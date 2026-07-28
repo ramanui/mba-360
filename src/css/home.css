@@ -1,0 +1,1157 @@
+.text-center {
+  text-align: center;
+}
+
+/* =========================================================
+   TOP MBA COLLEGES — heading + filter tabs
+========================================================= */
+.topColleges {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 73px 0px 78px;
+  background-color: #f6f9ff;
+}
+
+.topCollegesHead {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.topCollegesHead h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--c-blue);
+  margin: 0 0 10px;
+}
+
+.topCollegesHead p {
+  font-size: 1.05rem;
+  color: #5b6072;
+  margin: 0;
+}
+
+.collegeFilters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 0px 0 34px;
+}
+
+.collegeFilterBtn {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  background: #ffffff;
+  border: 1px solid #d8dbe6;
+  border-radius: 6px;
+  padding: 14px 40px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.collegeFilterBtn:hover {
+  border-color: var(--c-orange);
+}
+
+.collegeFilterBtn:focus-visible {
+  outline: 3px solid var(--c-orange);
+  outline-offset: 2px;
+}
+
+.collegeFilterBtn[aria-pressed="true"] {
+  background: var(--c-orange);
+  border-color: var(--c-orange);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 90, 31, 0.35);
+}
+
+/* =========================================================
+   SLIDER WRAP + NAV ARROWS
+========================================================= */
+.collegeSliderWrap {
+  position: relative;
+}
+
+.collegeSwiper {
+  overflow: hidden;
+}
+
+.collegeSlidePrev,
+.collegeSlideNext {
+  position: absolute;
+  top: -60px;
+  /* transform: translateY(-50%); */
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--c-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+.collegeSlideNext {
+  right: 0px;
+}
+
+.collegeSlidePrev {
+  right: 60px;
+}
+
+.collegeSlidePrev:hover,
+.collegeSlideNext:hover {
+  background: var(--c-orange);
+}
+
+.collegeSlidePrev:focus-visible,
+.collegeSlideNext:focus-visible {
+  outline: 3px solid var(--c-orange);
+  outline-offset: 2px;
+}
+
+.collegeSlidePrev.swiper-button-disabled,
+.collegeSlideNext.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARDS — same styling as before, now as swiper-slides
+========================================================= */
+.collegeGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.collegeCard {
+  border: 1px solid #e6e8ee;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.25s ease;
+}
+
+.collegeCardLogo {
+  width: 100%;
+  aspect-ratio: 16 / 8;
+  background:
+    radial-gradient(
+      120% 140% at 20% 15%,
+      rgba(255, 71, 1, 0.1),
+      transparent 55%
+    ),
+    linear-gradient(135deg, #eef0f5 0%, #e3e7f0 55%, #dfe3ee 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.collegeCardLogo img {
+  width: auto;
+  max-width: 70%;
+  height: auto;
+  max-height: 64px;
+  object-fit: contain;
+}
+
+.collegeCardBody {
+  padding: 20px 15px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.collegeCardName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  margin-bottom: 2px;
+}
+
+.collegeCardLocation {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.collegeStats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.collegeStatValue {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  line-height: 1.3;
+}
+
+.collegeStatLabel {
+  display: block;
+  font-size: 0.8rem;
+  color: #7c8194;
+  margin-top: 2px;
+}
+
+.collegeAccepting {
+  font-size: 0.75rem;
+  color: #7c8194;
+  margin-bottom: 8px;
+}
+
+.collegeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.collegeTag {
+  background: #fff1ea;
+  color: var(--c-orange);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.collegeCardFooter {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #edeef2;
+  padding-top: 16px;
+}
+
+.viewCoursesLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.viewCoursesLink svg {
+  transition: transform 0.2s ease;
+}
+
+.viewCoursesLink:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.downloadBrochureBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--c-orange);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  border: none;
+}
+
+.downloadBrochureBtn:hover {
+  background-color: var(--c-orange-dark, #e64200);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 71, 1, 0.3);
+}
+
+.downloadBrochureBtn:active {
+  transform: translateY(0);
+}
+
+/* =========================================
+         ENTRANCE EXAMS SECTION
+         Uses root vars: --c-blue, --c-orange, --white, --black
+         Greys not in root -> hardcoded values (no new custom props added)
+      ========================================= */
+
+.entranceExams {
+  width: 100%;
+  background-color: var(--white);
+  padding: 75px 0 80px;
+  box-sizing: border-box;
+}
+.entranceExams .marketing__heading {
+  text-align: left;
+}
+.entranceExams .topColleges-sub {
+  text-align: left;
+}
+.topColleges .marketing__heading {
+  text-align: center;
+}
+.topColleges-sub {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #45464e;
+  margin-bottom: 34px;
+}
+
+.entranceExams__heading {
+  text-align: center;
+  color: var(--c-blue);
+  margin-bottom: 12px;
+}
+
+.entranceExams__subtext {
+  text-align: left;
+  color: #5b6472;
+  max-width: 560px;
+  margin: 0 0 48px;
+  font-size: 1.125rem;
+}
+
+.entranceExams__slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.entranceExams__item {
+  width: 320px;
+  height: auto;
+}
+
+.examCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f6f9ff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(13, 27, 62, 0.05);
+  padding: 32px 28px;
+  border-left: 4px solid transparent;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.examCard:hover {
+  box-shadow: 0 8px 32px rgba(13, 27, 62, 0.1);
+  border-left-color: var(--c-blue);
+}
+
+.examCard__top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.examCard__top img {
+  height: 24px;
+  width: auto;
+  border: 1px solid #c6c6cf;
+  padding: 3px 6px;
+  border-radius: 6px;
+}
+
+.examCard__logo {
+  width: auto;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.examCard__meta {
+  text-align: right;
+  flex: 0 0 auto;
+}
+
+.examCard__metaLabel {
+  display: block;
+  font-size: 0.8125rem;
+  color: #8a94a6;
+  margin-bottom: 4px;
+}
+
+.examCard__metaValue {
+  display: block;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  line-height: 1.3;
+}
+
+.examCard__title {
+  font-size: clamp(1rem, 2vw, 1rem);
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 20px;
+  height: 50px;
+}
+
+.examCard__specs {
+  margin: 0 0 24px 0;
+  flex: 1 1 auto;
+}
+
+.examCard__spec {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 0;
+  border-top: 1px solid #eef0f5;
+}
+
+.examCard__spec:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.examCard__spec dt {
+  font-size: 0.8rem;
+  color: #45464e;
+  font-weight: 400;
+  margin: 0;
+}
+
+.examCard__spec dd {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--black);
+  margin: 0;
+  text-align: right;
+  max-width: 60%;
+  height: 38px;
+}
+.swiper {
+  padding: 1px !important;
+}
+.examCard__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px 20px;
+  border: 1.5px solid var(--c-orange);
+  border-radius: 8px;
+  background-color: var(--white);
+  color: var(--c-orange);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.examCard__cta svg {
+  transition: transform 0.2s ease;
+}
+
+.examCard__cta:hover {
+  background-color: var(--c-orange);
+  color: var(--white);
+}
+
+.examCard__cta:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.examCard__cta:focus-visible {
+  outline: 2px solid var(--c-blue);
+  outline-offset: 2px;
+}
+
+.entranceSliderWrap {
+  position: relative;
+}
+
+.entranceExams__slider {
+  overflow: hidden;
+}
+
+.entranceE {
+  position: relative;
+}
+.entranceSlidePrev,
+.entranceSlideNext {
+  position: absolute;
+  top: -60px;
+  /* transform: translateY(-50%); */
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--c-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.entranceSlidePrev {
+  right: 60px;
+}
+
+.entranceSlideNext {
+  right: 0px;
+}
+
+.entranceSlidePrev:hover,
+.entranceSlideNext:hover {
+  background: var(--c-orange);
+}
+
+.entranceSlidePrev:focus-visible,
+.entranceSlideNext:focus-visible {
+  outline: 3px solid var(--c-orange);
+  outline-offset: 2px;
+}
+
+.entranceSlidePrev.swiper-button-disabled,
+.entranceSlideNext.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ============================================
+   SECTION 1 — Decision tools
+   ============================================= */
+
+.decisionTools {
+  width: 100%;
+  background-color: #f6f9ff;
+  padding: 76px 0 80px;
+  box-sizing: border-box;
+}
+.decisionTools .topColleges-sub {
+  text-align: left;
+}
+/* .decisionTools__subtext {
+  font-size: 1.125rem;
+  color: #4b5563;
+  margin: 0 0 40px 0;
+  max-width: 620px;
+} */
+
+.decisionTools__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.decisionCard {
+  background-color: #ffffff;
+  border: 1px solid #e6e8ef;
+  border-radius: 16px;
+  padding: 34px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 6px rgba(13, 27, 62, 0.04);
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.decisionCard:hover {
+  box-shadow: 0 10px 30px rgba(13, 27, 62, 0.1);
+  transform: translateY(-3px);
+}
+
+.decisionCard__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: #eef4fc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.decisionCard__icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: #000000;
+}
+.decisionCard:hover .decisionCard__icon svg {
+  stroke: #ffffff;
+}
+.decisionCard:hover .decisionCard__icon {
+  background-color: var(--c-orange);
+}
+.decisionCard__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  margin-bottom: 12px;
+}
+
+.decisionCard__desc {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 28px;
+  max-width: 46ch;
+}
+
+/* Shared CTA button — same visual pattern as .admissionJourneySubmit,
+   background darkened slightly from var(--c-orange) so white
+   button-text clears WCAG AA contrast (4.5:1) at this font size. */
+
+/* ============================================
+   SECTION 2 — Management education for every stage
+   ============================================= */
+
+.managementEdu {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--c-blue);
+  padding: 76px 0 80px;
+  box-sizing: border-box;
+  isolation: isolate;
+}
+
+.managementEdu__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("https://designawebsite.co.in/demo/dummy-img/management-education-for-every-stage.webp");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+.managementEdu__heading {
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+.managementEdu .topColleges-sub {
+  color: #ffffff;
+  text-align: left;
+}
+
+/* .managementEdu__subtext {
+  font-size: 1.125rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 48px 0;
+} */
+
+.managementEdu__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.eduCard {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 36px;
+  box-sizing: border-box;
+}
+
+.eduCard__tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-blue);
+  background-color: #f6f9ff;
+  border: 1px solid #0d1b3e;
+  border-radius: 999px;
+  padding: 5px 14px;
+  margin-bottom: 20px;
+}
+.eduCard:hover .eduCard__tag {
+  background-color: #fff1ea;
+}
+.eduCard__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--c-blue);
+  line-height: 1.3;
+  margin-bottom: 14px;
+}
+
+.eduCard__desc {
+  font-size: 1rem;
+  color: #45464e;
+  margin-bottom: 28px;
+}
+
+/* =========================
+     MOBILE FIRST MEDIA QUERIES
+========================= */
+
+.as-section.home-as {
+  max-width: inherit !important;
+  padding: 56px 0 80px;
+}
+.as-section.home-as .as-card {
+  flex: 0 0 60%;
+  min-width: 0;
+}
+
+.home-as .as-step {
+  width: 140px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Latest From MBA Section ---------- */
+.lfm-section {
+  padding: 76px 0 80px;
+  background: #f6f9ff;
+}
+
+/* .lfm-container {
+  max-width: var(--container-max, 1280px);
+  margin: 0 auto;
+  padding: 0 var(--container-pad, 24px);
+} */
+
+.lfm-head {
+  margin-bottom: clamp(24px, 3vw, 36px);
+}
+
+.lfm-title {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 800;
+  color: var(--color-heading, #14213d);
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+
+/* .lfm-sub {
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: var(--color-text-muted, #5a6472);
+  margin: 0;
+} */
+.lfm-section .topColleges-sub {
+  text-align: left;
+}
+.lfm-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1.15fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.lfm-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-border, #e6e9ef);
+  border-radius: 12px;
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.lfm-card--feature:hover,
+.lfm-card--feature:focus-visible {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px -12px rgba(20, 33, 61, 0.25);
+  border-color: var(--c-orange, --c-orange);
+}
+
+.lfm-media {
+  position: relative;
+  /*    aspect-ratio: 16 / 11;*/
+  overflow: hidden;
+  isolation: isolate;
+}
+.lfm-media .lfm-tag {
+  font-size: 0.85rem;
+}
+
+.lfm-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 15, 30, 0) 35%,
+    rgba(6, 10, 22, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.lfm-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lfm-card--feature:hover .lfm-media img,
+.lfm-card--feature:focus-visible .lfm-media img {
+  transform: scale(1.08);
+}
+
+.lfm-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 2;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: var(--c-orange, #ff5e1a);
+}
+
+.lfm-tag--strategy {
+  background: #ff5e1a;
+}
+.lfm-tag--placements {
+  background: #ff5e1a;
+}
+.lfm-tag--interview {
+  background: #ff5e1a;
+  position: static;
+  margin-bottom: 10px;
+}
+.lfm-tag--exec {
+  background: #ff5e1a;
+  position: static;
+  margin-bottom: 10px;
+}
+
+.lfm-card--feature .lfm-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 20px;
+}
+
+.lfm-card--feature .lfm-heading {
+  color: #fff;
+  font-size: clamp(17px, 1.6vw, 19px);
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 12px;
+}
+
+.lfm-card--feature .lfm-meta {
+  color: #dfe4ee;
+}
+.lfm-card--feature .lfm-icon {
+  color: #ff5e1a;
+}
+
+/* right column stacked list */
+.lfm-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.lfm-list .lfm-meta {
+  font-weight: 400;
+  font-size: 0.92rem;
+}
+.lfm-list .lfm-meta img {
+  max-width: 18px;
+}
+.lfm-body .lfm-meta img {
+  filter: brightness(0) invert(1);
+}
+
+.lfm-card--text {
+  flex: 1;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lfm-card--text:hover,
+.lfm-card--text:focus-visible {
+  border-color: var(--color-primary, #ff5e1a);
+  box-shadow: 0 10px 26px -14px rgba(20, 33, 61, 0.2);
+  transform: translateX(4px);
+}
+
+.lfm-heading--sm {
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-weight: 700;
+  color: var(--color-heading, #14213d);
+  line-height: 1.4;
+  margin: 0 0 12px;
+  transition: color 0.3s ease;
+}
+
+.lfm-card--text:hover .lfm-heading--sm {
+  color: var(--color-primary, #ff5e1a);
+}
+
+.lfm-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  color: var(--color-text-muted, #6b7280);
+  margin-top: auto;
+  font-weight: 600;
+}
+.lfm-meta img {
+  max-width: 24px;
+}
+
+.lfm-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--color-primary, #ff5e1a);
+}
+
+/* ---------- Newsletter Section ---------- */
+
+/* =========================================================================
+   RESPONSIVE / MEDIA QUERIES
+   Sab breakpoints yahan ek jagah, largest se smallest order mein arrange
+   kiye hain. Same breakpoint jitni baar bhi upar alag-alag jagah use hua
+   tha, unhe ek hi block mein combine kiya hai (koi value/comment change
+   nahi kiya gaya, sirf arrangement kiya hai).
+========================================================================= */
+
+/* ---------- Responsive ---------- */
+/* ---------- Responsive breakpoints (mobile-first consolidated) ---------- */
+@media (max-width: 1640px) {
+  .lfm-media {
+    aspect-ratio: 16 / 12;
+  }
+}
+
+@media (max-width: 1440px) {
+  .lfm-media {
+    aspect-ratio: 16 / 13;
+  }
+  .as-section.home-as .as-card {
+    flex: 0 0 66%;
+  }
+}
+@media (max-width: 1367px) {
+  .lfm-media {
+    aspect-ratio: 16 / 14.6;
+  }
+}
+
+@media (max-width: 1024px) {
+  .lfm-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .lfm-list {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+  .lfm-card--text {
+    flex: 1 1 0;
+  }
+}
+
+@media (max-width: 1199px) {
+  .lfm-media {
+    aspect-ratio: 16 / 18;
+  }
+}
+
+@media (max-width: 992px) {
+  .entranceExams {
+    padding: 64px 0 48px;
+  }
+  .entranceExams__item {
+    width: 300px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .as-section .as-card {
+    flex: 0 0 calc((100% - 20px) / 1.2);
+  }
+}
+
+/* ---------- Responsive: shared for both sections ---------- */
+@media (max-width: 900px) {
+  .decisionTools {
+    padding: 56px 0 64px;
+  }
+  .managementEdu {
+    padding: 64px 0 64px;
+  }
+  .decisionTools__grid,
+  .managementEdu__grid {
+    grid-template-columns: 1fr;
+  }
+  .decisionCard,
+  .eduCard {
+    padding: 28px;
+  }
+  .managementEdu__bg {
+    background-image:
+      linear-gradient(
+        180deg,
+        var(--c-blue) 0%,
+        rgba(13, 27, 62, 0.9) 55%,
+        rgba(13, 27, 62, 0.75) 100%
+      ),
+      url("https://designawebsite.co.in/demo/dummy-img/management-education-for-every-stage.webp");
+    background-position: top center;
+  }
+}
+
+@media (max-width: 768px) {
+  .topColleges {
+    padding: 48px 16px;
+  }
+  .collegeFilters {
+    gap: 10px;
+  }
+  .collegeFilterBtn {
+    flex: 1 1 calc(50% - 10px);
+    padding: 12px 14px;
+    font-size: 0.9rem;
+  }
+  .collegeSlidePrev {
+    left: 4px;
+  }
+  .collegeSlideNext {
+    right: 4px;
+  }
+  .collegeCardFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .downloadBrochureBtn {
+    justify-content: center;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .entranceSlidePrev,
+  .entranceSlideNext {
+    width: 38px;
+    height: 38px;
+  }
+
+  .entranceSlidePrev {
+    left: -10px;
+  }
+
+  .entranceSlideNext {
+    right: -10px;
+  }
+
+  .as-section .as-card {
+    flex: 0 0 70%;
+  }
+}
+
+@media (max-width: 640px) {
+  .lfm-grid {
+    grid-template-columns: 1fr;
+  }
+  .lfm-list {
+    flex-direction: column;
+    grid-column: auto;
+  }
+  .lfm-media {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 600px) {
+  .entranceExams {
+    padding: 48px 0 40px;
+  }
+  .entranceExams__subtext {
+    margin-bottom: 32px;
+  }
+  .entranceExams__item {
+    width: 85vw;
+  }
+  .examCard {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collegeStats {
+    gap: 6px;
+  }
+  .collegeCardLogo {
+    padding: 20px;
+  }
+
+  .decisionTools__subtext,
+  .managementEdu__subtext {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collegeCard {
+    transition: none;
+  }
+  .reveal,
+  .revealleft,
+  .revealright {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}

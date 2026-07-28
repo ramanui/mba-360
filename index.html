@@ -1,0 +1,1677 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+   
+
+      <title>MBA 360</title>
+        <meta name="description" content="DGTL">
+<meta name="theme-color" content="#ff4701">
+    
+
+    <!-- Favicon -->
+     <link rel="icon" type="image/png" href="/favicon.svg"
+            sizes="32x32">
+        <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
+
+<!-- <link rel="preload" as="image"  href="./src/assets/images/mba-360-banner.webp" fetchpriority="high"> -->
+ <link
+  rel="preload"
+  as="image"
+  href="./src/assets/images/mba-360-banner.webp"
+  imagesrcset="
+    ./src/assets/images/mba-360-banner-640.webp 640w,
+    ./src/assets/images/mba-1024-banner.webp 1024w,
+    ./src/assets/images/mba-360-banner.webp 1920w
+  "
+  imagesizes="100vw"
+  fetchpriority="high"
+/>
+
+    <!-- Google Fonts (Ultra Optimized) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,600;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"> -->
+
+      <link
+  rel="preload"
+  href="/fonts/Inter-Bold.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin>
+
+<link
+  rel="preload"
+  href="/fonts/Inter-Regular.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin>
+    
+    <!-- Critical CSS inline (BEST for FCP) -->
+
+    <style>
+      .mbaHero {
+  width: 100%;
+  min-height: 430px;
+  padding: 80px 0 90px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+}
+
+.mbaHeroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.mbaHeroInner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mbaHeroTitle {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.mbaHeroInner .mbaHeroTitle {
+  margin-inline: auto;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+.mbaHeroSubtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.mbaHeroSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 8px 8px 8px 24px;
+  max-width: 700px;
+  height: 44px;
+  margin: 0 auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.mbaHeroSearchIcon {
+  align-self: center;
+  color: #a4abb8;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.mbaHeroSearchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 17px;
+  color: var(--text-dark, #0d1b3e);
+  margin-right: 1rem;
+  max-height: 37px;
+  padding-inline: 8px;;
+}
+
+.mbaHeroSearchInput::placeholder {
+  color: #a4abb8;
+}
+
+.mbaHeroSearchBtn {
+  flex: 0 0 auto;
+  align-self: center;
+  height: 40px;
+  background-color: var(--c-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 32px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.mbaHeroSearchBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 71, 1, 0.35);
+}
+
+.mbaHeroSearchBtn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+.mbaHero {
+    padding: 60px 0 60px;
+  }
+
+  .mbaHeroSubtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .mbaHeroSearch {
+    height: 58px;
+    padding: 5px 5px 5px 16px;
+    border-radius: 10px;
+  }
+
+  .mbaHeroSearchInput {
+    font-size: 14px;
+  }
+
+  .mbaHeroSearchBtn {
+    font-size: 13px;
+    padding: 0 18px;
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+.mbaHeroSearch {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 16px;
+    border-radius: 10px;
+  }
+
+  .mbaHeroSearchInput {
+    flex: 1 1 100%;
+    width: 100%;
+    height: auto;
+    padding: 10px 0 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mbaHeroSearchBtn {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+  }
+}
+    </style>
+  </head>
+
+
+    <include src="public/partials/header.html"></include>
+
+  <main>
+  <!-- ============================================
+     HERO SECTION MARKUP
+============================================= -->
+  <section class="mbaHero" aria-label="MBA360 Hero Search">
+    <img
+  src="./src/assets/images/mba-360-banner.webp"
+  srcset="
+    ./src/assets/images/mba-360-banner-640.webp 640w,
+    ./src/assets/images/mba-1024-banner.webp 1024w,
+    ./src/assets/images/mba-360-banner.webp 1920w
+  "
+  sizes="100vw"
+  alt="From the Right Exam to the Right College"
+  title="From the Right Exam to the Right College"
+  class="mbaHeroBg"
+  width="1920"
+  height="530"
+  fetchpriority="high"
+  loading="eager"
+  decoding="async"
+/>
+    <div class="container">
+      <div class="mbaHeroInner">
+        <h1 class="mbaHeroTitle ">
+          From The Right Exam To The Right College
+        </h1>
+
+        <p class="mbaHeroSubtitle ">
+          MBA 360 helps you navigate India's management education landscape
+        </p>
+
+        <form class="mbaHeroSearch reveal " role="search"
+          action="/search" method="get">
+          <label for="mbaHeroSearchInput" class="admissionJourneyLabel">Search
+            college, exams, news</label>
+
+          <svg class="mbaHeroSearchIcon" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" aria-hidden="true"
+            focusable="false">
+            <circle cx="11" cy="11" r="7" stroke="currentColor"
+              stroke-width="2" />
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" />
+          </svg>
+
+          <input
+            type="search"
+            id="mbaHeroSearchInput"
+            name="q"
+            class="mbaHeroSearchInput"
+            placeholder="Search college, exams, news"
+            autocomplete="off" />
+
+          <button type="submit" class="mbaHeroSearchBtn">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+<section class="topColleges" aria-labelledby="topCollegesHeading">
+  <div class="container">
+    <h2 id="topCollegesHeading" class="marketing__heading">Top MBA Colleges</h2>
+    <p class="topColleges-sub">Discover, compare and connect with India's top management institutions.</p>
+
+  <div class="collegeFilters" role="group" aria-label="Filter colleges by type">
+    <button type="button" class="collegeFilterBtn" data-filter="all" aria-pressed="true">All Colleges</button>
+    <button type="button" class="collegeFilterBtn" data-filter="iim" aria-pressed="false">IIMs</button>
+    <button type="button" class="collegeFilterBtn" data-filter="private" aria-pressed="false">Private</button>
+    <button type="button" class="collegeFilterBtn" data-filter="public" aria-pressed="false">Public</button>
+  </div>
+
+  <div class="collegeSliderWrap">
+    <div class="swiper collegeSwiper">
+      <ul class="swiper-wrapper collegeGrid" role="list">
+
+        <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="IIM Ahmedabad logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">IIMA</h3>
+            <p class="collegeCardLocation" itemprop="address">Ahmedabad, Gujarat</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹19.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹19 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">95%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+
+        <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+            <p class="collegeCardLocation" itemprop="address">Bangalore, Karnataka</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+            <p class="collegeCardLocation" itemprop="address">Bangalore, Karnataka</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+            <p class="collegeCardLocation" itemprop="address">Bangalore, Karnataka</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+
+        <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="IIM Calcutta logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">IIM Calcutta</h3>
+            <p class="collegeCardLocation" itemprop="address">Kolkata, West Bengal</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹17.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹23.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">98%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Calcutta brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  
+		  
+		  
+		   <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi p-1</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		   <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi p-2</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		   <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi p-3</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		   <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi p-4</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		   <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi p-5</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  
+		  
+
+        <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi public1</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi public2</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi public3</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi public4</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+		  <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
+          <div class="collegeCardLogo">
+            <img src="./src/assets/images/iima.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+          </div>
+          <div class="collegeCardBody">
+            <h3 class="collegeCardName" itemprop="name">FMS Delhi public5</h3>
+            <p class="collegeCardLocation" itemprop="address">Delhi - NCR</p>
+
+            <div class="collegeStats">
+              <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+              <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+            </div>
+
+            <p class="collegeAccepting">Accepting</p>
+            <ul class="collegeTags">
+              <li class="collegeTag">CAT</li>
+              <li class="collegeTag">XAT</li>
+              <li class="collegeTag">GMAT</li>
+            </ul>
+
+            <div class="collegeCardFooter">
+              <a href="/demo/our-project/college/college-detail.html" class="viewCoursesLink">View College
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </a>
+              <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+        </li>
+		  
+
+      </ul>
+    </div>
+
+    <button type="button" class="collegeSlidePrev" id="collegePrev" aria-label="Previous colleges">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button type="button" class="collegeSlideNext" id="collegeNext" aria-label="Next colleges">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+  </div>
+</section>
+
+
+
+<section class="entranceExams" aria-labelledby="entranceExamsHeading">
+      <div class="container">
+        <h2 id="entranceExamsHeading" class="marketing__heading">
+          Entrance exams
+        </h2>
+        <p class="topColleges-sub">
+          Complete guides for all management entrance exams.
+        </p>
+     <div class="entranceE">
+       <div class="swiper entranceExams__slider ">
+          <ul class="swiper-wrapper entranceExams__list">
+            <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                   <img  src="./src/assets/images/xat.webp"
+                 alt="xat" loading="lazy" decoding="async" width="80" height="34">
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Nov 29, 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Common Admission Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>21 IIMs + 1,600+ Colleges</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore CAT
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+            <li class="swiper-slide entranceExams__item">
+              <article class="examCard examCard--featured">
+                <div class="examCard__top">
+                   <img  src="./src/assets/images/cat.webp"
+                 alt="xat" loading="lazy" decoding="async" width="43" height="24">
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Jan 4, 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Xavier Aptitude Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>150+ Colleges</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore XAT
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+            <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                 <img  src="./src/assets/images/xat.webp"
+                 alt="xat" loading="lazy" decoding="async" width="80" height="34">
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Mode</span>
+                    <span class="examCard__metaValue">Year-round</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Graduate Management Admission Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>Global MBA Programmes</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Adaptive Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore GMAT
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+            <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                 <img  src="./src/assets/images/cat.webp"
+                 alt="xat" loading="lazy" decoding="async" width="43" height="24">
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Window</span>
+                    <span class="examCard__metaValue">Oct–Dec 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">NMAT by GMAC</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>30+ Colleges</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Adaptive Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore NMAT
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+            <!-- SNAP: cut off in screenshot, placeholder copy — confirm exact values -->
+            <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                  <svg width="48" height="24" viewBox="0 0 48 24" aria-hidden="true" focusable="false">
+                    <rect width="48" height="24" rx="4" fill="#ec1d24" />
+                    <text x="24" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">SNAP</text>
+                  </svg>
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Dec 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Symbiosis National Aptitude Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>15+ Symbiosis Institutes</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore SNAP
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+                <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                  <svg width="48" height="24" viewBox="0 0 48 24" aria-hidden="true" focusable="false">
+                    <rect width="48" height="24" rx="4" fill="#ec1d24" />
+                    <text x="24" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">SNAP</text>
+                  </svg>
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Dec 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Symbiosis National Aptitude Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>15+ Symbiosis Institutes</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore SNAP
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+
+
+                <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                  <svg width="48" height="24" viewBox="0 0 48 24" aria-hidden="true" focusable="false">
+                    <rect width="48" height="24" rx="4" fill="#ec1d24" />
+                    <text x="24" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">SNAP</text>
+                  </svg>
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Dec 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Symbiosis National Aptitude Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>15+ Symbiosis Institutes</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore SNAP
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+
+
+                <li class="swiper-slide entranceExams__item">
+              <article class="examCard">
+                <div class="examCard__top">
+                  <svg width="48" height="24" viewBox="0 0 48 24" aria-hidden="true" focusable="false">
+                    <rect width="48" height="24" rx="4" fill="#ec1d24" />
+                    <text x="24" y="16" text-anchor="middle" fill="#fff" font-size="10" font-family="Inter" font-weight="700">SNAP</text>
+                  </svg>
+                  <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date</span>
+                    <span class="examCard__metaValue">Dec 2026</span>
+                  </div>
+                </div>
+                <h3 class="examCard__title">Symbiosis National Aptitude Test</h3>
+                <dl class="examCard__specs">
+                  <div class="examCard__spec">
+                    <dt>Accepted By</dt>
+                    <dd>15+ Symbiosis Institutes</dd>
+                  </div>
+                  <div class="examCard__spec">
+                    <dt>Exam Mode</dt>
+                    <dd>Computer Based Test</dd>
+                  </div>
+                </dl>
+                <a href="/demo/mba-360/cat/" class="examCard__cta">
+                  Explore SNAP
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M4 12L12 4M12 4H5M12 4V11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+              </article>
+            </li>
+          </ul>
+   
+        </div>
+                        <button type="button" class="entranceSlidePrev" id="entrancePrev" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <button type="button" class="entranceSlideNext" id="entranceNext" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+    </div>
+
+
+
+      </div>
+    </section>
+
+
+
+
+     <!-- ============================================
+       SECTION 1 — Decision tools
+       ============================================= -->
+  <section class="decisionTools" aria-labelledby="decision-tools-heading">
+    <div class="container">
+      <h2 id="decision-tools-heading" class="marketing__heading">Decision tools</h2>
+      <p class="topColleges-sub">Free tools to help you decide. No login required.</p>
+
+      <ul class="decisionTools__grid">
+        <li class="decisionCard reveal">
+          <span class="decisionCard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <h3 class="decisionCard__title">Find My MBA</h3>
+          <p class="decisionCard__desc">Answer 6 questions about your profile, goals, and budget. Get a personalised shortlist of colleges that match you exactly.</p>
+        
+          <a href="javascript:void(0)" type="submit" class="admissionJourneySubmit">
+                                     Take the quiz
+                                    <svg viewBox="0 0 26 26" width="28" height="28" fill="none" aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+        </li>
+
+        <li class="decisionCard reveal delay-1">
+          <span class="decisionCard__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false">
+              <rect x="3" y="4" width="18" height="13" rx="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </span>
+          <h3 class="decisionCard__title">Education Loan EMI Calculator</h3>
+          <p class="decisionCard__desc">Compare education loan EMIs across banks. See total interest paid, tax benefits, and the real cost of your MBA.</p>
+        
+          <a href="javascript:void(0)" type="submit" class="admissionJourneySubmit">
+                                    Calculate EMI
+                                    <svg viewBox="0 0 26 26" width="28" height="28" fill="none" aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+
+          
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SECTION 2 — Management education for every stage
+       ============================================= -->
+  <section class="managementEdu" aria-labelledby="management-edu-heading">
+    <div class="managementEdu__bg" aria-hidden="true"></div>
+    <div class="container">
+      <h2 id="management-edu-heading" class="marketing__heading managementEdu__heading">Management education for every stage</h2>
+      <p class="topColleges-sub">Explore management education designed for every stage of your academic and professional journey</p>
+
+      <ul class="managementEdu__grid">
+        <li class="eduCard revealleft">
+          <span class="eduCard__tag">For working professionals</span>
+          <h3 class="eduCard__title">Executive MBA — your career, accelerated. No career break needed.</h3>
+          <p class="eduCard__desc">Part-time, weekend, and online programs from IIMs, ISB, XLRI, and SPJIMR. Compare by experience level, industry, and format.</p>
+        
+          <a href="javascript:void(0)" type="submit" class="admissionJourneySubmit">
+                                     Explore Executive MBA
+                                    <svg viewBox="0 0 26 26" width="28" height="28" fill="none" aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+        </li>
+
+        <li class="eduCard revealright">
+          <span class="eduCard__tag">For young achievers · Class 12 & above</span>
+          <h3 class="eduCard__title">BBA & IPM — Explore management education designed.</h3>
+          <p class="eduCard__desc">Integrated Programme in Management at IIMs, top BBA colleges, IPMAT preparation, and the complete early-start pathway to a top MBA.</p>
+            <a href="javascript:void(0)" type="submit" class="admissionJourneySubmit">
+                                     Explore BBA/IPM
+                                    <svg viewBox="0 0 26 26" width="28" height="28" fill="none" aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+
+         
+<section class="as-section home-as" id="alumni" aria-labelledby="as-heading">
+  <div class="container">
+  <div class="as-head">
+    <div>
+      <h2 id="alumni-heading" class="marketing__heading reveal ">Alumni speak</h2>
+
+
+      <p class="topColleges-sub">Verified video testimonials from real alumni.</p>
+    </div>
+    <div class="as-nav">
+      <button type="button" class="as-nav-btn videoLibraryPrev" data-dir="prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <button type="button" class="as-nav-btn videoLibraryNext" data-dir="next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="emblaViewport" id="asViewport">
+    <div class="emblaContainer" id="asContainer" role="group" aria-roledescription="carousel" aria-label="Alumni testimonials">
+
+      <div class="as-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
+        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
+
+        <div class="as-person">
+          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
+                  aria-label="Play video: Rahul Kumar's journey from SPJIMR to Microsoft">
+            <img class="videoCardImage"  src="./src/assets/images/slide-3.webp"
+                 alt="slide" loading="lazy" decoding="async" width="170" height="170">
+            <span class="as-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <p class="as-name">Rahul Kumar</p>
+          <p class="as-batch">PGDM 2022–24</p>
+        </div>
+
+        <div class="as-path">
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/dgtl-360.webp"
+                 alt="DGTL 360" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">DGTL360</p><p class="as-role">Manager</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/spjmir-logo.webp"
+                 alt="SPJMIR" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/microsoft.webp"
+                 alt="Microsoft" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">Microsoft</p><p class="as-role">Senior Product Manager</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="as-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
+        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
+
+        <div class="as-person">
+          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
+                  aria-label="Play video: Ananya Sharma's journey from SPJIMR to Google">
+            <img class="videoCardImage"  src="./src/assets/images/slide-2.webp"
+                 alt="slide" loading="lazy" decoding="async" width="170" height="170">
+            <span class="as-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <p class="as-name">Ananya Sharma</p>
+          <p class="as-batch">PGDM 2021–23</p>
+        </div>
+
+        <div class="as-path">
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/microsoft.webp"
+                 alt="SPJMIR" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">Bain &amp; Co</p><p class="as-role">Analyst</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/spjmir-logo.webp"
+                 alt="SPJMIR" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img  src="./src/assets/images/microsoft.webp"
+                 alt="SPJMIR" loading="lazy" decoding="async" width="70" height="70"></span>
+            <p class="as-org">Google</p><p class="as-role">Product Marketing Lead</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="as-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
+        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
+
+        <div class="as-person">
+          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
+                  aria-label="Play video: Karan Mehta's journey from SPJIMR to Amazon">
+            <img class="videoCardImage"  src="./src/assets/images/slide-1.webp"
+                 alt="karan mehta" loading="lazy" decoding="async" width="170" height="170">
+            <span class="as-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </span>
+          </button>
+          <p class="as-name">Karan Mehta</p>
+          <p class="as-batch">PGDM 2022–24</p>
+        </div>
+
+        <div class="as-path">
+          <div class="as-step">
+            <span class="as-logo"><img src="https://placehold.co/60x60?text=I" alt="ICICI Bank" loading="lazy" decoding="async" width="48" height="48"></span>
+            <p class="as-org">ICICI Bank</p><p class="as-role">Officer</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="SPJIMR" loading="lazy" decoding="async" width="48" height="48"></span>
+            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
+          <div class="as-step">
+            <span class="as-logo"><img src="https://placehold.co/60x60?text=A" alt="Amazon" loading="lazy" decoding="async" width="48" height="48"></span>
+            <p class="as-org">Amazon</p><p class="as-role">Category Manager</p>
+            <span class="as-underline" aria-hidden="true"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="videoLibraryDots" id="asDots" role="tablist" aria-label="Select testimonial"></div>
+  <p class="as-sr-only" id="asLiveRegion" aria-live="polite"></p>
+  </div>
+</section>
+
+
+<!-- ================= LATEST FROM MBA 360 SECTION ================= -->
+<section class="lfm-section" aria-labelledby="lfmHeading" itemscope itemtype="https://schema.org/ItemList">
+  <div class="container">
+
+    <div class="lfm-head reveal">
+      <h2 id="lfmHeading" class="lfm-title">Latest from MBA 360</h2>
+      <p class="topColleges-sub">Exam analysis, placement reports, strategy guides, alumni interviews.</p>
+    </div>
+
+    <div class="lfm-grid">
+
+      <!-- Featured Card 1 -->
+      <a href="/demo/our-project/blog/blog-detail.html" class="lfm-card lfm-card--feature revealleft delay-1"
+         itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <meta itemprop="position" content="1" />
+        <article itemprop="item" itemscope itemtype="https://schema.org/Article">
+          <div class="lfm-media">
+            <img
+              src="./src/assets/images/hand-shake.webp"
+              alt="6-month CAT 2026 preparation plan week by week guide"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="560"
+              height="360" />
+            <span class="lfm-tag lfm-tag--strategy">Strategy</span>
+          </div>
+          <div class="lfm-body">
+            <h3 class="lfm-heading" itemprop="headline">6-month CAT 2026 preparation plan — week-by-week guide</h3>
+            <div class="lfm-meta">
+               <img
+              src="./src/assets/images/calendar-icon.webp"
+              alt="Calender"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="26"
+              height="26" />
+              <time itemprop="datePublished" datetime="2026-05-14">May 14, 2026</time>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Featured Card 2 -->
+      <a href="/demo/our-project/blog/blog-detail.html" class="lfm-card lfm-card--feature reveal delay-2"
+         itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <meta itemprop="position" content="2" />
+        <article itemprop="item" itemscope itemtype="https://schema.org/Article">
+          <div class="lfm-media">
+            <img
+            src="./src/assets/images/hand-shake.webp"
+              alt="IIM final placements 2025 full data across all 21 IIMs"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="560"
+              height="360" />
+            <span class="lfm-tag lfm-tag--placements">Placements</span>
+          </div>
+          <div class="lfm-body">
+            <h3 class="lfm-heading" itemprop="headline">IIM final placements 2025 — full data across all 21 IIMs</h3>
+            <div class="lfm-meta">
+             <img
+              src="./src/assets/images/calendar-icon.webp"
+              alt="Calender"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="26"
+              height="26" />
+              <time itemprop="datePublished" datetime="2026-06-14">June 14, 2026</time>
+            </div>
+          </div>
+        </article>
+      </a>
+
+      <!-- Right Column: Text List Cards -->
+      <div class="lfm-list revealright delay-2">
+
+        <a href="/demo/our-project/blog/blog-detail.html" class="lfm-card lfm-card--text"
+           itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="3" />
+          <article itemprop="item" itemscope itemtype="https://schema.org/Article">
+            <span class="lfm-tag lfm-tag--interview">Interview</span>
+            <h3 class="lfm-heading lfm-heading--sm" itemprop="headline">SPJIMR Director interview — admissions, DCC evolution, 2026 vision</h3>
+            <div class="lfm-meta">
+             <img
+              src="./src/assets/images/calendar-icon.webp"
+              alt="Calender"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="26"
+              height="26" />
+              <time itemprop="datePublished" datetime="2026-04-10">Apr 10, 2026</time>
+            </div>
+          </article>
+        </a>
+
+        <a href="/demo/our-project/blog/blog-detail.html" class="lfm-card lfm-card--text"
+           itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <meta itemprop="position" content="4" />
+          <article itemprop="item" itemscope itemtype="https://schema.org/Article">
+            <span class="lfm-tag lfm-tag--exec">Exec MBA</span>
+            <h3 class="lfm-heading lfm-heading--sm" itemprop="headline">Is EMBA worth it at 35? ROI analysis across 8 top programs</h3>
+            <div class="lfm-meta">
+             <img
+              src="./src/assets/images/calendar-icon.webp"
+              alt="Calender"
+              itemprop="image"
+              loading="lazy"
+              decoding="async"
+              width="26"
+              height="26" />
+              <time itemprop="datePublished" datetime="2026-03-22">Mar 22, 2026</time>
+            </div>
+          </article>
+        </a>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  </main>
+
+    <!-- ===== Master Your Admission Journey (Subscribe) Section ===== -->
+            <section class="admissionJourney"
+                aria-labelledby="admissionJourneyHeading">
+                <div class="container">
+                    <div class="admissionJourneyInner revealright">
+                        <h2 class="marketing__heading"
+                            id="admissionJourneyHeading">Master your admission
+                            journey</h2>
+                        <p class="admissionJourneyText">Weekly briefing on exam
+                            updates, admission deadlines, placement reports, and
+                            editorial analysis. No spam. Unsubscribe
+                            anytime.</p>
+
+                        <form class="admissionJourneyForm"
+                            id="admissionJourneyForm"
+                            novalidate>
+                            <label for="admissionJourneyEmail"
+                                class="admissionJourneyLabel">Email
+                                address</label>
+                            <div class="admissionJourneyField">
+                                <input
+                                    type="email"
+                                    id="admissionJourneyEmail"
+                                    name="email"
+                                    class="admissionJourneyInput"
+                                    placeholder="Your email address"
+                                    autocomplete="email"
+                                    required
+                                    aria-describedby="admissionJourneyError">
+                                <button type="submit"
+                                    class="admissionJourneySubmit">
+                                    Subscribe
+                                    <svg viewBox="0 0 26 26" width="28"
+                                        height="28"
+                                        fill="none" aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="admissionJourneyError"
+                                id="admissionJourneyError" role="alert"
+                                aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+
+           
+<include src="public/partials/footer.html"></include>
+
+  
+   <!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+        <script defer>
+    (function () {
+      var selectors = '.reveal, .revealleft, .revealright';
+      var elements = document.querySelectorAll(selectors);
+
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+  
+
+
+
+  <script type="module" defer>
+  import EmblaCarousel from "embla-carousel";
+  /* Same technique as videoLibrary.js — swap this import for
+     `import EmblaCarousel from "embla-carousel";` once bundled into the build. */
+
+  document.addEventListener('DOMContentLoaded', function () {
+
+    const viewportNode = document.getElementById('asViewport');
+    if (!viewportNode || typeof EmblaCarousel === 'undefined') return;
+
+    const prevButton = document.querySelector('.videoLibraryPrev');
+    const nextButton = document.querySelector('.videoLibraryNext');
+    const dotsWrap = document.getElementById('asDots');
+    const liveRegion = document.getElementById('asLiveRegion');
+
+    const embla = EmblaCarousel(viewportNode, {
+      loop: false,
+      align: 'start',
+      skipSnaps: false,
+      dragFree: false
+    });
+
+    /* ---------- Dots ---------- */
+
+    function buildDots() {
+      dotsWrap.innerHTML = '';
+      const slideCount = embla.scrollSnapList().length;
+
+      for (let i = 0; i < slideCount; i++) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'videoLibraryDot';
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1) + ' of ' + slideCount);
+        dot.addEventListener('click', () => embla.scrollTo(i));
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateDots() {
+      const dots = dotsWrap.querySelectorAll('.videoLibraryDot');
+      const selectedIndex = embla.selectedScrollSnap();
+
+      dots.forEach(function (dot, index) {
+        if (index === selectedIndex) {
+          dot.classList.add('isSelected');
+          dot.setAttribute('aria-current', 'true');
+        } else {
+          dot.classList.remove('isSelected');
+          dot.setAttribute('aria-current', 'false');
+        }
+      });
+
+      liveRegion.textContent = 'Showing testimonial ' + (selectedIndex + 1) + ' of ' + dots.length;
+    }
+
+    /* ---------- Arrows ---------- */
+
+    function updateArrows() {
+      if (!prevButton || !nextButton) return;
+      prevButton.disabled = !embla.canScrollPrev();
+      nextButton.disabled = !embla.canScrollNext();
+    }
+
+    if (prevButton) prevButton.addEventListener('click', function () { embla.scrollPrev(); });
+    if (nextButton) nextButton.addEventListener('click', function () { embla.scrollNext(); });
+
+    viewportNode.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { embla.scrollPrev(); e.preventDefault(); }
+      if (e.key === 'ArrowRight') { embla.scrollNext(); e.preventDefault(); }
+    });
+
+    /* ---------- Init ---------- */
+
+    buildDots();
+    updateDots();
+    updateArrows();
+
+    embla.on('select', function () { updateDots(); updateArrows(); });
+    embla.on('reInit', function () { buildDots(); updateDots(); updateArrows(); });
+
+    /* ---------- Video facade: inject iframe only on click ----------
+       Keeps initial page load free of YouTube's iframe/JS payload.
+       No CLS: the iframe fills the same box the facade already reserved.
+       Video IDs below are dummy placeholders — swap data-video-id per slide. */
+
+    const facades = document.querySelectorAll('.videoCardFacade');
+    let activeIframes = [];
+
+    function pauseAllVideos() {
+      activeIframes.forEach(function (iframe) {
+        if (!iframe.contentWindow) return;
+        iframe.contentWindow.postMessage(
+          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
+          '*'
+        );
+      });
+    }
+
+    facades.forEach(function (facade) {
+      facade.addEventListener('click', function () {
+        const videoId = facade.getAttribute('data-video-id');
+        if (!videoId) return;
+
+        pauseAllVideos();
+
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + videoId +
+          '?autoplay=1&enablejsapi=1&si=6xLLtDiLX8I-VGiE';
+        iframe.title = facade.getAttribute('aria-label') || 'YouTube video player';
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.setAttribute('allowfullscreen', '');
+
+        facade.innerHTML = '';
+        facade.appendChild(iframe);
+        activeIframes.push(iframe);
+
+        facade.disabled = true;
+        facade.removeAttribute('aria-label');
+      }, { once: true });
+    });
+
+  });
+</script>
+
+
+    <script type="module" src="src/js/home-import.js" defer></script>
+  </body>
+</html>

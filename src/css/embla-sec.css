@@ -1,0 +1,486 @@
+/* Emla section */
+.clg-section__title {
+  background: linear-gradient(90deg, #0d1b3e 0%, #ff4701 136.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.as-section {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 10px 0px 0px;
+}
+
+.as-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.as-sub {
+  margin: 0;
+  color: #5a6178;
+  font-size: 15px;
+}
+
+.as-nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-bottom: 20px;
+}
+.as-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid #e7e9f0;
+  background: var(--c-blue);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+.as-nav-btn:hover {
+  border-color: #1b2340;
+}
+.as-nav-btn[data-dir="next"] {
+  background: #1b2340;
+  color: #fff;
+  border-color: #1b2340;
+}
+.as-nav-btn[data-dir="next"]:hover {
+  background: #c94f24;
+  border-color: #c94f24;
+}
+.as-nav-btn:focus-visible,
+.videoCardFacade:focus-visible,
+.as-dot:focus-visible {
+  outline: 3px solid #1b6ef3;
+  outline-offset: 2px;
+}
+.as-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.as-nav-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Embla */
+.emblaViewport {
+  overflow: hidden;
+}
+.emblaContainer {
+  display: flex;
+  gap: 24px;
+  touch-action: pan-y pinch-zoom;
+}
+
+.as-card {
+  flex: 0 0 100%;
+  min-width: 0;
+  border: 1px solid #e7e9f0;
+  border-radius: 16px;
+  background: #ffffff;
+  padding: 28px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+@media (min-width: 900px) {
+  .as-card {
+    flex-basis: 100%;
+  }
+}
+
+.as-verified {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #e15b2d;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.as-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 170px;
+}
+
+.videoCardFacade {
+  position: relative;
+  width: 170px;
+  height: 170px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0c1222;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+}
+.videoCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.videoCardFacade .as-play {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1b2340;
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+.videoCardFacade:hover .as-play {
+  transform: scale(1.08);
+}
+.as-play svg {
+  width: 14px;
+  height: 14px;
+  margin-left: 2px;
+}
+
+.videoCardFacade iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.videoCardFacade:disabled {
+  cursor: default;
+}
+
+.as-name {
+  margin: 12px 0 2px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #1b2340;
+}
+.as-batch {
+  margin: 0;
+  font-size: 13px;
+  color: #5a6178;
+}
+
+.as-path {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex: 1 1 320px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 4px 2px;
+}
+.as-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 0 0 auto;
+  width: 110px;
+}
+.as-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #eef0f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.as-logo img {
+  width: 60%;
+  height: 60%;
+  object-fit: contain;
+}
+.as-org {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+  color: #1b2340;
+}
+.as-role {
+  font-size: 12px;
+  color: #5a6178;
+  margin: 2px 0 6px;
+}
+.as-underline {
+  width: 22px;
+  height: 2px;
+  background: #e15b2d;
+  border-radius: 2px;
+}
+/* 
+.as-arrow {
+  flex: 1 1 auto;
+  min-width: 24px;
+  max-width: 45px;
+  height: 21px;
+  color: #e15b2d;
+  align-self: center;
+  margin-top: -18px;
+}
+
+.videoLibraryDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+.videoLibraryDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 0;
+  background: #e7e9f0;
+  cursor: pointer;
+  padding: 0;
+}
+.videoLibraryDot.isSelected {
+  background: #e15b2d;
+  width: 30px;
+  border-radius: 6px;
+} */
+
+.as-arrow {
+  flex: 1 1 auto;
+  min-width: 24px;
+  max-width: 68px;
+  height: 20%;
+  color: #ff4701;
+  align-self: center;
+  margin-top: -18px;
+}
+
+.videoLibraryDots {
+  display: flex;
+  justify-content: center;
+  gap: 8px; /* 8-12px is good */
+  margin-top: 24px;
+}
+
+.videoLibraryDot {
+  width: 30px; /* Increased touch target */
+  height: 30px; /* Increased touch target */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent; /* Remove button background */
+  padding: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.videoLibraryDot::before {
+  content: "";
+  width: 10px; /* Visible dot remains 10px */
+  height: 10px;
+  border-radius: 50%;
+  background: #e7e9f0;
+  transition: all 0.3s ease;
+}
+
+.videoLibraryDot.isSelected::before {
+  width: 30px; /* Active pill remains 30px */
+  border-radius: 6px;
+  background: #e15b2d;
+}
+
+.as-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.emblaViewport {
+  overflow: hidden;
+}
+
+.emblaContainer {
+  display: flex;
+}
+
+.as-card {
+  flex: 0 0 94%;
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .as-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .as-person {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+  .videoCardFacade {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 auto;
+  }
+  .videoCardFacade .as-play {
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    right: 4px;
+  }
+  .as-play svg {
+    width: 10px;
+    height: 10px;
+  }
+  .as-name {
+    margin: 0;
+    font-size: 14px;
+  }
+  .as-batch {
+    font-size: 12px;
+  }
+  .as-verified {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  /* Career path becomes a vertical timeline instead of a horizontal
+       scroll strip — every step is readable without side-scrolling. */
+  .as-path {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+    overflow-x: visible;
+    padding: 16px 0 0;
+  }
+  .as-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 0;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+  }
+  .as-step:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 19px;
+    width: 0;
+    height: 16px;
+    border-left: 2px dashed #e15b2d;
+  }
+  .as-logo {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .as-org {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 14px;
+  }
+  .as-role {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin: 2px 0 0;
+  }
+  .as-underline {
+    display: none;
+  }
+  .as-arrow {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 899px) {
+  .as-card {
+    gap: 20px;
+    padding: 22px;
+  }
+  .as-path {
+    gap: 10px;
+  }
+  .as-step {
+    width: 92px;
+  }
+  .as-org {
+    font-size: 12px;
+  }
+  .as-role {
+    font-size: 11px;
+  }
+  .as-arrow {
+    min-width: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .as-nav-btn,
+  .videoCardFacade .as-play,
+  .videoLibraryDot {
+    transition: none;
+  }
+}
+
+/* 
+Embla section end */

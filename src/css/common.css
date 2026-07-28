@@ -1,0 +1,452 @@
+/* =========================
+     ROOT VARIABLES
+========================= */
+
+/* =========================
+     TYPOGRAPHY
+========================= */
+
+html {
+  scroll-behavior: smooth;
+  font-size: 100%; /* 16px */
+  -webkit-text-size-adjust: 100%;
+  font-display: swap;
+}
+:focus-visible {
+  outline: 1px solid #e84b1a;
+  outline-offset: 0px;
+  border-radius: 4px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ===== ROOT ===== */
+
+:root {
+  --red: #ec1d24;
+  --black: #000000;
+  --white: #ffffff;
+  --font-size-base: 16px;
+  --c-orange: #ff4701;
+
+  --c-blue: #0d1b3e;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-family: "Inter";
+  margin-top: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Inter";
+  font-weight: 600;
+  margin-bottom: 1rem;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  line-height: 1.1;
+}
+
+h3 {
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  line-height: 1.7;
+}
+
+h4 {
+  font-size: clamp(1.5rem, 2.5vw, 1.75rem);
+  line-height: 1.3;
+}
+
+h5 {
+  font-size: clamp(1.25rem, 2vw, 1.375rem);
+  line-height: 1.4;
+}
+
+h6 {
+  font-size: clamp(1.125rem, 1.5vw, 1.125rem);
+  line-height: 1.7;
+}
+
+/* Desktop sizes */
+
+/* =========================
+     IMAGE CLS FIX
+========================= */
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: attr(width) / attr(height, auto);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1470px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-sizing: border-box !important;
+}
+
+/* =============================================
+       REVEAL ANIMATIONS
+    ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.revealleft {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+.revealleft.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.revealright {
+  opacity: 0;
+  transform: translateX(50px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+.revealright.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Stagger delay helpers */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+.delay-4 {
+  transition-delay: 0.4s;
+}
+
+.marketing__heading {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--c-blue);
+}
+
+/* ============================================
+   Admission Journey (Subscribe) Section
+   ============================================= */
+
+.admissionJourney {
+  width: 100%;
+  background-color: var(--c-blue);
+  padding: 74px 0px 50px;
+  box-sizing: border-box;
+}
+.admissionJourney .marketing__heading {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.admissionJourneyInner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.admissionJourneyText {
+  font-size: 1rem;
+  font-weight: 400;
+
+  color: #ffffff;
+  margin: 0 0 32px 0;
+}
+
+.admissionJourneyForm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.admissionJourneyLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.admissionJourneyField {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.admissionJourneyInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  background-color: var(--c-blue);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 14px 18px;
+  border-radius: 8px;
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.admissionJourneyInput:focus {
+  box-shadow: 0 0 0 3px rgba(255, 90, 31, 0.3);
+  border-color: var(--c-orange);
+}
+
+.admissionJourneyInput::placeholder {
+  color: 1px solid #bfc7d8;
+  color: #bfc7d8;
+}
+
+.admissionJourneyInput:hover {
+  border-color: #c9c9c9;
+}
+
+.admissionJourneySubmit {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  background-color: var(--c-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 26px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+.admissionJourneySubmit svg {
+  transition: transform 0.2s ease;
+}
+
+.admissionJourneySubmit:hover {
+  background-color: var(--c-orange);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 90, 31, 0.35);
+}
+
+.admissionJourneySubmit:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.admissionJourneySubmit:active {
+  transform: translateY(0);
+}
+
+.admissionJourneySubmit:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+.admissionJourneyError {
+  min-height: 20px;
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  color: #ff9b8a;
+  text-align: left;
+}
+
+/* Invalid state */
+.admissionJourneyInput.isInvalid {
+  border-color: var(--c-orange);
+  box-shadow: 0 0 0 3px rgba(255, 90, 90, 0.25);
+}
+
+/* Success state */
+.admissionJourneyInput.isSuccess {
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.25);
+}
+
+/* =========================================================================
+   RESPONSIVE / MEDIA QUERIES
+   Sab breakpoints yahan ek jagah, largest se smallest order mein arrange
+   kiye hain (koi value/comment change nahi kiya gaya, sirf arrangement
+   kiya hai).
+========================================================================= */
+
+/* Large Desktop */
+@media (max-width: 1640px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* Desktop */
+@media (max-width: 1367px) {
+  .container {
+    max-width: 1200px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* =========================
+     MOBILE FIRST MEDIA QUERIES
+========================= */
+
+/* Tablet + Mobile */
+@media (max-width: 768px) {
+  /* Mobile typography */
+  h1 {
+    font-size: 1.875rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.25rem;
+  }
+  h4 {
+    font-size: 1.125rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.875rem;
+  }
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* ---------- Responsive: Admission Journey ---------- */
+@media (max-width: 600px) {
+  .admissionJourney {
+    padding: 48px 16px;
+  }
+
+  .admissionJourneyText {
+    font-size: 15px;
+  }
+
+  .admissionJourneyField {
+    flex-direction: column;
+  }
+
+  .admissionJourneySubmit {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}

@@ -1,0 +1,111 @@
+
+/* navbar-css */
+.site-header {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid #c6c6cf;
+  font-family: "Inter";
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding-block: 20px;
+}
+
+.site-header__logo-link {
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.site-header__logo {
+  height: auto;
+  width: 100%;
+  max-width: 150px;
+}
+
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.site-nav__link {
+  color: var(--c-blue);
+  font-size: 1rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.site-nav__link:hover {
+  color: var(--c-orange);
+}
+
+.site-nav__link:focus-visible {
+  outline: 2px solid var(--c-orange);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ===== LOGIN / REGISTER BUTTONS ===== */
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter";
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 6px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  line-height: 1.2;
+}
+
+.btn--outline {
+  background: var(--white);
+  color: var(--c-blue);
+  border-color: var(--c-blue);
+}
+
+.btn--outline:hover {
+  background: #f2f3f7;
+}
+
+.btn--solid {
+  background: var(--c-orange);
+  color: var(--white);
+}
+
+.btn--solid:hover {
+  background: #e64000;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--c-orange);
+  outline-offset: 2px;
+}
+/* navbar-css-End */
+
+@media (max-width: 992px) {
+.site-header {
+    display: none;
+  }
+}
