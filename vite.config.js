@@ -33,10 +33,13 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
+        glossary: resolve(__dirname, "glossary.html"),
+        "glossary": resolve(__dirname, "glossary/accreditation.html"),
         blog: resolve(__dirname, "blog/index.html"),
         "blog-detail": resolve(__dirname, "blog/blog-detail.html"),
         college: resolve(__dirname, "college/index.html"),
         "college-detail": resolve(__dirname, "college/college-detail.html"),
+         college: resolve(__dirname, "exam/index.html"),
       },
     },
   },

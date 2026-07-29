@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>MBA 360</title>
+        <meta name="description"
+            content="DGTL">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/favicon.svg"
+            sizes="32x32">
+        <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
+
+        <!-- Preload LCP Hero Image (Mobile + Desktop) -->
+
+        <link rel="preload" as="image"
+            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            fetchpriority="high">
+
+        <!-- Google Fonts (Ultra Optimized) -->
+
+        <link rel="preload"
+            href="/fonts/Inter-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+        <link rel="preload"
+            href="/fonts/Inter-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+    </head>
+    <body>
+        <include src="public/partials/header.html"></include>
+
+        <main>
+            <section class="hero" aria-labelledby="page-heading reveal">
+                <div class="bg-image"></div>
+                <div class="overlay"></div>
+                <div class="container">
+                    <h1 id="page-heading" class="hero__title">MBA Entrance Exams
+                        in India</h1>
+                    <div class="breadcrumb"><a href="/">Home</a> <span
+                            aria-hidden="true">›</span> <span>MBA Entrance
+                            Exams</span></div>
+                </div>
+            </section>
+
+            <section class="ad-section">
+                <div class="container">
+                    <div class="ad-section__row">
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="clg-section reveal">
+                <div class="container">
+
+                    <div class="clg-card clg-about" data-open="false"
+                        id="about-card">
+                        <div class="clg-about__body">
+                            <h2 class="top_heading">MBA Entrance Exams</h2>
+                            <div class="clg-about__intro">
+                                <p>Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy
+                                    text ever since 1966 Lorem Ipsum is simply
+                                    dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum is simply dummy text
+                                    of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard
+                                    dummy text ever since 1966 Lorem Ipsum is
+                                    simply dummy text of the. Lorem Ipsum is
+                                    simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum is simply
+                                    dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the
+                                    industry's standard dummy text ever</p>
+                            </div>
+
+                        </div>
+                        <div class="clg-about__more" id="about-more">
+                            <div>
+                                <div class="clg-about__body">
+                                    <p>Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard
+                                        dummy text ever since 1966 Lorem Ipsum
+                                        is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has
+                                        been the industry's standard dummy text
+                                        ever since 1966 Lorem Ipsum is simply
+                                        dummy text of the. Lorem Ipsum is simply
+                                        dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has
+                                        been the industry's standard dummy text
+                                        ever</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clg-expandRow">
+                            <button type="button" class="clg-expandBtn"
+                                id="about-expand-btn"
+                                data-toggle-target="about-card"
+                                aria-expanded="false" aria-controls="about-more"
+                                aria-label="Show more about SPJIMR">
+                                <svg width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" aria-hidden="true"><path
+                                        d="M6 9l6 6 6-6" stroke="currentColor"
+                                        stroke-width="2.2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="examListing">
+                <div class="container">
+
+                    <div class="examActiveFilters" id="examActiveFilters"
+                        style="display:none;">
+                        <span class="examActiveFilters__label">Active
+                            Filters:</span>
+                        <a href="#" class="examActiveFilters__clear"
+                            id="examClearAll">Clear All ✕</a>
+                    </div>
+                    <p id="examNoResults"
+                        style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+                        exams match the selected filters. Try clearing some
+                        filters.</p>
+
+                    <div class="examLayout">
+
+                        <!-- Mobile Filter Toggle -->
+                        <button type="button" class="examMobileFilterToggle"
+                            id="examMobileFilterToggle" aria-expanded="false"
+                            aria-controls="examFiltersPanel">
+                            <span>Filters</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" aria-hidden="true"><path
+                                    d="M6 9l6 6 6-6" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg>
+                        </button>
+
+                        <!-- Sidebar Filters -->
+                        <aside class="examFilters" id="examFiltersPanel">
+                            <div class="examFilters__head">
+                                <h4>Filter Exams</h4>
+                                <button class="examFilters__clearAll"
+                                    id="examFiltersClearAll">Clear all</button>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Exam Level</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="National Level"
+                                        data-filter-group="level"><span>National
+                                        Level</span><em>6</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="State Level"
+                                        data-filter-group="level"><span>State
+                                        Level</span><em>18</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="University Level"
+                                        data-filter-group="level"><span>University
+                                        Level</span><em>10</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="International"
+                                        data-filter-group="level"><span>International</span><em>6</em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Application
+                                    Status</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Registration Open"
+                                        data-filter-group="status"><span>Registration
+                                        Open</span><em>12</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Closing Soon"
+                                        data-filter-group="status"><span>Closing
+                                        Soon</span><em>24</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Upcoming"
+                                        data-filter-group="status"><span>Upcoming</span><em>8</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Closed / Result Out"
+                                        data-filter-group="status"><span>Closed
+                                        / Result Out</span><em>4</em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Conducting
+                                    Body</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="IIMs (CAT)"
+                                        data-filter-group="body"><span>IIMs
+                                        (CAT)</span><em>6</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="NTA"
+                                        data-filter-group="body"><span>NTA</span><em>18</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="XLRI"
+                                        data-filter-group="body"><span>XLRI</span><em>10</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="State Government"
+                                        data-filter-group="body"><span>State
+                                        Government</span><em>10</em></label>
+                                <div class="examFilterGroup__extra"
+                                    id="examBodyExtra" hidden>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="Symbiosis"
+                                            data-filter-group="body"><span>Symbiosis</span><em>4</em></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="AICTE"
+                                            data-filter-group="body"><span>AICTE</span><em>5</em></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="GMAC"
+                                            data-filter-group="body"><span>GMAC</span><em>3</em></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="Delhi University"
+                                            data-filter-group="body"><span>Delhi
+                                            University</span><em>2</em></label>
+                                </div>
+                                <button class="examFilterGroup__more"
+                                    id="examBodyMoreBtn">+ Show more</button>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Exam Mode</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Online (CBT)"
+                                        data-filter-group="mode"><span>Online
+                                        (CBT)</span><em>10</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Offline (Pen-Paper)"
+                                        data-filter-group="mode"><span>Offline
+                                        (Pen-Paper)</span><em>4</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Both Modes Available"
+                                        data-filter-group="mode"><span>Both
+                                        Modes Available</span><em>8</em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Exam Month</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="September 2025"
+                                        data-filter-group="month"><span>September
+                                        2025</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="October 2025"
+                                        data-filter-group="month"><span>October
+                                        2025</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="November 2025"
+                                        data-filter-group="month"><span>November
+                                        2025</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="December 2025"
+                                        data-filter-group="month"><span>December
+                                        2025</span></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Application
+                                    Fee</p>
+                                <input type="range" min="3" max="42" value="30"
+                                    class="examFeeRange" id="examFeeRange">
+                                <div class="examFeeRange__labels"><span>₹3
+                                        lakhs</span><span
+                                        id="examFeeRangeValue">₹42
+                                        lakhs</span></div>
+                            </div>
+                        </aside>
+
+                        <!-- Main content -->
+                        <div class="examMain">
+                            <div class="examMain__toolbar">
+                                <p class="examMain__count">Showing <strong
+                                        id="examResultCount">5</strong> of
+                                    <strong id="examTotalCount">5</strong> MBA
+                                    Entrance Exams</p>
+                                <div class="examSort">
+                                    <label for="examSortSelect">Sort by</label>
+
+                                    <div class="selectWrap">
+                                        <select id="examSortSelect">
+                                            <option>Exam Date: Nearest
+                                                First</option>
+                                            <option>Application Fee: Low to
+                                                High</option>
+                                            <option>Accepting Colleges: High to
+                                                Low</option>
+                                            <option>Alphabetical</option>
+                                        </select>
+
+                                        <svg class="selectArrow"
+                                            viewBox="0 0 24 24" fill="none"
+                                            aria-hidden="true">
+                                            <path d="M6 9L12 15L18 9"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
+
+                            <!-- Exam Card 1 -->
+                            <div class="examCard examCard--featured"
+                                data-level="National Level"
+                                data-status="Registration Open"
+                                data-body="IIMs (CAT)" data-mode="Online (CBT)"
+                                data-month="November 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo">
+                                        <img src="/src/assets/images/cat.webp"
+                                            alt="CAT logo" width="56"
+                                            height="56" loading="lazy">
+                                    </div>
+                                    <div class="examCard__info">
+                                        <h3>CAT 2025 — Common Admission
+                                            Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Most
+                                                Prestigious</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,400</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 2 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Closing Soon" data-body="XLRI"
+                                data-mode="Online (CBT)"
+                                data-month="December 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="XAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>XAT 2026 — Xavier Aptitude Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Closing
+                                                Soon</span>
+                                            <span class="examBadge">Conducted by
+                                                XLRI</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,100</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>800+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 3 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open"
+                                data-body="Symbiosis" data-mode="Online (CBT)"
+                                data-month="December 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/cat.webp"
+                                            alt="SNAP logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>SNAP 2025 — Symbiosis National
+                                            Aptitude Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                Symbiosis</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹1,750</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>1
+                                            Hour</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 4 -->
+                            <div class="examCard" data-level="State Level"
+                                data-status="Registration Open"
+                                data-body="State Government"
+                                data-mode="Both Modes Available"
+                                data-month="October 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="MAH-CET logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>MAH-CET 2026 — Maharashtra Common
+                                            Entrance Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">State
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                DTE Maharashtra</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹1,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>2.5
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>500+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 5 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open" data-body="NTA"
+                                data-mode="Online (CBT)"
+                                data-month="September 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/cat.webp"
+                                            alt="CMAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>CMAT 2025 — Common Management
+                                            Admission Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                NTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 1 -->
+                            <div class="examCard examCard--featured"
+                                data-level="National Level"
+                                data-status="Registration Open"
+                                data-body="IIMs (CAT)" data-mode="Online (CBT)"
+                                data-month="November 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo">
+                                        <img src="/src/assets/images/cat.webp"
+                                            alt="CAT logo" width="56"
+                                            height="56" loading="lazy">
+                                    </div>
+                                    <div class="examCard__info">
+                                        <h3>CAT 2025 — Common Admission
+                                            Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Most
+                                                Prestigious</span>
+
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,400</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 2 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Closing Soon" data-body="XLRI"
+                                data-mode="Online (CBT)"
+                                data-month="December 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="XAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>XAT 2026 — Xavier Aptitude Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Closing
+                                                Soon</span>
+                                            <span class="examBadge">Conducted by
+                                                XLRI</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,100</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>800+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 3 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open"
+                                data-body="Symbiosis" data-mode="Online (CBT)"
+                                data-month="December 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/cat.webp"
+                                            alt="SNAP logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>SNAP 2025 — Symbiosis National
+                                            Aptitude Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                Symbiosis</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹1,750</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>1
+                                            Hour</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 4 -->
+                            <div class="examCard" data-level="State Level"
+                                data-status="Registration Open"
+                                data-body="State Government"
+                                data-mode="Both Modes Available"
+                                data-month="October 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="MAH-CET logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>MAH-CET 2026 — Maharashtra Common
+                                            Entrance Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">State
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                DTE Maharashtra</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹1,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>2.5
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>500+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <!-- Exam Card 5 -->
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open" data-body="NTA"
+                                data-mode="Online (CBT)"
+                                data-month="September 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="CMAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>CMAT 2025 — Common Management
+                                            Admission Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                NTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open" data-body="NTA"
+                                data-mode="Online (CBT)"
+                                data-month="September 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/xat.webp"
+                                            alt="CMAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>CMAT 2025 — Common Management
+                                            Admission Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                NTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <div class="examCard" data-level="National Level"
+                                data-status="Registration Open" data-body="NTA"
+                                data-mode="Online (CBT)"
+                                data-month="September 2025">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/cat.webp"
+                                            alt="CMAT logo" width="56"
+                                            height="56" loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>CMAT 2025 — Common Management
+                                            Admission Test</h3>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">National
+                                                Level</span>
+                                            <span class="examBadge">Registration
+                                                Open</span>
+                                            <span class="examBadge">Conducted by
+                                                NTA</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="https://designawebsite.co.in/demo/mba-360/cat/"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div
+                                        class="examCard__stat"><strong>₹2,000</strong><span>Application
+                                            Fee</span></div>
+                                    <div class="examCard__stat"><strong>3
+                                            Hours</strong><span>Duration</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>1,200+</strong><span>Accepting
+                                            Colleges</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>XX</strong><span>Lorem
+                                            Ipsum</span></div>
+                                </div>
+                            </div>
+
+                            <div class="examPagination"
+                                id="examPagination"></div>
+
+                        </div>
+
+                        <!-- Right sidebar -->
+                        <aside class="examAside">
+                            <div class="examCountdown">
+                                <p class="examCountdown__label">Next Big
+                                    Exam</p>
+                                <h4 class="examCountdown__title">CAT 2026</h4>
+                                <div class="examCountdown__timer"
+                                    id="examCountdownTimer">
+                                    <div class="examCountdown__unit"><strong
+                                            id="examDays">131</strong><span>Days</span></div>
+                                    <div class="examCountdown__unit"><strong
+                                            id="examHrs">08</strong><span>Hrs</span></div>
+                                    <div class="examCountdown__unit"><strong
+                                            id="examMin">22</strong><span>Min</span></div>
+                                </div>
+                                <a href="#" class="examCountdown__btn">Apply
+                                    Now</a>
+                            </div>
+
+                            <div class="examWidget">
+                                <h5>Exams Closing Soon</h5>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">XAT
+                                            2026</p><p
+                                            class="examClosingSoon__date">Closes
+                                            Dec 15</p></div>
+                                    <span class="examPill examPill--open">3
+                                        Days</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">CAT
+                                            2025</p><p
+                                            class="examClosingSoon__date">Jan 5,
+                                            2026</p></div>
+                                    <span class="examPill examPill--soon">3
+                                        Days</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">SNAP
+                                            2025</p><p
+                                            class="examClosingSoon__date">Dec
+                                            14, 2025</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">NMAT
+                                            2025</p><p
+                                            class="examClosingSoon__date">Oct–Dec</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">MAT
+                                            Sep 2025</p><p
+                                            class="examClosingSoon__date">Sep 7,
+                                            2025</p></div>
+                                    <span
+                                        class="examPill examPill--soon">Soon</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">CMAT
+                                            2025</p><p
+                                            class="examClosingSoon__date">Mar
+                                            22, 2025</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                            </div>
+
+                            <div class="examWidget examQuickLinks">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                    <li><a href="#">Top MBA Colleges by
+                                            Salary</a></li>
+                                    <li><a href="#">MBA vs PGDM — Key
+                                            Differences</a></li>
+                                    <li><a href="#">IIM Fees 2025-26 Complete
+                                            List</a></li>
+                                    <li><a href="#">CAT 2025 Preparation
+                                            Guide</a></li>
+                                    <li><a href="#">MBA Scholarships in
+                                            India</a></li>
+                                    <li><a href="#">1-Year MBA Programs
+                                            India</a></li>
+                                    <li><a href="#">Executive MBA (EMBA)
+                                            Colleges</a></li>
+                                    <li><a href="#">Online MBA Colleges
+                                            2025</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="examCalendar reveal">
+                <div class="container">
+                    <div class="examCalendar__grid">
+                        <div class="examCalendar__head">
+                            <h2 class="marketing__heading">MBA Exam Calendar
+                                2025–26 — Complete List</h2>
+                            <p>All major MBA entrance exam dates, fees &amp;
+                                application status in one place. Updated July
+                                2026.</p>
+                        </div>
+
+                        <div class="examCalendar__disclaimer">
+                            <strong>Disclaimer</strong>: Exam dates are subject
+                            to change as per official notifications by the
+                            conducting bodies. Please verify directly with the
+                            official exam website before applying.
+                        </div>
+
+                        <div
+                            class="examCalendar__tableWrap examTable__wrapScroll">
+                            <table class="examTable">
+                                <thead>
+                                    <tr>
+                                        <th>Exam Name</th>
+                                        <th>Level</th>
+                                        <th>Exam Date</th>
+                                        <th>Reg. Deadline</th>
+                                        <th>Accepting Colleges</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">XAT
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Jan 4, 2026</td>
+                                        <td>Dec 15, 2025</td>
+                                        <td><span
+                                                class="examTable__count">800+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">IBSAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">IIFT
+                                            Entrance 2026</td>
+                                        <td>University</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">600+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">MAH-CET
+                                            2026</td>
+                                        <td>University</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Aug 30, 2025</td>
+                                        <td><span
+                                                class="examTable__count">500+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">TANCET
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Nov 2, 2025</td>
+                                        <td><span
+                                                class="examTable__count">100+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">MAH-CET
+                                            2026</td>
+                                        <td>University</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--closed">Closed</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>State</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 25, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">TANCET
+                                            2026</td>
+                                        <td>State</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Mar 2026</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">ATMA
+                                            2025</td>
+                                        <td>State</td>
+                                        <td>Anytime</td>
+                                        <td>Rolling</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>University</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">1200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <!-- Extra exams: hidden until "View All" is clicked -->
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">NMAT by GMAC
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Oct 15 – Dec 20, 2025</td>
+                                        <td>Oct 10, 2025</td>
+                                        <td><span
+                                                class="examTable__count">200+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">MAT 2025
+                                            (PBT/CBT)</td>
+                                        <td>National</td>
+                                        <td>Dec 7, 2025</td>
+                                        <td>Nov 28, 2025</td>
+                                        <td><span
+                                                class="examTable__count">600+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">TISSNET
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Jan 10, 2026</td>
+                                        <td>Dec 5, 2025</td>
+                                        <td><span
+                                                class="examTable__count">50+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">MICAT
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Dec 6, 2025</td>
+                                        <td>Nov 20, 2025</td>
+                                        <td><span
+                                                class="examTable__count">10+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">KMAT Kerala
+                                            2025</td>
+                                        <td>State</td>
+                                        <td>Nov 23, 2025</td>
+                                        <td>Nov 10, 2025</td>
+                                        <td><span
+                                                class="examTable__count">40+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">PGCET
+                                            Karnataka 2025</td>
+                                        <td>State</td>
+                                        <td>Aug 24, 2025</td>
+                                        <td>Aug 5, 2025</td>
+                                        <td><span
+                                                class="examTable__count">180+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--closed">Closed</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">IRMASAT
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Feb 8, 2026</td>
+                                        <td>Jan 15, 2026</td>
+                                        <td><span
+                                                class="examTable__count">1+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">CUET-PG 2026
+                                            (MBA)</td>
+                                        <td>National</td>
+                                        <td>Mar 2026</td>
+                                        <td>Feb 2026</td>
+                                        <td><span
+                                                class="examTable__count">100+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">GMAT Focus
+                                            Edition</td>
+                                        <td>International</td>
+                                        <td>Anytime</td>
+                                        <td>Rolling</td>
+                                        <td><span
+                                                class="examTable__count">2,300+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--open">open</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">OJEE MBA
+                                            2026</td>
+                                        <td>State</td>
+                                        <td>May 2026</td>
+                                        <td>Apr 2026</td>
+                                        <td><span
+                                                class="examTable__count">90+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">AP ICET
+                                            2026</td>
+                                        <td>State</td>
+                                        <td>May 2026</td>
+                                        <td>Apr 2026</td>
+                                        <td><span
+                                                class="examTable__count">120+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">TS ICET
+                                            2026</td>
+                                        <td>State</td>
+                                        <td>May 2026</td>
+                                        <td>Apr 2026</td>
+                                        <td><span
+                                                class="examTable__count">110+</span></td>
+                                        <td><span
+                                                class="examTable__status examTable__status--soon">Soon</span></td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="examCalendar__viewAll">
+                            <button id="examViewAllBtn"
+                                class="examViewAllBtn">View All 25+ MBA Exams
+                                <span aria-hidden="true"><svg width="18"
+                                        height="18" viewBox="0 0 24 24"
+                                        fill="none" aria-hidden="true"><path
+                                            d="M6 9l6 6 6-6"
+                                            stroke="currentColor"
+                                            stroke-width="2.2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"></path></svg></span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="examFaq reveal">
+                <div class="container">
+                    <div class="examFaq__grid">
+                        <div class="examFaq__head">
+                            <h2 class="marketing__heading">Frequently Asked
+                                Questions — MBA Colleges in India</h2>
+                            <p>Everything you need to know about MBA admissions,
+                                fees, and career prospects</p>
+                        </div>
+
+                        <div class="examFaq__tabs" id="examFaqTabs">
+                            <button class="examFaq__tab is-active"
+                                data-category="rankings">Rankings</button>
+                            <button class="examFaq__tab"
+                                data-category="fees">Fees</button>
+                            <button class="examFaq__tab"
+                                data-category="admissions">Admissions</button>
+                            <button class="examFaq__tab"
+                                data-category="salary">Salary &amp;
+                                Placement</button>
+                            <button class="examFaq__tab"
+                                data-category="eligibility">Eligibility</button>
+                            <button class="examFaq__tab"
+                                data-category="specializations">Specializations</button>
+                            <button class="examFaq__tab"
+                                data-category="scholarships">Scholarships</button>
+                        </div>
+
+                        <div class="examFaq__list" id="examFaqList">
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">Which is the
+                                    No. 1 MBA college in India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>IIM Ahmedabad is
+                                        consistently ranked the No. 1 MBA
+                                        college in India, followed closely by
+                                        IIM Bangalore and IIM Calcutta, based on
+                                        NIRF rankings, placement records, and
+                                        faculty quality.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">How are MBA
+                                    colleges ranked in India — NIRF vs private
+                                    rankings?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>NIRF is the
+                                        official government ranking based on
+                                        teaching, research, placements and
+                                        outreach, while private rankings (like
+                                        those by business magazines) also factor
+                                        in brand perception and industry surveys
+                                        — so the two lists can differ
+                                        slightly.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">Which is the
+                                    No. 1 MBA college in India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>IIM Ahmedabad is
+                                        consistently ranked the No. 1 MBA
+                                        college in India, followed closely by
+                                        IIM Bangalore and IIM Calcutta, based on
+                                        NIRF rankings, placement records, and
+                                        faculty quality.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">How are MBA
+                                    colleges ranked in India — NIRF vs private
+                                    rankings?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>NIRF is the
+                                        official government ranking based on
+                                        teaching, research, placements and
+                                        outreach, while private rankings (like
+                                        those by business magazines) also factor
+                                        in brand perception and industry surveys
+                                        — so the two lists can differ
+                                        slightly.</p></div>
+                            </div>
+
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    cheapest top MBA college in India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Government-run
+                                        institutes and university departments
+                                        such as FMS Delhi and JBIMS Mumbai offer
+                                        top-tier MBA education at a fraction of
+                                        the cost of private B-schools.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    average total fee for a 2-year MBA at
+                                    IIMs?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The total fee
+                                        for a 2-year PGP at most IIMs typically
+                                        ranges between ₹20-25 lakhs, though
+                                        newer and smaller IIMs are usually on
+                                        the lower end of that range.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    cheapest top MBA college in India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Government-run
+                                        institutes and university departments
+                                        such as FMS Delhi and JBIMS Mumbai offer
+                                        top-tier MBA education at a fraction of
+                                        the cost of private B-schools.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    average total fee for a 2-year MBA at
+                                    IIMs?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The total fee
+                                        for a 2-year PGP at most IIMs typically
+                                        ranges between ₹20-25 lakhs, though
+                                        newer and smaller IIMs are usually on
+                                        the lower end of that range.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">How many MBA
+                                    entrance exams should I appear for?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most aspirants
+                                        appear for 3-4 exams such as CAT, XAT,
+                                        SNAP and NMAT to maximise their chances
+                                        of getting into a good
+                                        B-school.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">What is the
+                                    typical MBA admission process after the
+                                    entrance exam?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most B-schools
+                                        shortlist candidates for a Written
+                                        Ability Test (WAT) followed by a Group
+                                        Discussion and Personal Interview
+                                        (GD-PI), with the final selection based
+                                        on a combination of exam score, academic
+                                        record, work experience, and interview
+                                        performance.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">How many MBA
+                                    entrance exams should I appear for?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most aspirants
+                                        appear for 3-4 exams such as CAT, XAT,
+                                        SNAP and NMAT to maximise their chances
+                                        of getting into a good
+                                        B-school.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">What is the
+                                    typical MBA admission process after the
+                                    entrance exam?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most B-schools
+                                        shortlist candidates for a Written
+                                        Ability Test (WAT) followed by a Group
+                                        Discussion and Personal Interview
+                                        (GD-PI), with the final selection based
+                                        on a combination of exam score, academic
+                                        record, work experience, and interview
+                                        performance.</p></div>
+                            </div>
+
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">What is the
+                                    average salary after MBA from IIM?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The average
+                                        placement package across the older IIMs
+                                        ranges between ₹25-33 LPA, with top
+                                        recruiters offering significantly higher
+                                        packages in consulting and finance
+                                        roles.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">Which
+                                    companies recruit the most at top
+                                    B-schools?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Consulting firms
+                                        (McKinsey, BCG, Bain), major banks, and
+                                        consumer goods companies are
+                                        consistently among the top recruiters at
+                                        premier Indian B-schools every placement
+                                        season.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">What is the
+                                    average salary after MBA from IIM?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The average
+                                        placement package across the older IIMs
+                                        ranges between ₹25-33 LPA, with top
+                                        recruiters offering significantly higher
+                                        packages in consulting and finance
+                                        roles.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">Which
+                                    companies recruit the most at top
+                                    B-schools?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Consulting firms
+                                        (McKinsey, BCG, Bain), major banks, and
+                                        consumer goods companies are
+                                        consistently among the top recruiters at
+                                        premier Indian B-schools every placement
+                                        season.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">Is work
+                                    experience mandatory for MBA admission in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Work experience
+                                        is not mandatory for most MBA programs,
+                                        but exams like the Executive MBA and
+                                        certain XLRI/IIM programs give
+                                        preference to candidates with 2+ years
+                                        of experience.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">What is the
+                                    minimum percentage required for MBA entrance
+                                    exams?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most exams
+                                        require a minimum of 50% marks (45% for
+                                        reserved categories) in a bachelor's
+                                        degree from a recognised university to
+                                        be eligible to apply.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">Is work
+                                    experience mandatory for MBA admission in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Work experience
+                                        is not mandatory for most MBA programs,
+                                        but exams like the Executive MBA and
+                                        certain XLRI/IIM programs give
+                                        preference to candidates with 2+ years
+                                        of experience.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">What is the
+                                    minimum percentage required for MBA entrance
+                                    exams?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most exams
+                                        require a minimum of 50% marks (45% for
+                                        reserved categories) in a bachelor's
+                                        degree from a recognised university to
+                                        be eligible to apply.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Which MBA
+                                    specialization has the highest salary in
+                                    India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Finance,
+                                        Consulting, and Product Management
+                                        specializations continue to command the
+                                        highest average salaries for MBA
+                                        graduates in India.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Can I switch
+                                    my specialization after the first year of
+                                    MBA?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most 2-year MBA
+                                        programs let students choose their
+                                        specialization only after the first
+                                        year, once they've had exposure to core
+                                        subjects across finance, marketing,
+                                        operations and HR.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Which MBA
+                                    specialization has the highest salary in
+                                    India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Finance,
+                                        Consulting, and Product Management
+                                        specializations continue to command the
+                                        highest average salaries for MBA
+                                        graduates in India.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Can I switch
+                                    my specialization after the first year of
+                                    MBA?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most 2-year MBA
+                                        programs let students choose their
+                                        specialization only after the first
+                                        year, once they've had exposure to core
+                                        subjects across finance, marketing,
+                                        operations and HR.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Are
+                                    scholarships available for MBA students in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, most
+                                        B-schools offer merit and need-based
+                                        scholarships, and government schemes
+                                        along with bank education loans are also
+                                        widely used to fund MBA fees.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Do IIMs offer
+                                    fee waivers based on family income?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, IIMs offer
+                                        significant fee waivers (up to 100% at
+                                        some campuses) for students whose family
+                                        income falls below a specified
+                                        threshold, in addition to need-based
+                                        financial assistance.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Are
+                                    scholarships available for MBA students in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, most
+                                        B-schools offer merit and need-based
+                                        scholarships, and government schemes
+                                        along with bank education loans are also
+                                        widely used to fund MBA fees.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Do IIMs offer
+                                    fee waivers based on family income?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, IIMs offer
+                                        significant fee waivers (up to 100% at
+                                        some campuses) for students whose family
+                                        income falls below a specified
+                                        threshold, in addition to need-based
+                                        financial assistance.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="admissionJourney"
+                aria-labelledby="admissionJourneyHeading">
+                <div class="container">
+                    <div class="admissionJourneyInner revealright">
+                        <h2 class="marketing__heading"
+                            id="admissionJourneyHeading">Master your admission
+                            journey</h2>
+                        <p class="admissionJourneyText">Weekly briefing on exam
+                            updates, admission deadlines, placement reports, and
+                            editorial analysis. No spam. Unsubscribe
+                            anytime.</p>
+
+                        <form class="admissionJourneyForm"
+                            id="admissionJourneyForm" novalidate>
+                            <label for="admissionJourneyEmail"
+                                class="admissionJourneyLabel">Email
+                                address</label>
+                            <div class="admissionJourneyField">
+                                <input type="email" id="admissionJourneyEmail"
+                                    name="email" class="admissionJourneyInput"
+                                    placeholder="Your email address"
+                                    autocomplete="email" required
+                                    aria-describedby="admissionJourneyError">
+                                <button type="submit"
+                                    class="admissionJourneySubmit">
+                                    Subscribe
+                                    <svg viewBox="0 0 26 26" width="22"
+                                        height="22" fill="none"
+                                        aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="admissionJourneyError"
+                                id="admissionJourneyError" role="alert"
+                                aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <include src="public/partials/footer.html"></include>
+
+        <script type="module" src="/src/js/exam-import.js" defer></script>
+
+        <script>
+  document.querySelectorAll('.examFilterGroup__more').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // button ke pehle wale sibling extra div ko dhoondo
+      const extra = this.previousElementSibling;
+      const isHidden = extra.hasAttribute('hidden');
+
+      if (isHidden) {
+        extra.removeAttribute('hidden');
+        this.textContent = this.textContent.replace('Show more', 'Show less').replace('+', '-');
+      } else {
+        extra.setAttribute('hidden', '');
+        this.textContent = this.textContent.replace('Show less', 'Show more').replace('-', '+');
+      }
+    });
+  });
+</script>
+
+        <script>
+(function () {
+"use strict";
+
+/* ---- Exam Filters ---- */
+
+/* ---- Mobile Filter Toggle ---- */
+var mobileFilterToggleBtn = document.getElementById("examMobileFilterToggle");
+var mobileFiltersPanel = document.getElementById("examFiltersPanel");
+
+if (mobileFilterToggleBtn && mobileFiltersPanel) {
+    mobileFilterToggleBtn.addEventListener("click", function () {
+        var isOpen = mobileFiltersPanel.classList.toggle("is-open");
+        mobileFilterToggleBtn.classList.toggle("is-open", isOpen);
+        mobileFilterToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+}
+
+var activeFiltersBar = document.getElementById("examActiveFilters");
+var clearAllLink = document.getElementById("examClearAll");
+var noResultsEl = document.getElementById("examNoResults");
+var resultCountEl = document.getElementById("examResultCount");
+var totalCountEl = document.getElementById("examTotalCount");
+
+var filterInputs = document.querySelectorAll(
+    ".examFilters input[type='checkbox']"
+);
+
+var examCards = document.querySelectorAll(
+    ".examMain > .examCard"
+);
+
+if (totalCountEl) totalCountEl.textContent = examCards.length;
+
+/* ---- Compute real filter counts from actual exam card data ---- */
+function updateFilterCounts(){
+    filterInputs.forEach(function(input){
+        var countEl = input.parentElement.querySelector("em");
+        if (!countEl) return;
+
+        var group = input.getAttribute("data-filter-group");
+        var value = input.value;
+
+        var count = 0;
+        examCards.forEach(function(card){
+            if (card.dataset[group] === value) count++;
+        });
+
+        countEl.textContent = count;
+    });
+}
+updateFilterCounts();
+
+var feeRange = document.getElementById("examFeeRange");
+var feeRangeValueEl = document.getElementById("examFeeRangeValue");
+var feeRangeActive = false;
+
+var examPaginationEl = document.getElementById("examPagination");
+var CARDS_PER_PAGE = 8;
+var currentPage = 1;
+
+/* ---- Sort by ---- */
+
+var sortSelect = document.getElementById("examSortSelect");
+var examMainEl = document.querySelector(".examMain");
+
+var EXAM_MONTH_ORDER = {
+    "September 2025": 1,
+    "October 2025": 2,
+    "November 2025": 3,
+    "December 2025": 4
+};
+
+function getCardFee(card){
+    var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(1) strong");
+    return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+}
+
+function getCardColleges(card){
+    var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(3) strong");
+    return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+}
+
+function getCardName(card){
+    var h3 = card.querySelector("h3");
+    return h3 ? h3.textContent.trim().toLowerCase() : "";
+}
+
+function getCardDateRank(card){
+    return EXAM_MONTH_ORDER[card.dataset.month] || 999;
+}
+
+function sortExamCards(matchedCards){
+
+    if (!sortSelect) return matchedCards;
+
+    var sortBy = sortSelect.value;
+    var sorted = matchedCards.slice();
+
+    if (sortBy === "Exam Date: Nearest First") {
+        sorted.sort(function(a, b){ return getCardDateRank(a) - getCardDateRank(b); });
+    } else if (sortBy === "Application Fee: Low to High") {
+        sorted.sort(function(a, b){ return getCardFee(a) - getCardFee(b); });
+    } else if (sortBy === "Accepting Colleges: High to Low") {
+        sorted.sort(function(a, b){ return getCardColleges(b) - getCardColleges(a); });
+    } else if (sortBy === "Alphabetical") {
+        sorted.sort(function(a, b){ return getCardName(a).localeCompare(getCardName(b)); });
+    }
+
+    /* Reorder the actual DOM nodes so pagination/rendering stays correct */
+    if (examMainEl) {
+        sorted.forEach(function(card){
+            examMainEl.insertBefore(card, examPaginationEl);
+        });
+    }
+
+    return sorted;
+}
+
+if (sortSelect) {
+    sortSelect.addEventListener("change", applyExamFilters);
+}
+
+function applyExamFilters(){
+
+    /* Group selected filter values by their filter group so that
+       checkboxes within the SAME group (e.g. "National Level" +
+       "State Level" under Exam Level) are OR'd together, while
+       different groups (Level, Status, Body, Mode, Month) are
+       still AND'd together. */
+    var groupedFilters = {};
+
+    filterInputs.forEach(function(input){
+        if(input.checked){
+            var group = input.getAttribute("data-filter-group");
+            if(!groupedFilters[group]) groupedFilters[group] = [];
+            groupedFilters[group].push(input.value);
+        }
+    });
+
+    var groupKeys = Object.keys(groupedFilters);
+    var matchedCards = [];
+
+    examCards.forEach(function(card){
+
+        var matched = groupKeys.every(function(group){
+            return groupedFilters[group].indexOf(card.dataset[group]) !== -1;
+        });
+
+        if(groupKeys.length === 0 || matched){
+            matchedCards.push(card);
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    matchedCards = sortExamCards(matchedCards);
+
+    if (resultCountEl) resultCountEl.textContent = matchedCards.length;
+    if (noResultsEl) noResultsEl.style.display = matchedCards.length === 0 ? "block" : "none";
+
+    currentPage = 1;
+    renderExamPage(matchedCards);
+
+    updateActiveFilterTags();
+}
+
+
+function renderExamPage(matchedCards){
+
+    var totalPages = Math.max(1, Math.ceil(matchedCards.length / CARDS_PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    var startIndex = (currentPage - 1) * CARDS_PER_PAGE;
+    var endIndex = startIndex + CARDS_PER_PAGE;
+
+    matchedCards.forEach(function(card, i){
+        card.style.display = (i >= startIndex && i < endIndex) ? "" : "none";
+    });
+
+    renderPaginationControls(totalPages, matchedCards);
+}
+
+
+function renderPaginationControls(totalPages, matchedCards){
+
+    if(!examPaginationEl) return;
+
+    examPaginationEl.innerHTML = "";
+
+    if (matchedCards.length === 0) return;
+
+    var prevBtn = document.createElement("button");
+    prevBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Prev';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener("click", function(){
+        if (currentPage > 1) {
+            currentPage--;
+            renderExamPage(matchedCards);
+            scrollToExamMain();
+        }
+    });
+    examPaginationEl.appendChild(prevBtn);
+
+    for (var p = 1; p <= totalPages; p++) {
+        (function(pageNum){
+            var pageBtn = document.createElement("button");
+            pageBtn.textContent = pageNum;
+            if (pageNum === currentPage) pageBtn.classList.add("is-active");
+            pageBtn.addEventListener("click", function(){
+                currentPage = pageNum;
+                renderExamPage(matchedCards);
+                scrollToExamMain();
+            });
+            examPaginationEl.appendChild(pageBtn);
+        })(p);
+    }
+
+    var nextBtn = document.createElement("button");
+    nextBtn.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener("click", function(){
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderExamPage(matchedCards);
+            scrollToExamMain();
+        }
+    });
+    examPaginationEl.appendChild(nextBtn);
+}
+
+
+function scrollToExamMain(){
+    var mainCol = document.querySelector(".examMain");
+    if (mainCol) mainCol.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+function updateActiveFilterTags(){
+
+    if(!activeFiltersBar) return;
+
+    activeFiltersBar
+    .querySelectorAll(".examTag")
+    .forEach(function(tag){
+        tag.remove();
+    });
+
+    var hasAny = false;
+
+    filterInputs.forEach(function(input){
+        if(input.checked){
+            hasAny = true;
+
+            var tag = document.createElement("span");
+            tag.className = "examTag";
+            tag.innerHTML =
+            input.value +
+            ' <button aria-label="Remove filter" class="examTagRemove">' +
+            '<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+            '<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+            '<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+            '</svg>' +
+            '</button>';
+
+            tag.querySelector("button")
+            .addEventListener("click",function(){
+                input.checked = false;
+                applyExamFilters();
+            });
+
+            activeFiltersBar.insertBefore(
+                tag,
+                clearAllLink
+            );
+        }
+    });
+
+    if (feeRangeActive) {
+        hasAny = true;
+        var feeTag = document.createElement("span");
+        feeTag.className = "examTag";
+        feeTag.innerHTML = "Max Fee: ₹" + feeRange.value + " Lakh " + '<button aria-label="Remove filter">×</button>';
+        feeTag.querySelector("button").addEventListener("click", function () {
+            feeRange.value = feeRange.max;
+            feeRangeActive = false;
+            if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.max + " lakhs";
+            applyExamFilters();
+        });
+        activeFiltersBar.insertBefore(feeTag, clearAllLink);
+    }
+
+    activeFiltersBar.style.display = hasAny ? "flex" : "none";
+}
+
+
+filterInputs.forEach(function(input){
+    input.addEventListener(
+        "change",
+        applyExamFilters
+    );
+});
+
+if (feeRange) {
+    feeRange.addEventListener("input", function () {
+        if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.value + " lakhs";
+        feeRangeActive = parseInt(feeRange.value, 10) < parseInt(feeRange.max, 10);
+        applyExamFilters();
+    });
+}
+
+
+/* ---- Clear All Filters ---- */
+
+var filtersClearAllBtn = document.getElementById(
+    "examFiltersClearAll"
+);
+
+function clearAllExamFilters(){
+
+    filterInputs.forEach(function(cb){
+        cb.checked = false;
+    });
+
+    if (feeRange) {
+        feeRange.value = feeRange.max;
+        feeRangeActive = false;
+        if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.max + " lakhs";
+    }
+
+    applyExamFilters();
+
+}
+
+if(clearAllLink){
+    clearAllLink.addEventListener("click",function(e){
+        e.preventDefault();
+        clearAllExamFilters();
+    });
+}
+
+if(filtersClearAllBtn){
+    filtersClearAllBtn.addEventListener(
+        "click",
+        clearAllExamFilters
+    );
+}
+
+/* Run once on load so the bar starts hidden and the count is correct */
+applyExamFilters();
+
+
+
+
+/* ---- Calendar View All (Simple text toggle) ---- */
+
+var viewAllBtn = document.getElementById("examViewAllBtn");
+var examExtraRows = document.querySelectorAll(".examTable__extraRow");
+
+if (viewAllBtn) {
+
+    var isExpanded = false;
+    var btnTextSpan = viewAllBtn.querySelector("span") ? viewAllBtn.innerHTML.split("<span")[1] : "";
+    var svgPart = viewAllBtn.querySelector("span") ? viewAllBtn.querySelector("span").outerHTML : "";
+
+    viewAllBtn.addEventListener("click", function () {
+
+        isExpanded = !isExpanded;
+
+        examExtraRows.forEach(function (row) {
+            row.style.display = isExpanded ? "" : "none";
+        });
+
+        viewAllBtn.innerHTML = (isExpanded ? "Show Less " : "View All 25+ MBA Exams ") + svgPart;
+
+    });
+
+}
+
+
+
+/* ---- Admission Form Validation ---- */
+
+
+var admissionForm =
+document.getElementById("admissionJourneyForm");
+
+
+
+if(admissionForm){
+
+
+admissionForm.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+var input =
+document.getElementById("admissionJourneyMobile");
+
+
+var error =
+document.getElementById("admissionJourneyError");
+
+
+
+var val = input.value.trim();
+
+
+
+if(!/^\d{10}$/.test(val)){
+
+
+input.classList.add("isInvalid");
+
+error.textContent =
+"Please enter a valid 10-digit mobile number.";
+
+
+}else{
+
+
+input.classList.remove("isInvalid");
+
+error.textContent = "";
+
+admissionForm.reset();
+
+
+}
+
+
+
+});
+
+
+}
+
+
+
+})();
+</script>
+</body>
+</html>

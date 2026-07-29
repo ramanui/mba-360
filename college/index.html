@@ -1,1457 +1,1385 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 
-        <title>College LP</title>
-        <meta name="description" content="DGTL">
+    <title>College LP</title>
+    <meta name="description" content="DGTL">
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon.svg"
-            sizes="32x32">
-        <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.svg"
+      sizes="32x32">
+    <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
 
-        <!-- Preload LCP Hero Image (Mobile + Desktop) -->
-        <!-- <link rel="preload" as="image"
+    <!-- Preload LCP Hero Image (Mobile + Desktop) -->
+    <!-- <link rel="preload" as="image"
             href="../src/assets/images/stay-updated-with-mba-news.webp"
             media="(max-width: 767px)" fetchpriority="high">
         <link rel="preload" as="image"
             href="../src/assets/images/stay-updated-with-mba-news.webp"
             media="(min-width: 768px)" fetchpriority="high"> -->
 
-        <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
-            fetchpriority="high">
+    <link rel="preload" as="image"
+      href="../src/assets/images/stay-updated-with-mba-news.webp"
+      fetchpriority="high">
 
-        <!-- Google Fonts (Ultra Optimized) -->
+    <!-- Google Fonts (Ultra Optimized) -->
 
-        <link rel="preload"
-            href="/fonts/Inter-Regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+    <link rel="preload"
+      href="/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
 
-        <link rel="preload"
-            href="/fonts/Inter-Bold.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+    <link rel="preload"
+      href="/fonts/Inter-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
 
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
             rel="stylesheet"> -->
 
-        <!-- Critical CSS inline (BEST for FCP) -->
-        <style>
+    <!-- Critical CSS inline (BEST for FCP) -->
+    <style>
 
           [id="programmes"] {
 scroll-margin-top: 100px;
 }
   
 </style>
-    </head>
-    <body>
+  </head>
+  <body>
 
-       <include src="public/partials/header.html"></include>
+    <include src="public/partials/header.html"></include>
 
-       
+    <main>
+      <section class="hero" aria-labelledby="page-heading reveal">
+        <div class="bg-image"></div>
+        <div class="overlay"></div>
+        <div class="container">
+          <h1 id="page-heading" class="hero__title">Find the Right College<br />
+            for Your Future</h1>
+          <div class="breadcrumb"><a href="/">Home</a> <span
+              aria-hidden="true">›</span> <span>Colleges</span></div>
+        </div>
+      </section>
 
-
-
-
-
-<!-- ============ HERO / HEADER ============ -->
-<header class="clg-header">
-  <div class="clg-header__bgfx" aria-hidden="true">
-    <span class="clg-header__shape clg-header__shape--1"></span>
-    <span class="clg-header__shape clg-header__shape--2"></span>
-    <span class="clg-header__shape clg-header__shape--3"></span>
-    <span class="clg-header__shape clg-header__shape--4"></span>
-  </div>
-
-  <div class="container">
-    <nav class="clg-breadcrumb" aria-label="Breadcrumb">
-      <a href="#">Home</a>
-      <span aria-hidden="true">›</span>
-      <span aria-current="page">SPJIMR</span>
-    </nav>
-
-    <div class="clg-heroTop">
-      <div class="clg-heroMain">
-        <div>
-          <div class="clg-logoCard">
-            <img
-             src="/src/assets/images/spjmir.webp"
-              width="64" height="64"
-              alt="SPJIMR logo"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
+      <section class="ad-section">
+        <div class="container">
+          <div class="ad-section__row">
+            <div class="ad-section__item">
+              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+            </div>
+            <div class="ad-section__item">
+              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+            </div>
+            <div class="ad-section__item">
+              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+            </div>
+            <div class="ad-section__item">
+              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+            </div>
           </div>
-          <button type="button" class="clg-photosBtn">
-            <img
-             src="/src/assets/images/view-img.webp"
-              width="64" height="64"
-              alt="SPJIMR logo"
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
-            View Photos
-          </button>
         </div>
+      </section>
 
-        <div class="clg-titleBlock">
-          <h1 class="clg-title">SPJIMR Mumbai: Admission 2026, Cutoff, Courses, Fees, Placements, Ranking</h1>
-          <p class="clg-metaRow">
-            <span>Mumbai, Maharashtra</span>
-            <span class="clg-divider" aria-hidden="true">|</span>
-            <a href="#reviews">214 Q &amp; A</a>
-          </p>
-          <ul class="clg-tags">
-            <li class="clg-tag">Private</li>
-            <li class="clg-tag">NIRF Rank 20th</li>
-          </ul>
-        </div>
-      </div>
+      <section class="clg-section reveal">
+        <div class="container">
 
-      <div class="clg-heroActions">
-        <a href="#enquire" class="btn btn--solid">Enquire Now</a>
-        <a href="#brochure" class="btn btn--outline">Download Brochure</a>
-      </div>
-    </div>
-  </div>
-</header>
-
-<!-- ============ SECTION NAV ============ -->
-<nav class="clg-tabnav" aria-label="Page sections">
-  
-    <ul class="clg-tabnav__list">
-      <li><a href="#overview" aria-current="true">Overview</a></li>
-      <li><a href="#ranking">Ranking &amp; Accreditations</a></li>
-      <li><a href="#programmes">Programmes Offered</a></li>
-      <li><a href="#dates">Important Dates &amp; Deadlines</a></li>
-      <li><a href="#placements">Placement &amp; Reports</a></li>
-      <li><a href="#alumni">Alumni Speak</a></li>
-      <li><a href="#reviews">Student Reviews</a></li>
-      <li><a href="#similar">Similar Colleges</a></li>
-    </ul>
-  
-</nav>
-
-<main id="main-content">
-  <div class="container clg-main">
-    <div class="clg-layout">
-
-      <!-- ============ MAIN CONTENT ============ -->
-      <div class="clg-content">
-
-        <!-- Overview / About -->
-        <section id="overview" class="clg-section reveal" aria-labelledby="overview-heading">
-        
           <div class="clg-card clg-about" data-open="false" id="about-card">
             <div class="clg-about__body">
-                <h2 id="overview-heading" class="clg-section__title">About SPJIMR</h2>
-  <div class="clg-about__intro">
-              <p>
-                SPJIMR is one of India's leading management institutes, known for its rigorous
-                academics, industry-linked curriculum and a strong focus on values-based leadership.
-                Since 1961 the institute has built a reputation for producing socially conscious,
-                globally competent managers across its full-time and executive programmes.
-              </p>
-              <p>The institute is consistently ranked among the top private business schools in the country and holds international accreditations from EQUIS, AACSB and AMBA.</p>
-              <p>
-                SPJIMR is one of India's leading management institutes, known for its rigorous
-                academics, industry-linked curriculum and a strong focus on values-based leadership.
-                Since 1961 the institute has built a reputation for producing socially conscious,
-                globally competent managers across its full-time and executive programmes.
-              </p>
-              <p>The institute is consistently ranked among the top private business schools in the country and holds international accreditations from EQUIS, AACSB and AMBA.</p>
-  </div>
+              <h2 class="top_heading">MBA Colleges in india</h2>
+              <div class="clg-about__intro">
+                <p>Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since 1966 Lorem Ipsum is simply
+                  dummy text of the printing and typesetting industry. Lorem
+                  Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy
+                  text ever since 1966 Lorem Ipsum is simply dummy text of the.
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum is simply dummy text of the
+                  printing and typesetting industry. Lorem Ipsum has been the
+                  industry's standard dummy text ever</p>
+              </div>
 
             </div>
             <div class="clg-about__more" id="about-more">
               <div>
                 <div class="clg-about__body">
-                  <p>Its Post Graduate Diploma in Management (PGDM) blends classroom rigour with immersive, practice-focused learning, while the institute's alumni network of 38,000+ spans leadership roles across industries worldwide. SPJIMR's 103-acre campus and low 7:1 student-to-faculty ratio support close mentorship throughout the programme.</p>
-                  <p>Beyond the flagship PGDM, the institute runs doctoral, family business, entrepreneurship and executive education tracks, reflecting its broader mission of shaping responsible, enterprising leaders for India and the world.</p>
+                  <p>Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since 1966 Lorem Ipsum is simply
+                    dummy text of the printing and typesetting industry. Lorem
+                    Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy
+                    text ever since 1966 Lorem Ipsum is simply dummy text of
+                    the. Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum is simply dummy text of
+                    the printing and typesetting industry. Lorem Ipsum has been
+                    the industry's standard dummy text ever</p>
                 </div>
               </div>
             </div>
             <div class="clg-expandRow">
-              <button
-                type="button"
-                class="clg-expandBtn"
-                id="about-expand-btn"
-                data-toggle-target="about-card"
-                aria-expanded="false"
-                aria-controls="about-more"
-                aria-label="Show more about SPJIMR"
-              >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <button type="button" class="clg-expandBtn" id="about-expand-btn"
+                data-toggle-target="about-card" aria-expanded="false"
+                aria-controls="about-more" aria-label="Show more about SPJIMR">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  aria-hidden="true"><path d="M6 9l6 6 6-6"
+                    stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round" stroke-linejoin="round"></path></svg>
               </button>
             </div>
           </div>
-        </section>
-
-        <!-- Ranking & Accreditations -->
-        <section id="ranking" class="clg-section ranking reveal" aria-labelledby="ranking-heading">
-          <h2 id="ranking-heading" class="clg-section__title">Rankings &amp; Accreditations</h2>
-          <div class="clg-card">
-            <h3 class="clg-subheading">Rankings</h3>
-            <div class="clg-rankGrid">
-              <div class="clg-rankItem">
-                <p class="clg-rankItem__num">#3</p>
-                <span class="clg-rankItem__label">in India</span>
-                <p class="clg-rankItem__source">FT Masters in Management 2025 Ranking</p>
-              </div>
-              <div class="clg-rankItem">
-                <p class="clg-rankItem__num">#35</p>
-                <span class="clg-rankItem__label">In the World</span>
-                <p class="clg-rankItem__source">FT Masters in Management 2025 Ranking</p>
-              </div>
-              <div class="clg-rankItem">
-                <p class="clg-rankItem__num">#1</p>
-                <span class="clg-rankItem__label">All India Private B-School Rank</span>
-                <p class="clg-rankItem__source">BT-MDRA India's Best B-Schools Ranking 2025</p>
-              </div>
-              <div class="clg-rankItem">
-                <p class="clg-rankItem__num">#1</p>
-                <span class="clg-rankItem__label">All India Private B-school</span>
-                <p class="clg-rankItem__source">India Today Group MDRA Best Business Schools Survey 2025</p>
-              </div>
-            </div>
-
-            <h3 class="clg-subheading">Accreditations</h3>
-            <ul class="clg-accredRow">
-              <li class="clg-accredLogo"><img    src="/src/assets/images/equis.webp" width="90" height="30" alt="EQUIS accredited" loading="lazy" decoding="async" /></li>
-              <li class="clg-accredLogo"><img src="/src/assets/images/equis.webp" width="90" height="30" alt="AACSB accredited" loading="lazy" decoding="async" /></li>
-              <li class="clg-accredLogo"><img src="/src/assets/images/equis.webp" width="90" height="30" alt="AMBA accredited" loading="lazy" decoding="async" /></li>
-              <li class="clg-accredLogo"><img src="/src/assets/images/equis.webp" width="90" height="30" alt="NBA accredited" loading="lazy" decoding="async" /></li>
-              <li class="clg-accredLogo"><img src="/src/assets/images/equis.webp" width="90" height="30" alt="Association of Indian Universities member" loading="lazy" decoding="async" /></li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Programmes Offered -->
-        <section id="programmes" class="clg-section reveal" aria-labelledby="programmes-heading">
-          <h2 id="programmes-heading" class="clg-section__title">Programmes Offered</h2>
-          <div class="clg-card">
-
-            <div class="clg-pillTabs" role="tablist" data-tablist aria-label="Programme categories">
-              <button role="tab" id="pill-pg" aria-controls="pill-pg-panel" aria-selected="true" type="button">Post Graduate</button>
-              <button role="tab" id="pill-doc" aria-controls="pill-doc-panel" aria-selected="false" type="button">Doctoral</button>
-              <button role="tab" id="pill-online" aria-controls="pill-online-panel" aria-selected="false" type="button">Online Education</button>
-              <button role="tab" id="pill-fb" aria-controls="pill-fb-panel" aria-selected="false" type="button">Family Business</button>
-              <button role="tab" id="pill-ent" aria-controls="pill-ent-panel" aria-selected="false" type="button">Entrepreneurship</button>
-              <button role="tab" id="pill-exec" aria-controls="pill-exec-panel" aria-selected="false" type="button">Executive Education</button>
-            </div>
-
-            <div id="pill-pg-panel" role="tabpanel" aria-labelledby="pill-pg">
-              <div class="clg-accordion">
-
-                <!-- PGDM — open by default -->
-                <div class="clg-accItem" data-open="true" id="acc-pgdm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdm" aria-expanded="true" aria-controls="acc-pgdm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Diploma in Management (PGDM)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">–</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-
-                    <div class="clg-progTabs" role="tablist" data-tablist aria-label="PGDM details">
-                      <button role="tab" id="pt-overview" aria-controls="pt-overview-panel" aria-selected="true" type="button">Overview</button>
-                      <button role="tab" id="pt-eligibility" aria-controls="pt-eligibility-panel" aria-selected="false" type="button">Eligibility &amp; Admission</button>
-                      <button role="tab" id="pt-fees" aria-controls="pt-fees-panel" aria-selected="false" type="button">Fees &amp; Scholarships</button>
-                      <button role="tab" id="pt-timeline" aria-controls="pt-timeline-panel" aria-selected="false" type="button">Admission Timeline</button>
-                      <button role="tab" id="pt-faqs" aria-controls="pt-faqs-panel" aria-selected="false" type="button">FAQs</button>
-                    </div>
-
-                    <div id="pt-overview-panel" role="tabpanel" aria-labelledby="pt-overview">
-                      <dl class="clg-factGrid">
-                        <div class="clg-factBox"><dt>Duration</dt><dd>2 Years</dd></div>
-                        <div class="clg-factBox"><dt>Programme Starts</dt><dd>June 2027</dd></div>
-                        <div class="clg-factBox"><dt>Fees</dt><dd>₹24,86,000</dd></div>
-                      </dl>
-                      <p>SPJIMR's Post Graduate Diploma in Management (PGDM) is a two-year, full-time residential programme equivalent to an MBA. PGDM is approved by AICTE, accredited by NBA and AMBA UK, and consistently rates among India's top 10 management programmes. The programme offers a holistic approach to leadership development through a blend of classroom learning and curated immersive experiences, guided by SPJIMR's faculty of accomplished academicians and practitioners.</p>
-                      <p>In the Financial Times Masters in Management (FT MiM) 2025 Ranking, SPJIMR was ranked 35th globally and 3rd in India. The institute secured 3rd place worldwide — and 1st in India — in the "Careers Service" category, and was also ranked #1 among Indian B-schools in Alumni Network, Value for Money, and ESG &amp; Net Zero Teaching for its PGDM programme.</p>
-                    </div>
-                    <div id="pt-eligibility-panel" role="tabpanel" aria-labelledby="pt-eligibility" hidden>
-                      <p>Bachelor's degree in any discipline with a minimum aggregate of 50%, along with a valid CAT / GMAT / XAT score. Shortlisted candidates go through a written ability test and a personal interview round.</p>
-                    </div>
-                    <div id="pt-fees-panel" role="tabpanel" aria-labelledby="pt-fees" hidden>
-                      <p>Total programme fee is ₹24,86,000, payable in instalments. Need- and merit-based scholarships are available for eligible candidates, including special scholarships for women applicants.</p>
-                    </div>
-                    <div id="pt-timeline-panel" role="tabpanel" aria-labelledby="pt-timeline" hidden>
-                      <p>Applications open in August, with a final submission deadline of November 30, 2025. Interviews are conducted between February and March, and the final admit list is released by April.</p>
-                    </div>
-                    <div id="pt-faqs-panel" role="tabpanel" aria-labelledby="pt-faqs" hidden>
-                      <p>Common questions cover work-experience requirements, scholarship eligibility and hostel accommodation — reach out to admissions for a full FAQ list.</p>
-                    </div>
-
-                  </div></div>
-                </div>
-
-                <!-- Collapsed programme rows -->
-                <div class="clg-accItem" data-open="false" id="acc-pgdmbm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdmbm" aria-expanded="false" aria-controls="acc-pgdmbm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Diploma in Management Business Management PGDM (BM)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>A one-year full-time programme for candidates with prior work experience, focused on accelerating mid-career growth into general management roles.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-pgpm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgpm" aria-expanded="false" aria-controls="acc-pgpm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Programme in Management (PGPM)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>Designed for working professionals, delivered over weekends and short residencies to build strategic and leadership capability without a career break.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-gmp">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-gmp" aria-expanded="false" aria-controls="acc-gmp">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Global Management Programme (GMP)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>An internationally-oriented track combining SPJIMR coursework with partner-university modules abroad for a global business perspective.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-pgemp">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgemp" aria-expanded="false" aria-controls="acc-pgemp">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Executive Management Programme (PGEMP)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>A senior-level executive programme aimed at professionals with significant experience, preparing them for CXO-track leadership roles.</p>
-                  </div></div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Important Dates -->
-        <section id="dates" class="clg-section reveal" aria-labelledby="dates-heading">
-          <h2 id="dates-heading" class="clg-section__title">Important Dates &amp; Deadlines</h2>
-          <div class="clg-tableWrap">
-            <table class="clg-table">
-              <caption class="clg-visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">SPJIMR programme application deadlines</caption>
-              <thead>
-                <tr>
-                  <th scope="col">Programme</th>
-                  <th scope="col">Date / Deadline</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Post Graduate Diploma in Management (PGDM)</th>
-                  <td><span class="clg-dateCell"><img src="/src/assets/images/calender.webp" width="26" height="26" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /> Nov 30, 2025</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Post Graduate Diploma in Management Business Management PGDM (BM)</th>
-                  <td><span class="clg-dateCell"><img src="/src/assets/images/calender.webp" width="26" height="26" alt="Post Graduate Diploma in Management Business Management PGDM" loading="lazy" decoding="async" /> Jan 4, 2026</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Post Graduate Programme in Management (PGPM)</th>
-                  <td><span class="clg-dateCell"><img src="/src/assets/images/calender.webp" width="26" height="26" alt="Post Graduate Programme in Management" loading="lazy" decoding="async" /> Nov 30, 2025</span></td>
-                </tr>
-                <tr>
-                  <th scope="row">Global Management Programme (GMP)</th>
-                  <td><span class="clg-dateCell"><img src="/src/assets/images/calender.webp" width="26" height="26" alt="Global Management Programme" loading="lazy" decoding="async" /> Nov 30, 2025</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
-
-
-       <!-- Programmes Offered -->
-        <section id="placements" class="clg-section reveal" aria-labelledby="programmes-heading">
-          <h2 id="programmes-heading" class="clg-section__title">Placement & Reports</h2>
-          <div class="clg-card">
-
-            <div class="clg-pillTabs" role="tablist" data-tablist aria-label="Programme categories">
-              <button role="tab" id="pill-pg" aria-controls="pill-pg-panel" aria-selected="true" type="button">Post Graduate</button>
-              <button role="tab" id="pill-doc" aria-controls="pill-doc-panel" aria-selected="false" type="button">Doctoral</button>
-              <button role="tab" id="pill-online" aria-controls="pill-online-panel" aria-selected="false" type="button">Online Education</button>
-              <button role="tab" id="pill-fb" aria-controls="pill-fb-panel" aria-selected="false" type="button">Family Business</button>
-              <button role="tab" id="pill-ent" aria-controls="pill-ent-panel" aria-selected="false" type="button">Entrepreneurship</button>
-              <button role="tab" id="pill-exec" aria-controls="pill-exec-panel" aria-selected="false" type="button">Executive Education</button>
-            </div>
-
-            <div id="pill-pg-panel" role="tabpanel" aria-labelledby="pill-pg">
-              <div class="clg-accordion">
-
-                <!-- PGDM — open by default -->
-                <div class="clg-accItem" data-open="true" id="acc-pgdm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdm" aria-expanded="true" aria-controls="acc-pgdm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Diploma in Management (PGDM)sss</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">–</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel">
-
-                       
-                        <div class="reports-grid">
-
-  <a class="report-card" href="/reports/placement-2024-26.pdf" download aria-label="Download Placement Reports 2024 to 2026">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2024–26)</span></span>
-  </a>
-
-  <a class="report-card" href="/reports/placement-2023-25.pdf" download aria-label="Download Placement Reports 2023 to 2025">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2023–25)</span></span>
-  </a>
-
-  <a class="report-card" href="/reports/placement-2022-24.pdf" download aria-label="Download Placement Reports 2022 to 2024">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2022–24)</span></span>
-  </a>
-
-  <a class="report-card" href="/reports/placement-2021-23.pdf" download aria-label="Download Placement Reports 2021 to 2023">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2021–23)</span></span>
-  </a>
-
-  <a class="report-card" href="/reports/placement-2020-22.pdf" download aria-label="Download Placement Reports 2020 to 2022">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2020–22)</span></span>
-  </a>
-
-  <a class="report-card" href="/reports/placement-2019-21.pdf" download aria-label="Download Placement Reports 2019 to 2021">
-    <svg class="pdf-icon" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-      <path d="M9 4h15l7 7v25a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" fill="#fff3ec" stroke="#ff6a00" stroke-width="1.6"/>
-      <path d="M24 4v7h7" fill="none" stroke="#ff6a00" stroke-width="1.6" stroke-linejoin="round"/>
-      <text x="20" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#ff6a00" font-family="Arial, sans-serif">PDF</text>
-    </svg>
-    <span class="report-text">Download Placement Reports<span class="years">(2019–21)</span></span>
-  </a>
-
-</div>
-
-                  </div>
-                </div>
-
-                <!-- Collapsed programme rows -->
-                <div class="clg-accItem" data-open="false" id="acc-pgdmbm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdmbm" aria-expanded="false" aria-controls="acc-pgdmbm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Diploma in Management Business Management PGDM (BM)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>A one-year full-time programme for candidates with prior work experience, focused on accelerating mid-career growth into general management roles.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-pgpm">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgpm" aria-expanded="false" aria-controls="acc-pgpm">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Programme in Management (PGPM)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>Designed for working professionals, delivered over weekends and short residencies to build strategic and leadership capability without a career break.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-gmp">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-gmp" aria-expanded="false" aria-controls="acc-gmp">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Global Management Programme (GMP)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>An internationally-oriented track combining SPJIMR coursework with partner-university modules abroad for a global business perspective.</p>
-                  </div></div>
-                </div>
-
-                <div class="clg-accItem" data-open="false" id="acc-pgemp">
-                  <h3 style="margin:0;">
-                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgemp" aria-expanded="false" aria-controls="acc-pgemp">
-                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
-                      <span class="clg-accHeader__title">Post Graduate Executive Management Programme (PGEMP)</span>
-                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
-                    </button>
-                  </h3>
-                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
-                    <p>A senior-level executive programme aimed at professionals with significant experience, preparing them for CXO-track leadership roles.</p>
-                  </div></div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-
-
-
-
-
-
-       
-
-
-
-
-
-        
-<section class="as-section" id="alumni" aria-labelledby="as-heading">
-  <div class="as-head">
-    <div>
-      <h2 id="alumni-heading" class="clg-section__title reveal ">ALUMNI SPEAK</h2>
-
-
-      <p class="as-sub">Verified video testimonials from real alumni.</p>
-    </div>
-    <div class="as-nav">
-      <button type="button" class="as-nav-btn videoLibraryPrev" data-dir="prev" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button" class="as-nav-btn videoLibraryNext" data-dir="next" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
-  </div>
-
-  <div class="emblaViewport" id="asViewport">
-    <div class="emblaContainer" id="asContainer" role="group" aria-roledescription="carousel" aria-label="Alumni testimonials">
-
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
-
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Rahul Kumar's journey from SPJIMR to Microsoft">
-            <img class="videoCardImage"  src="../src/assets/images/slide-3.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <p class="as-name">Rahul Kumar</p>
-          <p class="as-batch">PGDM 2022–24</p>
         </div>
-
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=D" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">DGTL360</p><p class="as-role">Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=M" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Microsoft</p><p class="as-role">Senior Product Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
-
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Ananya Sharma's journey from SPJIMR to Google">
-            <img class="videoCardImage"  src="../src/assets/images/slide-2.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <p class="as-name">Ananya Sharma</p>
-          <p class="as-batch">PGDM 2021–23</p>
-        </div>
-
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=B" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Bain &amp; Co</p><p class="as-role">Analyst</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=G" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Google</p><p class="as-role">Product Marketing Lead</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
-
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Karan Mehta's journey from SPJIMR to Amazon">
-            <img class="videoCardImage"  src="../src/assets/images/slide-1.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <p class="as-name">Karan Mehta</p>
-          <p class="as-batch">PGDM 2022–24</p>
-        </div>
-
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=I" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">ICICI Bank</p><p class="as-role">Officer</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=A" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Amazon</p><p class="as-role">Category Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="videoLibraryDots" id="asDots" role="tablist" aria-label="Select testimonial"></div>
-  <p class="as-sr-only" id="asLiveRegion" aria-live="polite"></p>
-</section>
-
-
-
-
-
-
-<!-- SVG sprite: sirf ek baar define, sab jagah <use> se reuse -> extra HTTP request / duplicate markup nahi -->
-    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
-      <symbol id="icon-star-filled" viewBox="0 0 20 20">
-        <path
-          class="starFilled"
-          d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1 1 5.8L10 14.9l-5.21 2.62 1-5.8-4.21-4.1 5.82-.85L10 1.5z"
-        />
-      </symbol>
-      <symbol id="icon-star-empty" viewBox="0 0 20 20">
-        <path
-          class="starEmpty"
-          d="M10 1.5l2.6 5.27 5.82.85-4.21 4.1 1 5.8L10 14.9l-5.21 2.62 1-5.8-4.21-4.1 5.82-.85L10 1.5z"
-        />
-      </symbol>
-      <symbol id="icon-arrow" viewBox="0 0 16 16">
-        <path
-          d="M4 12L12 4M12 4H5M12 4V11"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </symbol>
-    </svg>
-
-      <section class="studentReviews" aria-labelledby="studentReviewsHeading">
-          <!-- Summary card -->
-          <div class="reviewsSummaryCard reveal">
-            <div class="reviewsSummaryHeader">
-             
-               <h2 id="reviews" class="clg-section__title reveal ">  Student Reviews</h2>
-              <a href="#write-review" class="inlineLink">
-                Write a review
-                <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
-              </a>
-            </div>
-
-            <div class="reviewsSummaryBody">
-              <!-- Overall score -->
-              <div class="overallRating">
-                <span class="overallRatingScore">4.4</span>
-                <span
-                  class="starRow"
-                  role="img"
-                  aria-label="4.4 out of 5 stars"
-                >
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-empty"></use></svg>
-                </span>
-                <span class="reviewsCount">312 reviews</span>
-              </div>
-
-              <!-- Rating bars -->
-              <ul class="ratingBars">
-                <li class="ratingBarRow">
-                  <span class="ratingLabel" id="rb-placements">Placements</span>
-                  <span
-                    class="ratingBarTrack"
-                    role="progressbar"
-                    aria-labelledby="rb-placements"
-                    aria-valuemin="0"
-                    aria-valuemax="5"
-                    aria-valuenow="4.5"
-                  >
-                    <span class="ratingBarFill" style="width: 90%"></span>
-                  </span>
-                  <span class="ratingValue" aria-hidden="true">4.5</span>
-                </li>
-                <li class="ratingBarRow">
-                  <span class="ratingLabel" id="rb-faculty">Faculty</span>
-                  <span
-                    class="ratingBarTrack"
-                    role="progressbar"
-                    aria-labelledby="rb-faculty"
-                    aria-valuemin="0"
-                    aria-valuemax="5"
-                    aria-valuenow="4.4"
-                  >
-                    <span class="ratingBarFill" style="width: 88%"></span>
-                  </span>
-                  <span class="ratingValue" aria-hidden="true">4.4</span>
-                </li>
-                <li class="ratingBarRow">
-                  <span class="ratingLabel" id="rb-roi">ROI</span>
-                  <span
-                    class="ratingBarTrack"
-                    role="progressbar"
-                    aria-labelledby="rb-roi"
-                    aria-valuemin="0"
-                    aria-valuemax="5"
-                    aria-valuenow="4.1"
-                  >
-                    <span class="ratingBarFill" style="width: 82%"></span>
-                  </span>
-                  <span class="ratingValue" aria-hidden="true">4.1</span>
-                </li>
-                <li class="ratingBarRow">
-                  <span class="ratingLabel" id="rb-campus">Campus Life</span>
-                  <span
-                    class="ratingBarTrack"
-                    role="progressbar"
-                    aria-labelledby="rb-campus"
-                    aria-valuemin="0"
-                    aria-valuemax="5"
-                    aria-valuenow="4.3"
-                  >
-                    <span class="ratingBarFill" style="width: 86%"></span>
-                  </span>
-                  <span class="ratingValue" aria-hidden="true">4.3</span>
-                </li>
-                <li class="ratingBarRow">
-                  <span class="ratingLabel" id="rb-peer">Peer Quality</span>
-                  <span
-                    class="ratingBarTrack"
-                    role="progressbar"
-                    aria-labelledby="rb-peer"
-                    aria-valuemin="0"
-                    aria-valuemax="5"
-                    aria-valuenow="4.6"
-                  >
-                    <span class="ratingBarFill" style="width: 92%"></span>
-                  </span>
-                  <span class="ratingValue" aria-hidden="true">4.6</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Review cards -->
-          <ul class="reviewsList">
-            <li class="reviewCard reveal">
-              <div class="reviewCardHeader">
-                <img
-                  class="reviewAvatar"
-                  src="../src/assets/images/rahul-kumar.webp"
-                  alt=""
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="reviewMeta">
-                  <h3 class="reviewerName">Rahul Kumar</h3>
-                  <p class="reviewerProgram">PGDM 2022–24 · Now at BCG</p>
-                </div>
-                <span class="starRow" role="img" aria-label="5 out of 5 stars">
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                </span>
-              </div>
-              <p class="reviewText">
-                The DCC programme was genuinely transformative — not a CSR
-                box-tick. Peer quality is exceptional and the Mumbai location
-                gives unmatched access to finance and consulting roles.
-                Placement support is outstanding.
-              </p>
-            </li>
-
-            <li class="reviewCard reveal">
-              <div class="reviewCardHeader">
-                <img
-                  class="reviewAvatar"
-                  src="../src/assets/images/priya.webp"
-                  alt=""
-                  width="48"
-                  height="48"
-                  loading="lazy"
-                  decoding="async"
-                />
-                <div class="reviewMeta">
-                  <h3 class="reviewerName">Priya Sharma</h3>
-                  <p class="reviewerProgram">
-                    PGDM 2021–23 · Now at Hindustan Unilever
-                  </p>
-                </div>
-                <span class="starRow" role="img" aria-label="5 out of 5 stars">
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                  <svg aria-hidden="true"><use href="#icon-star-filled"></use></svg>
-                </span>
-              </div>
-              <p class="reviewText">
-                Exceptional faculty, especially marketing and strategy. Live
-                projects across all trimesters give you a practical edge.
-                Campus is compact for Mumbai, but the location compensates
-                for it entirely.
-              </p>
-            </li>
-          </ul>
-
-          <div class="seeAllWrap">
-            <a href="#all-reviews" class="inlineLink">
-              See all 312 reviews
-              <svg aria-hidden="true"><use href="#icon-arrow"></use></svg>
-            </a>
-          </div>
       </section>
 
+      <section class="examListing">
+        <div class="container">
 
-
-
-<section class="similarColleges" aria-labelledby="similarCollegesTitle" itemscope itemtype="https://schema.org/ItemList">  
-
-    <div class="similarCollegesWrap">
-       <h2 id="similar" class="clg-section__title reveal visible">Similar Colleges</h2>
-    <ul class="collegeGrid" role="list">
-
-      <li class="collegeCard reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Ahmedabad logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIMA</h3>
-          <p class="collegeCardLocation" itemprop="address">Ahmedabad, Gujarat</p>
-
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹19.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹19 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">95%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
+          <div class="examActiveFilters" id="examActiveFilters"
+            style="display:none;">
+            <span class="examActiveFilters__label">Active Filters:</span>
+            <a href="#" class="examActiveFilters__clear" id="examClearAll">Clear
+              All ✕</a>
           </div>
+          <p id="examNoResults"
+            style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+            exams match the selected filters. Try clearing some filters.</p>
 
-          <p class="collegeAccepting">Accepting</p>
-          <ul class="collegeTags">
-            <li class="collegeTag">CAT</li>
-            <li class="collegeTag">XAT</li>
-            <li class="collegeTag">GMAT</li>
-          </ul>
+          <div class="examLayout">
 
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIMA brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
+            <!-- Mobile Filter Toggle -->
+            <button type="button" class="examMobileFilterToggle"
+              id="examMobileFilterToggle" aria-expanded="false"
+              aria-controls="examFiltersPanel">
+              <span>Filters</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor"
+                  stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg>
+            </button>
 
-      <li class="collegeCard revealright delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Bangalore logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
-          <p class="collegeCardLocation" itemprop="address">Bangalore, Karnataka</p>
+            <!-- Sidebar Filters -->
+            <aside class="examFilters" id="examFiltersPanel">
+              <div class="examFilters__head">
+                <h4>Filter Programmes</h4>
+                <button class="examFilters__clearAll"
+                  id="examFiltersClearAll">Clear all</button>
+              </div>
 
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹21.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹21.5 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">94%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
-          </div>
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Programme Type</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="Full-Time MBA"
+                    data-filter-group="programme"><span>Full-Time
+                    MBA</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Part-Time MBA"
+                    data-filter-group="programme"><span>Part-Time
+                    MBA</span><em>18</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Executive MBA (EMBA)"
+                    data-filter-group="programme"><span>Executive MBA
+                    (EMBA)</span><em>10</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Online MBA"
+                    data-filter-group="programme"><span>Online
+                    MBA</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Distance Learning MBA"
+                    data-filter-group="programme"><span>Distance Learning
+                    MBA</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Integrated MBA"
+                    data-filter-group="programme"><span>Integrated
+                    MBA</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Global MBA"
+                    data-filter-group="programme"><span>Global
+                    MBA</span><em>6</em></label>
+              </div>
 
-          <p class="collegeAccepting">Accepting</p>
-          <ul class="collegeTags">
-            <li class="collegeTag">CAT</li>
-            <li class="collegeTag">XAT</li>
-            <li class="collegeTag">GMAT</li>
-          </ul>
-
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li class="collegeCard revealright delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Calcutta logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIM Calcutta</h3>
-          <p class="collegeCardLocation" itemprop="address">Kolkata, West Bengal</p>
-
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹17.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹23.5 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">98%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
-          </div>
-
-          <p class="collegeAccepting" style="visibility:hidden;">Accepting</p>
-          <ul class="collegeTags" style="visibility:hidden;">
-            <li class="collegeTag">CAT</li>
-          </ul>
-
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIM Calcutta brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li class="collegeCard revealleft" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Ahmedabad logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIMA</h3>
-          <p class="collegeCardLocation" itemprop="address">Ahmedabad, Gujarat</p>
-
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹19.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹19 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">95%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
-          </div>
-
-          <p class="collegeAccepting">Accepting</p>
-          <ul class="collegeTags">
-            <li class="collegeTag">CAT</li>
-            <li class="collegeTag">XAT</li>
-            <li class="collegeTag">GMAT</li>
-          </ul>
-
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIMA brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li class="collegeCard reveal delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Bangalore logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
-          <p class="collegeCardLocation" itemprop="address">Bangalore, Karnataka</p>
-
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹21.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹21.5 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">94%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
-          </div>
-
-          <p class="collegeAccepting">Accepting</p>
-          <ul class="collegeTags">
-            <li class="collegeTag">CAT</li>
-            <li class="collegeTag">XAT</li>
-            <li class="collegeTag">GMAT</li>
-          </ul>
-
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
-
-      <li class="collegeCard revealright delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-        <div class="collegeCardLogo">
-          <img
-              src="../src/assets/images/iima.webp"
-            alt="IIM Calcutta logo"
-            width="160" height="64"
-            loading="lazy" decoding="async"
-            itemprop="logo" />
-        </div>
-        <div class="collegeCardBody">
-          <h3 class="collegeCardName" itemprop="name">IIM Calcutta</h3>
-          <p class="collegeCardLocation" itemprop="address">Kolkata, West Bengal</p>
-
-          <div class="collegeStats">
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹17.5 Lakh</span>
-              <span class="collegeStatLabel">Total Fees</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">₹23.5 Lakh</span>
-              <span class="collegeStatLabel">Avg Package</span>
-            </div>
-            <div class="collegeStat">
-              <span class="collegeStatValue">98%ile</span>
-              <span class="collegeStatLabel">Cutoff</span>
-            </div>
-          </div>
-
-          <p class="collegeAccepting" style="visibility:hidden;">Accepting</p>
-          <ul class="collegeTags" style="visibility:hidden;">
-            <li class="collegeTag">CAT</li>
-          </ul>
-
-          <div class="collegeCardFooter">
-            <a href="#" class="viewCoursesLink">
-              View Courses
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a href="#" class="downloadBrochureBtn" aria-label="Download IIM Calcutta brochure">
-              Download Brochure
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </div>
-      </li>
-    </ul>
-    </div>
-</section>
-
-
-
-
-
-<section class="topExams" aria-labelledby="topExamsTitle" itemscope itemtype="https://schema.org/ItemList">
-    <div class="topExamsWrap">
-      <h2 id="reviews-heading" class="clg-section__title reveal">Top Exams Accepted by SPJIMR Mumbai</h2>
-      <ul class="examGrid" role="list">
-
-        <li class="examCard reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/Event">
-          <div class="examCardTop">
-            <span class="examBadge" itemprop="name">CAT</span>
-            <div class="examDateBlock">
-              <span class="examDateLabel">Exam date</span>
-              <time class="examDateValue" itemprop="startDate" datetime="2026-11-29">Nov 29, 2026</time>
-            </div>
-          </div>
-
-          <h3 class="examCardTitle">Common Admission Test</h3>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Accepted By</span>
-            <span class="examMetaValue">21 IIMs + 1,600+ Colleges</span>
-          </div>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Exam Mode</span>
-            <span class="examMetaValue">Computer Based Test</span>
-          </div>
-
-          <div class="examCardFooter">
-            <a href="#" class="exploreExamBtn" aria-label="Explore CAT exam details">
-              Explore CAT
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </li>
-
-        <li class="examCard revealright delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/Event">
-          <div class="examCardTop">
-            <span class="examBadge" itemprop="name">CAT</span>
-            <div class="examDateBlock">
-              <span class="examDateLabel">Exam date</span>
-              <time class="examDateValue" itemprop="startDate" datetime="2026-11-29">Nov 29, 2026</time>
-            </div>
-          </div>
-
-          <h3 class="examCardTitle">Common Admission Test</h3>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Accepted By</span>
-            <span class="examMetaValue">21 IIMs + 1,600+ Colleges</span>
-          </div>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Exam Mode</span>
-            <span class="examMetaValue">Computer Based Test</span>
-          </div>
-
-          <div class="examCardFooter">
-            <a href="#" class="exploreExamBtn" aria-label="Explore CAT exam details">
-              Explore CAT
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </li>
-
-        <li class="examCard revealright delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/Event">
-          <div class="examCardTop">
-            <span class="examBadge" itemprop="name">CAT</span>
-            <div class="examDateBlock">
-              <span class="examDateLabel">Exam date</span>
-              <time class="examDateValue" itemprop="startDate" datetime="2026-11-29">Nov 29, 2026</time>
-            </div>
-          </div>
-
-          <h3 class="examCardTitle">Common Admission Test</h3>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Accepted By</span>
-            <span class="examMetaValue">21 IIMs + 1,600+ Colleges</span>
-          </div>
-
-          <div class="examMeta">
-            <span class="examMetaLabel">Exam Mode</span>
-            <span class="examMetaValue">Computer Based Test</span>
-          </div>
-
-          <div class="examCardFooter">
-            <a href="#" class="exploreExamBtn" aria-label="Explore CAT exam details">
-              Explore CAT
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </div>
-        </li>
-
-      </ul>
-    </div>
-</section>
-
-
-
-       
-       
-
-      </div>
-
-      <!-- ============ SIDEBAR ============ -->
-      <aside class="clg-aside" aria-label="Quick facts and links">
-
-        <div class="clg-ctaCard reveal" id="enquire">
-          <h2>Ready to Apply to SPJIMR?</h2>
-          <p>Get personalised guidance from SPJIMR alumni counsellors. Free 30-minute session.</p>
-          <a href="#" class="btn btn--solid btn--block">Enquire Now</a>
-          <a href="#brochure" class="btn btn--outline btn--block" >Download Brochure</a>
-        </div>
-
-        <div class="clg-card clg-sideCard">
-          <h2>Quick Facts</h2>
-          <dl class="clg-factsList">
-            <div><dt>Founded</dt><dd>1961</dd></div>
-            <div><dt>Institute Type</dt><dd>Private</dd></div>
-            <div><dt>Campus Area</dt><dd>103 Acres</dd></div>
-            <div><dt>Total Faculty</dt><dd>108 Full-time</dd></div>
-            <div><dt>Student:Faculty</dt><dd>7:1</dd></div>
-            <div><dt>Total Students</dt><dd>~2,100</dd></div>
-            <div><dt>Alumni Network</dt><dd>38,000+</dd></div>
-            <div><dt>Official Website</dt><dd><a href="https://www.spjimr.org" rel="noopener">spjimr.org</a></dd></div>
-          </dl>
-        </div>
-
-        <div class="clg-card clg-sideCard">
-          <h2>Upcoming Deadlines</h2>
-          <table class="clg-miniTable">
-            <thead><tr><th scope="col">Programme</th><th scope="col">Date</th></tr></thead>
-            <tbody>
-              <tr>
-                <td><span class="clg-progName">PGDM</span><span class="clg-progSub">Interview Process</span></td>
-                <td class="clg-dateStrong">Feb–Mar 25</td>
-              </tr>
-              <tr>
-                <td><span class="clg-progName">PGDM/BM</span><span class="clg-progSub">Last Date Apply</span></td>
-                <td class="clg-dateStrong">Jan 31</td>
-              </tr>
-              <tr>
-                <td><span class="clg-progName">PGPMBM</span><span class="clg-progSub">Applications Close</span></td>
-                <td class="clg-dateStrong">Feb 28</td>
-              </tr>
-              <tr>
-                <td><span class="clg-progName">PGPM</span><span class="clg-progSub">Final Admit List</span></td>
-                <td class="clg-dateStrong">Apr 30</td>
-              </tr>
-              <tr>
-                <td><span class="clg-progName">PGPMBM</span><span class="clg-progSub">PGP Orientation</span></td>
-                <td class="clg-dateStrong">Jun 9</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="clg-card clg-sideCard">
-          <h2>Quick Links</h2>
-          <ul class="clg-linkList">
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Top MBA Colleges by Salary</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>MBA vs PGDM — Key Differences</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>IIM Fees 2025-26 Complete List</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>CAT 2025 Preparation Guide</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>MBA Scholarships in India</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1-Year MBA Programs India</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Executive MBA (EMBA) Colleges</a></li>
-            <li><a href="#"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Online MBA Colleges 2025</a></li>
-          </ul>
-        </div>
-
-      </aside>
-    </div>
-  </div>
-</main>
-
-
-
-
-
-
-            <!-- ===== Master Your Admission Journey (Subscribe) Section ===== -->
-            <section class="admissionJourney"
-                aria-labelledby="admissionJourneyHeading">
-                <div class="container">
-                    <div class="admissionJourneyInner revealright">
-                        <h2 class="marketing__heading"
-                            id="admissionJourneyHeading">Master your admission
-                            journey</h2>
-                        <p class="admissionJourneyText">Weekly briefing on exam
-                            updates, admission deadlines, placement reports, and
-                            editorial analysis. No spam. Unsubscribe
-                            anytime.</p>
-
-                        <form class="admissionJourneyForm"
-                            id="admissionJourneyForm"
-                            novalidate>
-                            <label for="admissionJourneyEmail"
-                                class="admissionJourneyLabel">Email
-                                address</label>
-                            <div class="admissionJourneyField">
-                                <input
-                                    type="email"
-                                    id="admissionJourneyEmail"
-                                    name="email"
-                                    class="admissionJourneyInput"
-                                    placeholder="Your email address"
-                                    autocomplete="email"
-                                    required
-                                    aria-describedby="admissionJourneyError">
-                                <button type="submit"
-                                    class="admissionJourneySubmit">
-                                    Subscribe
-                                    <svg viewBox="0 0 26 26" width="28"
-                                        height="28"
-                                        fill="none" aria-hidden="true">
-                                        <path d="M7 17L17 7M17 7H9M17 7V15"
-                                            stroke="currentColor"
-                                            stroke-width="2"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <p class="admissionJourneyError"
-                                id="admissionJourneyError" role="alert"
-                                aria-live="polite"></p>
-                        </form>
-                    </div>
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Location / City</p>
+                <label class="examCheck"><input type="checkbox" value="Mumbai"
+                    data-filter-group="city"><span>Mumbai</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Delhi/NCR"
+                    data-filter-group="city"><span>Delhi/NCR</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Bangalore"
+                    data-filter-group="city"><span>Bangalore</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Hyderabad"
+                    data-filter-group="city"><span>Hyderabad</span><em></em></label>
+                <div class="examFilterGroup__extra" id="examCityExtra" hidden>
+                  <label class="examCheck"><input type="checkbox" value="Pune"
+                      data-filter-group="city"><span>Pune</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Chennai"
+                      data-filter-group="city"><span>Chennai</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Kolkata"
+                      data-filter-group="city"><span>Kolkata</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Ahmedabad"
+                      data-filter-group="city"><span>Ahmedabad</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Jamshedpur"
+                      data-filter-group="city"><span>Jamshedpur</span><em></em></label>
                 </div>
-            </section>
+                <button class="examFilterGroup__more" id="examCityMoreBtn">+
+                  Show more</button>
+              </div>
 
-            <!-- <script
-                src="https://cdn.jsdelivr.net/npm/embla-carousel@8.6.0/embla-carousel.umd.min.js"
-                defer></script> -->
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">College Type</p>
+                <label class="examCheck"><input type="checkbox" value="IIMs"
+                    data-filter-group="collegeType"><span>IIMs</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Private"
+                    data-filter-group="collegeType"><span>Private</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Public"
+                    data-filter-group="collegeType"><span>Public</span><em></em></label>
+              </div>
 
-        </main>
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Entrance Exam</p>
+                <label class="examCheck"><input type="checkbox" value="CAT"
+                    data-filter-group="entranceExam"><span>CAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="MAT"
+                    data-filter-group="entranceExam"><span>MAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="XAT"
+                    data-filter-group="entranceExam"><span>XAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="GMAT"
+                    data-filter-group="entranceExam"><span>GMAT</span><em></em></label>
+              </div>
 
-        <!-- ============================================================
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Total Fees</p>
+                <input type="range" min="3" max="42" value="42"
+                  class="examFeeRange" id="examFeeRange">
+                <div class="examFeeRange__labels"><span>₹3 lakhs</span><span
+                    id="examFeeRangeValue">₹42 lakhs</span></div>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Accreditation</p>
+                <label class="examCheck"><input type="checkbox" value="NAAC A+"
+                    data-filter-group="accreditation"><span>NAAC
+                    A+</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox" value="NAAC A"
+                    data-filter-group="accreditation"><span>NAAC
+                    A</span><em>28</em></label>
+                <label class="examCheck"><input type="checkbox" value="AACSB"
+                    data-filter-group="accreditation"><span>AACSB</span><em>10</em></label>
+                <label class="examCheck"><input type="checkbox" value="AMBA"
+                    data-filter-group="accreditation"><span>AMBA</span><em>4</em></label>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Avg. Placement Package</p>
+                <label class="examCheck"><input type="checkbox" value="20+ LPA"
+                    data-filter-group="package"><span>20+
+                    LPA</span><em>8</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="24-30 LPA" data-filter-group="package"><span>24-30
+                    LPA</span><em>6</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="30-40 LPA" data-filter-group="package"><span>30-40
+                    LPA</span><em>4</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="40-50 LPA" data-filter-group="package"><span>40-50
+                    LPA</span><em>5</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="32-40 LPA" data-filter-group="package"><span>32-40
+                    LPA</span><em>3</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Below 5 LPA" data-filter-group="package"><span>Below
+                    5 LPA</span><em>12</em></label>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">NIRF Ranking</p>
+                <label class="examCheck"><input type="checkbox" value="Top 10"
+                    data-filter-group="nirf"><span>Top
+                    10</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Top 25"
+                    data-filter-group="nirf"><span>Top
+                    25</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Top 50"
+                    data-filter-group="nirf"><span>Top
+                    50</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Top 100"
+                    data-filter-group="nirf"><span>Top
+                    100</span><em></em></label>
+              </div>
+            </aside>
+
+            <!-- Main content -->
+            <div class="examMain">
+              <div class="examMain__toolbar">
+                <p class="examMain__count">Showing <strong
+                    id="examResultCount">5</strong> of <strong
+                    id="examTotalCount">5</strong> MBA Colleges in India</p>
+                <div class="examSort">
+                  <label for="examSortSelect">Sort by</label>
+
+                  <div class="selectWrap">
+                    <select id="examSortSelect">
+                      <option>NIRF Ranking: Best First</option>
+                      <option>Total Fees: Low to High</option>
+                      <option>Alphabetical</option>
+                    </select>
+
+                    <svg class="selectArrow" viewBox="0 0 24 24" fill="none"
+                      aria-hidden="true">
+                      <path d="M6 9L12 15L18 9" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
+
+              <!-- Exam Card 1 -->
+
+              <div class="examCard" data-programme="Full-Time MBA"
+                data-city="Ahmedabad" data-college-type="IIMs"
+                data-entrance-exam="CAT" data-accreditation="NAAC A+"
+                data-package="40-50 LPA" data-nirf="1" data-fee="25.55">
+                <div class="examCard__top">
+                  <div class="examCard__logo"><img
+                      src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                      width="56" height="56" loading="lazy"></div>
+                  <div class="examCard__info">
+                    <h3>Indian Institute of Management, Ahmedabad (IIM-A)</h3>
+                    <p>Ahmedabad, Gujarat</p>
+                    <div class="examCard__badges">
+                      <span class="examBadge">NIRF #1</span>
+                      <span class="examBadge">Government</span>
+                      <span class="examBadge">NAAC A++</span>
+                      <span class="examBadge">AICTE Approved</span>
+                    </div>
+                  </div>
+                  <div class="examCard__actions">
+                    <a
+                      href="https://designawebsite.co.in/demo/our-project/college/college-detail.html"
+                      class="examBtn examBtn--solid">View College <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                    <a href="#" class="examBtn examBtn--outline">Download
+                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                  </div>
+                </div>
+                <div class="examCard__stats">
+                  <div class="examCard__stat"><strong>₹8.47 - 25.55
+                      L</strong><span>Total Fees</span></div>
+                  <div class="examCard__stat"><strong>₹1.02
+                      Cr</strong><span>Highest Package</span></div>
+                  <div class="examCard__stat"><strong>₹42
+                      LPA</strong><span>Average Package</span></div>
+                  <div
+                    class="examCard__stat"><strong>100%</strong><span>Placement
+                      Rate</span></div>
+                  <div
+                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div>
+                </div>
+              </div>
+
+              <!-- Exam Card 2 -->
+
+              <div class="examCard" data-programme="Full-Time MBA"
+                data-city="Bangalore" data-college-type="IIMs"
+                data-entrance-exam="CAT" data-accreditation="NAAC A+"
+                data-package="30-40 LPA" data-nirf="2" data-fee="24.50">
+                <div class="examCard__top">
+                  <div class="examCard__logo"><img
+                      src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                      width="56" height="56" loading="lazy"></div>
+                  <div class="examCard__info">
+                    <h3>Indian Institute of Management, Bangalore (IIM-B)</h3>
+                    <p>Bangalore, Karnataka</p>
+                    <div class="examCard__badges">
+                      <span class="examBadge">NIRF #2</span>
+                      <span class="examBadge">Government</span>
+                      <span class="examBadge">NAAC A++</span>
+                      <span class="examBadge">AICTE Approved</span>
+                    </div>
+                  </div>
+                  <div class="examCard__actions">
+                    <a
+                      href="https://designawebsite.co.in/demo/our-project/college/college-detail.html"
+                      class="examBtn examBtn--solid">View College <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                    <a href="#" class="examBtn examBtn--outline">Download
+                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                  </div>
+                </div>
+                <div class="examCard__stats">
+                  <div class="examCard__stat"><strong>₹8.30 - 24.50
+                      L</strong><span>Total Fees</span></div>
+                  <div class="examCard__stat"><strong>₹1.02
+                      Cr</strong><span>Highest Package</span></div>
+                  <div class="examCard__stat"><strong>₹35
+                      LPA</strong><span>Average Package</span></div>
+                  <div
+                    class="examCard__stat"><strong>100%</strong><span>Placement
+                      Rate</span></div>
+                  <div
+                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div>
+                </div>
+              </div>
+
+              <!-- Exam Card 3 -->
+
+              <div class="examCard" data-programme="Executive MBA (EMBA)"
+                data-city="Jamshedpur" data-college-type="Private"
+                data-entrance-exam="XAT" data-accreditation="AACSB"
+                data-package="24-30 LPA" data-nirf="6" data-fee="23.00">
+                <div class="examCard__top">
+                  <div class="examCard__logo"><img
+                      src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                      width="56" height="56" loading="lazy"></div>
+                  <div class="examCard__info">
+                    <h3>Xavier School of Management (XLRI), Jamshedpur</h3>
+                    <p>Jamshedpur, Jharkhand</p>
+                    <div class="examCard__badges">
+                      <span class="examBadge">NIRF #6</span>
+                      <span class="examBadge">Private</span>
+                      <span class="examBadge">NAAC A+</span>
+                      <span class="examBadge">AICTE Approved</span>
+                    </div>
+                  </div>
+                  <div class="examCard__actions">
+                    <a
+                      href="https://designawebsite.co.in/demo/our-project/college/college-detail.html"
+                      class="examBtn examBtn--solid">View College <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                    <a href="#" class="examBtn examBtn--outline">Download
+                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                  </div>
+                </div>
+                <div class="examCard__stats">
+                  <div class="examCard__stat"><strong>₹10.50 - 23.00
+                      L</strong><span>Total Fees</span></div>
+                  <div class="examCard__stat"><strong>₹1.02
+                      Cr</strong><span>Highest Package</span></div>
+                  <div class="examCard__stat"><strong>₹29
+                      LPA</strong><span>Average Package</span></div>
+                  <div
+                    class="examCard__stat"><strong>100%</strong><span>Placement
+                      Rate</span></div>
+                  <div
+                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div>
+                </div>
+              </div>
+
+              <!-- Exam Card 4 -->
+
+              <div class="examCard" data-programme="Full-Time MBA"
+                data-city="Delhi/NCR" data-college-type="Public"
+                data-entrance-exam="CAT" data-accreditation="NAAC A"
+                data-package="32-40 LPA" data-nirf="4" data-fee="2.50">
+                <div class="examCard__top">
+                  <div class="examCard__logo"><img
+                      src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                      width="56" height="56" loading="lazy"></div>
+                  <div class="examCard__info">
+                    <h3>Faculty of Management Studies, Delhi (FMS)</h3>
+                    <p>New Delhi, Delhi/NCR</p>
+                    <div class="examCard__badges">
+                      <span class="examBadge">NIRF #4</span>
+                      <span class="examBadge">Government</span>
+                      <span class="examBadge">NAAC A</span>
+                      <span class="examBadge">AICTE Approved</span>
+                    </div>
+                  </div>
+                  <div class="examCard__actions">
+                    <a
+                      href="https://designawebsite.co.in/demo/our-project/college/college-detail.html"
+                      class="examBtn examBtn--solid">View College <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                    <a href="#" class="examBtn examBtn--outline">Download
+                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                  </div>
+                </div>
+                <div class="examCard__stats">
+                  <div class="examCard__stat"><strong>₹1.50 - 2.50
+                      L</strong><span>Total Fees</span></div>
+                  <div class="examCard__stat"><strong>₹1.02
+                      Cr</strong><span>Highest Package</span></div>
+                  <div class="examCard__stat"><strong>₹32
+                      LPA</strong><span>Average Package</span></div>
+                  <div
+                    class="examCard__stat"><strong>100%</strong><span>Placement
+                      Rate</span></div>
+                  <div
+                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div>
+                </div>
+              </div>
+
+              <!-- Exam Card 5 -->
+
+              <div class="examCard" data-programme="Online MBA"
+                data-city="Delhi/NCR" data-college-type="Private"
+                data-entrance-exam="GMAT" data-accreditation="AMBA"
+                data-package="20+ LPA" data-nirf="8" data-fee="19.50">
+                <div class="examCard__top">
+                  <div class="examCard__logo"><img
+                      src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                      width="56" height="56" loading="lazy"></div>
+                  <div class="examCard__info">
+                    <h3>Management Development Institute, Gurgaon (MDI)</h3>
+                    <p>Gurgaon, Haryana</p>
+                    <div class="examCard__badges">
+                      <span class="examBadge">NIRF #8</span>
+                      <span class="examBadge">Autonomous</span>
+                      <span class="examBadge">NAAC A</span>
+                      <span class="examBadge">AICTE Approved</span>
+                    </div>
+                  </div>
+                  <div class="examCard__actions">
+                    <a
+                      href="https://designawebsite.co.in/demo/our-project/college/college-detail.html"
+                      class="examBtn examBtn--solid">View College <svg
+                        width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                    <a href="#" class="examBtn examBtn--outline">Download
+                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg></a>
+                  </div>
+                </div>
+                <div class="examCard__stats">
+                  <div class="examCard__stat"><strong>₹17.00 - 19.50
+                      L</strong><span>Total Fees</span></div>
+                  <div class="examCard__stat"><strong>₹1.02
+                      Cr</strong><span>Highest Package</span></div>
+                  <div class="examCard__stat"><strong>₹27
+                      LPA</strong><span>Average Package</span></div>
+                  <div
+                    class="examCard__stat"><strong>100%</strong><span>Placement
+                      Rate</span></div>
+                  <div
+                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div>
+                </div>
+              </div>
+
+              <div class="examPagination" id="examPagination"></div>
+
+            </div>
+
+            <!-- Right sidebar -->
+            <aside class="examAside">
+
+              <div class="clg-sideCard clg-admissionsWidget">
+                <h3 class="clg-sideCard__title">Admissions open now</h3>
+
+                <ul class="clg-admissionsList">
+                  <li class="clg-admissionItem">
+                    <img class="clg-admissionItem__logo"
+                      src="/src/assets/images/isb-hyderabad.webp"
+                      alt="ISB logo">
+                    <div class="clg-admissionItem__info">
+                      <p class="clg-admissionItem__name">ISB PGPpro</p>
+                      <p class="clg-admissionItem__deadline">Deadline: Jun 15,
+                        2026</p>
+                    </div>
+                    <a class="clg-admissionItem__cta" href="#">Apply now</a>
+                  </li>
+
+                  <li class="clg-admissionItem">
+                    <img class="clg-admissionItem__logo"
+                      src="/src/assets/images/spjimr.webp" alt="SPJIMR logo">
+                    <div class="clg-admissionItem__info">
+                      <p class="clg-admissionItem__name">SPJIMR PGEMP</p>
+                      <p class="clg-admissionItem__deadline">Deadline: Jun 30,
+                        2026</p>
+                    </div>
+                    <a class="clg-admissionItem__cta" href="#">Apply now</a>
+                  </li>
+
+                  <li class="clg-admissionItem">
+                    <img class="clg-admissionItem__logo"
+                      src="/src/assets/images/iim.webp" alt="IIM Calcutta logo">
+                    <div class="clg-admissionItem__info">
+                      <p class="clg-admissionItem__name">IIM-C EPGM</p>
+                      <p class="clg-admissionItem__deadline">Deadline: Jul 31,
+                        2026</p>
+                    </div>
+                    <a class="clg-admissionItem__cta" href="#">Apply now</a>
+                  </li>
+
+                  <li class="clg-admissionItem">
+                    <img class="clg-admissionItem__logo"
+                      src="/src/assets/images/mdi.webp" alt="MDI logo">
+                    <div class="clg-admissionItem__info">
+                      <p class="clg-admissionItem__name">MDI NMP</p>
+                      <p class="clg-admissionItem__deadline">Deadline: Aug
+                        2026</p>
+                    </div>
+                    <a class="clg-admissionItem__cta" href="#">Apply now</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="collegeCard" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/src/assets/images/iima-DED8g9td.webp"
+                    alt="IIM Ahmedabad logo" width="160" height="64"
+                    loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIMA</h3>
+                  <p class="collegeCardLocation" itemprop="address">Ahmedabad,
+                    Gujarat</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹19.5 Lakh</span>
+                      <span class="collegeStatLabel">Total Fees</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹19 Lakh</span>
+                      <span class="collegeStatLabel">Avg Package</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">95%ile</span>
+                      <span class="collegeStatLabel">Cutoff</span>
+                    </div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="#" class="viewCoursesLink">
+                      View Courses
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                    <a href="#" class="downloadBrochureBtn"
+                      aria-label="Download IIMA brochure">
+                      Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collegeCard" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/src/assets/images/iim-banglore.webp"
+                    alt="IIM Bangalore logo" width="160" height="64"
+                    loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+                  <p class="collegeCardLocation" itemprop="address">Bangalore,
+                    Karnataka</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹21.5 Lakh</span>
+                      <span class="collegeStatLabel">Total Fees</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹21.5 Lakh</span>
+                      <span class="collegeStatLabel">Avg Package</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">94%ile</span>
+                      <span class="collegeStatLabel">Cutoff</span>
+                    </div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="#" class="viewCoursesLink">
+                      View Courses
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                    <a href="#" class="downloadBrochureBtn"
+                      aria-label="Download IIM Bangalore brochure">
+                      Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="alumniAdvertiseWidget">
+                <h5>Advertise your programme here</h5>
+                <p>Reach 5,000+ working professionals actively comparing
+                  Executive MBA programs on MBA 360.</p>
+                <div class="alumniAdvertiseWidget__stats">
+                  <div><strong>5K+</strong><span>Monthly visitors</span></div>
+                  <div><strong>₹40L+</strong><span>Avg CTC</span></div>
+                  <div><strong>PPL</strong><span>Pay-per-lead</span></div>
+                  <div><strong>3.8×</strong><span>Lead quality</span></div>
+                </div>
+                <a href="#" class="alumniAdvertiseWidget__cta">Advertise here
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg></a>
+              </div>
+            </aside>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="examCalendar reveal">
+        <div class="container">
+          <div class="examCalendar__grid">
+            <div class="examCalendar__head">
+              <h2 class="marketing__heading">Top 20 MBA Colleges in India - NIRF
+                Rankings 2026</h2>
+              <p>Source: NIRF India Rankings 2025 (Management Category). Data
+                updated July 2025.</p>
+            </div>
+
+            <div class="examCalendar__disclaimer">
+              <strong>Disclaimer:</strong> Fee structures and placement data are
+              sourced from official institutional disclosures and may vary.
+              Please verify directly with the institute before making admission
+              decisions.
+            </div>
+
+            <div class="examCalendar__tableWrap examTable__wrapScroll">
+              <table class="examTable">
+                <thead>
+                  <tr>
+                    <th>NIRF Rank</th>
+                    <th>College Name</th>
+                    <th>City</th>
+                    <th>Type</th>
+                    <th>Avg Package</th>
+                    <th>Entrance Exam</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="examTable__name">1</td>
+                    <td class="examTable__name">IIM Ahmedabad</td>
+                    <td>Ahmedabad</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹42 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">2</td>
+                    <td class="examTable__name">IIM Bangalore</td>
+                    <td>Bangalore</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹35 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">3</td>
+                    <td class="examTable__name">IIM Calcutta</td>
+                    <td>Kolkata</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹34 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">4</td>
+                    <td class="examTable__name">FMS Delhi</td>
+                    <td>New Delhi</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹32 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">5</td>
+                    <td class="examTable__name">IIM Lucknow</td>
+                    <td>Lucknow</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹30 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">6</td>
+                    <td class="examTable__name">XLRI Jamshedpur</td>
+                    <td>Jamshedpur</td>
+                    <td>Private</td>
+                    <td><span class="examTable__count">₹29 LPA</span></td>
+                    <td>XAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">7</td>
+                    <td class="examTable__name">IIM Kozhikode</td>
+                    <td>Kozhikode</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹28 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">8</td>
+                    <td class="examTable__name">MDI Gurgaon</td>
+                    <td>Gurgaon</td>
+                    <td>Autonomous</td>
+                    <td><span class="examTable__count">₹27 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">9</td>
+                    <td class="examTable__name">JBIMS Mumbai</td>
+                    <td>Mumbai</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹28 LPA</span></td>
+                    <td>MH-CET</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">10</td>
+                    <td class="examTable__name">IIM Indore</td>
+                    <td>Indore</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹25 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">11</td>
+                    <td class="examTable__name">IIM Udaipur</td>
+                    <td>Udaipur</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹22 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">12</td>
+                    <td class="examTable__name">NITIE Mumbai (IIM Mumbai)</td>
+                    <td>Mumbai</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹24 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">13</td>
+                    <td class="examTable__name">NMIMS Mumbai</td>
+                    <td>Mumbai</td>
+                    <td>Deemed</td>
+                    <td><span class="examTable__count">₹18 LPA</span></td>
+                    <td>NMAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">14</td>
+                    <td class="examTable__name">IIM Shillong</td>
+                    <td>Shillong</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹20 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr>
+                    <td class="examTable__name">15</td>
+                    <td class="examTable__name">Great Lakes Chennai</td>
+                    <td>Chennai</td>
+                    <td>Private</td>
+                    <td><span class="examTable__count">₹16.5 LPA</span></td>
+                    <td>CAT/XAT/GMAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <!-- Extra exams: hidden until "View All" is clicked -->
+
+                  <tr class="examTable__extraRow" style="display:none;">
+                    <td class="examTable__name">16</td>
+                    <td class="examTable__name">IIM Ahmedabad</td>
+                    <td>Ahmedabad</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹42 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr class="examTable__extraRow" style="display:none;">
+                    <td class="examTable__name">17</td>
+                    <td class="examTable__name">IIM Bangalore</td>
+                    <td>Bangalore</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹35 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr class="examTable__extraRow" style="display:none;">
+                    <td class="examTable__name">18</td>
+                    <td class="examTable__name">IIM Calcutta</td>
+                    <td>Kolkata</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹34 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+
+                  <tr class="examTable__extraRow" style="display:none;">
+                    <td class="examTable__name">19</td>
+                    <td class="examTable__name">FMS Delhi</td>
+                    <td>New Delhi</td>
+                    <td>Government</td>
+                    <td><span class="examTable__count">₹32 LPA</span></td>
+                    <td>CAT</td>
+                    <td><button class="examTable__apply">Apply</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="examCalendar__viewAll">
+              <button id="examViewAllBtn">View Full NIRF Top 100 List <span
+                  aria-hidden="true"><svg width="18" height="18"
+                    viewBox="0 0 24 24" fill="none" aria-hidden="true"><path
+                      d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg></span></button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="examFaq reveal">
+        <div class="container">
+          <div class="examFaq__grid">
+            <div class="examFaq__head">
+              <h2 class="marketing__heading">Frequently Asked Questions — MBA
+                Colleges in India</h2>
+              <p>Everything you need to know about MBA admissions, fees, and
+                career prospects</p>
+            </div>
+
+            <div class="examFaq__tabs" id="examFaqTabs">
+              <button class="examFaq__tab is-active"
+                data-category="rankings">Rankings</button>
+              <button class="examFaq__tab" data-category="fees">Fees</button>
+              <button class="examFaq__tab"
+                data-category="admissions">Admissions</button>
+              <button class="examFaq__tab" data-category="salary">Salary &amp;
+                Placement</button>
+              <button class="examFaq__tab"
+                data-category="eligibility">Eligibility</button>
+              <button class="examFaq__tab"
+                data-category="specializations">Specializations</button>
+              <button class="examFaq__tab"
+                data-category="scholarships">Scholarships</button>
+            </div>
+
+            <div class="examFaq__list" id="examFaqList">
+              <div class="examFaq__item" data-category="rankings">
+                <button class="examFaq__question">Which is the No. 1 MBA college
+                  in India 2025?<span class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>IIM Ahmedabad is consistently
+                    ranked the No. 1 MBA college in India, followed closely by
+                    IIM Bangalore and IIM Calcutta, based on NIRF rankings,
+                    placement records, and faculty quality.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="rankings">
+                <button class="examFaq__question">How are MBA colleges ranked in
+                  India — NIRF vs private rankings?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>NIRF is the official government
+                    ranking based on teaching, research, placements and
+                    outreach, while private rankings (like those by business
+                    magazines) also factor in brand perception and industry
+                    surveys — so the two lists can differ slightly.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="rankings">
+                <button class="examFaq__question">Which is the No. 1 MBA college
+                  in India 2025?<span class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>IIM Ahmedabad is consistently
+                    ranked the No. 1 MBA college in India, followed closely by
+                    IIM Bangalore and IIM Calcutta, based on NIRF rankings,
+                    placement records, and faculty quality.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="rankings">
+                <button class="examFaq__question">How are MBA colleges ranked in
+                  India — NIRF vs private rankings?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>NIRF is the official government
+                    ranking based on teaching, research, placements and
+                    outreach, while private rankings (like those by business
+                    magazines) also factor in brand perception and industry
+                    surveys — so the two lists can differ slightly.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="fees">
+                <button class="examFaq__question">What is the cheapest top MBA
+                  college in India?<span class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Government-run institutes and
+                    university departments such as FMS Delhi and JBIMS Mumbai
+                    offer top-tier MBA education at a fraction of the cost of
+                    private B-schools.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="fees">
+                <button class="examFaq__question">What is the average total fee
+                  for a 2-year MBA at IIMs?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>The total fee for a 2-year PGP
+                    at most IIMs typically ranges between ₹20-25 lakhs, though
+                    newer and smaller IIMs are usually on the lower end of that
+                    range.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="fees">
+                <button class="examFaq__question">What is the cheapest top MBA
+                  college in India?<span class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Government-run institutes and
+                    university departments such as FMS Delhi and JBIMS Mumbai
+                    offer top-tier MBA education at a fraction of the cost of
+                    private B-schools.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="fees">
+                <button class="examFaq__question">What is the average total fee
+                  for a 2-year MBA at IIMs?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>The total fee for a 2-year PGP
+                    at most IIMs typically ranges between ₹20-25 lakhs, though
+                    newer and smaller IIMs are usually on the lower end of that
+                    range.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="admissions">
+                <button class="examFaq__question">How many MBA entrance exams
+                  should I appear for?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most aspirants appear for 3-4
+                    exams such as CAT, XAT, SNAP and NMAT to maximise their
+                    chances of getting into a good B-school.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="admissions">
+                <button class="examFaq__question">What is the typical MBA
+                  admission process after the entrance exam?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most B-schools shortlist
+                    candidates for a Written Ability Test (WAT) followed by a
+                    Group Discussion and Personal Interview (GD-PI), with the
+                    final selection based on a combination of exam score,
+                    academic record, work experience, and interview
+                    performance.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="admissions">
+                <button class="examFaq__question">How many MBA entrance exams
+                  should I appear for?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most aspirants appear for 3-4
+                    exams such as CAT, XAT, SNAP and NMAT to maximise their
+                    chances of getting into a good B-school.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="admissions">
+                <button class="examFaq__question">What is the typical MBA
+                  admission process after the entrance exam?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most B-schools shortlist
+                    candidates for a Written Ability Test (WAT) followed by a
+                    Group Discussion and Personal Interview (GD-PI), with the
+                    final selection based on a combination of exam score,
+                    academic record, work experience, and interview
+                    performance.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="salary">
+                <button class="examFaq__question">What is the average salary
+                  after MBA from IIM?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>The average placement package
+                    across the older IIMs ranges between ₹25-33 LPA, with top
+                    recruiters offering significantly higher packages in
+                    consulting and finance roles.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="salary">
+                <button class="examFaq__question">Which companies recruit the
+                  most at top B-schools?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Consulting firms (McKinsey, BCG,
+                    Bain), major banks, and consumer goods companies are
+                    consistently among the top recruiters at premier Indian
+                    B-schools every placement season.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="salary">
+                <button class="examFaq__question">What is the average salary
+                  after MBA from IIM?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>The average placement package
+                    across the older IIMs ranges between ₹25-33 LPA, with top
+                    recruiters offering significantly higher packages in
+                    consulting and finance roles.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="salary">
+                <button class="examFaq__question">Which companies recruit the
+                  most at top B-schools?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Consulting firms (McKinsey, BCG,
+                    Bain), major banks, and consumer goods companies are
+                    consistently among the top recruiters at premier Indian
+                    B-schools every placement season.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="eligibility">
+                <button class="examFaq__question">Is work experience mandatory
+                  for MBA admission in India?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Work experience is not mandatory
+                    for most MBA programs, but exams like the Executive MBA and
+                    certain XLRI/IIM programs give preference to candidates with
+                    2+ years of experience.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="eligibility">
+                <button class="examFaq__question">What is the minimum percentage
+                  required for MBA entrance exams?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most exams require a minimum of
+                    50% marks (45% for reserved categories) in a bachelor's
+                    degree from a recognised university to be eligible to
+                    apply.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="eligibility">
+                <button class="examFaq__question">Is work experience mandatory
+                  for MBA admission in India?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Work experience is not mandatory
+                    for most MBA programs, but exams like the Executive MBA and
+                    certain XLRI/IIM programs give preference to candidates with
+                    2+ years of experience.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="eligibility">
+                <button class="examFaq__question">What is the minimum percentage
+                  required for MBA entrance exams?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most exams require a minimum of
+                    50% marks (45% for reserved categories) in a bachelor's
+                    degree from a recognised university to be eligible to
+                    apply.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="specializations">
+                <button class="examFaq__question">Which MBA specialization has
+                  the highest salary in India 2025?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Finance, Consulting, and Product
+                    Management specializations continue to command the highest
+                    average salaries for MBA graduates in India.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="specializations">
+                <button class="examFaq__question">Can I switch my specialization
+                  after the first year of MBA?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most 2-year MBA programs let
+                    students choose their specialization only after the first
+                    year, once they've had exposure to core subjects across
+                    finance, marketing, operations and HR.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="specializations">
+                <button class="examFaq__question">Which MBA specialization has
+                  the highest salary in India 2025?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Finance, Consulting, and Product
+                    Management specializations continue to command the highest
+                    average salaries for MBA graduates in India.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="specializations">
+                <button class="examFaq__question">Can I switch my specialization
+                  after the first year of MBA?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Most 2-year MBA programs let
+                    students choose their specialization only after the first
+                    year, once they've had exposure to core subjects across
+                    finance, marketing, operations and HR.</p></div>
+              </div>
+
+              <div class="examFaq__item" data-category="scholarships">
+                <button class="examFaq__question">Are scholarships available for
+                  MBA students in India?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Yes, most B-schools offer merit
+                    and need-based scholarships, and government schemes along
+                    with bank education loans are also widely used to fund MBA
+                    fees.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="scholarships">
+                <button class="examFaq__question">Do IIMs offer fee waivers
+                  based on family income?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Yes, IIMs offer significant fee
+                    waivers (up to 100% at some campuses) for students whose
+                    family income falls below a specified threshold, in addition
+                    to need-based financial assistance.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="scholarships">
+                <button class="examFaq__question">Are scholarships available for
+                  MBA students in India?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Yes, most B-schools offer merit
+                    and need-based scholarships, and government schemes along
+                    with bank education loans are also widely used to fund MBA
+                    fees.</p></div>
+              </div>
+              <div class="examFaq__item" data-category="scholarships">
+                <button class="examFaq__question">Do IIMs offer fee waivers
+                  based on family income?<span
+                    class="examFaq__icon">+</span></button>
+                <div class="examFaq__answer"><p>Yes, IIMs offer significant fee
+                    waivers (up to 100% at some campuses) for students whose
+                    family income falls below a specified threshold, in addition
+                    to need-based financial assistance.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="admissionJourney"
+        aria-labelledby="admissionJourneyHeading">
+        <div class="container">
+          <div class="admissionJourneyInner revealright">
+            <h2 class="marketing__heading" id="admissionJourneyHeading">Master
+              your admission
+              journey</h2>
+            <p class="admissionJourneyText">Weekly briefing on exam
+              updates, admission deadlines, placement reports, and
+              editorial analysis. No spam. Unsubscribe
+              anytime.</p>
+
+            <form class="admissionJourneyForm" id="admissionJourneyForm"
+              novalidate>
+              <label for="admissionJourneyEmail"
+                class="admissionJourneyLabel">Email
+                address</label>
+              <div class="admissionJourneyField">
+                <input type="email" id="admissionJourneyEmail" name="email"
+                  class="admissionJourneyInput" placeholder="Your email address"
+                  autocomplete="email" required
+                  aria-describedby="admissionJourneyError">
+                <button type="submit" class="admissionJourneySubmit">
+                  Subscribe
+                  <svg viewBox="0 0 26 26" width="22" height="22" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="admissionJourneyError" id="admissionJourneyError"
+                role="alert" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
        FOOTER 
   ============================================================ -->
-      <include src="public/partials/footer.html"></include>
+    <include src="public/partials/footer.html"></include>
+    <script type="module" src="/src/js/exam-import.js" defer></script>
 
-      
-
-        <!-- ============================================================
+    <!-- ============================================================
        SCROLL REVEAL SCRIPT
   ============================================================ -->
-        <script>
+    <script>
     (function () {
       var selectors = '.reveal, .revealleft, .revealright';
       var elements = document.querySelectorAll(selectors);
@@ -1471,133 +1399,494 @@ scroll-margin-top: 100px;
     })();
   </script>
 
-  <script type="module">
-  import EmblaCarousel from "embla-carousel";
-  /* Same technique as videoLibrary.js — swap this import for
-     `import EmblaCarousel from "embla-carousel";` once bundled into the build. */
+    <script>
+  document.querySelectorAll('.examFilterGroup__more').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      // button ke pehle wale sibling extra div ko dhoondo
+      const extra = this.previousElementSibling;
+      const isHidden = extra.hasAttribute('hidden');
 
-  document.addEventListener('DOMContentLoaded', function () {
-
-    const viewportNode = document.getElementById('asViewport');
-    if (!viewportNode || typeof EmblaCarousel === 'undefined') return;
-
-    const prevButton = document.querySelector('.videoLibraryPrev');
-    const nextButton = document.querySelector('.videoLibraryNext');
-    const dotsWrap = document.getElementById('asDots');
-    const liveRegion = document.getElementById('asLiveRegion');
-
-    const embla = EmblaCarousel(viewportNode, {
-      loop: false,
-      align: 'start',
-      skipSnaps: false,
-      dragFree: false
-    });
-
-    /* ---------- Dots ---------- */
-
-    function buildDots() {
-      dotsWrap.innerHTML = '';
-      const slideCount = embla.scrollSnapList().length;
-
-      for (let i = 0; i < slideCount; i++) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'videoLibraryDot';
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1) + ' of ' + slideCount);
-        dot.addEventListener('click', () => embla.scrollTo(i));
-        dotsWrap.appendChild(dot);
+      if (isHidden) {
+        extra.removeAttribute('hidden');
+        this.textContent = this.textContent.replace('Show more', 'Show less').replace('+', '-');
+      } else {
+        extra.setAttribute('hidden', '');
+        this.textContent = this.textContent.replace('Show less', 'Show more').replace('-', '+');
       }
-    }
-
-    function updateDots() {
-      const dots = dotsWrap.querySelectorAll('.videoLibraryDot');
-      const selectedIndex = embla.selectedScrollSnap();
-
-      dots.forEach(function (dot, index) {
-        if (index === selectedIndex) {
-          dot.classList.add('isSelected');
-          dot.setAttribute('aria-current', 'true');
-        } else {
-          dot.classList.remove('isSelected');
-          dot.setAttribute('aria-current', 'false');
-        }
-      });
-
-      liveRegion.textContent = 'Showing testimonial ' + (selectedIndex + 1) + ' of ' + dots.length;
-    }
-
-    /* ---------- Arrows ---------- */
-
-    function updateArrows() {
-      if (!prevButton || !nextButton) return;
-      prevButton.disabled = !embla.canScrollPrev();
-      nextButton.disabled = !embla.canScrollNext();
-    }
-
-    if (prevButton) prevButton.addEventListener('click', function () { embla.scrollPrev(); });
-    if (nextButton) nextButton.addEventListener('click', function () { embla.scrollNext(); });
-
-    viewportNode.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { embla.scrollPrev(); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { embla.scrollNext(); e.preventDefault(); }
     });
-
-    /* ---------- Init ---------- */
-
-    buildDots();
-    updateDots();
-    updateArrows();
-
-    embla.on('select', function () { updateDots(); updateArrows(); });
-    embla.on('reInit', function () { buildDots(); updateDots(); updateArrows(); });
-
-    /* ---------- Video facade: inject iframe only on click ----------
-       Keeps initial page load free of YouTube's iframe/JS payload.
-       No CLS: the iframe fills the same box the facade already reserved.
-       Video IDs below are dummy placeholders — swap data-video-id per slide. */
-
-    const facades = document.querySelectorAll('.videoCardFacade');
-    let activeIframes = [];
-
-    function pauseAllVideos() {
-      activeIframes.forEach(function (iframe) {
-        if (!iframe.contentWindow) return;
-        iframe.contentWindow.postMessage(
-          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
-          '*'
-        );
-      });
-    }
-
-    facades.forEach(function (facade) {
-      facade.addEventListener('click', function () {
-        const videoId = facade.getAttribute('data-video-id');
-        if (!videoId) return;
-
-        pauseAllVideos();
-
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/' + videoId +
-          '?autoplay=1&enablejsapi=1&si=6xLLtDiLX8I-VGiE';
-        iframe.title = facade.getAttribute('aria-label') || 'YouTube video player';
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        iframe.setAttribute('allowfullscreen', '');
-
-        facade.innerHTML = '';
-        facade.appendChild(iframe);
-        activeIframes.push(iframe);
-
-        facade.disabled = true;
-        facade.removeAttribute('aria-label');
-      }, { once: true });
-    });
-
   });
 </script>
 
-        <script type="module" src="/src/js/college-import.js" defer></script>
-    </body>
+    <script>
+(function () {
+"use strict";
+
+/* ---- Exam Filters ---- */
+
+/* ---- Mobile Filter Toggle ---- */
+var mobileFilterToggleBtn = document.getElementById("examMobileFilterToggle");
+var mobileFiltersPanel = document.getElementById("examFiltersPanel");
+
+if (mobileFilterToggleBtn && mobileFiltersPanel) {
+    mobileFilterToggleBtn.addEventListener("click", function () {
+        var isOpen = mobileFiltersPanel.classList.toggle("is-open");
+        mobileFilterToggleBtn.classList.toggle("is-open", isOpen);
+        mobileFilterToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+}
+
+var activeFiltersBar = document.getElementById("examActiveFilters");
+var clearAllLink = document.getElementById("examClearAll");
+var noResultsEl = document.getElementById("examNoResults");
+var resultCountEl = document.getElementById("examResultCount");
+var totalCountEl = document.getElementById("examTotalCount");
+
+var filterInputs = document.querySelectorAll(
+    ".examFilters input[type='checkbox']"
+);
+
+var examCards = document.querySelectorAll(
+    ".examMain > .examCard"
+);
+
+if (totalCountEl) totalCountEl.textContent = examCards.length;
+
+/* NIRF Ranking checkboxes are ranges ("Top 10", "Top 25"...), not exact
+   matches, so a card with rank 6 should count towards "Top 10", "Top 25",
+   "Top 50" and "Top 100" all at once. */
+var NIRF_THRESHOLDS = {
+    "Top 10": 10,
+    "Top 25": 25,
+    "Top 50": 50,
+    "Top 100": 100
+};
+
+/* ---- Compute real filter counts from actual exam card data ---- */
+function updateFilterCounts(){
+    filterInputs.forEach(function(input){
+        var countEl = input.parentElement.querySelector("em");
+        if (!countEl) return;
+
+        var group = input.getAttribute("data-filter-group");
+        var value = input.value;
+
+        var count = 0;
+
+        if (group === "nirf") {
+            var threshold = NIRF_THRESHOLDS[value];
+            examCards.forEach(function(card){
+                var rank = parseInt(card.dataset.nirf, 10);
+                if (!isNaN(rank) && rank <= threshold) count++;
+            });
+        } else {
+            examCards.forEach(function(card){
+                if (card.dataset[group] === value) count++;
+            });
+        }
+
+        countEl.textContent = count;
+    });
+}
+updateFilterCounts();
+
+var feeRange = document.getElementById("examFeeRange");
+var feeRangeValueEl = document.getElementById("examFeeRangeValue");
+var feeRangeActive = false;
+
+var examPaginationEl = document.getElementById("examPagination");
+var CARDS_PER_PAGE = 8;
+var currentPage = 1;
+
+/* ---- Sort by ---- */
+
+var sortSelect = document.getElementById("examSortSelect");
+var examMainEl = document.querySelector(".examMain");
+
+function getCardFee(card){
+    return parseFloat(card.dataset.fee) || 0;
+}
+
+function getCardNirf(card){
+    var rank = parseInt(card.dataset.nirf, 10);
+    return isNaN(rank) ? 999 : rank;
+}
+
+function getCardName(card){
+    var h3 = card.querySelector("h3");
+    return h3 ? h3.textContent.trim().toLowerCase() : "";
+}
+
+function sortExamCards(matchedCards){
+
+    if (!sortSelect) return matchedCards;
+
+    var sortBy = sortSelect.value;
+    var sorted = matchedCards.slice();
+
+    if (sortBy === "NIRF Ranking: Best First") {
+        sorted.sort(function(a, b){ return getCardNirf(a) - getCardNirf(b); });
+    } else if (sortBy === "Total Fees: Low to High") {
+        sorted.sort(function(a, b){ return getCardFee(a) - getCardFee(b); });
+    } else if (sortBy === "Alphabetical") {
+        sorted.sort(function(a, b){ return getCardName(a).localeCompare(getCardName(b)); });
+    }
+
+    /* Reorder the actual DOM nodes so pagination/rendering stays correct */
+    if (examMainEl) {
+        sorted.forEach(function(card){
+            examMainEl.insertBefore(card, examPaginationEl);
+        });
+    }
+
+    return sorted;
+}
+
+if (sortSelect) {
+    sortSelect.addEventListener("change", applyExamFilters);
+}
+
+function applyExamFilters(){
+
+    /* Group selected filter values by their filter group so that
+       checkboxes within the SAME group (e.g. "IIMs" + "Private" under
+       College Type) are OR'd together, while different groups
+       (Programme, City, College Type, Entrance Exam, Accreditation,
+       Package, NIRF) are still AND'd together. */
+    var groupedFilters = {};
+
+    filterInputs.forEach(function(input){
+        if(input.checked){
+            var group = input.getAttribute("data-filter-group");
+            if(!groupedFilters[group]) groupedFilters[group] = [];
+            groupedFilters[group].push(input.value);
+        }
+    });
+
+    var groupKeys = Object.keys(groupedFilters);
+    var matchedCards = [];
+
+    examCards.forEach(function(card){
+
+        var matched = groupKeys.every(function(group){
+
+            /* NIRF Ranking checkboxes are ranges, not exact values:
+               a card matches if its rank falls within ANY of the
+               selected ranges (OR'd), e.g. rank 6 matches "Top 10"
+               and "Top 25" both. */
+            if (group === "nirf") {
+                var rank = parseInt(card.dataset.nirf, 10);
+                if (isNaN(rank)) return false;
+                return groupedFilters[group].some(function(label){
+                    return rank <= NIRF_THRESHOLDS[label];
+                });
+            }
+
+            return groupedFilters[group].indexOf(card.dataset[group]) !== -1;
+        });
+
+        /* Total Fees range slider: card's fee must be within the
+           selected max-fee cap whenever the slider has been moved
+           away from its default (max) value. */
+        if (matched && feeRangeActive && feeRange) {
+            var cardFee = parseFloat(card.dataset.fee) || 0;
+            if (cardFee > parseFloat(feeRange.value)) matched = false;
+        }
+
+        if(groupKeys.length === 0 && !feeRangeActive){
+            matchedCards.push(card);
+        } else if(matched){
+            matchedCards.push(card);
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    matchedCards = sortExamCards(matchedCards);
+
+    if (resultCountEl) resultCountEl.textContent = matchedCards.length;
+    if (noResultsEl) noResultsEl.style.display = matchedCards.length === 0 ? "block" : "none";
+
+    currentPage = 1;
+    renderExamPage(matchedCards);
+
+    updateActiveFilterTags();
+}
+
+
+function renderExamPage(matchedCards){
+
+    var totalPages = Math.max(1, Math.ceil(matchedCards.length / CARDS_PER_PAGE));
+    if (currentPage > totalPages) currentPage = totalPages;
+
+    var startIndex = (currentPage - 1) * CARDS_PER_PAGE;
+    var endIndex = startIndex + CARDS_PER_PAGE;
+
+    matchedCards.forEach(function(card, i){
+        card.style.display = (i >= startIndex && i < endIndex) ? "" : "none";
+    });
+
+    renderPaginationControls(totalPages, matchedCards);
+}
+
+
+function renderPaginationControls(totalPages, matchedCards){
+
+    if(!examPaginationEl) return;
+
+    examPaginationEl.innerHTML = "";
+
+    if (matchedCards.length === 0) return;
+
+    var prevBtn = document.createElement("button");
+    prevBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Prev';
+    prevBtn.disabled = currentPage === 1;
+    prevBtn.addEventListener("click", function(){
+        if (currentPage > 1) {
+            currentPage--;
+            renderExamPage(matchedCards);
+            scrollToExamMain();
+        }
+    });
+    examPaginationEl.appendChild(prevBtn);
+
+    for (var p = 1; p <= totalPages; p++) {
+        (function(pageNum){
+            var pageBtn = document.createElement("button");
+            pageBtn.textContent = pageNum;
+            if (pageNum === currentPage) pageBtn.classList.add("is-active");
+            pageBtn.addEventListener("click", function(){
+                currentPage = pageNum;
+                renderExamPage(matchedCards);
+                scrollToExamMain();
+            });
+            examPaginationEl.appendChild(pageBtn);
+        })(p);
+    }
+
+    var nextBtn = document.createElement("button");
+    nextBtn.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    nextBtn.disabled = currentPage === totalPages;
+    nextBtn.addEventListener("click", function(){
+        if (currentPage < totalPages) {
+            currentPage++;
+            renderExamPage(matchedCards);
+            scrollToExamMain();
+        }
+    });
+    examPaginationEl.appendChild(nextBtn);
+}
+
+
+function scrollToExamMain(){
+    var mainCol = document.querySelector(".examMain");
+    if (mainCol) mainCol.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+function updateActiveFilterTags(){
+
+    if(!activeFiltersBar) return;
+
+    activeFiltersBar
+    .querySelectorAll(".examTag")
+    .forEach(function(tag){
+        tag.remove();
+    });
+
+    var hasAny = false;
+
+    filterInputs.forEach(function(input){
+        if(input.checked){
+            hasAny = true;
+
+            var tag = document.createElement("span");
+            tag.className = "examTag";
+            tag.innerHTML =
+            input.value +
+            ' <button aria-label="Remove filter" class="examTagRemove">' +
+            '<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+            '<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+            '<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+            '</svg>' +
+            '</button>';
+
+            tag.querySelector("button")
+            .addEventListener("click",function(){
+                input.checked = false;
+                applyExamFilters();
+            });
+
+            activeFiltersBar.insertBefore(
+                tag,
+                clearAllLink
+            );
+        }
+    });
+
+    if (feeRangeActive) {
+        hasAny = true;
+        var feeTag = document.createElement("span");
+        feeTag.className = "examTag";
+        feeTag.innerHTML = "Max Fee: ₹" + feeRange.value + " Lakh " + '<button aria-label="Remove filter">×</button>';
+        feeTag.querySelector("button").addEventListener("click", function () {
+            feeRange.value = feeRange.max;
+            feeRangeActive = false;
+            if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.max + " lakhs";
+            applyExamFilters();
+        });
+        activeFiltersBar.insertBefore(feeTag, clearAllLink);
+    }
+
+    activeFiltersBar.style.display = hasAny ? "flex" : "none";
+}
+
+
+filterInputs.forEach(function(input){
+    input.addEventListener(
+        "change",
+        applyExamFilters
+    );
+});
+
+if (feeRange) {
+    feeRange.addEventListener("input", function () {
+        if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.value + " lakhs";
+        feeRangeActive = parseInt(feeRange.value, 10) < parseInt(feeRange.max, 10);
+        applyExamFilters();
+    });
+}
+
+
+/* ---- Clear All Filters ---- */
+
+var filtersClearAllBtn = document.getElementById(
+    "examFiltersClearAll"
+);
+
+function clearAllExamFilters(){
+
+    filterInputs.forEach(function(cb){
+        cb.checked = false;
+    });
+
+    if (feeRange) {
+        feeRange.value = feeRange.max;
+        feeRangeActive = false;
+        if (feeRangeValueEl) feeRangeValueEl.textContent = "₹" + feeRange.max + " lakhs";
+    }
+
+    applyExamFilters();
+
+}
+
+if(clearAllLink){
+    clearAllLink.addEventListener("click",function(e){
+        e.preventDefault();
+        clearAllExamFilters();
+    });
+}
+
+if(filtersClearAllBtn){
+    filtersClearAllBtn.addEventListener(
+        "click",
+        clearAllExamFilters
+    );
+}
+
+/* Run once on load so the bar starts hidden and the count is correct */
+applyExamFilters();
+
+
+/* ---- Calendar View All (Simple text toggle) ---- */
+
+var viewAllBtn = document.getElementById("examViewAllBtn");
+var examExtraRows = document.querySelectorAll(".examTable__extraRow");
+
+if (viewAllBtn) {
+
+    var isExpanded = false;
+    var btnTextSpan = viewAllBtn.querySelector("span") ? viewAllBtn.innerHTML.split("<span")[1] : "";
+    var svgPart = viewAllBtn.querySelector("span") ? viewAllBtn.querySelector("span").outerHTML : "";
+
+    viewAllBtn.addEventListener("click", function () {
+
+        isExpanded = !isExpanded;
+
+        examExtraRows.forEach(function (row) {
+            row.style.display = isExpanded ? "" : "none";
+        });
+
+        viewAllBtn.innerHTML = (isExpanded ? "Show Less " : "View Full NIRF Top 100 List ") + svgPart;
+
+    });
+
+}
+
+
+
+/* ---- Admission Form Validation ---- */
+
+
+var admissionForm =
+document.getElementById("admissionJourneyForm");
+
+
+
+if(admissionForm){
+
+
+admissionForm.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+var input =
+document.getElementById("admissionJourneyMobile");
+
+
+var error =
+document.getElementById("admissionJourneyError");
+
+
+
+var val = input.value.trim();
+
+
+
+if(!/^\d{10}$/.test(val)){
+
+
+input.classList.add("isInvalid");
+
+error.textContent =
+"Please enter a valid 10-digit mobile number.";
+
+
+}else{
+
+
+input.classList.remove("isInvalid");
+
+error.textContent = "";
+
+admissionForm.reset();
+
+
+}
+
+
+
+});
+
+
+}
+
+
+
+})();
+</script>
+  </body>
 </html>

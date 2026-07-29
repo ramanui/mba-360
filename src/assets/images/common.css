@@ -13,8 +13,8 @@ html {
   font-display: swap;
 }
 :focus-visible {
-  outline: 1px solid #e84b1a;
-  outline-offset: 0px;
+  outline: 3px solid #e84b1a;
+  outline-offset: 3px;
   border-radius: 4px;
 }
 
@@ -32,19 +32,18 @@ body {
 /* ===== ROOT ===== */
 
 :root {
-  --font-size-base: 16px;
   --red: #ec1d24;
   --black: #000000;
   --white: #ffffff;
+  --font-size-base: 16px;
   --c-orange: #ff4701;
+
   --c-blue: #0d1b3e;
-  --cold-cream: #f6f9ff;
-  --navy-light: #e8edf6;
 }
 
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -52,7 +51,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter-SemiBold.woff2") format("woff2");
+  src: url("../fonts/Inter-SemiBold.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -60,7 +59,7 @@ body {
 
 @font-face {
   font-family: "Inter";
-  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+  src: url("../fonts/Inter-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -78,6 +77,9 @@ p {
 ul {
   margin: 0;
   padding: 0;
+}
+ul li, ol li, span, div{
+  font-family: "Inter";
 }
 a {
   text-decoration: none;
