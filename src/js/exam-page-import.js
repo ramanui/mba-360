@@ -1,9 +1,9 @@
 import "../css/header.css";
 import "../css/common.css";
 import "../css/countdown.css";
-import "../css/glossary.css";
-import "../css/exam-college-bba-lp.css";
+import "../css/college-detail.css";
 import "../css/faq.css";
+import "../css/embla-sec.css";
+import "./college-detail.js";
+import "../js/faq.js";
 import "../css/footer.css";
-import "./exam.js";
-import "./faq.js";

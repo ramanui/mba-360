@@ -1,0 +1,147 @@
+.examCountdown {
+  background: var(--c-orange);
+  border-radius: 12px;
+  padding: 20px 20px 30px;
+  text-align: center;
+}
+.examCountdown__label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 4px 0;
+}
+.examCountdown__title {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 16px 0;
+}
+.examCountdown__timer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.examCountdown__unit {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 10px 4px;
+}
+.examCountdown__unit strong {
+  display: block;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+.examCountdown__unit span {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+.examCountdown__btn {
+  display: block;
+  width: 60%;
+  background: #fff;
+  color: var(--c-blue);
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 0 auto;
+}
+
+/* widget */
+
+.examWidget {
+  background: #fff;
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.examWidget h5 {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--c-blue);
+  padding: 0 0 14px 0;
+  border-bottom: 2px solid #f0f2f7;
+}
+.examClosingSoon__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 0;
+  /* border-bottom: 1px solid #f0f2f7; */
+}
+.examClosingSoon__item:first-child {
+  padding-top: 0;
+}
+.examClosingSoon__item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.examClosingSoon__name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--c-blue);
+  margin: 0 0 2px 0;
+}
+.examClosingSoon__date {
+  font-size: 13px;
+  color: #8898aa;
+  margin: 0;
+}
+.examPill {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+.examPill--open {
+  background: #eaf7ee;
+  color: #05b548;
+}
+.examPill--soon {
+  background: #fff4ee;
+  color: #e65c00;
+}
+
+@media (width <= 992px) {
+  .examCountdown {
+    width: 100%;
+  }
+
+  .examWidget {
+    width: 44%;
+  }
+}
+
+@media (width <= 910px) {
+  .examWidget {
+    width: 42.5%;
+  }
+}
+
+@media (width <= 768px) {
+  .examWidget {
+    width: 41.5%;
+  }
+}
+
+@media (width <= 680px) {
+  .examWidget {
+    width: 41%;
+  }
+}
+
+@media (width <= 610px) {
+  .examWidget {
+    width: 100%;
+  }
+}

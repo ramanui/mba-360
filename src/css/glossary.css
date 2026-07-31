@@ -1,0 +1,239 @@
+/* glossary css */
+.glossary_main {
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+.clg-admissionsWidget {
+  background: var(--white);
+  border: 1px solid #d4d4d4;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.clg-admissionsWidget .clg-sideCard__title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #12172b;
+  margin: 0;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e2e4ea;
+}
+
+.clg-admissionsList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.clg-admissionItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eceef2;
+}
+
+.clg-admissionItem:last-child {
+  border-bottom: none;
+}
+
+.clg-admissionItem__logo {
+  width: 44px;
+  height: 44px;
+  padding: 0 4px;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  background: #f4f5f8;
+}
+
+.clg-admissionItem__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.clg-admissionItem__name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--c-blue);
+  margin: 0 0 5px;
+}
+
+.clg-admissionItem__deadline {
+  font-size: 13.5px;
+  color: #5b6478;
+  margin: 0;
+}
+
+.clg-admissionItem__cta {
+  flex-shrink: 0;
+  background: var(--c-orange, #ff6a00);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+}
+
+.clg-admissionItem__cta:hover {
+  background: #e14000;
+  transform: translateY(-1px);
+}
+
+.glossary-search-wrap {
+  position: relative;
+  margin-bottom: 20px;
+  font-family: Inter, sans-serif;
+}
+
+.glossary-search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 15px 14px 15px 40px;
+  border: 1px solid #cfd1d8;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: var(--black);
+  background: var(--white);
+  font-family: Inter, sans-serif;
+}
+
+.glossary-search-input::placeholder {
+  color: #888780;
+}
+.glossary-search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: #888780;
+  pointer-events: none;
+}
+
+.glossary-search-input:focus {
+  outline: none;
+  border-color: var(--c-orange, #ff6a00);
+}
+
+.glossary-alpha-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 10px;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  background-color: var(--white);
+  border-bottom: 1px solid #888780;
+  position: sticky;
+  top: 0px;
+  z-index: 9;
+  padding: 10px 0;
+}
+
+.glossary-alpha-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+  text-decoration: none;
+  padding: 2px 4px;
+  position: relative;
+  padding-right: 10px;
+}
+.glossary-alpha-nav a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--black);
+}
+
+.glossary-alpha-nav a:hover,
+.glossary-alpha-nav a.is-active {
+  color: var(--c-orange, #ff6a00);
+}
+.glossary-search-wrap:focus-within .glossary-search-icon {
+  color: var(--c-orange, #ff6a00);
+}
+.glossary-alpha-nav a.is-disabled {
+  color: #d4d6dd;
+  pointer-events: none;
+}
+
+.glossary-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.glossary-group {
+  background: #f8f8f8;
+  border: 1px solid #dedddc;
+  border-radius: 10px;
+  padding: 20px 22px;
+  scroll-margin-top: 90px;
+}
+
+.glossary-group__title {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #12172b;
+  margin: 0 0 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #888780;
+}
+
+.glossary-terms-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 24px;
+}
+
+.glossary-term,
+.glossary-term a {
+  font-size: 0.88rem;
+  color: #12172b;
+}
+
+.glossary-term.is-hidden {
+  display: none;
+}
+
+.glossary-group.is-hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .glossary-terms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .glossary-terms-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (width<=992px) {
+  .clg-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .clg-aside {
+    position: static;
+  }
+}
