@@ -4,6 +4,15 @@
   padding-bottom: 60px;
 }
 
+.logo-date {
+  display: flex;
+  gap: 20px;
+}
+
+.clg-admissionsList .downloadBrochureBtn {
+  max-width: 100px;
+}
+
 .clg-admissionsWidget {
   background: var(--white);
   border: 1px solid #d4d4d4;
@@ -29,8 +38,9 @@
 
 .clg-admissionItem {
   display: flex;
-  align-items: center;
-  gap: 15px;
+  flex-direction: column;
+  /* align-items: center; */
+  gap: 12px;
   padding: 16px 20px;
   border-bottom: 1px solid #eceef2;
 }
@@ -55,31 +65,35 @@
 }
 
 .clg-admissionItem__name {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 800;
   color: var(--c-blue);
-  margin: 0 0 5px;
+  margin: 0 0 0px;
 }
 
 .clg-admissionItem__deadline {
-  font-size: 13.5px;
+  font-size: 0.8rem;
   color: #5b6478;
-  margin: 0;
+  margin: 0 0 6px 0;
 }
 
 .clg-admissionItem__cta {
-  flex-shrink: 0;
-  background: var(--c-orange, #ff6a00);
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 8px 12px;
-  border-radius: 6px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: var(--c-orange);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 7px 8px;
+  border-radius: 4px;
   white-space: nowrap;
   transition:
-    background-color 0.2s,
-    transform 0.15s;
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+  border: none;
 }
 
 .clg-admissionItem__cta:hover {

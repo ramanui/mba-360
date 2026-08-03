@@ -3,7 +3,6 @@ import "../css/common.css";
 import "../css/countdown.css";
 import "../css/college-detail.css";
 import "../css/faq.css";
-import "../css/embla-sec.css";
-import "./college-detail.js";
+import "./exam-detail.js";
 import "../js/faq.js";
 import "../css/footer.css";

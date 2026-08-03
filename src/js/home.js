@@ -26,9 +26,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (w >= 2000) return 4;
     if (w >= 1600) return 4.5;
     if (w >= 1366) return 4.5;
-    if (w >= 1024) return 3.5;
-    if (w >= 767) return 2.5;
-    if (w >= 480) return 1.5;
+    if (w >= 1199) return 1.5;
+    if (w >= 767) return 1.2;
+    if (w >= 480) return 1.2;
 
     return 1.15;
   }
@@ -58,15 +58,15 @@ rewind: false,
 
       breakpoints: {
         480: {
-          slidesPerView: 1.5,
-          spaceBetween: 20,
+          slidesPerView: 1.2,
+          spaceBetween: 10,
         },
         767: {
-          slidesPerView: 2.5,
-          spaceBetween: 20,
+          slidesPerView: 1.2,
+          spaceBetween: 15,
         },
-        1024: {
-          slidesPerView: 3.5,
+        1199: {
+          slidesPerView: 1.5,
           spaceBetween: 24,
         },
         1366: {

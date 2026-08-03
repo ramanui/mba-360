@@ -40,7 +40,7 @@ export default defineConfig({
         "blog-detail": resolve(__dirname, "blog/blog-detail.html"),
         college: resolve(__dirname, "college/index.html"),
         "college-detail": resolve(__dirname, "college/college-detail.html"),
-         college: resolve(__dirname, "exam/index.html"),
+         exam: resolve(__dirname, "exam/index.html"),
          alumni: resolve(__dirname, "alumni/index.html"),
       },
     },

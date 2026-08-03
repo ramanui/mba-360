@@ -15,14 +15,14 @@
 
         <!-- Preload LCP Hero Image (Mobile + Desktop) -->
         <!-- <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            href="/src/assets/images/stay-updated-with-mba-news.webp"
             media="(max-width: 767px)" fetchpriority="high">
         <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            href="/src/assets/images/stay-updated-with-mba-news.webp"
             media="(min-width: 768px)" fetchpriority="high"> -->
 
         <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            href="/src/assets/images/stay-updated-with-mba-news.webp"
             fetchpriority="high">
 
         <!-- Google Fonts (Ultra Optimized) -->
@@ -140,7 +140,7 @@
 
 <!-- ============ SECTION NAV ============ -->
 <nav class="clg-tabnav" aria-label="Page sections">
-  
+  <div class="container">
     <ul class="clg-tabnav__list">
       <li><a href="#overview" aria-current="true">Overview</a></li>
       <li><a href="#ranking">Ranking &amp; Accreditations</a></li>
@@ -151,6 +151,7 @@
       <li><a href="#reviews">Student Reviews</a></li>
       <li><a href="#similar">Similar Colleges</a></li>
     </ul>
+    </div>
   
 </nav>
 
@@ -262,7 +263,7 @@
               <button role="tab" id="pill-exec" aria-controls="pill-exec-panel" aria-selected="false" type="button">Executive Education</button>
             </div>
 
-            <div id="pill-pg-panel" role="tabpanel" aria-labelledby="pill-pg">
+            <div id="pill-pg-panel" role="tabpanel" aria-labelledby="pill-pg" class="is-active">
               <div class="clg-accordion">
 
                 <!-- PGDM — open by default -->
@@ -364,6 +365,114 @@
 
               </div>
             </div>
+
+
+            <div id="pill-doc-panel" role="tabpanel" aria-labelledby="pill-doc" class="is-active">
+              <div class="clg-accordion">
+
+                <!-- PGDM — open by default -->
+                <div class="clg-accItem" data-open="true" id="acc-pgdm">
+                  <h3 style="margin:0;">
+                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdm" aria-expanded="true" aria-controls="acc-pgdm">
+                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
+                      <span class="clg-accHeader__title">22222Post Graduate Diploma in Management (PGDM)</span>
+                      <span class="clg-accHeader__toggle" aria-hidden="true">–</span>
+                    </button>
+                  </h3>
+                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
+
+                    <div class="clg-progTabs" role="tablist" data-tablist aria-label="PGDM details">
+                      <button role="tab" id="pt-overview1" aria-controls="pt-overview-panel1" aria-selected="true" type="button">Overview</button>
+                      <button role="tab" id="pt-eligibility1" aria-controls="pt-eligibility-panel1" aria-selected="false" type="button">Eligibility &amp; Admission</button>
+                      <button role="tab" id="pt-fees1" aria-controls="pt-fees-panel1" aria-selected="false" type="button">Fees &amp; Scholarships</button>
+                      <button role="tab" id="pt-timeline1" aria-controls="pt-timeline-panel1" aria-selected="false" type="button">Admission Timeline</button>
+                      <button role="tab" id="pt-faqs1" aria-controls="pt-faqs-panel1" aria-selected="false" type="button">FAQs</button>
+                    </div>
+
+                    <div id="pt-overview-panel1" role="tabpanel" aria-labelledby="pt-overview1">
+                      <dl class="clg-factGrid">
+                        <div class="clg-factBox"><dt>Duration</dt><dd>2 Years</dd></div>
+                        <div class="clg-factBox"><dt>Programme Starts</dt><dd>June 2027</dd></div>
+                        <div class="clg-factBox"><dt>Fees</dt><dd>₹24,86,000</dd></div>
+                      </dl>
+                      <p>SPJIMR's Post Graduate Diploma in Management (PGDM) is a two-year, full-time residential programme equivalent to an MBA. PGDM is approved by AICTE, accredited by NBA and AMBA UK, and consistently rates among India's top 10 management programmes. The programme offers a holistic approach to leadership development through a blend of classroom learning and curated immersive experiences, guided by SPJIMR's faculty of accomplished academicians and practitioners.</p>
+                      <p>In the Financial Times Masters in Management (FT MiM) 2025 Ranking, SPJIMR was ranked 35th globally and 3rd in India. The institute secured 3rd place worldwide — and 1st in India — in the "Careers Service" category, and was also ranked #1 among Indian B-schools in Alumni Network, Value for Money, and ESG &amp; Net Zero Teaching for its PGDM programme.</p>
+                    </div>
+                    <div id="pt-eligibility-panel1" role="tabpanel" aria-labelledby="pt-eligibility1" hidden>
+                      <p>Bachelor's degree in any discipline with a minimum aggregate of 50%, along with a valid CAT / GMAT / XAT score. Shortlisted candidates go through a written ability test and a personal interview round.</p>
+                    </div>
+                    <div id="pt-fees-panel1" role="tabpanel" aria-labelledby="pt-fees1" hidden>
+                      <p>Total programme fee is ₹24,86,000, payable in instalments. Need- and merit-based scholarships are available for eligible candidates, including special scholarships for women applicants.</p>
+                    </div>
+                    <div id="pt-timeline-panel1" role="tabpanel" aria-labelledby="pt-timeline1" hidden>
+                      <p>Applications open in August, with a final submission deadline of November 30, 2025. Interviews are conducted between February and March, and the final admit list is released by April.</p>
+                    </div>
+                    <div id="pt-faqs-panel1" role="tabpanel" aria-labelledby="pt-faqs1" hidden>
+                      <p>Common questions cover work-experience requirements, scholarship eligibility and hostel accommodation — reach out to admissions for a full FAQ list.</p>
+                    </div>
+
+                  </div></div>
+                </div>
+
+                <!-- Collapsed programme rows -->
+                <div class="clg-accItem" data-open="false" id="acc-pgdmbm">
+                  <h3 style="margin:0;">
+                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgdmbm" aria-expanded="false" aria-controls="acc-pgdmbm">
+                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
+                      <span class="clg-accHeader__title">Post Graduate Diploma in Management Business Management PGDM (BM)</span>
+                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
+                    <p>A one-year full-time programme for candidates with prior work experience, focused on accelerating mid-career growth into general management roles.</p>
+                  </div></div>
+                </div>
+
+                <div class="clg-accItem" data-open="false" id="acc-pgpm">
+                  <h3 style="margin:0;">
+                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgpm" aria-expanded="false" aria-controls="acc-pgpm">
+                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
+                      <span class="clg-accHeader__title">Post Graduate Programme in Management (PGPM)</span>
+                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
+                    <p>Designed for working professionals, delivered over weekends and short residencies to build strategic and leadership capability without a career break.</p>
+                  </div></div>
+                </div>
+
+                <div class="clg-accItem" data-open="false" id="acc-gmp">
+                  <h3 style="margin:0;">
+                    <button class="clg-accHeader" type="button" data-toggle-target="acc-gmp" aria-expanded="false" aria-controls="acc-gmp">
+                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
+                      <span class="clg-accHeader__title">Global Management Programme (GMP)</span>
+                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
+                    <p>An internationally-oriented track combining SPJIMR coursework with partner-university modules abroad for a global business perspective.</p>
+                  </div></div>
+                </div>
+
+                <div class="clg-accItem" data-open="false" id="acc-pgemp">
+                  <h3 style="margin:0;">
+                    <button class="clg-accHeader" type="button" data-toggle-target="acc-pgemp" aria-expanded="false" aria-controls="acc-pgemp">
+                      <span class="clg-accHeader__icon" aria-hidden="true"><img src="/src/assets/images/book.webp" width="30" height="30" alt="Post Graduate Diploma in Management" loading="lazy" decoding="async" /></span>
+                      <span class="clg-accHeader__title">Post Graduate Executive Management Programme (PGEMP)</span>
+                      <span class="clg-accHeader__toggle" aria-hidden="true">+</span>
+                    </button>
+                  </h3>
+                  <div class="clg-accPanel"><div class="clg-accPanel__inner">
+                    <p>A senior-level executive programme aimed at professionals with significant experience, preparing them for CXO-track leadership roles.</p>
+                  </div></div>
+                </div>
+
+              </div>
+            </div>
+
+
+
+            
           </div>
         </section>
 
@@ -556,151 +665,380 @@
 
 
 
-       
+   <div class="as-head">
+          <div>
+            <h2 id="alumni-heading"
+              class="marketing__heading reveal visible">Alumni speak</h2>
 
+            <p class="topColleges-sub">Verified video testimonials from real
+              alumni.</p>
+          </div>
 
+        </div>
+        <div class="alumni-slider">
 
+          <div class="swiper alumniSwiper">
+            <div class="swiper-wrapper">
 
+              <!-- SLIDE 1 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="gLyns5_dCDY">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Rajat Prakash"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=44" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Rajat Prakash">
+                    <div>
+                      <h3 class="alumniCardName">Rajat Prakash</h3>
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/dgtl-360.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Client Servicing Associate</p>
+                      <p class="tlSub">Financial services</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Finance</p>
+                      <p class="tlSub">2-Year, Manesar</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Business Manager —
+                        Wealth &amp; Premier Banking</p>
+                      <p class="tlSub">BFSI</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
 
-        
-<section class="as-section" id="alumni" aria-labelledby="as-heading">
-  <div class="as-head">
-    <div>
-      <h2 id="alumni-heading" class="clg-section__title reveal ">ALUMNI SPEAK</h2>
+              <!-- SLIDE 2 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="33QeHqVdM5I">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Keshvi Gautam"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=45" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Keshvi Gautam">
+                    <div>
+                      <h3 class="alumniCardName">Keshvi Gautam</h3>
 
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/dgtl-360.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">System Engineer</p>
+                      <p class="tlSub">IT Services</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Analytics</p>
+                      <p class="tlSub">Domain-shift track</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Business
+                        Architecture Senior Analyst</p>
+                      <p class="tlSub">Global consulting</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
 
-      <p class="as-sub">Verified video testimonials from real alumni.</p>
-    </div>
-    <div class="as-nav">
-      <button type="button" class="as-nav-btn videoLibraryPrev" data-dir="prev" aria-label="Previous testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
-      </button>
-      <button type="button" class="as-nav-btn videoLibraryNext" data-dir="next" aria-label="Next testimonial">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
-      </button>
-    </div>
-  </div>
+              <!-- SLIDE 3 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="1XUi1nA2lyQ">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Nikhil Arora"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=46" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Nikhil Arora">
+                    <div>
+                      <h3 class="alumniCardName">Nikhil Arora</h3>
 
-  <div class="emblaViewport" id="asViewport">
-    <div class="emblaContainer" id="asContainer" role="group" aria-roledescription="carousel" aria-label="Alumni testimonials">
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/dgtl-360.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Fresh Graduate</p>
+                      <p class="tlSub">B.Tech, no work experience</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Marketing</p>
+                      <p class="tlSub">Design Thinking track</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Assistant Brand
+                        Manager</p>
+                      <p class="tlSub">Consumer goods</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
 
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="1 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
+              <!-- SLIDE 4 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="nqmrrkUvhRw">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Shreya Kapoor"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=47" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Shreya Kapoor">
+                    <div>
+                      <h3 class="alumniCardName">Shreya Kapoor</h3>
 
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Rahul Kumar's journey from SPJIMR to Microsoft">
-            <img class="videoCardImage"  src="../src/assets/images/slide-3.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/dgtl-360.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Junior Associate</p>
+                      <p class="tlSub">EdTech operations</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Analytics</p>
+                      <p class="tlSub">Live capstone projects</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Senior Data
+                        Analyst</p>
+                      <p class="tlSub">Technology</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 5 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="wubJqRtFFvE">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Aman Verma"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=48" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Aman Verma">
+                    <div>
+                      <h3 class="alumniCardName">Aman Verma</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/dgtl-360.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Graduate Engineer</p>
+                      <p class="tlSub">Automotive manufacturing</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Operations</p>
+                      <p class="tlSub">Summer internship, L&amp;T</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Manager — Supply
+                        Chain Planning</p>
+                      <p class="tlSub">Industrials</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 6 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement"
+                  itemscope itemtype="https://schema.org/Person"
+                  data-video-id="CYO-_DE3nW">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video story of Priya Nair"
+                    aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor"
+                      aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar"
+                      src="https://i.pravatar.cc/120?img=49" width="52"
+                      height="52" loading="lazy" decoding="async"
+                      alt="Priya Nair">
+                    <div>
+                      <h3 class="alumniCardName">Priya Nair</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/cat-logo.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Fresh Graduate</p>
+                      <p class="tlSub">B.Com honours</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/spjimr.webp" width="54"
+                          height="21" loading="lazy" decoding="async"
+                          alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Finance</p>
+                      <p class="tlSub">CFA-aligned electives</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img
+                          src="/src/assets/images/microsoft.webp" width="26"
+                          height="26" loading="lazy" decoding="async"
+                          alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Equity Research
+                        Analyst</p>
+                      <p class="tlSub">Global markets</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+            </div>
+
+          </div>
+          <button type="button" class="alumniNavBtnPrev as-nav-btn"
+            id="alumniPrev" aria-label="Previous alumni story">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
           </button>
-          <p class="as-name">Rahul Kumar</p>
-          <p class="as-batch">PGDM 2022–24</p>
-        </div>
-
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=D" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">DGTL360</p><p class="as-role">Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=M" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Microsoft</p><p class="as-role">Senior Product Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="2 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
-
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Ananya Sharma's journey from SPJIMR to Google">
-            <img class="videoCardImage"  src="../src/assets/images/slide-2.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
+          <button type="button" class="alumniNavBtnNext as-nav-btn"
+            id="alumniNext" aria-label="Next alumni story">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
           </button>
-          <p class="as-name">Ananya Sharma</p>
-          <p class="as-batch">PGDM 2021–23</p>
         </div>
 
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=B" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Bain &amp; Co</p><p class="as-role">Analyst</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=G" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Google</p><p class="as-role">Product Marketing Lead</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
+      </section>
+
+      <!-- Video popup (iframe built only on click; destroyed on close) -->
+      <div class="videoModal" id="videoModal" role="dialog" aria-modal="true"
+        aria-hidden="true" aria-label="Alumni video story">
+        <div class="videoModalBackdrop" data-close></div>
+        <div class="videoModalBox">
+          <div class="videoModalFrame" id="videoFrame"></div>
+          <button type="button" class="videoModalClose" data-close
+            aria-label="Close video">&times;</button>
         </div>
-      </div>
+      </div>    
 
-      <div class="as-card" role="group" aria-roledescription="slide" aria-label="3 of 3">
-        <span class="as-verified"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg> Verified</span>
 
-        <div class="as-person">
-          <button type="button" class="videoCardFacade" data-video-id="dQw4w9WgXcQ"
-                  aria-label="Play video: Karan Mehta's journey from SPJIMR to Amazon">
-            <img class="videoCardImage"  src="../src/assets/images/slide-1.webp"
-                 alt="" loading="lazy" width="170" height="170">
-            <span class="as-play" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </span>
-          </button>
-          <p class="as-name">Karan Mehta</p>
-          <p class="as-batch">PGDM 2022–24</p>
-        </div>
 
-        <div class="as-path">
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=I" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">ICICI Bank</p><p class="as-role">Officer</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=S" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">SPJIMR</p><p class="as-role">PGDM</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-          <svg class="as-arrow" viewBox="0 0 34 14" fill="none" aria-hidden="true" preserveAspectRatio="none"><path d="M0 7h28M22 1l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-dasharray="4 3" stroke-linecap="round"/></svg>
-          <div class="as-step">
-            <span class="as-logo"><img src="https://placehold.co/60x60?text=A" alt="" loading="lazy" width="48" height="48"></span>
-            <p class="as-org">Amazon</p><p class="as-role">Category Manager</p>
-            <span class="as-underline" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
 
-    </div>
-  </div>
 
-  <div class="videoLibraryDots" id="asDots" role="tablist" aria-label="Select testimonial"></div>
-  <p class="as-sr-only" id="asLiveRegion" aria-live="polite"></p>
-</section>
 
 
 
@@ -845,7 +1183,7 @@
               <div class="reviewCardHeader">
                 <img
                   class="reviewAvatar"
-                  src="../src/assets/images/rahul-kumar.webp"
+                  src="/src/assets/images/rahul-kumar.webp"
                   alt=""
                   width="48"
                   height="48"
@@ -876,7 +1214,7 @@
               <div class="reviewCardHeader">
                 <img
                   class="reviewAvatar"
-                  src="../src/assets/images/priya.webp"
+                  src="/src/assets/images/priya.webp"
                   alt=""
                   width="48"
                   height="48"
@@ -926,7 +1264,7 @@
       <li class="collegeCard reveal" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Ahmedabad logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -974,7 +1312,7 @@
       <li class="collegeCard revealright delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Bangalore logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -1022,7 +1360,7 @@
       <li class="collegeCard revealright delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Calcutta logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -1068,7 +1406,7 @@
       <li class="collegeCard revealleft" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Ahmedabad logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -1116,7 +1454,7 @@
       <li class="collegeCard reveal delay-1" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Bangalore logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -1164,7 +1502,7 @@
       <li class="collegeCard revealright delay-2" itemprop="itemListElement" itemscope itemtype="https://schema.org/CollegeOrUniversity">
         <div class="collegeCardLogo">
           <img
-              src="../src/assets/images/iima.webp"
+              src="/src/assets/images/iima.webp"
             alt="IIM Calcutta logo"
             width="160" height="64"
             loading="lazy" decoding="async"
@@ -1456,139 +1794,98 @@
   ============================================================ -->
       <include src="public/partials/footer.html"></include>
 
-      
+    
 
-        <!-- ============================================================
-       SCROLL REVEAL SCRIPT
-  ============================================================ -->
-      
+         <script>
+    (function () {
+      var selectors = '.reveal, .revealleft, .revealright';
+      var elements = document.querySelectorAll(selectors);
 
-  <script type="module">
-  import EmblaCarousel from "embla-carousel";
-  /* Same technique as videoLibrary.js — swap this import for
-     `import EmblaCarousel from "embla-carousel";` once bundled into the build. */
+      if (!elements.length) return;
 
-  document.addEventListener('DOMContentLoaded', function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
 
-    const viewportNode = document.getElementById('asViewport');
-    if (!viewportNode || typeof EmblaCarousel === 'undefined') return;
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
 
-    const prevButton = document.querySelector('.videoLibraryPrev');
-    const nextButton = document.querySelector('.videoLibraryNext');
-    const dotsWrap = document.getElementById('asDots');
-    const liveRegion = document.getElementById('asLiveRegion');
+  <script>
 
-    const embla = EmblaCarousel(viewportNode, {
-      loop: false,
-      align: 'start',
-      skipSnaps: false,
-      dragFree: false
+    /* ---------- Tabs ---------- */
+
+document.querySelectorAll("[data-tablist]").forEach(function (list) {
+
+  var buttons = Array.from(list.querySelectorAll("[role='tab']"));
+
+  function getPanels() {
+    return Array.from(
+      document.querySelectorAll("[role='tabpanel']")
+    ).filter(function (panel) {
+      return buttons.some(function (btn) {
+        return btn.getAttribute("aria-controls") === panel.id;
+      });
+    });
+  }
+
+  var panels = getPanels();
+
+  function activateTab(button) {
+
+    // Reset all tabs
+    buttons.forEach(function (btn) {
+      btn.setAttribute("aria-selected", "false");
+      btn.setAttribute("tabindex", "-1");
     });
 
-    /* ---------- Dots ---------- */
-
-    function buildDots() {
-      dotsWrap.innerHTML = '';
-      const slideCount = embla.scrollSnapList().length;
-
-      for (let i = 0; i < slideCount; i++) {
-        const dot = document.createElement('button');
-        dot.type = 'button';
-        dot.className = 'videoLibraryDot';
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', 'Go to testimonial ' + (i + 1) + ' of ' + slideCount);
-        dot.addEventListener('click', () => embla.scrollTo(i));
-        dotsWrap.appendChild(dot);
-      }
-    }
-
-    function updateDots() {
-      const dots = dotsWrap.querySelectorAll('.videoLibraryDot');
-      const selectedIndex = embla.selectedScrollSnap();
-
-      dots.forEach(function (dot, index) {
-        if (index === selectedIndex) {
-          dot.classList.add('isSelected');
-          dot.setAttribute('aria-current', 'true');
-        } else {
-          dot.classList.remove('isSelected');
-          dot.setAttribute('aria-current', 'false');
-        }
-      });
-
-      liveRegion.textContent = 'Showing testimonial ' + (selectedIndex + 1) + ' of ' + dots.length;
-    }
-
-    /* ---------- Arrows ---------- */
-
-    function updateArrows() {
-      if (!prevButton || !nextButton) return;
-      prevButton.disabled = !embla.canScrollPrev();
-      nextButton.disabled = !embla.canScrollNext();
-    }
-
-    if (prevButton) prevButton.addEventListener('click', function () { embla.scrollPrev(); });
-    if (nextButton) nextButton.addEventListener('click', function () { embla.scrollNext(); });
-
-    viewportNode.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowLeft') { embla.scrollPrev(); e.preventDefault(); }
-      if (e.key === 'ArrowRight') { embla.scrollNext(); e.preventDefault(); }
+    // Hide all panels
+    panels.forEach(function (panel) {
+      panel.hidden = true;
+      panel.style.display = "none";
     });
 
-    /* ---------- Init ---------- */
+    // Activate current tab
+    button.setAttribute("aria-selected", "true");
+    button.setAttribute("tabindex", "0");
 
-    buildDots();
-    updateDots();
-    updateArrows();
+    var panel = document.getElementById(
+      button.getAttribute("aria-controls")
+    );
 
-    embla.on('select', function () { updateDots(); updateArrows(); });
-    embla.on('reInit', function () { buildDots(); updateDots(); updateArrows(); });
-
-    /* ---------- Video facade: inject iframe only on click ----------
-       Keeps initial page load free of YouTube's iframe/JS payload.
-       No CLS: the iframe fills the same box the facade already reserved.
-       Video IDs below are dummy placeholders — swap data-video-id per slide. */
-
-    const facades = document.querySelectorAll('.videoCardFacade');
-    let activeIframes = [];
-
-    function pauseAllVideos() {
-      activeIframes.forEach(function (iframe) {
-        if (!iframe.contentWindow) return;
-        iframe.contentWindow.postMessage(
-          JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }),
-          '*'
-        );
-      });
+    if (panel) {
+      panel.hidden = false;
+      panel.style.display = "block";
     }
+  }
 
-    facades.forEach(function (facade) {
-      facade.addEventListener('click', function () {
-        const videoId = facade.getAttribute('data-video-id');
-        if (!videoId) return;
+  buttons.forEach(function (button) {
 
-        pauseAllVideos();
-
-        const iframe = document.createElement('iframe');
-        iframe.src = 'https://www.youtube.com/embed/' + videoId +
-          '?autoplay=1&enablejsapi=1&si=6xLLtDiLX8I-VGiE';
-        iframe.title = facade.getAttribute('aria-label') || 'YouTube video player';
-        iframe.setAttribute('frameborder', '0');
-        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-        iframe.setAttribute('allowfullscreen', '');
-
-        facade.innerHTML = '';
-        facade.appendChild(iframe);
-        activeIframes.push(iframe);
-
-        facade.disabled = true;
-        facade.removeAttribute('aria-label');
-      }, { once: true });
+    button.addEventListener("click", function () {
+      activateTab(button);
     });
 
   });
-</script>
+
+  // Initial active tab
+  var active =
+    buttons.find(function (btn) {
+      return btn.getAttribute("aria-selected") === "true";
+    }) || buttons[0];
+
+  if (active) {
+    activateTab(active);
+  }
+
+});
+  </script>
+      
+
 
         <script type="module" src="/src/js/college-page-import.js" defer></script>
     </body>

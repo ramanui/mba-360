@@ -378,31 +378,31 @@
 
     <div id="pill-step1-panel" class="is-active" role="tabpanel" aria-labelledby="pill-step1">
       <div class="clg-processBox">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
+        <p>11Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
       </div>
     </div>
 
     <div id="pill-step2-panel" role="tabpanel" aria-labelledby="pill-step2">
       <div class="clg-processBox">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>22Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       </div>
     </div>
 
     <div id="pill-step3-panel" role="tabpanel" aria-labelledby="pill-step3">
       <div class="clg-processBox">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>33Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       </div>
     </div>
 
     <div id="pill-step4-panel" role="tabpanel" aria-labelledby="pill-step4">
       <div class="clg-processBox">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>44Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       </div>
     </div>
 
     <div id="pill-step5-panel" role="tabpanel" aria-labelledby="pill-step5">
       <div class="clg-processBox">
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <p>55Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
       </div>
     </div>
 
@@ -1185,7 +1185,126 @@
        SCROLL REVEAL SCRIPT
   ============================================================ -->
       
+ <script>
 
+          document.querySelectorAll('[data-tablist]').forEach((tablist) => {
+  const tabs = tablist.querySelectorAll('[role="tab"]');
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      // reset all tabs in this tablist
+      tabs.forEach((t) => t.setAttribute('aria-selected', 'false'));
+      tab.setAttribute('aria-selected', 'true');
+
+      // reset all panels linked to this tablist
+      tabs.forEach((t) => {
+        const panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.classList.remove('is-active');
+      });
+
+      // show the matching panel
+      const activePanel = document.getElementById(tab.getAttribute('aria-controls'));
+      if (activePanel) activePanel.classList.add('is-active');
+    });
+  });
+});
+
+// mouse-drag to scroll the tab bar
+document.querySelectorAll('.clg-pillTabs').forEach((bar) => {
+  let isDown = false;
+  let startX;
+  let scrollLeftStart;
+
+  bar.addEventListener('mousedown', (e) => {
+    isDown = true;
+    bar.classList.add('is-dragging');
+    startX = e.pageX - bar.offsetLeft;
+    scrollLeftStart = bar.scrollLeft;
+  });
+
+  bar.addEventListener('mouseleave', () => {
+    isDown = false;
+    bar.classList.remove('is-dragging');
+  });
+
+  bar.addEventListener('mouseup', () => {
+    isDown = false;
+    bar.classList.remove('is-dragging');
+  });
+
+  bar.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - bar.offsetLeft;
+    const walk = x - startX;
+    bar.scrollLeft = scrollLeftStart - walk;
+  });
+});
+
+/* ---- FAQ Tabs ---- */
+
+
+var faqTabs = document.getElementById("examFaqTabs");
+var faqItemsForTabs = document.querySelectorAll("#examFaqList .examFaq__item");
+
+
+function filterFaqByCategory(category){
+
+    faqItemsForTabs.forEach(function(item){
+
+        var show = item.getAttribute("data-category") === category;
+        item.style.display = show ? "" : "none";
+
+        if(!show){
+            item.classList.remove("is-open");
+            var ans = item.querySelector(".examFaq__answer");
+            if(ans) ans.style.maxHeight = null;
+        }
+
+    });
+
+}
+
+
+if(faqTabs){
+
+
+    faqTabs.querySelectorAll(".examFaq__tab")
+    .forEach(function(tab){
+
+
+        tab.addEventListener("click",function(){
+
+
+            faqTabs.querySelectorAll(".examFaq__tab")
+            .forEach(function(t){
+
+                t.classList.remove("is-active");
+
+            });
+
+
+            tab.classList.add("is-active");
+
+            filterFaqByCategory(tab.getAttribute("data-category"));
+
+
+        });
+
+
+    });
+
+
+    /* Show only the default active tab's questions on load */
+    var initialTab = faqTabs.querySelector(".examFaq__tab.is-active");
+    if(initialTab){
+        filterFaqByCategory(initialTab.getAttribute("data-category"));
+    }
+
+
+}
+
+  </script>
 
         <script type="module" src="/src/js/exam-page-import.js" defer></script>
     </body>

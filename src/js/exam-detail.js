@@ -1,5 +1,10 @@
+
+
+
+
 (function () {
   "use strict";
+
 
   /* ---------- Generic accordion ---------- */
   function wireToggle(trigger, container) {
@@ -117,8 +122,6 @@ document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
 
   }
 
-
-  /* ---------- Scroll Spy ---------- */
   
 
 /* ---------- Scroll Spy ---------- */
@@ -186,3 +189,9 @@ window.addEventListener("load", updateActive);
 window.addEventListener("resize", updateActive);
 
 })();
+
+
+
+
+
+
