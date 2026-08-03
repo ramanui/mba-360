@@ -87,8 +87,8 @@
   position: absolute;
   top: -60px;
   /* transform: translateY(-50%); */
-  width: 38px;
-  height: 38px;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 50%;
   border: none;
   background: var(--c-blue);
@@ -138,7 +138,7 @@
 }
 
 .collegeCard {
-  border: 1px solid #e6e8ee;
+  border: 1px solid transparent;
   border-radius: 12px;
   overflow: hidden;
   background: #ffffff;
@@ -146,6 +146,14 @@
   display: flex;
   flex-direction: column;
   transition: box-shadow 0.25s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease;
+}
+
+.collegeCard:hover {
+  border-color: var(--c-orange, --c-orange);
 }
 
 .collegeCardLogo {
@@ -266,6 +274,7 @@
 
 .downloadBrochureBtn {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 6px;
   background: var(--c-orange);
@@ -315,7 +324,7 @@
 }
 .topColleges-sub {
   font-size: 1.25rem;
-  text-align: center;
+  text-align: left;
   color: #45464e;
   margin-bottom: 34px;
 }
@@ -348,10 +357,10 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  background: #f6f9ff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(13, 27, 62, 0.05);
-  padding: 32px 28px;
+  /* background: #f6f9ff; */
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px #e6e8ee;
+  padding: 32px 20px;
   border-left: 4px solid transparent;
   transition:
     border-color 0.3s ease,
@@ -360,23 +369,25 @@
 }
 
 .examCard:hover {
-  box-shadow: 0 8px 32px rgba(13, 27, 62, 0.1);
+  /* box-shadow: 0 8px 32px rgba(13, 27, 62, 0.1); */
   border-left-color: var(--c-blue);
 }
 
 .examCard__top {
-  display: flex;
-  align-items: flex-start;
+  /* display: flex;
+  align-items: flex-start; */
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 .examCard__top img {
-  height: 24px;
+  height: 44px;
   width: auto;
   border: 1px solid #c6c6cf;
   padding: 3px 6px;
   border-radius: 6px;
+  margin-bottom: 1.2rem;
+  margin-inline: auto;
 }
 
 .examCard__logo {
@@ -388,11 +399,13 @@
 .examCard__meta {
   text-align: right;
   flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .examCard__metaLabel {
   display: block;
-  font-size: 0.8125rem;
+  font-size: 0.85rem;
   color: #8a94a6;
   margin-bottom: 4px;
 }
@@ -409,12 +422,13 @@
   font-size: clamp(1rem, 2vw, 1rem);
   font-weight: 600;
   color: var(--black);
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
   height: 50px;
+  text-align: center;
 }
 
 .examCard__specs {
-  margin: 0 0 24px 0;
+  margin: 0 0 0px 0;
   flex: 1 1 auto;
 }
 
@@ -423,18 +437,27 @@
   align-items: baseline;
   justify-content: space-between;
   gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid #eef0f5;
+  padding: 14px 0 0.8rem;
+  border-top: 1px dashed #e6e9f2;
 }
 
 .examCard__spec:first-child {
   border-top: none;
   padding-top: 0;
 }
+.examCard__spec:last-child {
+  padding: 14px 0 1.4rem;
+}
+.examCard__spec:first-child dd {
+  background: none;
+}
+.examCard__spec:last-child dd {
+  font-size: 0.75rem;
+}
 
 .examCard__spec dt {
-  font-size: 0.8rem;
-  color: #45464e;
+  font-size: 0.85rem;
+  color: #8a94a6;
   font-weight: 400;
   margin: 0;
 }
@@ -446,7 +469,11 @@
   margin: 0;
   text-align: right;
   max-width: 60%;
-  height: 38px;
+  height: auto;
+  display: inline-block;
+  background: #eef3ff;
+  padding: 2px 8px;
+  border-radius: 6px;
 }
 .swiper {
   padding: 1px !important;
@@ -505,8 +532,8 @@
   position: absolute;
   top: -60px;
   /* transform: translateY(-50%); */
-  width: 38px;
-  height: 38px;
+  width: 2.3rem;
+  height: 2.3rem;
   border-radius: 50%;
   border: none;
   background: var(--c-blue);
@@ -997,9 +1024,9 @@
     grid-column: 1 / -1;
     flex-direction: row;
   }
-  .lfm-card--text {
+  /* .lfm-card--text {
     flex: 1 1 0;
-  }
+  } */
 }
 
 @media (max-width: 1199px) {
@@ -1008,19 +1035,29 @@
   }
 }
 
-@media (max-width: 992px) {
+/* Tablet */
+@media (max-width: 991px) {
   .entranceExams {
     padding: 64px 0 48px;
   }
   .entranceExams__item {
     width: 300px;
   }
-}
-
-/* Tablet */
-@media (max-width: 991px) {
   .as-section .as-card {
     flex: 0 0 calc((100% - 20px) / 1.2);
+  }
+
+  .as-head {
+    flex-direction: column;
+  }
+  .topColleges-sub {
+    font-size: 1.125rem;
+    text-align: left;
+    margin-bottom: 1.6rem;
+  }
+
+  .topColleges .topColleges-sub {
+    text-align: center;
   }
 }
 
@@ -1030,7 +1067,7 @@
     padding: 56px 0 64px;
   }
   .managementEdu {
-    padding: 64px 0 64px;
+    padding: 56px 0 60px;
   }
   .decisionTools__grid,
   .managementEdu__grid {
@@ -1053,9 +1090,9 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .topColleges {
-    padding: 48px 16px;
+    padding: 56px 0px 100px;
   }
   .collegeFilters {
     gap: 10px;
@@ -1065,12 +1102,7 @@
     padding: 12px 14px;
     font-size: 0.9rem;
   }
-  .collegeSlidePrev {
-    left: 4px;
-  }
-  .collegeSlideNext {
-    right: 4px;
-  }
+
   .collegeCardFooter {
     flex-direction: column;
     align-items: stretch;
@@ -1078,26 +1110,34 @@
   .downloadBrochureBtn {
     justify-content: center;
   }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .entranceSlidePrev,
-  .entranceSlideNext {
-    width: 38px;
-    height: 38px;
+  .entranceExams {
+    padding: 56px 0 100px;
   }
-
-  .entranceSlidePrev {
-    left: -10px;
+  .lfm-section {
   }
-
-  .entranceSlideNext {
-    right: -10px;
-  }
-
   .as-section .as-card {
     flex: 0 0 70%;
+  }
+  .collegeSlidePrev,
+  .collegeSlideNext {
+    top: inherit;
+    bottom: -54px;
+  }
+
+  .collegeSliderWrap {
+    margin-top: 2rem;
+  }
+  .lfm-section {
+    padding: 56px 0 60px;
+  }
+
+  .entranceSlidePrev,
+  .entranceSlideNext {
+    top: inherit;
+    bottom: -54px;
+  }
+  .entranceE {
+    margin-top: 2rem;
   }
 }
 
@@ -1115,9 +1155,6 @@
 }
 
 @media (max-width: 600px) {
-  .entranceExams {
-    padding: 48px 0 40px;
-  }
   .entranceExams__subtext {
     margin-bottom: 32px;
   }

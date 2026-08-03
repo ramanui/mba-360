@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>MBA 360</title>
+    <meta name="description"
+      content="DGTL">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.svg"
+      sizes="32x32">
+    <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
+
+    <link rel="preload" as="image"
+      href=".../src/assets/images/stay-updated-with-mba-news.webp"
+      fetchpriority="high">
+
+    <!-- Google Fonts (Ultra Optimized) -->
+
+    <link rel="preload"
+      href="/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
+
+    <link rel="preload"
+      href="/fonts/Inter-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin>
+
+  </head>
+  <body>
+
+    <include src="public/partials/header.html"></include>
+
+    <main>
+
+      <!-- ============ HERO / HEADER ============ -->
+      <section class="clg-header alumni_main">
+        <div class="clg-header__bgfx" aria-hidden="true">
+          <span class="clg-header__shape clg-header__shape--1"></span>
+          <span class="clg-header__shape clg-header__shape--2"></span>
+          <span class="clg-header__shape clg-header__shape--3"></span>
+          <span class="clg-header__shape clg-header__shape--4"></span>
+        </div>
+
+        <div class="container">
+          <nav class="clg-breadcrumb" aria-label="Breadcrumb">
+            <a href="#">Home</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Alumni</span>
+          </nav>
+
+          <div class="clg-heroTop">
+            <div class="clg-heroMain">
+
+              <div class="clg-titleBlock">
+                <h1 class="hero__title">Alumni Speak</h1>
+                <p class="clg-metaRow"><span>Unscripted video testimonials from
+                    graduates of India s leading B-schools every speaker s
+                    identity and enrolment year confirmed directly with their
+                    college before publishing.</span></p>
+                <a href="#enquire" class="btn btn--solid">Share Your Story</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="alumniListing alumni_examListing">
+        <div class="container">
+
+          <div class="examActiveFilters" id="alumniActiveFilters"
+            style="display:none;">
+            <span class="examActiveFilters__label">Active Filters:</span>
+            <a href="#" class="examActiveFilters__clear"
+              id="alumniClearAll">Clear All ✕</a>
+          </div>
+          <p id="alumniNoResults"
+            style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+            alumni stories match the selected filters. Try clearing some
+            filters.</p>
+
+          <div class="examLayout alumniLayout">
+
+            <!-- Mobile Filter Toggle -->
+            <button type="button" class="examMobileFilterToggle"
+              id="alumniMobileFilterToggle" aria-expanded="false"
+              aria-controls="alumniFiltersPanel">
+              <span>Filters</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor"
+                  stroke-width="2.4" stroke-linecap="round"
+                  stroke-linejoin="round"></path></svg>
+            </button>
+
+            <!-- Sidebar Filters -->
+            <aside class="examFilters" id="alumniFiltersPanel">
+              <div class="examFilters__head">
+                <h4>Exam Filter</h4>
+                <button class="examFilters__clearAll"
+                  id="alumniFiltersClearAll">Clear all</button>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Sort by</p>
+                <label class="examCheck"><input type="checkbox"
+                    name="alumniSort" value="Newest"
+                    data-filter-group="sort"><span>Newest</span></label>
+                <label class="examCheck"><input type="checkbox"
+                    name="alumniSort" value="Oldest"
+                    data-filter-group="sort"><span>Oldest</span></label>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Programme Type</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="Full-Time MBA"
+                    data-filter-group="programme"><span>Full-Time
+                    MBA</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Part-Time MBA"
+                    data-filter-group="programme"><span>Part-Time
+                    MBA</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Executive MBA (EMBA)"
+                    data-filter-group="programme"><span>Executive MBA
+                    (EMBA)</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Online MBA"
+                    data-filter-group="programme"><span>Online
+                    MBA</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Distance Learning MBA"
+                    data-filter-group="programme"><span>Distance Learning
+                    MBA</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Integrated MBA"
+                    data-filter-group="programme"><span>Integrated
+                    MBA</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Global MBA"
+                    data-filter-group="programme"><span>Global
+                    MBA</span><em></em></label>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">College</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Ahmedabad" data-filter-group="college"><span>IIM
+                    Ahmedabad</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Bangalore" data-filter-group="college"><span>IIM
+                    Bangalore</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Calcutta" data-filter-group="college"><span>IIM
+                    Calcutta</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="ISB Hyderabad" data-filter-group="college"><span>ISB
+                    Hyderabad</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="XLRI Jamshedpur"
+                    data-filter-group="college"><span>XLRI
+                    Jamshedpur</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="FMS Delhi" data-filter-group="college"><span>FMS
+                    Delhi</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="MDI Gurgaon" data-filter-group="college"><span>MDI
+                    Gurgaon</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="SPJIMR Mumbai"
+                    data-filter-group="college"><span>SPJIMR
+                    Mumbai</span><em></em></label>
+                <div class="examFilterGroup__extra" id="alumniCollegeExtra"
+                  hidden>
+                  <label class="examCheck"><input type="checkbox"
+                      value="IIFT Delhi" data-filter-group="college"><span>IIFT
+                      Delhi</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="NMIMS Mumbai"
+                      data-filter-group="college"><span>NMIMS
+                      Mumbai</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="IIM Lucknow" data-filter-group="college"><span>IIM
+                      Lucknow</span><em></em></label>
+                </div>
+                <button class="examFilterGroup__more"
+                  id="alumniCollegeMoreBtn">+ Show more</button>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Batch Year</p>
+                <label class="examCheck"><input type="checkbox" value="2026"
+                    data-filter-group="year"><span>2026</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="2025"
+                    data-filter-group="year"><span>2025</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="2024"
+                    data-filter-group="year"><span>2024</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="2023"
+                    data-filter-group="year"><span>2023</span><em></em></label>
+              </div>
+            </aside>
+
+            <!-- Main content -->
+            <div class="examMain alumniMain">
+
+              <div class="examMain__toolbar">
+                <p class="examMain__count">Showing <strong
+                    id="alumniResultCount">25</strong> Alumni Speak</p>
+                <div class="examSort">
+                  <label for="alumniSortSelect">Sort by</label>
+                  <div class="selectWrap">
+                    <select id="alumniSortSelect">
+                      <option>Nearest First</option>
+                      <option>Newest First</option>
+                      <option>Oldest First</option>
+                      <option>Most Helpful</option>
+                    </select>
+                    <svg class="selectArrow" viewBox="0 0 24 24" fill="none"
+                      aria-hidden="true">
+                      <path d="M6 9L12 15L18 9" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Alumni Card 1 -->
+              <div class="alumniCard alumniCard--featured"
+                data-programme="Full-Time MBA" data-college="IIM Ahmedabad"
+                data-year="2026">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-1.webp"
+                    alt="Rohan Deshpande video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ZiliZI9lDnY?autoplay=1">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+
+                <div class="videoModal" id="videoModal">
+                  <div class="videoModal__overlay"></div>
+                  <div class="videoModal__content">
+                    <button class="videoModal__close">&times;</button>
+                    <iframe id="videoFrame" src
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Rohan Deshpande</h3>
+                      <p class="alumniCard__meta">Full-time MBA · Batch of
+                        2026</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 2 -->
+              <div class="alumniCard" data-programme="Part-Time MBA"
+                data-college="IIM Bangalore" data-year="2026">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-2.webp"
+                    alt="Rohan Deshpande video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="videoModal" id="videoModal1">
+                  <div class="videoModal__overlay"></div>
+                  <div class="videoModal__content">
+                    <button class="videoModal__close">&times;</button>
+                    <iframe id="videoFrame" src
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Rohan Deshpande</h3>
+                      <p class="alumniCard__meta">Full-time MBA · Batch of
+                        2026</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 3 -->
+              <div class="alumniCard" data-programme="Executive MBA (EMBA)"
+                data-college="XLRI Jamshedpur" data-year="2025">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-3.webp"
+                    alt="Rohan Deshpande video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Rohan Deshpande</h3>
+                      <p class="alumniCard__meta">Full-time MBA · Batch of
+                        2026</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 4 -->
+              <div class="alumniCard" data-programme="Part-Time MBA"
+                data-college="FMS Delhi" data-year="2025">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-4.webp"
+                    alt="Rohan Deshpande video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Rohan Deshpande</h3>
+                      <p class="alumniCard__meta">Full-time MBA · Batch of
+                        2026</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 6 -->
+              <div class="alumniCard" data-programme="Online MBA"
+                data-college="ISB Hyderabad" data-year="2024">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-2.webp"
+                    alt="Priya Nair video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Priya Nair</h3>
+                      <p class="alumniCard__meta">Online MBA · Batch of 2024</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 7 -->
+              <div class="alumniCard" data-programme="Distance Learning MBA"
+                data-college="SPJIMR Mumbai" data-year="2024">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-3.webp"
+                    alt="Arjun Mehta video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Arjun Mehta</h3>
+                      <p class="alumniCard__meta">Distance Learning MBA · Batch
+                        of 2024</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 8 -->
+              <div class="alumniCard" data-programme="Integrated MBA"
+                data-college="IIM Calcutta" data-year="2023">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-4.webp"
+                    alt="Sneha Kapoor video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Sneha Kapoor</h3>
+                      <p class="alumniCard__meta">Integrated MBA · Batch of
+                        2023</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 9 -->
+              <div class="alumniCard" data-programme="Global MBA"
+                data-college="IIFT Delhi" data-year="2023">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-1.webp"
+                    alt="Karan Malhotra video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Karan Malhotra</h3>
+                      <p class="alumniCard__meta">Global MBA · Batch of 2023</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 10 -->
+              <div class="alumniCard" data-programme="Executive MBA (EMBA)"
+                data-college="IIM Lucknow" data-year="2023">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-2.webp"
+                    alt="Ananya Rao video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Ananya Rao</h3>
+                      <p class="alumniCard__meta">Executive MBA · Batch of
+                        2023</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 10 -->
+              <div class="alumniCard" data-programme="Executive MBA (EMBA)"
+                data-college="IIM Lucknow" data-year="2023">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-3.webp"
+                    alt="Ananya Rao video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Ananya Rao</h3>
+                      <p class="alumniCard__meta">Executive MBA · Batch of
+                        2023</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"><svg
+                      width="15" height="15" viewBox="0 0 24 24" fill="none"
+                      aria-hidden="true"><path
+                        d="M4 12v7a2 2 0 002 2h12a2 2 0 002-2v-7M16 6l-4-4-4 4M12 2v14"
+                        stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"></path></svg>Share</button>
+                </div>
+              </div>
+
+              <!-- Alumni Card 10 -->
+              <div class="alumniCard" data-programme="Executive MBA (EMBA)"
+                data-college="IIM Lucknow" data-year="2023">
+                <div class="alumniCard__media">
+                  <img src="../src/assets/images/alumni-4.webp"
+                    alt="Ananya Rao video testimonial" loading="lazy">
+                  <button type="button" class="alumniCard__play"
+                    aria-label="Play video testimonial">
+                    <svg width="22" height="22" viewBox="0 0 24 24"
+                      fill="currentColor" aria-hidden="true"><path
+                        d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+                <div class="alumniCard__body">
+                  <div class="alumniCard__head">
+                    <div>
+                      <h3 class="alumniCard__name">Ananya Rao</h3>
+                      <p class="alumniCard__meta">Executive MBA · Batch of
+                        2023</p>
+                      <p class="alumniCard__college"><img
+                          src="../src/assets/images/iim-a-logo.webp" alt
+                          width="18"
+                          height="18"></p>
+                    </div>
+                    <span class="alumniBadge alumniBadge--verified">✓
+                      Verified</span>
+                  </div>
+                  <p
+                    class="alumniCard__quote">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."</p>
+                  <button type="button" class="alumniCard__share"
+                    aria-label="Share"><svg xmlns="http://www.w3.org/2000/svg"
+                      width="18" height="18" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round" stroke-linejoin="round"
+                      aria-hidden="true"><circle cx="18" cy="5"
+                        r="3"></circle><circle cx="6" cy="12"
+                        r="3"></circle><circle cx="18" cy="19"
+                        r="3"></circle><path
+                        d="M8.59 13.51L15.42 17.49"></path><path
+                        d="M15.41 6.51L8.59 10.49"></path></svg><span>Share</span></button>
+                </div>
+              </div>
+
+              <div class="examPagination" id="alumniPagination"></div>
+
+            </div>
+
+            <!-- Right sidebar -->
+            <aside class="examAside alumniAside">
+
+              <div class="collegeCard" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="../src/assets/images/iima-DED8g9td.webp"
+                    alt="IIM Ahmedabad logo" width="160" height="64"
+                    loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIMA</h3>
+                  <p class="collegeCardLocation" itemprop="address">Ahmedabad,
+                    Gujarat</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹19.5 Lakh</span>
+                      <span class="collegeStatLabel">Total Fees</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹19 Lakh</span>
+                      <span class="collegeStatLabel">Avg Package</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">95%ile</span>
+                      <span class="collegeStatLabel">Cutoff</span>
+                    </div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="#" class="viewCoursesLink">
+                      View Courses
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                    <a href="#" class="downloadBrochureBtn"
+                      aria-label="Download IIMA brochure">
+                      Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="collegeCard" itemprop="itemListElement" itemscope
+                itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="../src/assets/images/iim-banglore.webp"
+                    alt="IIM Bangalore logo" width="160" height="64"
+                    loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+                  <p class="collegeCardLocation" itemprop="address">Bangalore,
+                    Karnataka</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹21.5 Lakh</span>
+                      <span class="collegeStatLabel">Total Fees</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">₹21.5 Lakh</span>
+                      <span class="collegeStatLabel">Avg Package</span>
+                    </div>
+                    <div class="collegeStat">
+                      <span class="collegeStatValue">94%ile</span>
+                      <span class="collegeStatLabel">Cutoff</span>
+                    </div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="#" class="viewCoursesLink">
+                      View Courses
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                    <a href="#" class="downloadBrochureBtn"
+                      aria-label="Download IIM Bangalore brochure">
+                      Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true"><path
+                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path></svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="examWidget examQuickLinks">
+                <h5>Quick Links</h5>
+                <ul>
+                  <li><a href="#">Top MBA Colleges by Salary</a></li>
+                  <li><a href="#">MBA vs PGDM — Key Differences</a></li>
+                  <li><a href="#">IIM Fees 2025-26 Complete List</a></li>
+                  <li><a href="#">CAT 2025 Preparation Guide</a></li>
+                  <li><a href="#">MBA Scholarships in India</a></li>
+                  <li><a href="#">1-Year MBA Programs India</a></li>
+                  <li><a href="#">Executive MBA (EMBA) Colleges</a></li>
+                  <li><a href="#">Online MBA Colleges 2025</a></li>
+                </ul>
+              </div>
+
+              <div class="alumniAdvertiseWidget">
+                <h5>Advertise your programme here</h5>
+                <p>Reach 5,000+ working professionals actively comparing
+                  Executive MBA programs on MBA 360.</p>
+                <div class="alumniAdvertiseWidget__stats">
+                  <div><strong>5K+</strong><span>Monthly visitors</span></div>
+                  <div><strong>₹40L+</strong><span>Avg CTC</span></div>
+                  <div><strong>PPL</strong><span>Pay-per-lead</span></div>
+                  <div><strong>3.8×</strong><span>Lead quality</span></div>
+                </div>
+                <a href="#" class="alumniAdvertiseWidget__cta">Advertise here
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg></a>
+              </div>
+            </aside>
+
+          </div>
+
+        </div>
+      </section>
+
+      <section class="admissionJourney"
+        aria-labelledby="admissionJourneyHeading">
+        <div class="container">
+          <div class="admissionJourneyInner revealright">
+            <h2 class="marketing__heading" id="admissionJourneyHeading">Master
+              your admission
+              journey</h2>
+            <p class="admissionJourneyText">Weekly briefing on exam
+              updates, admission deadlines, placement reports, and
+              editorial analysis. No spam. Unsubscribe
+              anytime.</p>
+
+            <form class="admissionJourneyForm" id="admissionJourneyForm"
+              novalidate>
+              <label for="admissionJourneyEmail"
+                class="admissionJourneyLabel">Email
+                address</label>
+              <div class="admissionJourneyField">
+                <input type="email" id="admissionJourneyEmail" name="email"
+                  class="admissionJourneyInput" placeholder="Your email address"
+                  autocomplete="email" required
+                  aria-describedby="admissionJourneyError">
+                <button type="submit" class="admissionJourneySubmit">
+                  Subscribe
+                  <svg viewBox="0 0 26 26" width="22" height="22" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </button>
+              </div>
+              <p class="admissionJourneyError" id="admissionJourneyError"
+                role="alert" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+
+    <!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+    <script defer>
+    (function () {
+      var selectors = '.reveal, .revealleft, .revealright';
+      var elements = document.querySelectorAll(selectors);
+
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+    <script>
+
+const modal = document.getElementById("videoModal");
+const frame = document.getElementById("videoFrame");
+
+document.querySelectorAll(".alumniCard__play").forEach(btn => {
+    btn.addEventListener("click", () => {
+        frame.src = btn.dataset.video;
+        modal.classList.add("active");
+    });
+});
+
+function closeVideo(){
+    modal.classList.remove("active");
+    frame.src = "";
+}
+
+document.querySelector(".videoModal__close").addEventListener("click", closeVideo);
+document.querySelector(".videoModal__overlay").addEventListener("click", closeVideo);
+
+(function () {
+"use strict";
+
+
+/* ---- Alumni Speak Filters ---- */
+
+var alumniMobileFilterToggleBtn = document.getElementById("alumniMobileFilterToggle");
+var alumniMobileFiltersPanel = document.getElementById("alumniFiltersPanel");
+
+if (alumniMobileFilterToggleBtn && alumniMobileFiltersPanel) {
+    alumniMobileFilterToggleBtn.addEventListener("click", function () {
+        var isOpen = alumniMobileFiltersPanel.classList.toggle("is-open");
+        alumniMobileFilterToggleBtn.classList.toggle("is-open", isOpen);
+        alumniMobileFilterToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+}
+
+var alumniActiveFiltersBar = document.getElementById("alumniActiveFilters");
+var alumniClearAllLink = document.getElementById("alumniClearAll");
+var alumniNoResultsEl = document.getElementById("alumniNoResults");
+var alumniResultCountEl = document.getElementById("alumniResultCount");
+
+/* Checkbox filters (programme, college, year) — drive matching */
+var alumniFilterInputs = document.querySelectorAll(
+    "#alumniFiltersPanel input[type='checkbox']:not([data-filter-group='sort'])"
+);
+
+/* Sort radio (Newest / Oldest) — drives order + shows as an active tag,
+   but does not remove cards from the result set */
+var alumniSortInputs = document.querySelectorAll(
+    "#alumniFiltersPanel input[type='checkbox'][data-filter-group='sort']"
+);
+
+var alumniCardsList = Array.prototype.slice.call(
+    document.querySelectorAll(".alumniMain > .alumniCard")
+);
+
+var alumniPaginationEl = document.getElementById("alumniPagination");
+var ALUMNI_CARDS_PER_PAGE = 8;
+var alumniCurrentPage = 1;
+var alumniSortSelect = document.getElementById("alumniSortSelect");
+
+/* Compute how many alumni cards actually exist for each filter value,
+   write that count into the <em> next to the checkbox, and hide any
+   filter option that has zero matching cards so it never shows by default. */
+function computeAlumniFilterCounts(){
+
+    var counts = {};
+
+    alumniCardsList.forEach(function(card){
+        [card.dataset.programme, card.dataset.college, card.dataset.year].forEach(function(val){
+            if(!val) return;
+            counts[val] = (counts[val] || 0) + 1;
+        });
+    });
+
+    alumniFilterInputs.forEach(function(input){
+        var count = counts[input.value] || 0;
+        var label = input.closest("label");
+        if(!label) return;
+
+        var emTag = label.querySelector("em");
+        if (emTag) emTag.textContent = count;
+
+        label.style.display = count === 0 ? "none" : "";
+    });
+}
+
+
+/* Sort the matched cards according to the toolbar "Sort by" dropdown.
+   Nearest First / Most Helpful keep the default listing order (falling
+   back to the sidebar Newest/Oldest radio if one is selected);
+   Newest First / Oldest First sort by the alumni's batch year. */
+function sortAlumniCards(cards){
+
+    var sorted = cards.slice();
+    var sortValue = alumniSortSelect ? alumniSortSelect.value : "Nearest First";
+
+    if (sortValue === "Newest First") {
+        sorted.sort(function(a, b){
+            return parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10);
+        });
+        return sorted;
+    }
+
+    if (sortValue === "Oldest First") {
+        sorted.sort(function(a, b){
+            return parseInt(a.dataset.year, 10) - parseInt(b.dataset.year, 10);
+        });
+        return sorted;
+    }
+
+    /* "Nearest First" / "Most Helpful" — respect the sidebar Oldest/Newest
+       radio if the person has picked one there, otherwise default order */
+    var checkedSort = null;
+    alumniSortInputs.forEach(function(input){
+        if(input.checked) checkedSort = input.value;
+    });
+    if (checkedSort === "Oldest") {
+        sorted.reverse();
+    }
+
+    return sorted;
+}
+
+if (alumniSortSelect) {
+    alumniSortSelect.addEventListener("change", applyAlumniFilters);
+}
+
+function applyAlumniFilters(){
+
+    var selectedFilters = [];
+
+    alumniFilterInputs.forEach(function(input){
+        if(input.checked){
+            selectedFilters.push(input.value);
+        }
+    });
+
+    var matchedCards = [];
+
+    alumniCardsList.forEach(function(card){
+
+        var cardValues = [
+            card.dataset.programme,
+            card.dataset.college,
+            card.dataset.year
+        ];
+
+        var matched = selectedFilters.every(function(filter){
+            return cardValues.indexOf(filter) !== -1;
+        });
+
+        if(selectedFilters.length === 0 || matched){
+            matchedCards.push(card);
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    /* Apply sort order from the toolbar "Sort by" dropdown
+       (falls back to the sidebar Newest/Oldest radio when relevant) */
+    matchedCards = sortAlumniCards(matchedCards);
+
+    if (alumniResultCountEl) alumniResultCountEl.textContent = matchedCards.length;
+    if (alumniNoResultsEl) alumniNoResultsEl.style.display = matchedCards.length === 0 ? "block" : "none";
+
+    alumniCurrentPage = 1;
+    renderAlumniPage(matchedCards);
+
+    updateAlumniActiveFilterTags();
+}
+
+
+function renderAlumniPage(matchedCards){
+
+    /* hide everything first, then show only current page in DOM order via appendChild */
+    alumniCardsList.forEach(function(card){ card.style.display = "none"; });
+
+    var totalPages = Math.max(1, Math.ceil(matchedCards.length / ALUMNI_CARDS_PER_PAGE));
+    if (alumniCurrentPage > totalPages) alumniCurrentPage = totalPages;
+
+    var startIndex = (alumniCurrentPage - 1) * ALUMNI_CARDS_PER_PAGE;
+    var endIndex = startIndex + ALUMNI_CARDS_PER_PAGE;
+    var pageCards = matchedCards.slice(startIndex, endIndex);
+
+    var alumniMainCol = document.querySelector(".alumniMain");
+    var alumniPaginationNode = document.getElementById("alumniPagination");
+
+    pageCards.forEach(function(card){
+        card.style.display = "";
+        alumniMainCol.insertBefore(card, alumniPaginationNode);
+    });
+
+    renderAlumniPaginationControls(totalPages, matchedCards);
+}
+
+
+function renderAlumniPaginationControls(totalPages, matchedCards){
+
+    if(!alumniPaginationEl) return;
+
+    alumniPaginationEl.innerHTML = "";
+
+    if (matchedCards.length === 0) return;
+
+    var prevBtn = document.createElement("button");
+    prevBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Prev';
+    prevBtn.disabled = alumniCurrentPage === 1;
+    prevBtn.addEventListener("click", function(){
+        if (alumniCurrentPage > 1) {
+            alumniCurrentPage--;
+            renderAlumniPage(matchedCards);
+            scrollToAlumniMain();
+        }
+    });
+    alumniPaginationEl.appendChild(prevBtn);
+
+    for (var ap = 1; ap <= totalPages; ap++) {
+        (function(pageNum){
+            var pageBtn = document.createElement("button");
+            pageBtn.textContent = pageNum;
+            if (pageNum === alumniCurrentPage) pageBtn.classList.add("is-active");
+            pageBtn.addEventListener("click", function(){
+                alumniCurrentPage = pageNum;
+                renderAlumniPage(matchedCards);
+                scrollToAlumniMain();
+            });
+            alumniPaginationEl.appendChild(pageBtn);
+        })(ap);
+    }
+
+    var nextBtn = document.createElement("button");
+    nextBtn.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
+    nextBtn.disabled = alumniCurrentPage === totalPages;
+    nextBtn.addEventListener("click", function(){
+        if (alumniCurrentPage < totalPages) {
+            alumniCurrentPage++;
+            renderAlumniPage(matchedCards);
+            scrollToAlumniMain();
+        }
+    });
+    alumniPaginationEl.appendChild(nextBtn);
+}
+
+
+function scrollToAlumniMain(){
+    var alumniMainCol = document.querySelector(".alumniMain");
+    if (alumniMainCol) alumniMainCol.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+
+function updateAlumniActiveFilterTags(){
+
+    if(!alumniActiveFiltersBar) return;
+
+    alumniActiveFiltersBar
+    .querySelectorAll(".examTag")
+    .forEach(function(tag){
+        tag.remove();
+    });
+
+    var hasAny = false;
+
+    function addAlumniTag(value, onRemove){
+        hasAny = true;
+        var tag = document.createElement("span");
+        tag.className = "examTag";
+        tag.innerHTML =
+        value +
+        ' <button aria-label="Remove filter" class="examTagRemove">' +
+        '<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+        '<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+        '<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+        '</svg>' +
+        '</button>';
+
+        tag.querySelector("button").addEventListener("click", onRemove);
+
+        alumniActiveFiltersBar.insertBefore(tag, alumniClearAllLink);
+    }
+
+    alumniSortInputs.forEach(function(input){
+        if(input.checked){
+            addAlumniTag(input.value, function(){
+                input.checked = false;
+                applyAlumniFilters();
+            });
+        }
+    });
+
+    alumniFilterInputs.forEach(function(input){
+        if(input.checked){
+            addAlumniTag(input.value, function(){
+                input.checked = false;
+                applyAlumniFilters();
+            });
+        }
+    });
+
+    alumniActiveFiltersBar.style.display = hasAny ? "flex" : "none";
+}
+
+
+alumniFilterInputs.forEach(function(input){
+    input.addEventListener("change", applyAlumniFilters);
+});
+
+alumniSortInputs.forEach(function(input){
+    input.addEventListener("change", applyAlumniFilters);
+});
+
+
+/* ---- Alumni Clear All Filters ---- */
+
+var alumniFiltersClearAllBtn = document.getElementById("alumniFiltersClearAll");
+
+function clearAllAlumniFilters(){
+
+    alumniFilterInputs.forEach(function(cb){
+        cb.checked = false;
+    });
+    alumniSortInputs.forEach(function(rb){
+        rb.checked = false;
+    });
+
+    applyAlumniFilters();
+}
+
+if(alumniClearAllLink){
+    alumniClearAllLink.addEventListener("click",function(e){
+        e.preventDefault();
+        clearAllAlumniFilters();
+    });
+}
+
+if(alumniFiltersClearAllBtn){
+    alumniFiltersClearAllBtn.addEventListener("click", clearAllAlumniFilters);
+}
+
+/* ---- Alumni College "Show more" ---- */
+var alumniCollegeExtra = document.getElementById("alumniCollegeExtra");
+var alumniCollegeMoreBtn = document.getElementById("alumniCollegeMoreBtn");
+
+if (alumniCollegeExtra && alumniCollegeMoreBtn) {
+    alumniCollegeMoreBtn.addEventListener("click", function () {
+        var isHidden = alumniCollegeExtra.hasAttribute("hidden");
+        if (isHidden) {
+            alumniCollegeExtra.removeAttribute("hidden");
+            alumniCollegeMoreBtn.textContent = "− Show less";
+        } else {
+            alumniCollegeExtra.querySelectorAll("input[type='checkbox']").forEach(function (cb) {
+                if (cb.checked) {
+                    cb.checked = false;
+                    applyAlumniFilters();
+                }
+            });
+            alumniCollegeExtra.setAttribute("hidden", "");
+            alumniCollegeMoreBtn.textContent = "+ Show more";
+        }
+    });
+}
+
+/* Run once on load: compute real per-filter counts (hiding any filter
+   option with zero matching cards), then render the first page */
+if (alumniCardsList.length) {
+    computeAlumniFilterCounts();
+    applyAlumniFilters();
+}
+
+
+})();
+
+
+</script>
+
+    <script type="module" src="/src/js/alumni-import.js" defer></script>
+
+  </body>
+</html>
