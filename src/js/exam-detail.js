@@ -1,197 +1,46 @@
-
-
-
-
 (function () {
-  "use strict";
+  'use strict';
 
+  /* ---- 1) Generic Tablist (role="tab") ---- */
+  document.querySelectorAll('[data-tablist]').forEach(function (tablist) {
+    var tabs = tablist.querySelectorAll('[role="tab"]');
 
-  /* ---------- Generic accordion ---------- */
-  function wireToggle(trigger, container) {
-    var toggleIcon = trigger.querySelector(".clg-accHeader__toggle");
+    tablist.addEventListener('click', function (e) {
+      var tab = e.target.closest('[role="tab"]');
+      if (!tab || !tablist.contains(tab)) return;
 
-    trigger.addEventListener("click", function () {
-      var isOpen = container.getAttribute("data-open") === "true";
-
-      container.setAttribute("data-open", String(!isOpen));
-      trigger.setAttribute("aria-expanded", String(!isOpen));
-
-      if (toggleIcon) {
-        toggleIcon.textContent = !isOpen ? "–" : "+";
-      }
-    });
-  }
-
-
-  // click Expand
-
-document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
-
-  var target = null;
-
-  // Accordion ke andar hai
-  var accordion = trigger.closest(".clg-accordion");
-
-  if (accordion) {
-    target = accordion.querySelector(
-      "#" + trigger.getAttribute("data-toggle-target")
-    );
-  } else {
-    // About card jaisa normal element
-    target = document.getElementById(
-      trigger.getAttribute("data-toggle-target")
-    );
-  }
-
-  if (target) {
-    wireToggle(trigger, target);
-  }
-
-});
-
-
-  /* ---------- Tabs ---------- */
-  document.querySelectorAll("[data-tablist]").forEach(function (list) {
-
-    var buttons = Array.from(list.querySelectorAll("[role='tab']"));
-
-    buttons.forEach(function (btn) {
-
-      btn.addEventListener("click", function () {
-
-        buttons.forEach(function (b) {
-
-          b.setAttribute("aria-selected", "false");
-
-          var scope = list.parentElement;
-
-          var panel = scope.querySelector(
-            "#" + CSS.escape(b.getAttribute("aria-controls"))
-          );
-
-          if (panel) panel.hidden = true;
-        });
-
-        btn.setAttribute("aria-selected", "true");
-
-        var scope = list.parentElement;
-
-        var activePanel = scope.querySelector(
-          "#" + CSS.escape(btn.getAttribute("aria-controls"))
-        );
-
-        if (activePanel) activePanel.hidden = false;
-
+      tabs.forEach(function (t) {
+        var isActive = t === tab;
+        t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        if (panel) panel.classList.toggle('is-active', isActive);
       });
-
     });
-
   });
 
+  /* ---- 2) Pill Tabs — drag to scroll ---- */
+  document.querySelectorAll('.clg-pillTabs').forEach(function (bar) {
+    var isDown = false, startX = 0, scrollLeftStart = 0;
 
-  /* ---------- Scroll reveal ---------- */
-  var revealTargets = document.querySelectorAll(".reveal, .revealleft, .revealright");
+    bar.addEventListener('mousedown', function (e) {
+      isDown = true;
+      bar.classList.add('is-dragging');
+      startX = e.pageX - bar.offsetLeft;
+      scrollLeftStart = bar.scrollLeft;
+    });
 
-  if ("IntersectionObserver" in window && revealTargets.length) {
-
-    var revealObserver = new IntersectionObserver(function (entries, obs) {
-
-      entries.forEach(function (entry) {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
-        }
-
+    ['mouseleave', 'mouseup'].forEach(function (evt) {
+      bar.addEventListener(evt, function () {
+        isDown = false;
+        bar.classList.remove('is-dragging');
       });
-
-    }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -40px 0px"
     });
 
-    revealTargets.forEach(function (el) {
-      revealObserver.observe(el);
+    bar.addEventListener('mousemove', function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var x = e.pageX - bar.offsetLeft;
+      bar.scrollLeft = scrollLeftStart - (x - startX);
     });
-
-  } else {
-
-    revealTargets.forEach(function (el) {
-      el.classList.add("visible");
-    });
-
-  }
-
-  
-
-/* ---------- Scroll Spy ---------- */
-
-var OFFSET = 100;
-
-var navLinks = [...document.querySelectorAll(".clg-tabnav__list a")];
-
-var sections = navLinks
-  .map(link => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-function setActiveLink(activeLink) {
-  navLinks.forEach(link => link.removeAttribute("aria-current"));
-  if (activeLink) activeLink.setAttribute("aria-current", "true");
-}
-
-// Click
-navLinks.forEach(function (link) {
-
-  link.addEventListener("click", function (e) {
-
-    e.preventDefault();
-
-    var target = document.querySelector(this.getAttribute("href"));
-
-    if (!target) return;
-
-    var y = target.getBoundingClientRect().top + window.pageYOffset - OFFSET;
-
-    window.scrollTo({
-      top: y,
-      behavior: "smooth"
-    });
-
-    setActiveLink(this);
-
   });
-
-});
-
-// Scroll Spy
-function updateActive() {
-
-  let current = sections[0];
-
-  sections.forEach(function (section) {
-
-    if (window.pageYOffset + OFFSET >= section.offsetTop) {
-      current = section;
-    }
-
-  });
-
-  const active = navLinks.find(link => link.getAttribute("href") === "#" + current.id);
-
-  setActiveLink(active);
-
-}
-
-window.addEventListener("scroll", updateActive, { passive: true });
-
-window.addEventListener("load", updateActive);
-
-window.addEventListener("resize", updateActive);
-
 })();
-
-
-
-
-
-

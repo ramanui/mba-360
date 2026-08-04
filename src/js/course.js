@@ -1,14 +1,15 @@
 /* =========================================================
-   EXAM-PAGE.JS — Combined page script (single file, defer-ready)
-   Sections: 1) Exam "Show more" toggle
-             2) Exam Filters / Sort / Pagination / Admission Form
+   MAIN.JS — Combined page script (single file, defer-ready)
+   Sections: 1) Scroll Reveal  2) Exam "Show more" toggle
+             3) Exam Filters/Sort/Pagination + Admission Form
+             4) Accordion toggle (event delegation)
    Perf notes:
-   - Load with defer: <script src="exam-page.js" defer></script>
+   - Load this file with the "defer" attribute on <script>,
+     e.g. <script src="main.js" defer></script>
    - Single DOMContentLoaded wrapper (no duplicate listeners)
-   - If this page also has .reveal / .revealleft / .revealright
-     elements or .clg-accordion, use the shared main.js instead
-     (or add those modules here) — don't load two files that
-     both bind global click/DOMContentLoaded listeners.
+   - One IntersectionObserver instance, elements unobserved
+     after reveal (frees memory, avoids layout thrash)
+   - Accordion uses event delegation (1 listener, not N)
    ========================================================= */
 (function () {
   "use strict";
@@ -16,18 +17,62 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
+    initRevealAnimations();
     initExamShowMoreToggle();
     initExamFiltersModule();
+    initAccordionToggle();
   }
 
- 
+  /* ---------------------------------------------------------
+     1) SCROLL REVEAL (.reveal, .revealleft, .revealright)
+  --------------------------------------------------------- */
+  function initRevealAnimations() {
+    var elements = document.querySelectorAll(".reveal, .revealleft, .revealright");
+    if (!elements.length) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.25 });
+
+    elements.forEach(function (el) { observer.observe(el); });
+  }
 
   /* ---------------------------------------------------------
-     2) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
+     2) EXAM FILTER GROUP — "Show more / Show less" toggle
+  --------------------------------------------------------- */
+  function initExamShowMoreToggle() {
+    var moreBtns = document.querySelectorAll(".examFilterGroup__more");
+    if (!moreBtns.length) return;
+
+    moreBtns.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var extra = this.previousElementSibling;
+        if (!extra) return;
+        var isHidden = extra.hasAttribute("hidden");
+
+        if (isHidden) {
+          extra.removeAttribute("hidden");
+          this.textContent = this.textContent.replace("Show more", "Show less").replace("+", "-");
+        } else {
+          extra.setAttribute("hidden", "");
+          this.textContent = this.textContent.replace("Show less", "Show more").replace("-", "+");
+        }
+      });
+    });
+  }
+
+  /* ---------------------------------------------------------
+     3) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
   --------------------------------------------------------- */
   function initExamFiltersModule() {
     var examCards = document.querySelectorAll(".examMain > .examCard");
     if (!examCards.length) {
+      // still run admission form validation even if no exam cards on this page
       initAdmissionForm();
       return;
     }
@@ -85,30 +130,20 @@
     var sortSelect = document.getElementById("examSortSelect");
     var examMainEl = document.querySelector(".examMain");
 
-    var EXAM_MONTH_ORDER = {
-      "September 2025": 1,
-      "October 2025": 2,
-      "November 2025": 3,
-      "December 2025": 4
-    };
-
     function getCardFee(card) {
-      var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(1) strong");
-      return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+      return parseFloat(card.dataset.fee) || 0;
     }
 
-    function getCardColleges(card) {
+    function getCardAvgPackage(card) {
       var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(3) strong");
-      return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+      if (!strong) return 0;
+      var match = strong.textContent.match(/[\d.]+/);
+      return match ? parseFloat(match[0]) : 0;
     }
 
     function getCardName(card) {
       var h3 = card.querySelector("h3");
       return h3 ? h3.textContent.trim().toLowerCase() : "";
-    }
-
-    function getCardDateRank(card) {
-      return EXAM_MONTH_ORDER[card.dataset.month] || 999;
     }
 
     function sortExamCards(matchedCards) {
@@ -117,12 +152,10 @@
       var sortBy = sortSelect.value;
       var sorted = matchedCards.slice();
 
-      if (sortBy === "Exam Date: Nearest First") {
-        sorted.sort(function (a, b) { return getCardDateRank(a) - getCardDateRank(b); });
-      } else if (sortBy === "Application Fee: Low to High") {
+      if (sortBy === "Total Fees: Low to High") {
         sorted.sort(function (a, b) { return getCardFee(a) - getCardFee(b); });
-      } else if (sortBy === "Accepting Colleges: High to Low") {
-        sorted.sort(function (a, b) { return getCardColleges(b) - getCardColleges(a); });
+      } else if (sortBy === "Avg Package: High to Low") {
+        sorted.sort(function (a, b) { return getCardAvgPackage(b) - getCardAvgPackage(a); });
       } else if (sortBy === "Alphabetical") {
         sorted.sort(function (a, b) { return getCardName(a).localeCompare(getCardName(b)); });
       }
@@ -143,10 +176,9 @@
 
     function applyExamFilters() {
       /* Group selected filter values by their filter group so that
-         checkboxes within the SAME group (e.g. "National Level" +
-         "State Level" under Exam Level) are OR'd together, while
-         different groups (Level, Status, Body, Mode, Month) are
-         still AND'd together. */
+         checkboxes within the SAME group (e.g. "Government" +
+         "Private" under College Type) are OR'd together, while
+         different groups are AND'd together. */
       var groupedFilters = {};
 
       filterInputs.forEach(function (input) {
@@ -165,7 +197,17 @@
           return groupedFilters[group].indexOf(card.dataset[group]) !== -1;
         });
 
-        if (groupKeys.length === 0 || matched) {
+        /* Total Fees range slider: card's fee must be within the
+           selected max-fee cap whenever the slider has been moved
+           away from its default (max) value. */
+        if (matched && feeRangeActive && feeRange) {
+          var cardFee = parseFloat(card.dataset.fee) || 0;
+          if (cardFee > parseFloat(feeRange.value)) matched = false;
+        }
+
+        if (groupKeys.length === 0 && !feeRangeActive) {
+          matchedCards.push(card);
+        } else if (matched) {
           matchedCards.push(card);
         } else {
           card.style.display = "none";
@@ -383,6 +425,36 @@
         input.classList.remove("isInvalid");
         error.textContent = "";
         admissionForm.reset();
+      }
+    });
+  }
+
+  /* ---------------------------------------------------------
+     4) ACCORDION TOGGLE (event delegation — 1 listener total)
+  --------------------------------------------------------- */
+  function initAccordionToggle() {
+    document.addEventListener("click", function (e) {
+      var trigger = e.target.closest("[data-toggle-target]");
+      if (!trigger) return;
+
+      var targetId = trigger.dataset.toggleTarget;
+
+      var accordion = trigger.closest(".clg-accordion");
+      var container = accordion
+        ? accordion.querySelector("#" + targetId)
+        : document.getElementById(targetId);
+
+      if (!container) return;
+
+      var isOpen = container.dataset.open === "true";
+      var newState = !isOpen;
+
+      container.dataset.open = String(newState);
+      trigger.setAttribute("aria-expanded", newState);
+
+      var toggleIcon = trigger.querySelector(".clg-accHeader__toggle");
+      if (toggleIcon) {
+        toggleIcon.textContent = newState ? "\u2013" : "+";
       }
     });
   }

@@ -6,5 +6,5 @@ import "../css/exam-college-bba-lp.css";
 import "../css/faq.css";
 import "../css/footer.css";
 import "./exam-college-comon.js";
-import "./exam.js";
+import "./college.js";
 import "./faq.js";

@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>MBA 360</title>
+        <meta name="description"
+            content="DGTL">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/favicon.svg"
+            sizes="32x32">
+        <link rel="apple-touch-icon" href="/favicon.svg" sizes="180x180">
+
+        <!-- Preload LCP Hero Image (Mobile + Desktop) -->
+
+        <link rel="preload" as="image"
+            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            fetchpriority="high">
+
+        <!-- Google Fonts (Ultra Optimized) -->
+
+        <link rel="preload"
+            href="/fonts/Inter-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+        <link rel="preload"
+            href="/fonts/Inter-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+    </head>
+    <body>
+        <include src="public/partials/header.html"></include>
+
+        <main>
+            <section class="hero" aria-labelledby="page-heading reveal">
+                <div class="bg-image"></div>
+                <div class="overlay"></div>
+                <div class="container">
+                    <h1 id="page-heading" class="hero__title">Best BBA Colleges
+                        in India 2025</h1>
+                    <div class="breadcrumb"><a href="/">Home</a> <span
+                            aria-hidden="true">›</span> <span>BBA Colleges in
+                            India</span></div>
+                </div>
+            </section>
+
+            <section class="ad-section">
+                <div class="container">
+                    <div class="ad-section__row">
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                        <div class="ad-section__item">
+                            <img src="/src/assets/images/mdi-gurgaon.webp"
+                                alt="MDI Gurgaon">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="clg-section reveal">
+                <div class="container">
+
+                    <div class="clg-card clg-about" data-open="false"
+                        id="about-card">
+                        <div class="clg-about__body">
+                            <h2 class="top_heading">BBA Colleges in
+                                Delhi/NCR</h2>
+                            <div class="clg-about__intro">
+                                <p>Lorem Ipsum is simply dummy text of the
+                                    printing and typesetting industry. Lorem
+                                    Ipsum has been the industry's standard dummy
+                                    text ever since 1966 Lorem Ipsum is simply
+                                    dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum is simply dummy text
+                                    of the printing and typesetting industry.
+                                    Lorem Ipsum has been the industry's standard
+                                    dummy text ever since 1966 Lorem Ipsum is
+                                    simply dummy text of the. Lorem Ipsum is
+                                    simply dummy text of the printing and
+                                    typesetting industry. Lorem Ipsum is simply
+                                    dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the
+                                    industry's standard dummy text ever</p>
+                            </div>
+
+                        </div>
+                        <div class="clg-about__more" id="about-more">
+                            <div>
+                                <div class="clg-about__body">
+                                    <p>Lorem Ipsum is simply dummy text of the
+                                        printing and typesetting industry. Lorem
+                                        Ipsum has been the industry's standard
+                                        dummy text ever since 1966 Lorem Ipsum
+                                        is simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has
+                                        been the industry's standard dummy text
+                                        ever since 1966 Lorem Ipsum is simply
+                                        dummy text of the. Lorem Ipsum is simply
+                                        dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum is
+                                        simply dummy text of the printing and
+                                        typesetting industry. Lorem Ipsum has
+                                        been the industry's standard dummy text
+                                        ever</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clg-expandRow">
+                            <button type="button" class="clg-expandBtn"
+                                id="about-expand-btn"
+                                data-toggle-target="about-card"
+                                aria-expanded="false" aria-controls="about-more"
+                                aria-label="Show more about SPJIMR">
+                                <svg width="18" height="18" viewBox="0 0 24 24"
+                                    fill="none" aria-hidden="true"><path
+                                        d="M6 9l6 6 6-6" stroke="currentColor"
+                                        stroke-width="2.2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="examListing">
+                <div class="container">
+
+                    <div class="examActiveFilters" id="examActiveFilters"
+                        style="display:none;">
+                        <span class="examActiveFilters__label">Active
+                            Filters:</span>
+                        <a href="#" class="examActiveFilters__clear"
+                            id="examClearAll">Clear All ✕</a>
+                    </div>
+                    <p id="examNoResults"
+                        style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+                        exams match the selected filters. Try clearing some
+                        filters.</p>
+
+                    <div class="examLayout">
+
+                        <!-- Mobile Filter Toggle -->
+                        <button type="button" class="examMobileFilterToggle"
+                            id="examMobileFilterToggle" aria-expanded="false"
+                            aria-controls="examFiltersPanel">
+                            <span>Filters</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24"
+                                fill="none" aria-hidden="true"><path
+                                    d="M6 9l6 6 6-6" stroke="currentColor"
+                                    stroke-width="2.4" stroke-linecap="round"
+                                    stroke-linejoin="round"></path></svg>
+                        </button>
+
+                        <!-- Sidebar Filters -->
+                        <aside class="examFilters" id="examFiltersPanel">
+                            <div class="examFilters__head">
+                                <h4>Filter Colleges</h4>
+                                <button class="examFilters__clearAll"
+                                    id="examFiltersClearAll">Clear all</button>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Location /
+                                    City</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Delhi/NCR"
+                                        data-filter-group="city"><span>Delhi/NCR</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Mumbai"
+                                        data-filter-group="city"><span>Mumbai</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Bangalore"
+                                        data-filter-group="city"><span>Bangalore</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Pune"
+                                        data-filter-group="city"><span>Pune</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Chennai"
+                                        data-filter-group="city"><span>Chennai</span><em></em></label>
+                                <div class="examFilterGroup__extra"
+                                    id="examCityExtra" hidden>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="Kolkata"
+                                            data-filter-group="city"><span>Kolkata</span><em></em></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="Hyderabad"
+                                            data-filter-group="city"><span>Hyderabad</span><em></em></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox" value="Indore"
+                                            data-filter-group="city"><span>Indore</span><em></em></label>
+                                </div>
+                                <button class="examFilterGroup__more"
+                                    id="examCityMoreBtn">+ Show more</button>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">College
+                                    Type</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Government"
+                                        data-filter-group="collegeType"><span>Government</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Private"
+                                        data-filter-group="collegeType"><span>Private</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Central University"
+                                        data-filter-group="collegeType"><span>Central
+                                        University</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Public"
+                                        data-filter-group="collegeType"><span>Public</span><em></em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Admission
+                                    Mode</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Entrance Exam Based"
+                                        data-filter-group="admissionMode"><span>Entrance
+                                        Exam Based</span><em>6</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Merit (12th Marks)"
+                                        data-filter-group="admissionMode"><span>Merit
+                                        (12th Marks)</span><em>18</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Direct Admission"
+                                        data-filter-group="admissionMode"><span>Direct
+                                        Admission</span><em>10</em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Entrance
+                                    Exam</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="IPMAT"
+                                        data-filter-group="entranceExam"><span>IPMAT</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="SET (Symbiosis)"
+                                        data-filter-group="entranceExam"><span>SET
+                                        (Symbiosis)</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="NPAT (NMIMS)"
+                                        data-filter-group="entranceExam"><span>NPAT
+                                        (NMIMS)</span><em></em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p
+                                    class="examFilterGroup__title">Specialization</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Finance"
+                                        data-filter-group="specialization"><span>Finance</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Marketing"
+                                        data-filter-group="specialization"><span>Marketing</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Human Resources"
+                                        data-filter-group="specialization"><span>Human
+                                        Resources</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="International Business"
+                                        data-filter-group="specialization"><span>International
+                                        Business</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="BBA + IT / CA"
+                                        data-filter-group="specialization"><span>BBA
+                                        + IT / CA</span><em></em></label>
+                                <div class="examFilterGroup__extra"
+                                    id="examSpecExtra" hidden>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="Business Analytics"
+                                            data-filter-group="specialization"><span>Business
+                                            Analytics</span><em></em></label>
+                                </div>
+                                <button class="examFilterGroup__more"
+                                    id="examSpecMoreBtn">+ Show more</button>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Total Fees
+                                    (₹)</p>
+                                <input type="range" min="3" max="42" value="42"
+                                    class="examFeeRange" id="examFeeRange">
+                                <div class="examFeeRange__labels"><span>₹3
+                                        lakhs</span><span
+                                        id="examFeeRangeValue">₹42
+                                        lakhs</span></div>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p
+                                    class="examFilterGroup__title">Accreditation</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="NAAC A+"
+                                        data-filter-group="accreditation"><span>NAAC
+                                        A+</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="NAAC A"
+                                        data-filter-group="accreditation"><span>NAAC
+                                        A</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="UGC Recognized"
+                                        data-filter-group="accreditation"><span>UGC
+                                        Recognized</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="AACSB"
+                                        data-filter-group="accreditation"><span>AACSB</span><em></em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Avg Placement
+                                    Package</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="10+ LPA"
+                                        data-filter-group="package"><span>10+
+                                        LPA</span><em>10</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="6-10 LPA"
+                                        data-filter-group="package"><span>6-10
+                                        LPA</span><em>4</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="3-6 LPA"
+                                        data-filter-group="package"><span>3-6
+                                        LPA</span><em>8</em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Below 3 LPA"
+                                        data-filter-group="package"><span>Below
+                                        3 LPA</span><em>8</em></label>
+                            </div>
+
+                            <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Programme
+                                    Type</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Regular BBA (3 Yrs)"
+                                        data-filter-group="programme"><span>Regular
+                                        BBA (3 Yrs)</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="BBA+MBA (5 Yrs)"
+                                        data-filter-group="programme"><span>BBA+MBA
+                                        (5 Yrs)</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="BBA LLB (5 Yrs)"
+                                        data-filter-group="programme"><span>BBA
+                                        LLB (5 Yrs)</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Online / Distance BBA"
+                                        data-filter-group="programme"><span>Online
+                                        / Distance BBA</span><em></em></label>
+                            </div>
+                        </aside>
+
+                        <!-- Main content -->
+                        <div class="examMain">
+                            <div class="examMain__toolbar">
+                                <p class="examMain__count">Showing <strong
+                                        id="examResultCount">5</strong> of
+                                    <strong id="examTotalCount">5</strong> BBA
+                                    Colleges in India</p>
+                                <div class="examSort">
+                                    <label for="examSortSelect">Sort by</label>
+
+                                    <div class="selectWrap">
+                                        <select id="examSortSelect">
+                                            <option>Total Fees: Low to
+                                                High</option>
+                                            <option>Avg Package: High to
+                                                Low</option>
+                                            <option>Alphabetical</option>
+                                        </select>
+
+                                        <svg class="selectArrow"
+                                            viewBox="0 0 24 24" fill="none"
+                                            aria-hidden="true">
+                                            <path d="M6 9L12 15L18 9"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
+
+                            <!-- Exam Card 1 -->
+
+                            <div class="examCard"
+                                data-programme="Regular BBA (3 Yrs)"
+                                data-city="Delhi/NCR"
+                                data-college-type="Central University"
+                                data-admission-mode="Merit (12th Marks)"
+                                data-specialization="Finance"
+                                data-accreditation="NAAC A+"
+                                data-package="6-10 LPA" data-fee="1.80">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/iima-DED8g9td.webp"
+                                            alt="Shaheed Sukhdev College of Business Studies (SSCBS), Delhi logo"
+                                            width="56" height="56"
+                                            loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>Shaheed Sukhdev College of Business
+                                            Studies (SSCBS), Delhi</h3>
+                                        <p>New Delhi, Delhi/NCR</p>
+                                        <div class="examCard__badges">
+                                            <span class="examBadge">Delhi
+                                                University</span>
+                                            <span
+                                                class="examBadge">Government</span>
+                                            <span class="examBadge">NAAC
+                                                A+</span>
+                                            <span class="examBadge">UGC
+                                                Recognized</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a href="#"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Download
+                                            Brochure <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div class="examCard__stat"><strong>₹1.80
+                                            L</strong><span>Total
+                                            Fees</span></div>
+                                    <div class="examCard__stat"><strong>₹24
+                                            L</strong><span>Highest
+                                            Package</span></div>
+                                    <div class="examCard__stat"><strong>₹8.5
+                                            LPA</strong><span>Average
+                                            Package</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>96%</strong><span>Placement
+                                            Rate</span></div>
+                                </div>
+                            </div>
+                            <!-- Exam Card 2 -->
+
+                            <div class="examCard"
+                                data-programme="Regular BBA (3 Yrs)"
+                                data-city="Bangalore"
+                                data-college-type="Private"
+                                data-admission-mode="Entrance Exam Based"
+                                data-specialization="Marketing"
+                                data-accreditation="NAAC A+"
+                                data-package="3-6 LPA" data-fee="12.00">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/iima-DED8g9td.webp"
+                                            alt="Christ University, Bangalore logo"
+                                            width="56" height="56"
+                                            loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>Christ University, Bangalore</h3>
+                                        <p>Bangalore, Karnataka</p>
+                                        <div class="examCard__badges">
+                                            <span
+                                                class="examBadge">Private</span>
+                                            <span class="examBadge">NAAC
+                                                A+</span>
+                                            <span class="examBadge">UGC
+                                                Recognized</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a href="#"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Download
+                                            Brochure <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div class="examCard__stat"><strong>₹12.00
+                                            L</strong><span>Total
+                                            Fees</span></div>
+                                    <div class="examCard__stat"><strong>₹18
+                                            L</strong><span>Highest
+                                            Package</span></div>
+                                    <div class="examCard__stat"><strong>₹5.5
+                                            LPA</strong><span>Average
+                                            Package</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>90%</strong><span>Placement
+                                            Rate</span></div>
+                                </div>
+                            </div>
+                            <!-- Exam Card 3 -->
+
+                            <div class="examCard"
+                                data-programme="Regular BBA (3 Yrs)"
+                                data-city="Mumbai" data-college-type="Private"
+                                data-admission-mode="Entrance Exam Based"
+                                data-entrance-exam="NPAT (NMIMS)"
+                                data-specialization="International Business"
+                                data-accreditation="AACSB"
+                                data-package="10+ LPA" data-fee="18.00">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/iima-DED8g9td.webp"
+                                            alt="NMIMS Anil Surendra Modi School of Commerce, Mumbai logo"
+                                            width="56" height="56"
+                                            loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>NMIMS Anil Surendra Modi School of
+                                            Commerce, Mumbai</h3>
+                                        <p>Mumbai, Maharashtra</p>
+                                        <div class="examCard__badges">
+                                            <span
+                                                class="examBadge">Private</span>
+                                            <span class="examBadge">NAAC
+                                                A</span>
+                                            <span class="examBadge">AACSB</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a href="#"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Download
+                                            Brochure <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div class="examCard__stat"><strong>₹18.00
+                                            L</strong><span>Total
+                                            Fees</span></div>
+                                    <div class="examCard__stat"><strong>₹28
+                                            L</strong><span>Highest
+                                            Package</span></div>
+                                    <div class="examCard__stat"><strong>₹11
+                                            LPA</strong><span>Average
+                                            Package</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>95%</strong><span>Placement
+                                            Rate</span></div>
+                                </div>
+                            </div>
+                            <!-- Exam Card 4 -->
+
+                            <div class="examCard"
+                                data-programme="Regular BBA (3 Yrs)"
+                                data-city="Pune" data-college-type="Private"
+                                data-admission-mode="Entrance Exam Based"
+                                data-entrance-exam="SET (Symbiosis)"
+                                data-specialization="Business Analytics"
+                                data-accreditation="NAAC A"
+                                data-package="6-10 LPA" data-fee="15.00">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/iima-DED8g9td.webp"
+                                            alt="Symbiosis Institute of Business Management (SIBM), Pune logo"
+                                            width="56" height="56"
+                                            loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>Symbiosis Institute of Business
+                                            Management (SIBM), Pune</h3>
+                                        <p>Pune, Maharashtra</p>
+                                        <div class="examCard__badges">
+                                            <span
+                                                class="examBadge">Private</span>
+                                            <span class="examBadge">NAAC
+                                                A</span>
+                                            <span class="examBadge">AACSB</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a href="#"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Download
+                                            Brochure <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div class="examCard__stat"><strong>₹15.00
+                                            L</strong><span>Total
+                                            Fees</span></div>
+                                    <div class="examCard__stat"><strong>₹22
+                                            L</strong><span>Highest
+                                            Package</span></div>
+                                    <div class="examCard__stat"><strong>₹9
+                                            LPA</strong><span>Average
+                                            Package</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>93%</strong><span>Placement
+                                            Rate</span></div>
+                                </div>
+                            </div>
+                            <!-- Exam Card 5 -->
+
+                            <div class="examCard"
+                                data-programme="BBA+MBA (5 Yrs)"
+                                data-city="Indore"
+                                data-college-type="Government"
+                                data-admission-mode="Entrance Exam Based"
+                                data-entrance-exam="IPMAT"
+                                data-specialization="BBA + IT / CA"
+                                data-accreditation="AACSB"
+                                data-package="10+ LPA" data-fee="20.00">
+                                <div class="examCard__top">
+                                    <div class="examCard__logo"><img
+                                            src="/src/assets/images/iima-DED8g9td.webp"
+                                            alt="Integrated Programme in Management (IPM), IIM Indore logo"
+                                            width="56" height="56"
+                                            loading="lazy"></div>
+                                    <div class="examCard__info">
+                                        <h3>Integrated Programme in Management
+                                            (IPM), IIM Indore</h3>
+                                        <p>Indore, Madhya Pradesh</p>
+                                        <div class="examCard__badges">
+                                            <span
+                                                class="examBadge">Government</span>
+                                            <span class="examBadge">AACSB</span>
+                                            <span class="examBadge">EQUIS</span>
+                                        </div>
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a href="#"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Download
+                                            Brochure <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
+                                </div>
+                                <div class="examCard__stats">
+                                    <div class="examCard__stat"><strong>₹20.00
+                                            L</strong><span>Total
+                                            Fees</span></div>
+                                    <div class="examCard__stat"><strong>₹30
+                                            L</strong><span>Highest
+                                            Package</span></div>
+                                    <div class="examCard__stat"><strong>₹14
+                                            LPA</strong><span>Average
+                                            Package</span></div>
+                                    <div
+                                        class="examCard__stat"><strong>98%</strong><span>Placement
+                                            Rate</span></div>
+                                </div>
+                            </div>
+                            <div class="examPagination"
+                                id="examPagination"></div>
+
+                        </div>
+
+                        <!-- Right sidebar -->
+                        <aside class="examAside">
+
+                            <div class="examWidget">
+                                <h5>Upcoming Exams</h5>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">IPMAT
+                                            2026</p><p
+                                            class="examClosingSoon__date">Closes
+                                            Dec 15</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">SET
+                                            2026</p><p
+                                            class="examClosingSoon__date">Jan 5,
+                                            2026</p></div>
+                                    <span
+                                        class="examPill examPill--soon">Soon</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">NPAT
+                                            2026</p><p
+                                            class="examClosingSoon__date">Dec
+                                            14, 2025</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">CUET
+                                            UG 2026</p><p
+                                            class="examClosingSoon__date">Oct–Dec</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">IPU
+                                            CET 2026</p><p
+                                            class="examClosingSoon__date">Sep 7,
+                                            2025</p></div>
+                                    <span
+                                        class="examPill examPill--soon">Soon</span>
+                                </div>
+                                <div class="examClosingSoon__item">
+                                    <div><p class="examClosingSoon__name">Christ
+                                            Entrance 2025</p><p
+                                            class="examClosingSoon__date">Mar
+                                            22, 2025</p></div>
+                                    <span
+                                        class="examPill examPill--open">Open</span>
+                                </div>
+                            </div>
+
+                            <div class="examWidget examQuickLinks">
+                                <h5>Quick Links</h5>
+                                <ul>
+                                    <li><a href="#">Top MBA Colleges by
+                                            Salary</a></li>
+                                    <li><a href="#">MBA vs PGDM — Key
+                                            Differences</a></li>
+                                    <li><a href="#">IIM Fees 2025-26 Complete
+                                            List</a></li>
+                                    <li><a href="#">CAT 2025 Preparation
+                                            Guide</a></li>
+                                    <li><a href="#">MBA Scholarships in
+                                            India</a></li>
+                                    <li><a href="#">1-Year MBA Programs
+                                            India</a></li>
+                                    <li><a href="#">Executive MBA (EMBA)
+                                            Colleges</a></li>
+                                    <li><a href="#">Online MBA Colleges
+                                            2025</a></li>
+                                </ul>
+                            </div>
+                        </aside>
+
+                    </div>
+                </div>
+            </section>
+
+            <section class="examCalendar reveal">
+                <div class="container">
+                    <div class="examCalendar__grid">
+                        <div class="examCalendar__head">
+                            <h2 class="marketing__heading">MBA Exam Calendar
+                                2025 26 Complete List</h2>
+                            <p>All major MBA entrance exam dates, fees &
+                                application status in one place. Updated July
+                                2025.</p>
+                        </div>
+
+                        <div class="examCalendar__disclaimer">
+                            <strong>Disclaimer:</strong> Disclaimer: Exam dates
+                            are subject to change as per official notifications
+                            by the conducting bodies. Please verify directly
+                            with the official exam website before applying.
+                        </div>
+
+                        <div
+                            class="examCalendar__tableWrap examTable__wrapScroll">
+                            <table class="examTable">
+                                <thead>
+                                    <tr>
+                                        <th>Exam Name</th>
+                                        <th>Level</th>
+                                        <th>Exam Date</th>
+                                        <th>Reg. Deadline</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">XAT
+                                            2026</td>
+                                        <td>National</td>
+                                        <td>Jan 4, 2026</td>
+                                        <td>Dec 15, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">IBSAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">IIFT
+                                            Entrance 2026</td>
+                                        <td>University</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Nov 28, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">MAH-CET
+                                            2026</td>
+                                        <td>University</td>
+                                        <td>Apr 6, 2026</td>
+                                        <td>Feb 25, 2026</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">TANCET
+                                            2026</td>
+                                        <td>State</td>
+                                        <td>May 9, 2026</td>
+                                        <td>Apr 10, 2026</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+
+                                    <!-- Extra exams: hidden until "View All" is clicked -->
+
+                                    <tr class="examTable__extraRow"
+                                        style="display:none;">
+                                        <td class="examTable__name">CAT
+                                            2025</td>
+                                        <td>National</td>
+                                        <td>Nov 30, 2025</td>
+                                        <td>Sept 20, 2025</td>
+                                        <td><button
+                                                class="examTable__apply">Apply</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="examCalendar__viewAll">
+                            <button id="examViewAllBtn">View All 25+ MBA Exams
+                                <span aria-hidden="true"><svg width="18"
+                                        height="18" viewBox="0 0 24 24"
+                                        fill="none" aria-hidden="true"><path
+                                            d="M6 9l6 6 6-6"
+                                            stroke="currentColor"
+                                            stroke-width="2.2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"></path></svg></span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="examFaq reveal">
+                <div class="container">
+                    <div class="examFaq__grid">
+                        <div class="examFaq__head">
+                            <h2 class="marketing__heading">Frequently Asked
+                                Questions — MBA Colleges in India</h2>
+                            <p>Everything you need to know about MBA admissions,
+                                fees, and career prospects</p>
+                        </div>
+
+                        <div class="examFaq__tabs" id="examFaqTabs">
+                            <button class="examFaq__tab is-active"
+                                data-category="rankings">Rankings</button>
+                            <button class="examFaq__tab"
+                                data-category="fees">Fees</button>
+                            <button class="examFaq__tab"
+                                data-category="admissions">Admissions</button>
+                            <button class="examFaq__tab"
+                                data-category="salary">Salary &amp;
+                                Placement</button>
+                            <button class="examFaq__tab"
+                                data-category="eligibility">Eligibility</button>
+                            <button class="examFaq__tab"
+                                data-category="specializations">Specializations</button>
+                            <button class="examFaq__tab"
+                                data-category="scholarships">Scholarships</button>
+                        </div>
+
+                        <div class="examFaq__list" id="examFaqList">
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">Which is the
+                                    No. 1 MBA college in India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>IIM Ahmedabad is
+                                        consistently ranked the No. 1 MBA
+                                        college in India, followed closely by
+                                        IIM Bangalore and IIM Calcutta, based on
+                                        NIRF rankings, placement records, and
+                                        faculty quality.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">How are MBA
+                                    colleges ranked in India — NIRF vs private
+                                    rankings?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>NIRF is the
+                                        official government ranking based on
+                                        teaching, research, placements and
+                                        outreach, while private rankings (like
+                                        those by business magazines) also factor
+                                        in brand perception and industry surveys
+                                        — so the two lists can differ
+                                        slightly.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">Which is the
+                                    No. 1 MBA college in India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>IIM Ahmedabad is
+                                        consistently ranked the No. 1 MBA
+                                        college in India, followed closely by
+                                        IIM Bangalore and IIM Calcutta, based on
+                                        NIRF rankings, placement records, and
+                                        faculty quality.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="rankings">
+                                <button class="examFaq__question">How are MBA
+                                    colleges ranked in India — NIRF vs private
+                                    rankings?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>NIRF is the
+                                        official government ranking based on
+                                        teaching, research, placements and
+                                        outreach, while private rankings (like
+                                        those by business magazines) also factor
+                                        in brand perception and industry surveys
+                                        — so the two lists can differ
+                                        slightly.</p></div>
+                            </div>
+
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    cheapest top MBA college in India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Government-run
+                                        institutes and university departments
+                                        such as FMS Delhi and JBIMS Mumbai offer
+                                        top-tier MBA education at a fraction of
+                                        the cost of private B-schools.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    average total fee for a 2-year MBA at
+                                    IIMs?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The total fee
+                                        for a 2-year PGP at most IIMs typically
+                                        ranges between ₹20-25 lakhs, though
+                                        newer and smaller IIMs are usually on
+                                        the lower end of that range.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    cheapest top MBA college in India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Government-run
+                                        institutes and university departments
+                                        such as FMS Delhi and JBIMS Mumbai offer
+                                        top-tier MBA education at a fraction of
+                                        the cost of private B-schools.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="fees">
+                                <button class="examFaq__question">What is the
+                                    average total fee for a 2-year MBA at
+                                    IIMs?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The total fee
+                                        for a 2-year PGP at most IIMs typically
+                                        ranges between ₹20-25 lakhs, though
+                                        newer and smaller IIMs are usually on
+                                        the lower end of that range.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">How many MBA
+                                    entrance exams should I appear for?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most aspirants
+                                        appear for 3-4 exams such as CAT, XAT,
+                                        SNAP and NMAT to maximise their chances
+                                        of getting into a good
+                                        B-school.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">What is the
+                                    typical MBA admission process after the
+                                    entrance exam?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most B-schools
+                                        shortlist candidates for a Written
+                                        Ability Test (WAT) followed by a Group
+                                        Discussion and Personal Interview
+                                        (GD-PI), with the final selection based
+                                        on a combination of exam score, academic
+                                        record, work experience, and interview
+                                        performance.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">How many MBA
+                                    entrance exams should I appear for?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most aspirants
+                                        appear for 3-4 exams such as CAT, XAT,
+                                        SNAP and NMAT to maximise their chances
+                                        of getting into a good
+                                        B-school.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="admissions">
+                                <button class="examFaq__question">What is the
+                                    typical MBA admission process after the
+                                    entrance exam?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most B-schools
+                                        shortlist candidates for a Written
+                                        Ability Test (WAT) followed by a Group
+                                        Discussion and Personal Interview
+                                        (GD-PI), with the final selection based
+                                        on a combination of exam score, academic
+                                        record, work experience, and interview
+                                        performance.</p></div>
+                            </div>
+
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">What is the
+                                    average salary after MBA from IIM?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The average
+                                        placement package across the older IIMs
+                                        ranges between ₹25-33 LPA, with top
+                                        recruiters offering significantly higher
+                                        packages in consulting and finance
+                                        roles.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">Which
+                                    companies recruit the most at top
+                                    B-schools?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Consulting firms
+                                        (McKinsey, BCG, Bain), major banks, and
+                                        consumer goods companies are
+                                        consistently among the top recruiters at
+                                        premier Indian B-schools every placement
+                                        season.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">What is the
+                                    average salary after MBA from IIM?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>The average
+                                        placement package across the older IIMs
+                                        ranges between ₹25-33 LPA, with top
+                                        recruiters offering significantly higher
+                                        packages in consulting and finance
+                                        roles.</p></div>
+                            </div>
+                            <div class="examFaq__item" data-category="salary">
+                                <button class="examFaq__question">Which
+                                    companies recruit the most at top
+                                    B-schools?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Consulting firms
+                                        (McKinsey, BCG, Bain), major banks, and
+                                        consumer goods companies are
+                                        consistently among the top recruiters at
+                                        premier Indian B-schools every placement
+                                        season.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">Is work
+                                    experience mandatory for MBA admission in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Work experience
+                                        is not mandatory for most MBA programs,
+                                        but exams like the Executive MBA and
+                                        certain XLRI/IIM programs give
+                                        preference to candidates with 2+ years
+                                        of experience.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">What is the
+                                    minimum percentage required for MBA entrance
+                                    exams?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most exams
+                                        require a minimum of 50% marks (45% for
+                                        reserved categories) in a bachelor's
+                                        degree from a recognised university to
+                                        be eligible to apply.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">Is work
+                                    experience mandatory for MBA admission in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Work experience
+                                        is not mandatory for most MBA programs,
+                                        but exams like the Executive MBA and
+                                        certain XLRI/IIM programs give
+                                        preference to candidates with 2+ years
+                                        of experience.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="eligibility">
+                                <button class="examFaq__question">What is the
+                                    minimum percentage required for MBA entrance
+                                    exams?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most exams
+                                        require a minimum of 50% marks (45% for
+                                        reserved categories) in a bachelor's
+                                        degree from a recognised university to
+                                        be eligible to apply.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Which MBA
+                                    specialization has the highest salary in
+                                    India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Finance,
+                                        Consulting, and Product Management
+                                        specializations continue to command the
+                                        highest average salaries for MBA
+                                        graduates in India.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Can I switch
+                                    my specialization after the first year of
+                                    MBA?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most 2-year MBA
+                                        programs let students choose their
+                                        specialization only after the first
+                                        year, once they've had exposure to core
+                                        subjects across finance, marketing,
+                                        operations and HR.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Which MBA
+                                    specialization has the highest salary in
+                                    India 2025?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Finance,
+                                        Consulting, and Product Management
+                                        specializations continue to command the
+                                        highest average salaries for MBA
+                                        graduates in India.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="specializations">
+                                <button class="examFaq__question">Can I switch
+                                    my specialization after the first year of
+                                    MBA?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Most 2-year MBA
+                                        programs let students choose their
+                                        specialization only after the first
+                                        year, once they've had exposure to core
+                                        subjects across finance, marketing,
+                                        operations and HR.</p></div>
+                            </div>
+
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Are
+                                    scholarships available for MBA students in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, most
+                                        B-schools offer merit and need-based
+                                        scholarships, and government schemes
+                                        along with bank education loans are also
+                                        widely used to fund MBA fees.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Do IIMs offer
+                                    fee waivers based on family income?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, IIMs offer
+                                        significant fee waivers (up to 100% at
+                                        some campuses) for students whose family
+                                        income falls below a specified
+                                        threshold, in addition to need-based
+                                        financial assistance.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Are
+                                    scholarships available for MBA students in
+                                    India?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, most
+                                        B-schools offer merit and need-based
+                                        scholarships, and government schemes
+                                        along with bank education loans are also
+                                        widely used to fund MBA fees.</p></div>
+                            </div>
+                            <div class="examFaq__item"
+                                data-category="scholarships">
+                                <button class="examFaq__question">Do IIMs offer
+                                    fee waivers based on family income?<span
+                                        class="examFaq__icon">+</span></button>
+                                <div class="examFaq__answer"><p>Yes, IIMs offer
+                                        significant fee waivers (up to 100% at
+                                        some campuses) for students whose family
+                                        income falls below a specified
+                                        threshold, in addition to need-based
+                                        financial assistance.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="admissionJourney"
+                aria-labelledby="admissionJourneyHeading">
+                <div class="container">
+                    <div class="admissionJourneyInner revealright">
+                        <h2 class="marketing__heading"
+                            id="admissionJourneyHeading">Master your admission
+                            journey</h2>
+                        <p class="admissionJourneyText">Weekly briefing on exam
+                            updates, admission deadlines, placement reports, and
+                            editorial analysis. No spam. Unsubscribe
+                            anytime.</p>
+
+                        <form class="admissionJourneyForm"
+                            id="admissionJourneyForm" novalidate>
+                            <label for="admissionJourneyEmail"
+                                class="admissionJourneyLabel">Email
+                                address</label>
+                            <div class="admissionJourneyField">
+                                <input type="email" id="admissionJourneyEmail"
+                                    name="email" class="admissionJourneyInput"
+                                    placeholder="Your email address"
+                                    autocomplete="email" required
+                                    aria-describedby="admissionJourneyError">
+                                <button type="submit"
+                                    class="admissionJourneySubmit">
+                                    Subscribe
+                                    <svg viewBox="0 0 26 26" width="22"
+                                        height="22" fill="none"
+                                        aria-hidden="true">
+                                        <path d="M7 17L17 7M17 7H9M17 7V15"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                            <p class="admissionJourneyError"
+                                id="admissionJourneyError" role="alert"
+                                aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <include src="public/partials/footer.html"></include>
+
+        <script type="module" src="/src/js/course-import.js" defer></script>
+
+    </body>
+</html>

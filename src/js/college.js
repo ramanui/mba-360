@@ -1,36 +1,22 @@
-/* =========================================================
-   EXAM-PAGE.JS — Combined page script (single file, defer-ready)
-   Sections: 1) Exam "Show more" toggle
-             2) Exam Filters / Sort / Pagination / Admission Form
-   Perf notes:
-   - Load with defer: <script src="exam-page.js" defer></script>
-   - Single DOMContentLoaded wrapper (no duplicate listeners)
-   - If this page also has .reveal / .revealleft / .revealright
-     elements or .clg-accordion, use the shared main.js instead
-     (or add those modules here) — don't load two files that
-     both bind global click/DOMContentLoaded listeners.
-   ========================================================= */
-(function () {
+// ==========================================================
+// Collapse + Scroll Reveal + Exam Show-More (Optimized)
+// ==========================================================
+
+(() => {
   "use strict";
 
-  document.addEventListener("DOMContentLoaded", init);
-
-  function init() {
-    initExamShowMoreToggle();
+  document.addEventListener("DOMContentLoaded", () => {
     initExamFiltersModule();
-  }
+  });
 
- 
+  
 
-  /* ---------------------------------------------------------
-     2) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
-  --------------------------------------------------------- */
+  /* ======================================================
+     4) EXAM FILTERS + SORT + PAGINATION (NIRF ranking aware)
+  ====================================================== */
   function initExamFiltersModule() {
     var examCards = document.querySelectorAll(".examMain > .examCard");
-    if (!examCards.length) {
-      initAdmissionForm();
-      return;
-    }
+    if (!examCards.length) return;
 
     /* ---- Mobile Filter Toggle ---- */
     var mobileFilterToggleBtn = document.getElementById("examMobileFilterToggle");
@@ -54,6 +40,16 @@
 
     if (totalCountEl) totalCountEl.textContent = examCards.length;
 
+    /* NIRF Ranking checkboxes are ranges ("Top 10", "Top 25"...), not exact
+       matches, so a card with rank 6 should count towards "Top 10", "Top 25",
+       "Top 50" and "Top 100" all at once. */
+    var NIRF_THRESHOLDS = {
+      "Top 10": 10,
+      "Top 25": 25,
+      "Top 50": 50,
+      "Top 100": 100
+    };
+
     /* ---- Compute real filter counts from actual exam card data ---- */
     function updateFilterCounts() {
       filterInputs.forEach(function (input) {
@@ -64,9 +60,18 @@
         var value = input.value;
 
         var count = 0;
-        examCards.forEach(function (card) {
-          if (card.dataset[group] === value) count++;
-        });
+
+        if (group === "nirf") {
+          var threshold = NIRF_THRESHOLDS[value];
+          examCards.forEach(function (card) {
+            var rank = parseInt(card.dataset.nirf, 10);
+            if (!isNaN(rank) && rank <= threshold) count++;
+          });
+        } else {
+          examCards.forEach(function (card) {
+            if (card.dataset[group] === value) count++;
+          });
+        }
 
         countEl.textContent = count;
       });
@@ -85,30 +90,18 @@
     var sortSelect = document.getElementById("examSortSelect");
     var examMainEl = document.querySelector(".examMain");
 
-    var EXAM_MONTH_ORDER = {
-      "September 2025": 1,
-      "October 2025": 2,
-      "November 2025": 3,
-      "December 2025": 4
-    };
-
     function getCardFee(card) {
-      var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(1) strong");
-      return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+      return parseFloat(card.dataset.fee) || 0;
     }
 
-    function getCardColleges(card) {
-      var strong = card.querySelector(".examCard__stats .examCard__stat:nth-child(3) strong");
-      return strong ? (parseInt(strong.textContent.replace(/[^\d]/g, ""), 10) || 0) : 0;
+    function getCardNirf(card) {
+      var rank = parseInt(card.dataset.nirf, 10);
+      return isNaN(rank) ? 999 : rank;
     }
 
     function getCardName(card) {
       var h3 = card.querySelector("h3");
       return h3 ? h3.textContent.trim().toLowerCase() : "";
-    }
-
-    function getCardDateRank(card) {
-      return EXAM_MONTH_ORDER[card.dataset.month] || 999;
     }
 
     function sortExamCards(matchedCards) {
@@ -117,12 +110,10 @@
       var sortBy = sortSelect.value;
       var sorted = matchedCards.slice();
 
-      if (sortBy === "Exam Date: Nearest First") {
-        sorted.sort(function (a, b) { return getCardDateRank(a) - getCardDateRank(b); });
-      } else if (sortBy === "Application Fee: Low to High") {
+      if (sortBy === "NIRF Ranking: Best First") {
+        sorted.sort(function (a, b) { return getCardNirf(a) - getCardNirf(b); });
+      } else if (sortBy === "Total Fees: Low to High") {
         sorted.sort(function (a, b) { return getCardFee(a) - getCardFee(b); });
-      } else if (sortBy === "Accepting Colleges: High to Low") {
-        sorted.sort(function (a, b) { return getCardColleges(b) - getCardColleges(a); });
       } else if (sortBy === "Alphabetical") {
         sorted.sort(function (a, b) { return getCardName(a).localeCompare(getCardName(b)); });
       }
@@ -143,10 +134,10 @@
 
     function applyExamFilters() {
       /* Group selected filter values by their filter group so that
-         checkboxes within the SAME group (e.g. "National Level" +
-         "State Level" under Exam Level) are OR'd together, while
-         different groups (Level, Status, Body, Mode, Month) are
-         still AND'd together. */
+         checkboxes within the SAME group (e.g. "IIMs" + "Private" under
+         College Type) are OR'd together, while different groups
+         (Programme, City, College Type, Entrance Exam, Accreditation,
+         Package, NIRF) are still AND'd together. */
       var groupedFilters = {};
 
       filterInputs.forEach(function (input) {
@@ -162,10 +153,32 @@
 
       examCards.forEach(function (card) {
         var matched = groupKeys.every(function (group) {
+          /* NIRF Ranking checkboxes are ranges, not exact values:
+             a card matches if its rank falls within ANY of the
+             selected ranges (OR'd), e.g. rank 6 matches "Top 10"
+             and "Top 25" both. */
+          if (group === "nirf") {
+            var rank = parseInt(card.dataset.nirf, 10);
+            if (isNaN(rank)) return false;
+            return groupedFilters[group].some(function (label) {
+              return rank <= NIRF_THRESHOLDS[label];
+            });
+          }
+
           return groupedFilters[group].indexOf(card.dataset[group]) !== -1;
         });
 
-        if (groupKeys.length === 0 || matched) {
+        /* Total Fees range slider: card's fee must be within the
+           selected max-fee cap whenever the slider has been moved
+           away from its default (max) value. */
+        if (matched && feeRangeActive && feeRange) {
+          var cardFee = parseFloat(card.dataset.fee) || 0;
+          if (cardFee > parseFloat(feeRange.value)) matched = false;
+        }
+
+        if (groupKeys.length === 0 && !feeRangeActive) {
+          matchedCards.push(card);
+        } else if (matched) {
           matchedCards.push(card);
         } else {
           card.style.display = "none";
@@ -340,50 +353,5 @@
 
     /* Run once on load so the bar starts hidden and the count is correct */
     applyExamFilters();
-
-    /* ---- Calendar View All (Simple text toggle) ---- */
-    var viewAllBtn = document.getElementById("examViewAllBtn");
-    var examExtraRows = document.querySelectorAll(".examTable__extraRow");
-
-    if (viewAllBtn) {
-      var isExpanded = false;
-      var svgPart = viewAllBtn.querySelector("span") ? viewAllBtn.querySelector("span").outerHTML : "";
-
-      viewAllBtn.addEventListener("click", function () {
-        isExpanded = !isExpanded;
-
-        examExtraRows.forEach(function (row) {
-          row.style.display = isExpanded ? "" : "none";
-        });
-
-        viewAllBtn.innerHTML = (isExpanded ? "Show Less " : "View All 25+ MBA Exams ") + svgPart;
-      });
-    }
-
-    initAdmissionForm();
-  }
-
-  /* ---- Admission Form Validation (shared helper) ---- */
-  function initAdmissionForm() {
-    var admissionForm = document.getElementById("admissionJourneyForm");
-    if (!admissionForm) return;
-
-    admissionForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      var input = document.getElementById("admissionJourneyMobile");
-      var error = document.getElementById("admissionJourneyError");
-
-      var val = input.value.trim();
-
-      if (!/^\d{10}$/.test(val)) {
-        input.classList.add("isInvalid");
-        error.textContent = "Please enter a valid 10-digit mobile number.";
-      } else {
-        input.classList.remove("isInvalid");
-        error.textContent = "";
-        admissionForm.reset();
-      }
-    });
   }
 })();

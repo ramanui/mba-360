@@ -667,7 +667,7 @@
 
    <div class="as-head">
           <div>
-            <h2 id="alumni-heading"
+            <h2 id="alumni"
               class="marketing__heading reveal visible">Alumni speak</h2>
 
             <p class="topColleges-sub">Verified video testimonials from real
@@ -1793,8 +1793,164 @@
        FOOTER 
   ============================================================ -->
       <include src="public/partials/footer.html"></include>
+ <script type="module" src="/src/js/college-page-import.js" defer></script>
+    <script>
 
-    
+(function () {
+  "use strict";
+
+  var OFFSET = 100;
+  var navLinks = Array.prototype.slice.call(
+    document.querySelectorAll(".clg-tabnav__list a")
+  );
+
+  if (!navLinks.length) return;
+
+  var sections = [];
+  var ticking = false;
+  var isClickScrolling = false;
+
+  /* ---------------- Cache Sections ---------------- */
+
+  function cacheSections() {
+    sections = navLinks
+      .map(function (link) {
+        var target = document.querySelector(link.getAttribute("href"));
+
+        return target
+          ? {
+              id: target.id,
+              element: target
+            }
+          : null;
+      })
+      .filter(Boolean);
+
+    updateSectionPositions();
+  }
+
+  function updateSectionPositions() {
+    sections.forEach(function (section) {
+      section.top =
+        section.element.getBoundingClientRect().top + window.pageYOffset;
+    });
+  }
+
+  /* ---------------- Active Link ---------------- */
+
+  function setActiveLink(activeLink) {
+    navLinks.forEach(function (link) {
+      link.removeAttribute("aria-current");
+    });
+
+    if (activeLink) {
+      activeLink.setAttribute("aria-current", "true");
+    }
+  }
+
+  /* ---------------- Scroll Spy ---------------- */
+
+  function updateActive() {
+
+    if (isClickScrolling) {
+      ticking = false;
+      return;
+    }
+
+    if (!sections.length) {
+      ticking = false;
+      return;
+    }
+
+    updateSectionPositions();
+
+    var scrollY = window.pageYOffset + OFFSET + 5;
+    var current = sections[0];
+
+    sections.forEach(function (section) {
+      if (scrollY >= section.top) {
+        current = section;
+      }
+    });
+
+    var active = navLinks.find(function (link) {
+      return link.getAttribute("href") === "#" + current.id;
+    });
+
+    setActiveLink(active);
+
+    ticking = false;
+  }
+
+  function requestUpdate() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(updateActive);
+    }
+  }
+
+  /* ---------------- Click ---------------- */
+
+  navLinks.forEach(function (link) {
+
+    link.addEventListener("click", function (e) {
+
+      e.preventDefault();
+
+      var target = document.querySelector(
+        this.getAttribute("href")
+      );
+
+      if (!target) return;
+
+      isClickScrolling = true;
+
+      setActiveLink(this);
+
+      var y =
+        target.getBoundingClientRect().top +
+        window.pageYOffset -
+        OFFSET;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth"
+      });
+
+      // Wait until smooth scroll finishes
+      setTimeout(function () {
+        cacheSections();
+        isClickScrolling = false;
+        updateActive();
+      }, 600);
+
+    });
+
+  });
+
+  /* ---------------- Init ---------------- */
+
+  cacheSections();
+  updateActive();
+
+  window.addEventListener("scroll", requestUpdate, {
+    passive: true
+  });
+
+  window.addEventListener("resize", function () {
+    cacheSections();
+    requestUpdate();
+  }, {
+    passive: true
+  });
+
+  window.addEventListener("load", function () {
+    cacheSections();
+    updateActive();
+  });
+
+})();
+    </script>
 
          <script>
     (function () {
@@ -1887,6 +2043,6 @@ document.querySelectorAll("[data-tablist]").forEach(function (list) {
       
 
 
-        <script type="module" src="/src/js/college-page-import.js" defer></script>
+       
     </body>
 </html>

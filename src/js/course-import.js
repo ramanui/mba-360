@@ -5,6 +5,5 @@ import "../css/glossary.css";
 import "../css/exam-college-bba-lp.css";
 import "../css/faq.css";
 import "../css/footer.css";
-import "./exam-college-comon.js";
-import "./exam.js";
+import "./course.js";
 import "./faq.js";
