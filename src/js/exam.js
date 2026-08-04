@@ -1,14 +1,27 @@
 /* =========================================================
    EXAM-PAGE.JS — Combined page script (single file, defer-ready)
-   Sections: 1) Exam "Show more" toggle
-             2) Exam Filters / Sort / Pagination / Admission Form
-   Perf notes:
-   - Load with defer: <script src="exam-page.js" defer></script>
-   - Single DOMContentLoaded wrapper (no duplicate listeners)
-   - If this page also has .reveal / .revealleft / .revealright
-     elements or .clg-accordion, use the shared main.js instead
-     (or add those modules here) — don't load two files that
-     both bind global click/DOMContentLoaded listeners.
+   ---------------------------------------------------------
+   SECTIONS:
+     1) Exam Filters / Sort / Pagination
+     2) Admission Form Validation (shared helper)
+
+   WHY COMBINED INTO ONE FILE:
+     - 1 script tag = 1 network request = better PageSpeed
+       (fewer render-blocking / parser-blocking requests).
+     - Single DOMContentLoaded listener = no duplicate binding,
+       no risk of one script running before DOM is ready.
+
+   HOW TO LOAD (for 100 Lighthouse / PSI score):
+     <script src="exam-page.js" defer></script>
+     - Use `defer` (not async) so it runs after HTML parsing
+       but still in document order — keeps TBT/INP low.
+     - Do NOT also load the separate inline <script> blocks
+       (doc 2) on the same page — they duplicate this file's
+       logic 1:1 and would double up event listeners.
+     - If this page also has .reveal / .revealleft / .revealright
+       or .clg-accordion elements, use the shared main.js for
+       those (or extend this file) — don't load two scripts
+       that both bind global click/DOMContentLoaded listeners.
    ========================================================= */
 (function () {
   "use strict";
@@ -16,14 +29,11 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
-    initExamShowMoreToggle();
     initExamFiltersModule();
   }
 
- 
-
   /* ---------------------------------------------------------
-     2) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
+     1) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
   --------------------------------------------------------- */
   function initExamFiltersModule() {
     var examCards = document.querySelectorAll(".examMain > .examCard");
@@ -363,7 +373,9 @@
     initAdmissionForm();
   }
 
-  /* ---- Admission Form Validation (shared helper) ---- */
+  /* ---------------------------------------------------------
+     2) ADMISSION FORM VALIDATION (shared helper)
+  --------------------------------------------------------- */
   function initAdmissionForm() {
     var admissionForm = document.getElementById("admissionJourneyForm");
     if (!admissionForm) return;

@@ -14,7 +14,7 @@
 }
 .examCountdown__title {
   color: #fff;
-  font-size: 22px;
+  font-size: 1.2rem;
   font-weight: 700;
   margin: 0 0 16px 0;
 }
@@ -32,7 +32,7 @@
 .examCountdown__unit strong {
   display: block;
   color: #fff;
-  font-size: 22px;
+  font-size: 1.2rem;
   font-weight: 700;
 }
 .examCountdown__unit span {
@@ -42,17 +42,22 @@
 }
 .examCountdown__btn {
   display: block;
-  width: 60%;
+  width: 100%;
+  max-width: 120px;
   background: #fff;
   color: var(--c-blue);
   border: none;
-  border-radius: 8px;
-  padding: 12px;
-  font-size: 14px;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   text-transform: uppercase;
   margin: 0 auto;
+}
+.examCountdown:hover .examCountdown__btn {
+  background: var(--c-blue);
+  color: #ffffff;
 }
 
 /* widget */
@@ -92,7 +97,7 @@
   margin: 0 0 2px 0;
 }
 .examClosingSoon__date {
-  font-size: 13px;
+  font-size: 0.8rem;
   color: #8898aa;
   margin: 0;
 }

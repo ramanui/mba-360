@@ -63,7 +63,10 @@
   padding: 20px 0 44px;
   isolation: isolate;
 }
-
+.clg-about {
+  padding-bottom: 2rem !important;
+  overflow: inherit !important;
+}
 .clg-header__bgfx {
   position: absolute;
   inset: 0;
@@ -142,6 +145,7 @@
     animation: none;
   }
 }
+
 @media (max-width: 768px) {
   .clg-header__shape--1,
   .clg-header__shape--3 {
@@ -291,6 +295,7 @@
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   border-bottom: 2px solid rgba(13, 27, 62, 1);
+  justify-content: center;
 }
 .clg-tabnav__list::-webkit-scrollbar {
   display: none;
@@ -299,7 +304,7 @@
   display: inline-block;
   white-space: nowrap;
   padding: 30px 2px 16px;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 400;
   color: rgba(0, 0, 0, 1);
   border-bottom: 3px solid transparent;
@@ -338,9 +343,9 @@
 }
 
 /* ---------- Layout ---------- */
-.ranking {
+/* .ranking {
   padding-top: 40px;
-}
+} */
 .clg-main {
   padding-top: 40px;
   padding-bottom: 80px;
@@ -359,7 +364,7 @@
   flex-direction: column;
   gap: 20px;
   position: sticky;
-  top: 76px;
+  top: 110px;
 }
 @media (max-width: 992px) {
   .clg-layout {
@@ -369,11 +374,22 @@
     position: static;
   }
 }
-
+.clg-section hr {
+  border: 0;
+  border-top: 1px solid #bababa66;
+  margin: 0; /* optional */
+}
 .clg-section {
   margin-bottom: 40px;
   position: relative;
   padding-bottom: 0;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid #bababa66;
+  border-radius: 12px;
+  /* padding: clamp(20px, 3vw, 32px); */
+  background: #fff;
+  overflow: hidden;
 }
 .clg-section:last-child {
   margin-bottom: 0;
@@ -385,13 +401,19 @@
   background-clip: text;
   color: transparent;
   display: inline-block;
-  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  font-size: clamp(1.4rem, 3vw, 1.5rem);
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
+  font-weight: 700;
+  padding: 18px 0px 0px 30px;
+  margin-bottom: 1rem;
 }
 
 .clg-about .clg-section__title {
+  padding-top: 0;
+}
+.about .clg-section__title {
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
 }
@@ -402,12 +424,13 @@
 
 .clg-card {
   background: var(--c-surface);
-  border: 1px solid #0d1b3e4d;
+  /* border: 1px solid #0d1b3e4d; */
   border-radius: 6px;
   box-shadow:
     0 1px 2px rgba(13, 27, 62, 0.04),
     0 10px 30px -12px rgba(13, 27, 62, 0.12);
   padding: clamp(20px, 3vw, 34px);
+  padding-top: 2rem;
 }
 
 /* ---------- About (expandable) ---------- */
@@ -501,14 +524,14 @@
 }
 
 .clg-epSection__full {
-  font-size: 14px;
+  font-size: 0.9rem;
   margin: 0 0 18px;
   line-height: 1.35;
-  height: 42px;
+  height: 25px;
 }
 
 .clg-epSection__count {
-  font-size: 1.9rem;
+  font-size: 1.7rem;
   font-weight: 800;
   line-height: 1;
 }
@@ -540,7 +563,7 @@
 }
 
 .clg-epStat__value {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 800;
   margin: 0 0 4px;
 }
@@ -570,7 +593,7 @@
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: #9198a6;
-  margin: 0 0 4px;
+  margin: 0 0 2px;
 }
 
 .clg-epDetail__value {
@@ -584,10 +607,10 @@
 .clg-card {
   box-sizing: border-box;
   width: 100%;
-  border: 1px solid #bababa66;
+  /* border: 1px solid #bababa66;
   border-radius: 12px;
   padding: clamp(20px, 3vw, 32px);
-  background: #fff;
+  background: #fff; */
   overflow: hidden;
 }
 
@@ -693,7 +716,7 @@
 #question-papers,
 .admit-card,
 .topExams {
-  padding: 10px 0 0;
+  padding: 0px 0 0;
   scroll-margin-top: 90px;
 }
 #overview,
@@ -705,7 +728,6 @@
 }
 #exam-pattern {
   scroll-margin-top: 90px;
-  padding-top: 15px;
 }
 
 /* ============ Syllabus Panel Boxes ============ */
@@ -917,21 +939,24 @@
   display: flex;
   gap: 28px;
   overflow-x: auto;
-  border-bottom: 1px solid #e3e7f2;
+  border-bottom: 2px solid #e3e7f2;
   margin-bottom: 24px;
   scrollbar-width: none;
+  z-index: 99;
 }
 .clg-pillTabs::-webkit-scrollbar {
   display: none;
 }
 .clg-pillTabs button {
+  z-index: 0;
+  margin-top: -2px;
   font: inherit;
   font-weight: 600;
   font-size: 0.92rem;
   color: #5b6478;
   background: none;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
   padding: 4px 2px 14px;
   cursor: pointer;
   white-space: nowrap;
@@ -1090,7 +1115,7 @@
   width: 100%;
   border-collapse: collapse;
   min-width: 560px;
-  background: var(--c-surface);
+  background: var(--c-orange);
   border-radius: 16px;
   overflow: hidden;
 }

@@ -2,7 +2,7 @@
    FAQ SECTION
 ========================================================= */
 .examFaq {
-  padding-bottom: 75px;
+  padding-bottom: 80px;
 }
 .examFaq__head {
   /* text-align: center; */
@@ -14,7 +14,8 @@
 .examFaq__head p {
   color: #8898aa;
   margin: 10px 0 0;
-  font-size: 18px;
+  font-size: 1rem;
+  font-weight: 400;
 }
 .examFaq__tabs {
   display: flex;
@@ -28,10 +29,10 @@
   background: #eef1f8;
   border: none;
   color: var(--c-blue);
-  font-size: 15px;
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 14px 32px;
-  border-radius: 8px;
+  padding: 12px 32px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .examFaq__tab.is-active {
@@ -61,8 +62,8 @@
   border: none;
   text-align: left;
   padding: 18px 22px;
-  font-size: var(--font-size-base);
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 400;
   color: var(--c-blue);
   cursor: pointer;
 }
@@ -167,7 +168,10 @@
   }
 }
 
-@media (width <= 600px) {
+@media (width <= 767px) {
+  .examFaq__tab {
+    padding: 6px 32px;
+  }
   .examFaq {
     padding-bottom: 55px;
   }

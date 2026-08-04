@@ -1,3 +1,7 @@
+main {
+  background: #f6f9ff;
+}
+
 button {
   padding: 0;
   border: none;
@@ -40,7 +44,7 @@ button {
   /* letter-spacing: .08em;
   text-transform: uppercase; */
   margin-bottom: 1rem;
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
   font-weight: 800;
   position: relative;
 }
@@ -62,7 +66,7 @@ button {
 
 .ad-section {
   width: 100%;
-  padding: 50px 0 25px;
+  padding: 60px 0 25px;
 }
 .ad-section .ad-section__row {
   display: grid;
@@ -176,8 +180,7 @@ button {
 .clg-about .top_heading {
   background-color: var(--c-blue);
   color: var(--white);
-  padding: 15px 40px;
-  font-size: 1.6rem;
+  padding: 12px 40px;
 }
 .clg-about__intro {
   padding: 10px 30px 0;
@@ -327,7 +330,7 @@ button {
 
 /* ---------- Section wrapper ---------- */
 .examListing {
-  padding: 32px 0 10px;
+  padding: 46px 0 10px;
 }
 
 /* ---------- Active Filters bar ---------- */
@@ -336,12 +339,12 @@ button {
   align-items: center;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 2.4rem;
 }
 .examActiveFilters__label {
-  font-size: 18px;
+  font-size: 0.95rem;
   color: #7f8188;
-  /* font-weight: 600; */
+  font-weight: 600;
 }
 .examTag {
   display: inline-flex;
@@ -352,9 +355,10 @@ button {
   color: var(--c-blue);
   font-size: var(--font-size-base);
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 .examTag button {
   background: none;
@@ -369,8 +373,9 @@ button {
   justify-content: center;
 }
 .examActiveFilters__clear {
-  color: var(--red);
-  font-size: var(--font-size-base);
+  color: var(--c-orange);
+  font-size: 0.9rem;
+  /* font-size: var(--font-size-base); */
   font-weight: 600;
   text-decoration: underline;
   cursor: pointer;
@@ -489,12 +494,13 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 1.4rem;
 }
 .examMain__count {
   font-size: var(--font-size-base);
   color: var(--c-blue);
   margin: 0;
+  font-size: 1rem;
 }
 .examMain__count strong {
   color: var(--c-blue);
@@ -505,7 +511,7 @@ button {
   gap: 10px;
 }
 .examSort label {
-  font-size: 17px;
+  font-size: 0.95rem;
   color: #45464e;
 }
 .examSort select {
@@ -662,7 +668,7 @@ button {
   font-size: 1.125rem;
   font-weight: 700;
   color: var(--c-blue);
-  margin: 0 0 12px 0;
+  margin: 0 0 14px 0;
 }
 .examCard__info h3 + p {
   font-size: 14px;
@@ -826,10 +832,9 @@ button {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: 15px;
+  font-size: 0.9rem;
   color: var(--c-blue);
-  line-height: 1.4;
-  font-weight: 600;
+  font-weight: 400;
 }
 .examQuickLinks a:hover {
   color: var(--c-orange);
@@ -849,7 +854,7 @@ button {
    EXAM CALENDAR TABLE SECTION
 ========================================================= */
 .examCalendar {
-  margin: 60px auto;
+  margin: 60px auto 64px;
 }
 .examCalendar__grid {
   display: grid;
@@ -861,10 +866,10 @@ button {
 }
 .examCalendar__head h2 {
   color: var(--c-blue);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .examCalendar__head p {
-  font-size: 18px;
+  font-size: 1rem;
   color: #8898aa;
   margin-bottom: 24px;
 }
@@ -872,7 +877,7 @@ button {
   background: #ffede6;
   border: 1px solid #ffa683;
   color: var(--c-blue);
-  font-size: 15px;
+  font-size: 0.9rem;
   border-radius: 10px;
   padding: 14px 18px;
   margin-bottom: 22px;
@@ -893,14 +898,14 @@ button {
 .examTable thead th {
   background: var(--c-blue);
   color: #fff;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 0.9rem;
+  font-weight: 400;
   text-align: left;
-  padding: 16px 15px;
+  padding: 12px 15px;
 }
 .examTable tbody td {
   padding: 16px 15px;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: var(--c-blue);
   border-bottom: 1px solid #f0f2f7;
 }
@@ -918,15 +923,15 @@ button {
   display: inline-block;
   background: #fdeee3;
   color: var(--c-orange);
-  font-weight: 700;
-  font-size: 12px;
-  padding: 4px 11px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 4px 10px;
   border-radius: 20px;
 }
 .examTable__status {
   font-weight: 600;
-  font-size: 13px;
-  padding: 4px 10px 6px;
+  font-size: 0.85rem;
+  padding: 4px 10px;
   border-radius: 20px;
 }
 .examTable__status--open {
@@ -935,21 +940,33 @@ button {
 }
 .examTable__status--soon {
   background-color: #fdeee3;
-  color: var(--red);
+  color: var(--c-orange);
 }
 .examTable__status--closed {
   color: #888780;
   background: #eef1f8;
 }
 .examTable__apply {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--c-blue);
   color: var(--white);
   border: none;
-  border-radius: 6px;
-  padding: 8px 16px;
-  font-size: 13px;
-  font-weight: 600;
+  border-radius: 4px;
+  padding: 6px 12px;
+  min-height: 30px; /* Consistent height across browsers */
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+
   cursor: pointer;
+
+  -webkit-appearance: none;
+  appearance: none;
+}
+.examTable__apply:hover {
+  background-color: var(--c-orange);
 }
 .examCalendar__viewAll {
   display: flex;
@@ -963,10 +980,10 @@ button {
   background: #fff;
   border: 1px solid var(--c-blue);
   color: var(--c-blue);
-  font-size: var(--font-size-base);
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 600;
   padding: 12px 22px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
 }
 .examCalendar__viewAll button span {
@@ -1530,7 +1547,7 @@ button {
   background: var(--c-orange);
   color: #fff;
   white-space: nowrap;
-  border-radius: 6px;
+  border-radius: 4px;
   align-items: center;
   gap: 6px;
   padding: 5px 10px;
@@ -2091,7 +2108,7 @@ button {
   .examCalendar__grid,
   .alumni_examListing .examLayout {
     grid-template-columns: 1fr;
-    gap: 25px;
+    gap: 20px;
   }
   .examCalendar__grid {
     gap: 0;
@@ -2117,6 +2134,7 @@ button {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 2rem;
   }
 
   .examCard__stat:nth-child(2n) {
@@ -2134,10 +2152,37 @@ button {
   .alumniCard__share {
     align-self: flex-start;
   }
+  .examMain__toolbar {
+    gap: 20px;
+  }
 }
 
 @media (width <= 768px) {
+  .ad-section {
+    width: 100%;
+    padding: 40px 0 10px;
+  }
+  .examPagination button,
+  .examPagination span.examPagination__dots {
+    min-width: 40px;
+    height: 32px;
+  }
+
+  .examTable th,
+  .examTable td {
+    white-space: nowrap;
+  }
+
+  .examTable tbody td {
+    padding: 10px 15px;
+  }
+  .examTable th:nth-child(4),
+  .examTable td:nth-child(5) {
+    min-width: 150px;
+  }
+
   .examCard__top {
+    display: flex;
     flex-wrap: wrap;
   }
   .examCard__actions {
@@ -2161,6 +2206,13 @@ button {
   .examTable__wrapScroll {
     overflow-x: auto;
   }
+  .examCalendar {
+    margin: 30px auto 44px;
+  }
+
+  .alumni_examListing {
+    padding: 40px 0;
+  }
 }
 @media (width <= 680px) {
   .examCard__stats {
@@ -2168,15 +2220,6 @@ button {
   }
 }
 
-@media (width <= 600px) {
-  .examCalendar {
-    margin: 45px auto 55px;
-  }
-
-  .alumni_examListing {
-    padding: 40px 0;
-  }
-}
 @media (width <= 576px) {
   .hero {
     padding-top: 40px;
@@ -2191,12 +2234,11 @@ button {
   }
   .examCard__top {
     flex-direction: column;
-    display: inherit;
   }
   .examCard__logo {
     float: left;
-    margin-right: 15px;
-    margin-bottom: 20px;
+    margin-right: 0px;
+    margin-bottom: 0px;
   }
   .examCard__info h3 {
     margin-bottom: 0;
@@ -2204,7 +2246,10 @@ button {
   .examCard__badges {
     float: none;
     width: 100%;
-    margin: 10px 0 20px;
+    margin: 1.1rem 0 16px;
+  }
+  .examCard__top {
+    gap: 24px;
   }
   .examCard__stats {
     grid-template-columns: 1fr 1fr;
