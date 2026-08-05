@@ -2,6 +2,7 @@ import "../css/header.css";
 import "../css/common.css";
 import "../css/college-detail.css";
 import "../css/alumni-speak.css";
+import "../css/entrace-exam.css";
 import "./college-detail-fix.js";
 import "./college-exam-detail.js";
 import "./faq.js";

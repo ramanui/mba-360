@@ -43,4 +43,6 @@
       bar.scrollLeft = scrollLeftStart - (x - startX);
     });
   });
+
+  
 })();

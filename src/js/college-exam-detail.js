@@ -188,6 +188,71 @@ window.addEventListener("load", updateActive);
 
 window.addEventListener("resize", updateActive);
 
+
+/* ---- 3) Entrance Exams Slider — lazy-loaded Swiper (CWV safe) ---- */
+  var entranceSlider = document.querySelector('.entranceExams__slider');
+
+  if (entranceSlider) {
+    var swiperLoaded = false;
+
+    var initEntranceSlider = function () {
+      if (swiperLoaded) return;
+      swiperLoaded = true;
+
+      Promise.all([
+        import('swiper'),
+        import('swiper/modules'),
+        import('swiper/css'),
+        import('swiper/css/navigation')
+      ]).then(function (mods) {
+        var Swiper = mods[0].default;
+        var Navigation = mods[1].Navigation;
+
+        new Swiper(entranceSlider, {
+          modules: [Navigation],
+
+          slidesPerView: 1.15,
+          spaceBetween: 16,
+
+          loop: true,
+          speed: 700,
+
+          navigation: {
+            nextEl: '#entranceNext',
+            prevEl: '#entrancePrev',
+          },
+
+          keyboard: {
+            enabled: true,
+          },
+
+          breakpoints: {
+            600: { slidesPerView: 2.2, spaceBetween: 20 },
+            992: { slidesPerView: 2.2, spaceBetween: 24 },
+            1500: { slidesPerView: 2.5, spaceBetween: 24 },
+            1800: { slidesPerView: 3.5, spaceBetween: 24 },
+          },
+        });
+      });
+    };
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            initEntranceSlider();
+            observer.unobserve(entranceSlider);
+          }
+        });
+      }, { rootMargin: '200px 0px' });
+
+      observer.observe(entranceSlider);
+    } else {
+      // fallback for old browsers
+      initEntranceSlider();
+    }
+  }
+
 })();
 
 

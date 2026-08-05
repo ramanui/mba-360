@@ -67,9 +67,6 @@
   padding-bottom: 2rem !important;
   overflow: inherit !important;
 } */
-.clg-about {
-  padding-bottom: 40px;
-}
 .clg-header__bgfx {
   position: absolute;
   inset: 0;
@@ -143,6 +140,18 @@
     transform: rotate(0deg) translate(0, 0);
   }
 }
+@media (prefers-reduced-motion: reduce) {
+  .clg-header__shape {
+    animation: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .clg-header__shape--1,
+  .clg-header__shape--3 {
+    opacity: 0.6;
+  }
+}
 
 .clg-breadcrumb {
   display: flex;
@@ -175,7 +184,7 @@
 .clg-heroMain {
   display: flex;
   gap: 22px;
-  /* flex: 1 1 520px; */
+  flex: 1 1 520px;
   min-width: 0;
 }
 
@@ -283,14 +292,17 @@
 .clg-tabnav__list {
   display: flex;
   gap: 30px;
-  border-bottom: 2px solid rgba(13, 27, 62, 1);
-  justify-content: flex-start; /* center hata diya — overflow ke saath center clipping issue deta hai */
   overflow-x: auto;
-  overflow-y: hidden !important;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  border-bottom: 2px solid rgba(13, 27, 62, 1);
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin; /* Firefox */
-  padding: 0 10px 0 0px;
+  /* padding-bottom: 6px; */
 }
 .clg-tabnav__list::-webkit-scrollbar {
   display: none;
@@ -313,10 +325,10 @@
   font-weight: 700;
 }
 
-/* .clg-tabnav,
+.clg-tabnav,
 .clg-tabnav__list {
   overflow: visible;
-} */
+}
 
 .clg-tabnav__list a {
   position: relative;
@@ -327,7 +339,7 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0px;
+  bottom: -2px;
   width: 100%;
   height: 2px;
   background: transparent;
@@ -342,7 +354,7 @@
   padding-top: 40px;
 } */
 .clg-main {
-  padding-top: 50px;
+  padding-top: 40px;
   padding-bottom: 80px;
 }
 .clg-layout {
@@ -361,14 +373,21 @@
   position: sticky;
   top: 110px;
 }
-
+@media (max-width: 992px) {
+  .clg-layout {
+    grid-template-columns: 1fr;
+  }
+  .clg-aside {
+    position: static;
+  }
+}
 .clg-section hr {
   border: 0;
   border-top: 1px solid #bababa66;
   margin: 0; /* optional */
 }
 .clg-section {
-  margin-bottom: 3.4rem;
+  margin-bottom: 40px;
   position: relative;
   padding-bottom: 0;
   box-sizing: border-box;
@@ -389,7 +408,7 @@
   background-clip: text;
   color: transparent;
   display: inline-block;
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.4rem, 3vw, 1.5rem);
   text-transform: uppercase;
   display: inline-block;
   margin-bottom: 0rem;
@@ -515,14 +534,13 @@
   font-size: 0.9rem;
   margin: 0 0 18px;
   line-height: 1.35;
-  /* height: 25px; */
+  height: 25px;
 }
 
 .clg-epSection__count {
   font-size: 1.7rem;
   font-weight: 800;
-  line-height: 1.4;
-  margin-bottom: 0;
+  line-height: 1;
 }
 
 .clg-epSection__label {
@@ -886,8 +904,48 @@
   color: var(--c-orange);
 }
 
-/* ===== Media Queries ===== */
+@media (max-width: 768px) {
+  .clg-admitTop {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 1299px) {
+  .clg-tabnav .container {
+    overflow: scroll;
+  }
+}
 
+/* ===== Media Queries ===== */
+@media (max-width: 900px) {
+  .clg-rankGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  .clg-rankItem:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .clg-syllabusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .clg-rankGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .clg-rankItem::after {
+    display: none;
+  }
+  .clg-accredLogo {
+    flex: 1 1 45%;
+    max-width: none;
+    padding: 14px 12px;
+  }
+}
 /* ---------- Programmes ---------- */
 .clg-pillTabs {
   display: flex;
@@ -995,9 +1053,6 @@
 .clg-accPanel__inner {
   padding: 20px;
 }
-.clg-accPanel__inner p {
-  font-size: 0.95rem;
-}
 #preparation-strategy .clg-accItem {
   margin-bottom: 1rem;
 }
@@ -1038,6 +1093,11 @@
   max-width: 24px;
 }
 
+@media (max-width: 576px) {
+  .clg-factGrid {
+    grid-template-columns: 1fr;
+  }
+}
 .clg-factGrid dt {
   font-size: 0.72rem;
   text-transform: uppercase;
@@ -1086,9 +1146,6 @@
   font-weight: 700;
   font-size: 0.92rem;
   padding: 16px 15px;
-}
-.clg-table .exam-th {
-  min-width: 160px;
 }
 .clg-table tbody td {
   padding: 20px 15px;
@@ -1270,6 +1327,21 @@
 }
 
 /* ---------- Small screens: hero stacking ---------- */
+@media (max-width: 640px) {
+  .clg-heroTop {
+    flex-direction: column;
+  }
+  .clg-heroActions {
+    flex-direction: row;
+    width: 100%;
+  }
+  .clg-heroActions .btn {
+    flex: 1 1 0;
+  }
+  .clg-heroMain {
+    flex-direction: column;
+  }
+}
 
 .reports-grid {
   margin: 30px 18px 30px;
@@ -1318,6 +1390,27 @@
   font-weight: 700;
   font-size: 0.8rem;
   display: block;
+}
+
+@media (max-width: 860px) {
+  .reports-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .reports-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .report-card {
+    transition: none;
+  }
+  .report-card:hover,
+  .report-card:focus-visible {
+    transform: none;
+  }
 }
 
 .as-section {
@@ -1410,6 +1503,11 @@
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
+}
+@media (min-width: 900px) {
+  .as-card {
+    flex-basis: 100%;
+  }
 }
 
 .as-verified {
@@ -1610,6 +1708,136 @@
   min-width: 0;
 }
 
+@media (max-width: 640px) {
+  .as-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  .as-person {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+  }
+  .videoCardFacade {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 auto;
+  }
+  .videoCardFacade .as-play {
+    width: 24px;
+    height: 24px;
+    top: 4px;
+    right: 4px;
+  }
+  .as-play svg {
+    width: 10px;
+    height: 10px;
+  }
+  .as-name {
+    margin: 0;
+    font-size: 14px;
+  }
+  .as-batch {
+    font-size: 12px;
+  }
+  .as-verified {
+    top: 14px;
+    right: 14px;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  /* Career path becomes a vertical timeline instead of a horizontal
+       scroll strip — every step is readable without side-scrolling. */
+  .as-path {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0;
+    overflow-x: visible;
+    padding: 16px 0 0;
+  }
+  .as-step {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 0;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    padding: 10px 0;
+  }
+  .as-step:not(:first-of-type)::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 19px;
+    width: 0;
+    height: 16px;
+    border-left: 2px dashed #e15b2d;
+  }
+  .as-logo {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    margin-bottom: 0;
+    width: 40px;
+    height: 40px;
+  }
+  .as-org {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    font-size: 14px;
+  }
+  .as-role {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    margin: 2px 0 0;
+  }
+  .as-underline {
+    display: none;
+  }
+  .as-arrow {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 899px) {
+  .as-card {
+    gap: 20px;
+    padding: 22px;
+  }
+  .as-path {
+    gap: 10px;
+  }
+  .as-step {
+    width: 92px;
+  }
+  .as-org {
+    font-size: 12px;
+  }
+  .as-role {
+    font-size: 11px;
+  }
+  .as-arrow {
+    min-width: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .as-nav-btn,
+  .videoCardFacade .as-play,
+  .videoLibraryDot {
+    transition: none;
+  }
+}
+
 /* ============================================
    Admission Journey (Subscribe) Section
    ============================================= */
@@ -1753,6 +1981,32 @@
 }
 
 /* ---------- Responsive: Admission Journey ---------- */
+
+@media (max-width: 600px) {
+  .admissionJourney {
+    padding: 48px 16px;
+  }
+
+  .admissionJourneyText {
+    font-size: 15px;
+  }
+
+  .admissionJourneyField {
+    flex-direction: column;
+  }
+
+  .admissionJourneySubmit {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
 
 /* ============================================================
    STUDENT REVIEWS SECTION
@@ -1973,6 +2227,44 @@
 }
 
 /* ---- Responsive: Student Reviews ---- */
+@media (max-width: 900px) {
+  .reviewsSummaryBody {
+    gap: 32px;
+  }
+  .ratingBars {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .studentReviews {
+    padding: 40px 0;
+  }
+  .reviewsSummaryCard {
+    padding: 24px;
+  }
+  .reviewsSummaryHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .reviewCard {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ratingBarRow {
+    grid-template-columns: 90px 1fr 32px;
+    gap: 10px;
+  }
+  .reviewCardHeader {
+    flex-wrap: wrap;
+  }
+  .seeAllWrap {
+    text-align: left;
+  }
+}
 
 /* =============================================
    SIMILAR COLLEGES SECTION
@@ -2165,23 +2457,52 @@
 /* =========================
    MOBILE FIRST MEDIA QUERIES (consolidated per breakpoint)
 ========================= */
-.topExamsWrap {
-  background-color: var(--white);
-  border: 1px solid #e6e8ee;
-  border-radius: 16px;
-  padding: 30px 24px 20px;
-  box-sizing: border-box;
-  box-shadow: 0 4px 24px rgba(13, 27, 62, 0.05);
+@media (max-width: 1100px) {
+  .collegeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
-.topExamsWrap .clg-section__title {
-  margin-bottom: 1.7rem;
+
+@media (max-width: 768px) {
+  .similarColleges {
+    padding: 48px 0;
+  }
+  .similarCollegesWrap {
+    padding: 24px;
+    border-radius: 14px;
+  }
+  .collegeGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .collegeCardFooter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .downloadBrochureBtn {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .similarCollegesWrap {
+    padding: 16px;
+    border-radius: 12px;
+  }
+  .collegeStats {
+    gap: 6px;
+  }
+  .collegeCardLogo {
+    padding: 20px;
+  }
 }
 
 /* =============================================
    TOP EXAMS ACCEPTED SECTION
 ============================================= */
-/* .topExams {
+.topExams {
   box-sizing: border-box;
+  /* margin-top: 3rem; */
 }
 
 .topExamsWrap {
@@ -2339,53 +2660,9 @@
   transform: translateY(1px);
 }
 
-.exam-th {
-  min-width: 160px;
-} */
-
 /* =========================
    MOBILE FIRST MEDIA QUERIES (consolidated per breakpoint)
 ========================= */
-
-@media (max-width: 1640px) {
-  .clg-epSection__full {
-    height: 40px;
-  }
-}
-
-@media (max-width: 1299px) {
-  .clg-tabnav .container {
-    overflow: scroll;
-  }
-  .clg-tabnav__list a::after {
-    height: 3px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .clg-epSections {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .clg-epStats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .clg-table {
-    min-width: 650px;
-  }
-  .reports-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .clg-admitTop {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@media (max-width: 1100px) {
-  .collegeGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 1100px) {
   .container {
     max-width: 960px;
@@ -2395,113 +2672,10 @@
   }
 }
 
-@media (max-width: 992px) {
-  .clg-layout {
-    grid-template-columns: 1fr;
-  }
-  .clg-aside {
-    position: static;
-  }
-}
-
-@media (max-width: 900px) {
-  .clg-rankGrid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-  }
-  .clg-rankItem:nth-child(2n)::after {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .reviewsSummaryBody {
-    gap: 32px;
-  }
-  .ratingBars {
-    min-width: 100%;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 899px) {
-  .as-card {
-    gap: 20px;
-    padding: 22px;
-  }
-  .as-path {
-    gap: 10px;
-  }
-  .as-step {
-    width: 92px;
-  }
-  .as-org {
-    font-size: 12px;
-  }
-  .as-role {
-    font-size: 11px;
-  }
-  .as-arrow {
-    min-width: 16px;
-  }
-}
-
-@media (max-width: 860px) {
-  .reports-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 @media (max-width: 768px) {
-  .clg-header__shape--1,
-  .clg-header__shape--3 {
-    opacity: 0.6;
+  h2 {
+    font-size: 1.8rem;
   }
-  .clg-section__title {
-    padding: 16px 16px 0 16px;
-  }
-
-  .clg-admitTop {
-    grid-template-columns: 1fr;
-  }
-
-  .clg-syllabusGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .studentReviews {
-    padding: 40px 0;
-  }
-  .reviewsSummaryCard {
-    padding: 24px;
-  }
-  .reviewsSummaryHeader {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .reviewCard {
-    padding: 20px;
-  }
-
-  .similarColleges {
-    padding: 48px 0;
-  }
-  .similarCollegesWrap {
-    padding: 24px;
-    border-radius: 14px;
-  }
-  .collegeGrid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-  .collegeCardFooter {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .downloadBrochureBtn {
-    justify-content: center;
-  }
-
   .container {
     max-width: 720px;
     padding-left: 16px;
@@ -2524,17 +2698,6 @@
   .examDateBlock {
     text-align: right;
   }
-  .clg-table thead th {
-    min-width: 150px;
-  }
-  .entranceSlidePrev,
-  .entranceSlideNext {
-    top: inherit;
-    bottom: -85px;
-  }
-  .summary {
-    padding: 20px;
-  }
 }
 
 @media (max-width: 680px) {
@@ -2547,202 +2710,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
-@media (max-width: 640px) {
-  .clg-heroTop {
-    flex-direction: column;
-  }
-  .clg-heroActions {
-    flex-direction: row;
-    width: 100%;
-  }
-  .clg-heroActions .btn {
-    flex: 1 1 0;
-  }
-  .clg-heroMain {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 640px) {
-  .as-card {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
-  }
-  .as-person {
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    gap: 14px;
-  }
-  .videoCardFacade {
-    width: 72px;
-    height: 72px;
-    flex: 0 0 auto;
-  }
-  .videoCardFacade .as-play {
-    width: 24px;
-    height: 24px;
-    top: 4px;
-    right: 4px;
-  }
-  .as-play svg {
-    width: 10px;
-    height: 10px;
-  }
-  .as-name {
-    margin: 0;
-    font-size: 14px;
-  }
-  .as-batch {
-    font-size: 12px;
-  }
-  .as-verified {
-    top: 14px;
-    right: 14px;
-    font-size: 10px;
-    padding: 4px 10px;
-  }
-
-  /* Career path becomes a vertical timeline instead of a horizontal
-       scroll strip — every step is readable without side-scrolling. */
-  .as-path {
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    width: 100%;
-    gap: 0;
-    overflow-x: visible;
-    padding: 16px 0 0;
-  }
-  .as-step {
-    display: grid;
-    grid-template-columns: 40px 1fr;
-    grid-template-rows: auto auto;
-    column-gap: 14px;
-    row-gap: 0;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    position: relative;
-    padding: 10px 0;
-  }
-  .as-step:not(:first-of-type)::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: 19px;
-    width: 0;
-    height: 16px;
-    border-left: 2px dashed #e15b2d;
-  }
-  .as-logo {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    margin-bottom: 0;
-    width: 40px;
-    height: 40px;
-  }
-  .as-org {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: end;
-    font-size: 14px;
-  }
-  .as-role {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: start;
-    margin: 2px 0 0;
-  }
-  .as-underline {
-    display: none;
-  }
-  .as-arrow {
-    display: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .admissionJourney {
-    padding: 48px 16px;
-  }
-
-  .admissionJourneyText {
-    font-size: 15px;
-  }
-
-  .admissionJourneyField {
-    flex-direction: column;
-  }
-
-  .admissionJourneySubmit {
-    justify-content: center;
-  }
-}
-
-@media (max-width: 576px) {
-  .clg-factGrid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 576px) {
-  .container {
-    max-width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-}
-
-@media (max-width: 576px) {
-  .ratingBarRow {
-    grid-template-columns: 90px 1fr 32px;
-    gap: 10px;
-  }
-  .reviewCardHeader {
-    flex-wrap: wrap;
-  }
-  .seeAllWrap {
-    text-align: left;
-  }
-}
-
-@media (max-width: 560px) {
-  .reports-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 480px) {
-  .clg-rankGrid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .clg-rankItem::after {
-    display: none;
-  }
-  .clg-accredLogo {
-    flex: 1 1 45%;
-    max-width: none;
-    padding: 14px 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .similarCollegesWrap {
-    padding: 16px;
-    border-radius: 12px;
-  }
-  .collegeStats {
-    gap: 6px;
-  }
-  .collegeCardLogo {
-    padding: 20px;
-  }
-}
-
 @media (max-width: 480px) {
   .container {
     max-width: 100%;
@@ -2766,39 +2733,8 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 @media (max-width: 400px) {
   .clg-heroActions {
     flex-direction: column;
-  }
-}
-
-@media (min-width: 900px) {
-  .as-card {
-    flex-basis: 100%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .clg-header__shape {
-    animation: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .report-card {
-    transition: none;
-  }
-  .report-card:hover,
-  .report-card:focus-visible {
-    transform: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .as-nav-btn,
-  .videoCardFacade .as-play,
-  .videoLibraryDot {
-    transition: none;
   }
 }
