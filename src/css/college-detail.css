@@ -166,7 +166,6 @@
 
 .clg-heroTop {
   display: flex;
-  flex-wrap: wrap;
   gap: 28px;
   justify-content: space-between;
   align-items: flex-start;
@@ -261,7 +260,7 @@
 
 .clg-heroActions {
   display: flex;
-  flex-direction: column;
+
   gap: 12px;
   flex: 0 0 auto;
 }
@@ -2196,11 +2195,6 @@
 .college-alumni-page .topExamsWrap .clg-section__title {
   margin-bottom: 0;
 }
-
-
-
-
-
 
 /* =============================================
    TOP EXAMS ACCEPTED SECTION
