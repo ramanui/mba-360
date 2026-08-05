@@ -227,10 +227,10 @@ window.addEventListener("resize", updateActive);
           },
 
           breakpoints: {
-            600: { slidesPerView: 2.2, spaceBetween: 20 },
+            600: { slidesPerView: 1.2, spaceBetween: 20 },
             992: { slidesPerView: 2.2, spaceBetween: 24 },
             1500: { slidesPerView: 2.5, spaceBetween: 24 },
-            1800: { slidesPerView: 3.5, spaceBetween: 24 },
+            1800: { slidesPerView: 3.2, spaceBetween: 24 },
           },
         });
       });

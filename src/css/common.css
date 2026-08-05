@@ -445,6 +445,7 @@ ul {
 
 /* Tablet + Mobile */
 @media (max-width: 767px) {
+ 
   /* Mobile typography */
   h1 {
     font-size: 1.875rem;

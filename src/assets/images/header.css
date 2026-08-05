@@ -1,4 +1,3 @@
-
 /* navbar-css */
 .site-header {
   width: 100%;
@@ -47,7 +46,8 @@
   text-decoration: none;
 }
 
-.site-nav__link:hover, .site-nav__link.active {
+.site-nav__link:hover,
+.site-nav__link.active {
   color: var(--c-orange);
 }
 
@@ -72,7 +72,7 @@
   font-family: "Inter";
   font-size: 0.95rem;
   font-weight: 600;
-  padding: 10px 22px;
+  padding: 8px 14px;
   border-radius: 6px;
   border: 1.5px solid transparent;
   cursor: pointer;
@@ -105,7 +105,7 @@
 /* navbar-css-End */
 
 @media (max-width: 992px) {
-.site-header {
+  .site-header {
     display: none;
   }
 }

@@ -67,7 +67,7 @@
   padding-bottom: 2rem !important;
   overflow: inherit !important;
 } */
-.clg-about {
+.clg-card.clg-about {
   padding-bottom: 40px;
 }
 .clg-header__bgfx {
@@ -282,10 +282,11 @@
 }
 .clg-tabnav__list {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   border-bottom: 2px solid rgba(13, 27, 62, 1);
   justify-content: flex-start; /* center hata diya — overflow ke saath center clipping issue deta hai */
-  overflow-x: auto;
+  overflow: hidden;
+
   overflow-y: hidden !important;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
@@ -411,7 +412,7 @@
 }
 
 .clg-card {
-  background: var(--c-surface);
+  background: #ffffff;
   /* border: 1px solid #0d1b3e4d; */
   border-radius: 6px;
   box-shadow:
@@ -552,7 +553,7 @@
 }
 
 .clg-epStat__value {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin: 0 0 4px;
 }
@@ -628,7 +629,7 @@
   position: relative;
 }
 .clg-rankItem__num {
-  font-size: clamp(1.9rem, 3.4vw, 2.4rem);
+  font-size: clamp(1.4rem, 3.4vw, 1.8rem);
   font-weight: 700;
   color: var(--c-blue);
   margin: 0 0 4px;
@@ -667,7 +668,7 @@
   padding: 0;
 }
 .clg-accredLogo {
-  flex: 1 1 150px;
+  flex: 1 1 115px;
   max-width: 200px;
   border: 1px solid #bababa66;
   border-radius: 6px;
@@ -830,7 +831,7 @@
 }
 
 .clg-admitBox__value {
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--black);
   margin: 0 0 8px;
@@ -1762,9 +1763,13 @@
 
 .studentReviews {
   width: 100%;
-  padding: 64px 0;
+  padding: 60px 0 50px;
   background-color: #f7f8fb;
   box-sizing: border-box;
+}
+
+.entranceExams-page {
+  margin-top: 3rem;
 }
 
 /* ---- Summary card ---- */
@@ -1775,7 +1780,13 @@
   padding: 40px;
   box-sizing: border-box;
 }
-
+.reviewsSummaryCard .clg-section__title,
+.similarCollegesWrap .clg-section__title {
+  padding: 0;
+}
+.college-alumni-page {
+  margin-top: 3rem;
+}
 .reviewsSummaryHeader {
   display: flex;
   align-items: flex-start;
@@ -1992,7 +2003,7 @@
 .collegeGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 18px;
 }
 
 .collegeCard {
@@ -2013,7 +2024,7 @@
 
 .collegeCardLogo {
   width: 100%;
-  aspect-ratio: 16 / 8;
+  aspect-ratio: 16 / 7;
   background:
     radial-gradient(
       120% 140% at 20% 15%,
@@ -2024,7 +2035,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 28px;
+  padding: 14px;
   box-sizing: border-box;
 }
 
@@ -2032,7 +2043,7 @@
   width: auto;
   max-width: 70%;
   height: auto;
-  max-height: 64px;
+  max-height: 50px;
   object-fit: contain;
 }
 
@@ -2059,7 +2070,7 @@
 .collegeStats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 16px;
 }
 
@@ -2073,7 +2084,8 @@
 
 .collegeStatLabel {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
+  font-weight: 700;
   color: #7c8194;
   margin-top: 2px;
 }
@@ -2106,8 +2118,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  border-top: 1px solid #edeef2;
+  border-top: 1px dashed #e6e9f2;
   padding-top: 16px;
+  flex-direction: column;
 }
 
 .viewCoursesLink {
@@ -2166,16 +2179,28 @@
    MOBILE FIRST MEDIA QUERIES (consolidated per breakpoint)
 ========================= */
 .topExamsWrap {
-  background-color: var(--white);
+  background-color: #ffffff;
   border: 1px solid #e6e8ee;
   border-radius: 16px;
-  padding: 30px 24px 20px;
+  padding: 30px 30px 30px;
   box-sizing: border-box;
   box-shadow: 0 4px 24px rgba(13, 27, 62, 0.05);
+}
+.alumniCard {
+  background-color: var(--light-orange) !important;
 }
 .topExamsWrap .clg-section__title {
   margin-bottom: 1.7rem;
 }
+
+.college-alumni-page .topExamsWrap .clg-section__title {
+  margin-bottom: 0;
+}
+
+
+
+
+
 
 /* =============================================
    TOP EXAMS ACCEPTED SECTION
@@ -2358,7 +2383,10 @@
     overflow: scroll;
   }
   .clg-tabnav__list a::after {
-    height: 3px;
+    height: 2px;
+  }
+  .clg-tabnav__list {
+    overflow: auto;
   }
 }
 
@@ -2469,7 +2497,7 @@
   }
 
   .studentReviews {
-    padding: 40px 0;
+    padding: 110px 0 40px;
   }
   .reviewsSummaryCard {
     padding: 24px;
@@ -2483,17 +2511,11 @@
     padding: 20px;
   }
 
-  .similarColleges {
-    padding: 48px 0;
-  }
   .similarCollegesWrap {
     padding: 24px;
     border-radius: 14px;
   }
-  .collegeGrid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+
   .collegeCardFooter {
     flex-direction: column;
     align-items: stretch;
@@ -2525,7 +2547,7 @@
     text-align: right;
   }
   .clg-table thead th {
-    min-width: 150px;
+    min-width: 160px;
   }
   .entranceSlidePrev,
   .entranceSlideNext {
@@ -2534,6 +2556,76 @@
   }
   .summary {
     padding: 20px;
+  }
+  .collegeCardName {
+    font-size: 1rem;
+  }
+  .clg-tabnav__list a {
+    font-size: 1rem;
+  }
+  .clg-main {
+    padding-top: 30px;
+  }
+  .clg-epSection__full {
+    height: auto;
+  }
+  .clg-epStat__value {
+    font-size: 1.4rem;
+  }
+  .clg-epDetail__label {
+    font-size: 0.7rem;
+  }
+  .clg-epDetail__value {
+    font-size: 0.8rem;
+  }
+  .clg-syllabusBox {
+    padding: 20px 20px;
+  }
+  .clg-section {
+    margin-bottom: 2.4rem;
+  }
+  .clg-table tbody th {
+    font-size: 0.85rem;
+  }
+  .report-card {
+    padding: 8px 6px;
+  }
+  .clg-accHeader {
+    font-size: 0.95rem;
+  }
+  .clg-accHeader__icon img {
+    max-width: 26px;
+    min-width: 24px;
+  }
+  .clg-accHeader {
+    padding: 12px 16px;
+  }
+  .clg-epSection__name,
+  .clg-epSection__count {
+    font-size: 1.2rem;
+  }
+  .entranceSlidePrev,
+  .entranceSlideNext {
+    bottom: -76px;
+  }
+  .examFaq_main {
+    padding: 90px 0 0;
+  }
+  .clg-main {
+    padding-bottom: 60px;
+  }
+  .alumniNavBtnPrev,
+  .alumniNavBtnNext,
+  .entranceSlidePrev,
+  .entranceSlideNext {
+    top: inherit;
+    bottom: -80px;
+  }
+  .clg-ctaCard {
+    margin-top: 4rem;
+  }
+  .clg-aside {
+    gap: 40px;
   }
 }
 
@@ -2684,6 +2776,23 @@
 
 @media (max-width: 576px) {
   .clg-factGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .clg-factGrid dt {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #5b6478;
+    margin-bottom: 0px;
+    letter-spacing: 0;
+  }
+  .clg-factGrid .clg-factBox {
+    padding: 12px 10px;
+  }
+  .clg-factGrid {
+    gap: 8px;
+  }
+  .collegeGrid {
     grid-template-columns: 1fr;
   }
 }

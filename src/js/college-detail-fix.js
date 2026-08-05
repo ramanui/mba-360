@@ -93,10 +93,10 @@ import "swiper/css/navigation";
     function getSlidesPerView() {
       var w = window.innerWidth;
 
-      if (w >= 2000) return 4;
-      if (w >= 1600) return 3.2;
-      if (w >= 1366) return 3.2;
-      if (w >= 1199) return 1.5;
+      if (w >= 2000) return 3.2;
+      if (w >= 1600) return 2.8;
+      if (w >= 1366) return 2.8;
+      if (w >= 1199) return 2.5;
       if (w >= 767) return 2.5;
       if (w >= 480) return 1.5;
 
@@ -128,23 +128,23 @@ import "swiper/css/navigation";
 
         breakpoints: {
           480: {
-            slidesPerView: 1.5,
+            slidesPerView: 1.2,
             spaceBetween: 20,
           },
           767: {
-            slidesPerView: 2.5,
+            slidesPerView: 1.5,
             spaceBetween: 20,
           },
           1199: {
-            slidesPerView: 1.5,
+            slidesPerView: 2.5,
             spaceBetween: 24,
           },
           1366: {
-            slidesPerView: 3.2,
+            slidesPerView: 2.8,
             spaceBetween: 24,
           },
           1600: {
-            slidesPerView: 3.2,
+            slidesPerView: 2.8,
             spaceBetween: 24,
           },
         },
@@ -184,42 +184,42 @@ import "swiper/css/navigation";
 
   /* ---------- Generic accordion ---------- */
 
-  function wireToggle(trigger, container) {
-    var toggleIcon = trigger.querySelector(".clg-accHeader__toggle");
+  // function wireToggle(trigger, container) {
+  //   var toggleIcon = trigger.querySelector(".clg-accHeader__toggle");
 
-    trigger.addEventListener("click", function () {
-      var isOpen = container.getAttribute("data-open") === "true";
+  //   trigger.addEventListener("click", function () {
+  //     var isOpen = container.getAttribute("data-open") === "true";
 
-      container.setAttribute("data-open", String(!isOpen));
-      trigger.setAttribute("aria-expanded", String(!isOpen));
+  //     container.setAttribute("data-open", String(!isOpen));
+  //     trigger.setAttribute("aria-expanded", String(!isOpen));
 
-      if (toggleIcon) {
-        toggleIcon.textContent = !isOpen ? "–" : "+";
-      }
-    });
-  }
+  //     if (toggleIcon) {
+  //       toggleIcon.textContent = !isOpen ? "–" : "+";
+  //     }
+  //   });
+  // }
 
-  document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
+  // document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
 
-    var target = null;
+  //   var target = null;
 
-    var accordion = trigger.closest(".clg-accordion");
+  //   var accordion = trigger.closest(".clg-accordion");
 
-    if (accordion) {
-      target = accordion.querySelector(
-        "#" + trigger.getAttribute("data-toggle-target")
-      );
-    } else {
-      target = document.getElementById(
-        trigger.getAttribute("data-toggle-target")
-      );
-    }
+  //   if (accordion) {
+  //     target = accordion.querySelector(
+  //       "#" + trigger.getAttribute("data-toggle-target")
+  //     );
+  //   } else {
+  //     target = document.getElementById(
+  //       trigger.getAttribute("data-toggle-target")
+  //     );
+  //   }
 
-    if (target) {
-      wireToggle(trigger, target);
-    }
+  //   if (target) {
+  //     wireToggle(trigger, target);
+  //   }
 
-  });
+  // });
 
 
   /* ---------- Tabs ---------- */

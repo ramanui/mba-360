@@ -80,7 +80,7 @@
 /* Swiper container */
 .alumniSwiper {
   padding-bottom: 4px;
-  overflow: visible;
+  /* overflow: visible; */
 }
 .alumniSwiper .swiper-wrapper {
   align-items: stretch;
