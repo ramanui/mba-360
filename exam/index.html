@@ -79,7 +79,8 @@
                     <div class="clg-card clg-about" data-open="false"
                         id="about-card">
                         <div class="clg-about__body">
-                            <h2 class="top_heading marketing__heading-small">MBA Entrance Exams</h2>
+                            <h2 class="top_heading marketing__heading-small">MBA
+                                Entrance Exams</h2>
                             <div class="clg-about__intro">
                                 <p>Lorem Ipsum is simply dummy text of the
                                     printing and typesetting industry. Lorem
@@ -141,7 +142,7 @@
             </section>
 
             <section class="examListing">
-                <div class="container">
+                <div class="container ">
 
                     <div class="examActiveFilters" id="examActiveFilters"
                         style="display:none;">
@@ -150,15 +151,103 @@
                         <a href="#" class="examActiveFilters__clear"
                             id="examClearAll">Clear All ✕</a>
                     </div>
-                    <p id="examNoResults"
-                        style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
-                        exams match the selected filters. Try clearing some
-                        filters.</p>
 
-                    <div class="examLayout">
+                    <div class="examFiltersToggleWrap"
+                        id="examFiltersToggleWrap">
 
+                    </div> <!--add this-->
+                    <div class="examFiltersOverlay"
+                        id="examFiltersOverlay"></div>
+                    <div class="examSortOverlay" id="examSortOverlay"></div>
+                    <!-- add this -->
+
+                    <div class="examLayout layout ">
+                        <div class="examActionsBar">
+                            <button type="button"
+                                class="examActionsBar__sortBtn"
+                                id="examSortToggleBtn"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                                aria-controls="examSortPanel">
+                                <svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M3 6h13M3 12h9M3 18h5"></path>
+                                </svg>
+                                Sort by
+                            </button>
+                            <button type="button"
+                                class="examActionsBar__filterBtn"
+                                id="examFiltersToggleBtn"
+                                aria-haspopup="dialog"
+                                aria-expanded="false"
+                                aria-controls="examFiltersPanel">
+                                <svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round">
+                                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                                    <circle cx="9" cy="6" r="1.6"
+                                        fill="currentColor"
+                                        stroke="none"></circle>
+                                    <circle cx="15" cy="12" r="1.6"
+                                        fill="currentColor"
+                                        stroke="none"></circle>
+                                    <circle cx="9" cy="18" r="1.6"
+                                        fill="currentColor"
+                                        stroke="none"></circle>
+                                </svg>
+                                Filters
+                            </button>
+                        </div>
+                        <!-- Sort bottom-sheet (mobile only) -->
+                        <div class="examSortPanel" id="examSortPanel"
+                            role="dialog" aria-modal="true"
+                            aria-labelledby="examSortPanelTitle"
+                            aria-hidden="true">
+                            <div class="examSortPanel__head">
+                                <h4 id="examSortPanelTitle">Sort by</h4>
+                                <button type="button"
+                                    class="examSortPanel__closeBtn"
+                                    id="examSortCloseBtn" aria-label="Close">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round">
+                                        <line x1="6" y1="6" x2="18"
+                                            y2="18"></line>
+                                        <line x1="18" y1="6" x2="6"
+                                            y2="18"></line>
+                                    </svg>
+                                </button>
+                            </div>
+                            <ul class="examSortOptions" id="examSortOptions"
+                                role="radiogroup"
+                                aria-labelledby="examSortPanelTitle">
+                                <li><button type="button" class="examSortOption"
+                                        role="radio" aria-checked="true"
+                                        data-value="Exam Date: Nearest First"><span>Exam
+                                            Date: Nearest First</span><span
+                                            class="examSortOption__dot"></span></button></li>
+                                <li><button type="button" class="examSortOption"
+                                        role="radio" aria-checked="false"
+                                        data-value="Application Fee: Low to High"><span>Application
+                                            Fee: Low to High</span><span
+                                            class="examSortOption__dot"></span></button></li>
+                                <li><button type="button" class="examSortOption"
+                                        role="radio" aria-checked="false"
+                                        data-value="Accepting Colleges: High to Low"><span>Accepting
+                                            Colleges: High to Low</span><span
+                                            class="examSortOption__dot"></span></button></li>
+                                <li><button type="button" class="examSortOption"
+                                        role="radio" aria-checked="false"
+                                        data-value="Alphabetical"><span>Alphabetical</span><span
+                                            class="examSortOption__dot"></span></button></li>
+                            </ul>
+                        </div>
                         <!-- Mobile Filter Toggle -->
-                        <button type="button" class="examMobileFilterToggle"
+                        <!-- <button type="button" class="examMobileFilterToggle"
                             id="examMobileFilterToggle" aria-expanded="false"
                             aria-controls="examFiltersPanel">
                             <span>Filters</span>
@@ -167,10 +256,13 @@
                                     d="M6 9l6 6 6-6" stroke="currentColor"
                                     stroke-width="2.4" stroke-linecap="round"
                                     stroke-linejoin="round"></path></svg>
-                        </button>
+                        </button> -->
 
                         <!-- Sidebar Filters -->
-                        <aside class="examFilters" id="examFiltersPanel">
+                        <aside class="examFilters" id="examFiltersPanel"
+                            role="dialog" aria-modal="true"
+                            aria-labelledby="examFiltersTitle"
+                            aria-hidden="true">
                             <div class="examFilters__head">
                                 <h4>Filter Exams</h4>
                                 <button class="examFilters__clearAll"
@@ -300,6 +392,16 @@
                                         id="examFeeRangeValue">₹42
                                         lakhs</span></div>
                             </div>
+
+                            <div class="examFilters__actions"> <!-- add this -->
+                                <button type="button"
+                                    class="examFilters__closeBtn"
+                                    id="examFiltersCloseBtn">Close</button>
+                                <button type="button"
+                                    class="examFilters__applyBtn"
+                                    id="examFiltersApplyBtn">Apply</button>
+                            </div>
+
                         </aside>
 
                         <!-- Main content -->
@@ -337,6 +439,11 @@
                             </div>
 
                             <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
+                            <p id="examNoResults"
+                                style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+                                exams match the selected filters. Try clearing
+                                some
+                                filters.</p>
 
                             <!-- Exam Card 1 -->
                             <div class="examCard examCard--featured"
@@ -1953,7 +2060,7 @@
             <section class="admissionJourney"
                 aria-labelledby="admissionJourneyHeading">
                 <div class="container">
-                    <div class="admissionJourneyInner revealright">
+                    <div class="admissionJourneyInner reveal">
                         <h2 class="marketing__heading"
                             id="admissionJourneyHeading">Master your admission
                             journey</h2>

@@ -71,6 +71,39 @@
   pointer-events: none;
 }
 
+/* overlay css */
+.mbaHero {
+  position: relative;
+}
+
+.mbaHeroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.mbaHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 27, 62, 0.75) 0%,
+    rgba(13, 27, 62, 0.7) 45%,
+    rgba(13, 27, 62, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.mbaHero .container {
+  position: relative;
+  z-index: 2;
+}
+/* overlay css */
+
 .mbaHeroInner {
   max-width: 780px;
   margin: 0 auto;
@@ -110,6 +143,8 @@
   margin: 0 auto;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
+.mbaHeroSearch svg{ width:24px; height:24px; color: #ff4701; opacity: 0.6; }
+.mbaHeroSearch svg path{ stroke-width: 2;  stroke: #ff4701;}
 
 .mbaHeroSearchIcon {
   align-self: center;
@@ -126,11 +161,11 @@
   outline: none;
   background: transparent;
   font-family: "Inter", sans-serif;
-  font-size: 17px;
+  font-size: 0.98rem;
   color: var(--text-dark, #0d1b3e);
   margin-right: 1rem;
   max-height: 37px;
-  padding-inline: 8px;;
+  padding-inline: 8px;
 }
 
 .mbaHeroSearchInput::placeholder {
@@ -236,11 +271,11 @@
 ============================================= -->
     <section class="mbaHero" aria-label="MBA360 Hero Search">
       <img
-        src="./src/assets/images/mba-360-banner.webp"
+        src="./src/assets/images/college-student.webp"
         srcset="
     ./src/assets/images/mba-360-banner-640.webp 640w,
     ./src/assets/images/mba-1024-banner.webp 1024w,
-    ./src/assets/images/mba-360-banner.webp 1920w
+    ./src/assets/images/college-student.webp 1920w
   "
         sizes="100vw"
         alt="From the Right Exam to the Right College"
@@ -264,7 +299,7 @@
           <form class="mbaHeroSearch reveal " role="search"
             action="/search" method="get">
             <label for="mbaHeroSearchInput" class="admissionJourneyLabel">Search
-              college, exams, news</label>
+              CAT, XAT and MBA exams...</label>
 
             <svg class="mbaHeroSearchIcon" width="20" height="20"
               viewBox="0 0 24 24" fill="none" aria-hidden="true"
@@ -277,10 +312,10 @@
 
             <input
               type="search"
-              id="mbaHeroSearchInput"
+              id="searchBox"
               name="q"
               class="mbaHeroSearchInput"
-              placeholder="Search college, exams, news"
+              placeholder="Search for college"
               autocomplete="off" />
 
             <button type="submit" class="mbaHeroSearchBtn">Search</button>
@@ -1540,7 +1575,7 @@
               </svg>
             </a> -->
             <button href="javascript:void(0)" class="downloadBrochureBtn"
-              aria-label="Download IIMA brochure">Take the quiz
+              aria-label="Download IIMA brochure">Calculate EMI
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                 aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -1613,7 +1648,7 @@
             </a> -->
 
             <button href="javascript:void(0)" class="downloadBrochureBtn"
-              aria-label="Download IIMA brochure"> Explore Executive MBA
+              aria-label="Download IIMA brochure"> Calculate EMI
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
                 aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
                   stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -2046,6 +2081,11 @@
                     width="560"
                     height="360" />
                   <span class="lfm-tag lfm-tag--strategy">Strategy</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg>
                 </div>
                 <div class="lfm-body">
                   <h3 class="lfm-heading" itemprop="headline">6-month CAT 2026
@@ -2084,6 +2124,11 @@
                     width="560"
                     height="360" />
                   <span class="lfm-tag lfm-tag--placements">Placements</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg>
                 </div>
                 <div class="lfm-body">
                   <h3 class="lfm-heading" itemprop="headline">IIM final
@@ -2115,6 +2160,11 @@
                 <article itemprop="item" itemscope
                   itemtype="https://schema.org/Article">
                   <span class="lfm-tag lfm-tag--interview">Interview</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg>
                   <h3 class="lfm-heading lfm-heading--sm"
                     itemprop="headline">SPJIMR Director interview — admissions,
                     DCC evolution, 2026 vision</h3>
@@ -2141,6 +2191,11 @@
                 <article itemprop="item" itemscope
                   itemtype="https://schema.org/Article">
                   <span class="lfm-tag lfm-tag--exec">Exec MBA</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path></svg>
                   <h3 class="lfm-heading lfm-heading--sm" itemprop="headline">Is
                     EMBA worth it at 35? ROI analysis across 8 top programs</h3>
                   <div class="lfm-meta">

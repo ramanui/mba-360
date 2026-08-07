@@ -56,9 +56,9 @@
   height: 100%;
   /* background: #f6f9ff; */
   border-radius: 12px;
-  box-shadow: 0 0 0 1px #e6e8ee;
+  /* box-shadow: 0 0 0 1px #e6e8ee; */
   padding: 32px 20px;
-  border-left: 4px solid transparent;
+  border: 1px solid #e6e8ee;
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -67,7 +67,9 @@
 
 .examCard:hover {
   /* box-shadow: 0 8px 32px rgba(13, 27, 62, 0.1); */
-  border-left-color: var(--c-blue);
+  border-color: var(--color-primary, #ff5e1a);
+  box-shadow: 0 10px 26px -14px rgba(20, 33, 61, 0.2);
+  transform: translateX(0px);
 }
 
 .examCard__top {

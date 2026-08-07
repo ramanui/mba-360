@@ -8,6 +8,74 @@
   padding: 56px 16px;
   text-align: center;
 }
+
+.viewCoursesLink {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--c-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.viewCoursesLink svg {
+  transition: transform 0.2s ease;
+}
+
+.viewCoursesLink:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.viewCoursesLink {
+  font-size: 1.125rem;
+  margin-bottom: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.viewCoursesLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 88%;
+  height: 2px;
+  background: #ff4701;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.viewCoursesLink:hover {
+  color: #ff4701;
+}
+
+.viewCoursesLink:hover::after,
+.viewCoursesLink:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.viewCoursesLink svg {
+  transition: transform 0.3s ease;
+}
+
+.viewCoursesLink:hover svg {
+  transform: translateX(3px) translateY(-1px);
+}
+
+.videoCard svg {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
 @media (min-width: 640px) {
   .hero {
     padding: 72px 24px;
@@ -66,7 +134,7 @@
 }
 
 .hero__subtitle {
-  font-size: clamp(0.9rem, 1.5vw, 1.25rem);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
   color: #bfcfea;
   line-height: 1.7;
 
@@ -718,7 +786,7 @@
 }
 .videoLibrary .marketing__heading {
   text-align: center;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
 }
 
 .videoLibraryInner {
@@ -920,6 +988,12 @@
   .hero__deco {
     display: none;
   }
+  .serviceCard a {
+    flex-direction: column;
+  }
+  .article-card__body {
+    padding: 1rem 1.1rem 0rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1007,7 +1081,7 @@
   background: center / contain no-repeat
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 26' fill='none'%3E%3Cpath d='M7 17L17 7M17 7H9M17 7V15' stroke='%23ff5a1f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
-  opacity: 0;
+  opacity: 1;
   overflow: hidden;
 
   transition:
@@ -1215,6 +1289,29 @@
   .videoLibrary {
     padding: 48px 0;
   }
+  .marketing__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    gap: 0;
+  }
+  .section-cards {
+    padding: 0 0 46px;
+  }
+  .mkt-article-desc {
+    height: auto;
+  }
+  .section-featured {
+    padding: 60px 0 60px;
+  }
+  .marketing-grid {
+    gap: 1.2rem;
+  }
+  .section-marketing {
+    padding: 0 0 60px;
+  }
 }
 
 @media (max-width: 639px) {
@@ -1245,7 +1342,7 @@
   .serviceCardImageWrap {
     flex: 0 0 auto;
     width: 100%;
-    max-width: 220px;
+    max-width: 160px;
     height: auto;
     aspect-ratio: 1 / 1;
   }

@@ -75,7 +75,7 @@ rewind: false,
         },
         1600: {
           slidesPerView: 4.5,
-          spaceBetween: 24,
+          spaceBetween: 22,
         },
       },
     });
@@ -119,6 +119,48 @@ rewind: false,
     }, 200);
   });
 
+//search home animation
+const words = [
+    "CAT, XAT and MBA exams...",
+    "IIM Ahmedabad and top B-schools...",
+    "MBA admissions, fees and placements...",
+    "Executive MBA and career growth...",
+    "colleges, compare and decide..."
+];
+
+const input = document.getElementById("searchBox");
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function animatePlaceholder(){
+
+    const word = words[wordIndex];
+
+    if(!deleting){
+        input.placeholder = "Search for " + word.substring(0, charIndex + 1);
+        charIndex++;
+
+        if(charIndex === word.length){
+            deleting = true;
+            setTimeout(animatePlaceholder,1500);
+            return;
+        }
+    }else{
+        input.placeholder = "Search for " + word.substring(0, charIndex - 1);
+        charIndex--;
+
+        if(charIndex === 0){
+            deleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+        }
+    }
+
+    setTimeout(animatePlaceholder, deleting ? 60 : 120);
+}
+
+animatePlaceholder();
 
 
  // Entrance Slider

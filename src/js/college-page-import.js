@@ -3,6 +3,8 @@ import "../css/common.css";
 import "../css/college-detail.css";
 import "../css/alumni-speak.css";
 import "../css/entrace-exam.css";
+import "../css/lightbox.css";
+import "./lightbox.js";
 import "./college-detail-fix.js";
 import "./college-exam-detail.js";
 import "./faq.js";

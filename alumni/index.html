@@ -79,15 +79,19 @@
             <a href="#" class="examActiveFilters__clear"
               id="alumniClearAll">Clear All ✕</a>
           </div>
-          <p id="alumniNoResults"
-            style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
-            alumni stories match the selected filters. Try clearing some
-            filters.</p>
 
-          <div class="examLayout alumniLayout">
+          <div class="examFiltersToggleWrap"
+            id="examFiltersToggleWrap">
+
+          </div> <!--add this-->
+          <div class="examFiltersOverlay"
+            id="examFiltersOverlay"></div>
+          <div class="examSortOverlay" id="examSortOverlay"></div>
+
+          <div class="examLayout layout alumniLayout">
 
             <!-- Mobile Filter Toggle -->
-            <button type="button" class="examMobileFilterToggle"
+            <!-- <button type="button" class="examMobileFilterToggle"
               id="alumniMobileFilterToggle" aria-expanded="false"
               aria-controls="alumniFiltersPanel">
               <span>Filters</span>
@@ -95,10 +99,97 @@
                 aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor"
                   stroke-width="2.4" stroke-linecap="round"
                   stroke-linejoin="round"></path></svg>
-            </button>
+            </button> -->
+            <div class="examActionsBar">
+              <button type="button"
+                class="examActionsBar__sortBtn"
+                id="examSortToggleBtn"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="examSortPanel">
+                <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M3 6h13M3 12h9M3 18h5"></path>
+                </svg>
+                Sort by
+              </button>
+              <button type="button"
+                class="examActionsBar__filterBtn"
+                id="examFiltersToggleBtn"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls="examFiltersPanel">
+                <svg viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round">
+                  <line x1="4" y1="6" x2="20" y2="6"></line>
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <line x1="4" y1="18" x2="20" y2="18"></line>
+                  <circle cx="9" cy="6" r="1.6"
+                    fill="currentColor"
+                    stroke="none"></circle>
+                  <circle cx="15" cy="12" r="1.6"
+                    fill="currentColor"
+                    stroke="none"></circle>
+                  <circle cx="9" cy="18" r="1.6"
+                    fill="currentColor"
+                    stroke="none"></circle>
+                </svg>
+                Filters
+              </button>
+            </div>
+            <!-- Sort bottom-sheet (mobile only) -->
+            <div class="examSortPanel" id="examSortPanel"
+              role="dialog" aria-modal="true"
+              aria-labelledby="examSortPanelTitle"
+              aria-hidden="true">
+              <div class="examSortPanel__head">
+                <h4 id="examSortPanelTitle">Sort by</h4>
+                <button type="button"
+                  class="examSortPanel__closeBtn"
+                  id="examSortCloseBtn" aria-label="Close">
+                  <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <line x1="6" y1="6" x2="18"
+                      y2="18"></line>
+                    <line x1="18" y1="6" x2="6"
+                      y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+              <ul class="examSortOptions" id="examSortOptions"
+                role="radiogroup"
+                aria-labelledby="examSortPanelTitle">
+                <li><button type="button" class="examSortOption"
+                    role="radio" aria-checked="true"
+                    data-value="Exam Date: Nearest First"><span>Exam
+                      Date: Nearest First</span><span
+                      class="examSortOption__dot"></span></button></li>
+                <li><button type="button" class="examSortOption"
+                    role="radio" aria-checked="false"
+                    data-value="Application Fee: Low to High"><span>Application
+                      Fee: Low to High</span><span
+                      class="examSortOption__dot"></span></button></li>
+                <li><button type="button" class="examSortOption"
+                    role="radio" aria-checked="false"
+                    data-value="Accepting Colleges: High to Low"><span>Accepting
+                      Colleges: High to Low</span><span
+                      class="examSortOption__dot"></span></button></li>
+                <li><button type="button" class="examSortOption"
+                    role="radio" aria-checked="false"
+                    data-value="Alphabetical"><span>Alphabetical</span><span
+                      class="examSortOption__dot"></span></button></li>
+              </ul>
+            </div>
 
             <!-- Sidebar Filters -->
-            <aside class="examFilters" id="alumniFiltersPanel">
+            <aside class="examFilters" id="examFiltersPanel"
+              role="dialog" aria-modal="true"
+              aria-labelledby="examFiltersTitle"
+              aria-hidden="true">
               <div class="examFilters__head">
                 <h4>Exam Filter</h4>
                 <button class="examFilters__clearAll"
@@ -203,6 +294,15 @@
                 <label class="examCheck"><input type="checkbox" value="2023"
                     data-filter-group="year"><span>2023</span><em></em></label>
               </div>
+
+              <div class="examFilters__actions"> <!-- add this -->
+                <button type="button"
+                  class="examFilters__closeBtn"
+                  id="examFiltersCloseBtn">Close</button>
+                <button type="button"
+                  class="examFilters__applyBtn"
+                  id="examFiltersApplyBtn">Apply</button>
+              </div>
             </aside>
 
             <!-- Main content -->
@@ -230,6 +330,11 @@
                 </div>
               </div>
 
+              <p id="alumniNoResults"
+                style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+                alumni stories match the selected filters. Try clearing some
+                filters.</p>
+
               <!-- Alumni Card 1 -->
               <div class="alumniCard alumniCard--featured"
                 data-programme="Full-Time MBA" data-college="IIM Ahmedabad"
@@ -237,7 +342,7 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-1.webp"
                     alt="Rohan Deshpande video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
+                  <button type="button" class="alumniCardPlay"
                     aria-label="Play video testimonial"
                     data-video="https://www.youtube.com/embed/ZiliZI9lDnY?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
@@ -266,7 +371,12 @@
                           width="18"
                           height="18"></p>
                     </div>
-                    <span class="alumniBadge alumniBadge--verified">✓
+                    <span class="alumniBadge alumniBadge--verified"><svg
+                        width="13" height="13" viewBox="0 0 20 20"
+                        fill="currentColor" aria-hidden="true" style="
+    color: #ff4701;
+"><path fill-rule="evenodd"
+                          d="M10 1.5l2.4 1.2 2.7-.3 1.2 2.4 2.4 1.2-.3 2.7 1.2 2.4-1.2 2.4.3 2.7-2.4 1.2-1.2 2.4-2.7-.3L10 20.5l-2.4-1.2-2.7.3-1.2-2.4-2.4-1.2.3-2.7L.4 10l1.2-2.4-.3-2.7 2.4-1.2 1.2-2.4 2.7.3L10 1.5zm-1.2 12.1l5.1-5.1-1.2-1.2-3.9 3.9-1.9-1.9-1.2 1.2 3.1 3.1z"></path></svg>
                       Verified</span>
                   </div>
                   <p
@@ -291,8 +401,7 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-2.webp"
                     alt="Rohan Deshpande video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial"
+                  <button type="button" class="alumniCardPlay"
                     aria-label="Play video testimonial"
                     data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
@@ -345,13 +454,15 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-3.webp"
                     alt="Rohan Deshpande video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/c5f0LoYIpWw??autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
                   </button>
                 </div>
+
                 <div class="alumniCard__body">
                   <div class="alumniCard__head">
                     <div>
@@ -388,8 +499,9 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-4.webp"
                     alt="Rohan Deshpande video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -431,8 +543,9 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-2.webp"
                     alt="Priya Nair video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -473,8 +586,10 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-3.webp"
                     alt="Arjun Mehta video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -516,8 +631,9 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-4.webp"
                     alt="Sneha Kapoor video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -559,8 +675,10 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-1.webp"
                     alt="Karan Malhotra video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -601,8 +719,10 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-2.webp"
                     alt="Ananya Rao video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -644,8 +764,10 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-3.webp"
                     alt="Ananya Rao video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -683,8 +805,10 @@
                 <div class="alumniCard__media">
                   <img src="../src/assets/images/alumni-4.webp"
                     alt="Ananya Rao video testimonial" loading="lazy">
-                  <button type="button" class="alumniCard__play"
-                    aria-label="Play video testimonial">
+                  <button type="button" class="alumniCardPlay"
+                    aria-label="Play video testimonial"
+                    aria-label="Play video testimonial"
+                    data-video="https://www.youtube.com/embed/ms1Ek6xFjr4?autoplay=1">
                     <svg width="22" height="22" viewBox="0 0 24 24"
                       fill="currentColor" aria-hidden="true"><path
                         d="M8 5v14l11-7L8 5z"></path></svg>
@@ -880,7 +1004,7 @@
       <section class="admissionJourney"
         aria-labelledby="admissionJourneyHeading">
         <div class="container">
-          <div class="admissionJourneyInner revealright">
+          <div class="admissionJourneyInner ">
             <h2 class="marketing__heading" id="admissionJourneyHeading">Master
               your admission
               journey</h2>
@@ -949,7 +1073,7 @@
 const modal = document.getElementById("videoModal");
 const frame = document.getElementById("videoFrame");
 
-document.querySelectorAll(".alumniCard__play").forEach(btn => {
+document.querySelectorAll(".alumniCardPlay").forEach(btn => {
     btn.addEventListener("click", () => {
         frame.src = btn.dataset.video;
         modal.classList.add("active");
@@ -970,8 +1094,8 @@ document.querySelector(".videoModal__overlay").addEventListener("click", closeVi
 
 /* ---- Alumni Speak Filters ---- */
 
-var alumniMobileFilterToggleBtn = document.getElementById("alumniMobileFilterToggle");
-var alumniMobileFiltersPanel = document.getElementById("alumniFiltersPanel");
+var examMobileFilterToggleBtn = document.getElementById("examMobileFilterToggle");
+var examMobileFiltersPanel = document.getElementById("examFiltersPanel");
 
 if (alumniMobileFilterToggleBtn && alumniMobileFiltersPanel) {
     alumniMobileFilterToggleBtn.addEventListener("click", function () {
@@ -988,13 +1112,13 @@ var alumniResultCountEl = document.getElementById("alumniResultCount");
 
 /* Checkbox filters (programme, college, year) — drive matching */
 var alumniFilterInputs = document.querySelectorAll(
-    "#alumniFiltersPanel input[type='checkbox']:not([data-filter-group='sort'])"
+    "#examFiltersPanel input[type='checkbox']:not([data-filter-group='sort'])"
 );
 
 /* Sort radio (Newest / Oldest) — drives order + shows as an active tag,
    but does not remove cards from the result set */
 var alumniSortInputs = document.querySelectorAll(
-    "#alumniFiltersPanel input[type='checkbox'][data-filter-group='sort']"
+    "#examFiltersPanel input[type='checkbox'][data-filter-group='sort']"
 );
 
 var alumniCardsList = Array.prototype.slice.call(
@@ -1320,7 +1444,7 @@ if (alumniCardsList.length) {
 
 
 </script>
-
+    <include src="public/partials/footer.html"></include>
     <script type="module" src="/src/js/alumni-import.js" defer></script>
 
   </body>

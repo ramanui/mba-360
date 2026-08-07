@@ -4,6 +4,7 @@ import "../css/countdown.css";
 import "../css/college-detail.css";
 import "../css/entrace-exam.css";
 import "../css/faq.css";
+import "./lightbox.js";
 import "./exam-detail.js";
 import "./college-exam-detail.js";
 import "../js/faq.js";

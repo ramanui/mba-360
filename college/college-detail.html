@@ -103,7 +103,7 @@
               decoding="async"
             />
           </div>
-          <button type="button" class="clg-photosBtn">
+          <button type="button"  class="clg-photosBtn" id="clgPhotosBtn" aria-haspopup="dialog">
             <img
              src="/src/assets/images/view-img.webp"
               width="64" height="64"
@@ -114,26 +114,57 @@
             />
             View Photos
           </button>
-        </div>
+     
 
+        </div>
+     <!-- Lightboxhtml -->
+
+<ul class="clg-gallery" id="clgGallery" hidden>
+  <li><a href="../src/assets/images/college-student.webp" data-caption="Students at the SPJIMR campus library">
+    <img src="../src/assets/images/college-student.webp" width="400" height="300" alt="Students studying together at the SPJIMR campus library" loading="lazy" decoding="async">
+  </a></li>
+  <li><a href="../src/assets/images/college-student.webp" data-caption="Graduation ceremony, main auditorium">
+    <img src="../src/assets/images/college-student.webp" width="400" height="300" alt="Graduation ceremony in the main auditorium" loading="lazy" decoding="async">
+  </a></li>
+  <li><a href="../src/assets/images/college-student.webp" data-caption="Classroom discussion session">
+    <img src="../src/assets/images/college-student.webp" width="400" height="300" alt="Faculty leading a classroom discussion" loading="lazy" decoding="async">
+  </a></li>
+</ul>
+
+<dialog class="clg-lightbox" id="clgLightbox" aria-label="Photo gallery">
+  <div class="clg-lightbox__inner">
+    <button type="button" class="clg-lightbox__close" data-action="close" aria-label="Close gallery">&times;</button>
+    <button type="button" class="clg-lightbox__nav clg-lightbox__nav--prev" data-action="prev" aria-label="Previous photo">&#8249;</button>
+    <figure class="clg-lightbox__figure">
+      <img class="clg-lightbox__img" id="clgLightboxImg" src="" alt="" decoding="async">
+    </figure>
+    <button type="button" class="clg-lightbox__nav clg-lightbox__nav--next" data-action="next" aria-label="Next photo">&#8250;</button>
+    <figcaption class="clg-lightbox__caption" id="clgLightboxCaption"></figcaption>
+    <p class="clg-lightbox__counter" id="clgLightboxCounter" aria-live="polite"></p>
+  </div>
+</dialog>
+
+     <!-- Lightbox-html-end -->
         <div class="clg-titleBlock">
-          <h1 class="clg-title">SPJIMR Mumbai: Admission 2026, Cutoff, Courses, Fees, Placements, Ranking</h1>
+          <h1 class="clg-title">SPJIMR Mumbai: Admission 2026, Cutoff, Courses</h1>
           <p class="clg-metaRow">
             <span>Mumbai, Maharashtra</span>
             <span class="clg-divider" aria-hidden="true">|</span>
             <a href="#reviews">214 Q &amp; A</a>
           </p>
-          <ul class="clg-tags">
+          <!-- <ul class="clg-tags">
             <li class="clg-tag">Private</li>
             <li class="clg-tag">NIRF Rank 20th</li>
-          </ul>
-        </div>
-      </div>
+          </ul> -->
 
-      <div class="clg-heroActions">
+          <div class="clg-heroActions">
         <a href="#enquire" class="btn btn--solid">Enquire Now</a>
         <a href="#brochure" class="btn btn--outline">Download Brochure</a>
       </div>
+        </div>
+      </div>
+
+      
     </div>
   </div>
 </header>
@@ -2784,6 +2815,8 @@
   ============================================================ -->
       <include src="public/partials/footer.html"></include>
  <script type="module" src="/src/js/college-page-import.js" defer></script>
+
+ 
     <script>
 
 (function () {

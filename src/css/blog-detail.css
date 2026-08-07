@@ -22,7 +22,11 @@
   white-space: nowrap;
   border: 0;
 }
-
+.btn--outline {
+  background: var(--white) !important;
+  color: var(--c-blue) !important;
+  border-color: var(--c-blue) !important;
+}
 /* =========================
    PAGE / LAYOUT
 ========================= */

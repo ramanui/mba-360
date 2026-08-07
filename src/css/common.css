@@ -318,7 +318,7 @@ ul {
   border-radius: 6px;
   font-size: 15px;
   font-weight: 600;
-  padding: 12px 26px;
+  padding: 10px 26px;
   cursor: pointer;
   transition:
     background-color 0.2s ease,
@@ -330,6 +330,13 @@ ul {
 
 .admissionJourneySubmit svg {
   transition: transform 0.2s ease;
+}
+.admissionJourneySubmit svg {
+  width: 18px;
+  height: 18px;
+}
+.admissionJourneySubmit svg path {
+  stroke-width: 2.4;
 }
 
 .admissionJourneySubmit:hover {
@@ -371,6 +378,15 @@ ul {
   box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.25);
 }
 
+svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  z-index: 2;
+}
+svg path {
+  stroke-width: 2.2;
+}
 .downloadBrochureBtn {
   display: inline-flex;
   justify-content: center;
@@ -393,11 +409,86 @@ ul {
 .downloadBrochureBtn:hover {
   background-color: var(--c-orange-dark, #e64200);
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 71, 1, 0.3);
+  /* box-shadow: 0 4px 12px rgba(255, 71, 1, 0.3); */
 }
-
+.downloadBrochureBtn:hover svg {
+  transform: translate(2px, -2px);
+}
+.downloadBrochureBtn svg {
+  transition: transform 0.2s ease;
+}
 .downloadBrochureBtn:active {
   transform: translateY(0);
+}
+
+/* animated btn */
+
+/* Play button, top right of card */
+.alumniCardPlay {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--c-orange);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease;
+}
+.alumniCardPlay svg {
+  width: 22px;
+  height: 22px;
+  margin-left: 2px;
+}
+.alumniCardPlay:hover,
+.alumniCardPlay:focus-visible {
+  background: var(--c-blue);
+  transform: scale(1.06);
+}
+
+.alumniCardPlay {
+  z-index: 6;
+  border: none;
+  outline: none;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: transform;
+  opacity: 1;
+  animation: btnFadeIn 0.6s 0.4s forwards;
+}
+@keyframes btnFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.alumniCardPlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #f59120;
+  z-index: 1;
+  animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
 /* =========================================================================
    RESPONSIVE / MEDIA QUERIES
@@ -445,7 +536,6 @@ ul {
 
 /* Tablet + Mobile */
 @media (max-width: 767px) {
- 
   /* Mobile typography */
   h1 {
     font-size: 1.875rem;

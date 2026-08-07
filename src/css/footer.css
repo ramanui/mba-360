@@ -1,7 +1,7 @@
 /* Footer css */
 
 .site-footer {
-  background: #eef4fc;
+  background: var(--light-orange);
   color: #45464e;
 
   border-top: 1px solid rgba(13, 27, 62, 0.08);
@@ -27,8 +27,8 @@
 
 .site-footer__logo {
   display: inline-block;
-  margin-bottom: 1rem;
-  max-width: 150px;
+  margin-bottom: 0.5rem;
+  max-width: 190px;
 }
 
 .site-footer__logo span {
@@ -36,8 +36,8 @@
 }
 
 .site-footer__desc {
-  font-size: 1.2rem;
-  color: #5a5c6a;
+  font-size: 1.125rem;
+  color: #000000;
   max-width: 34ch;
   margin: 0;
 }
@@ -62,7 +62,7 @@
 
 .site-footer__col a {
   font-size: 1rem;
-  color: #45464e;
+  color: #000000;
   text-decoration: none;
   transition: color 0.15s ease;
 }
@@ -87,7 +87,7 @@
 
 .site-footer__copy {
   font-size: 1rem;
-  color: #45464e;
+  color: #000000;
   margin: 0;
 }
 

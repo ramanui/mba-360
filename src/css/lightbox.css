@@ -1,0 +1,192 @@
+/* ============ Reset (minimal, non-invasive) ============ */
+.clg-photosBtn,
+.clg-lightbox,
+.clg-lightbox * {
+  box-sizing: border-box;
+}
+
+/* ============ Trigger button (unchanged structure) ============ */
+/* .clg-photosBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font: inherit;
+  font-weight: 600;
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  min-height: 44px; 
+}
+.clg-photosBtn img {
+  width: 24px;
+  height: 24px;
+} */
+.clg-photosBtn:focus-visible {
+  outline: 3px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* ============ Progressive-enhancement gallery grid ============ */
+/* Real <a> links so crawlers/no-JS users can still reach every photo. */
+.clg-gallery {
+  display: none;
+  list-style: none;
+  /* display: grid; */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+.clg-gallery a {
+  display: block;
+  aspect-ratio: 4 / 3; /* reserves space -> zero CLS */
+  overflow: hidden;
+  border-radius: 8px;
+}
+.clg-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.clg-gallery a:focus-visible {
+  outline: 3px solid #4d90fe;
+  outline-offset: 2px;
+}
+
+/* ============ Lightbox (native <dialog>) ============ */
+.clg-lightbox {
+  border: none;
+  padding: 0;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.clg-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.92);
+}
+.clg-lightbox[open] {
+  display: flex;
+}
+.clg-lightbox__inner {
+  position: relative;
+  width: min(1100px, 94vw);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+.clg-lightbox__figure {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 4 / 2; /* stable box -> no shift while next photo loads */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.clg-lightbox__img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+.clg-lightbox__caption {
+  color: #eaeaea;
+  font-size: 0.9rem;
+  text-align: center;
+  min-height: 1.2em;
+}
+.clg-lightbox__counter {
+  color: #9a9a9a;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.clg-lightbox__close,
+.clg-lightbox__nav {
+  position: absolute;
+  background: #ff4701d1;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clg-lightbox__close:hover,
+.clg-lightbox__nav:hover {
+  background: #ff470166;
+}
+.clg-lightbox__close:focus-visible,
+.clg-lightbox__nav:focus-visible {
+  outline: 3px solid #4d90fe;
+  outline-offset: 2px;
+}
+.clg-lightbox__close {
+  top: 7px;
+  right: -16px;
+}
+.clg-lightbox__nav--prev {
+  left: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.clg-lightbox__nav--next {
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 640px) {
+  .clg-lightbox__figure {
+    aspect-ratio: 3 / 2;
+  }
+  .clg-lightbox__close,
+  .clg-lightbox__nav {
+    width: 32px;
+    height: 32px;
+  }
+  .clg-lightbox__inner {
+    width: 100vw;
+    padding: 0 2rem;
+  }
+  .clg-lightbox__nav--prev {
+    left: 22px;
+  }
+  .clg-lightbox__nav--next {
+    right: 22px;
+  }
+  .clg-lightbox__close {
+    top: -17px;
+    right: 20px;
+  }
+  .clg-lightbox__img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .clg-lightbox__img {
+    transition: opacity 0.15s ease;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clg-lightbox__img {
+    transition: none;
+  }
+}

@@ -97,7 +97,7 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   margin-bottom: 2rem;
-  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   display: inline-block;
 }
 
@@ -184,6 +184,9 @@ button {
 }
 .clg-about__intro {
   padding: 10px 30px 0;
+}
+.clg-about__intro p {
+  font-size: 0.95rem;
 }
 .clg-about .clg-about__more {
   padding: 0 30px;
@@ -392,14 +395,14 @@ button {
 }
 
 /* ---------- Sidebar filters ---------- */
-.examFilters {
+/* .examFilters {
   background: #fff;
   border: 1px solid #d4d4d4;
   border-radius: 12px;
   overflow: hidden;
   position: sticky;
   top: 20px;
-}
+} */
 .examFilters__head {
   display: flex;
   align-items: center;
@@ -494,7 +497,7 @@ button {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
-  margin-bottom: 1.4rem;
+  margin-bottom: 2rem;
 }
 .examMain__count {
   font-size: var(--font-size-base);
@@ -509,6 +512,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 0;
 }
 .examSort label {
   font-size: 0.95rem;
@@ -812,9 +816,26 @@ button {
 .examAside {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 }
-
+.examWidget {
+  padding: 20px 15px 22px;
+  width: 100%;
+  background: #fff;
+  border-radius: 12px;
+  flex-direction: column;
+  transition:
+    box-shadow 0.25s,
+    transform 0.25s;
+  display: flex;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 0 2px;
+  box-sizing: border-box;
+}
+.examWidget h5 {
+  border-bottom: 1px solid #e2e6ef;
+  padding-bottom: 10px;
+}
 .examQuickLinks ul {
   display: flex;
   flex-direction: column;
@@ -1049,7 +1070,7 @@ button {
 .clg-header {
   background: linear-gradient(160deg, var(--c-blue) 0%, var(--c-blue) 100%);
   isolation: isolate;
-  padding: 20px 0 44px;
+  padding: 30px 0 40px;
   position: relative;
   overflow: clip;
 }
@@ -1153,7 +1174,7 @@ button {
   flex-wrap: wrap;
   align-items: center;
   gap: 6px;
-  margin-bottom: 22px;
+  margin-bottom: 1.4rem;
   font-size: 0.85rem;
   display: flex;
 }
@@ -1245,8 +1266,9 @@ button {
   align-items: center;
   gap: 10px;
   margin-bottom: 14px;
-  font-size: 0.95rem;
+  font-size: 1.125rem;
   display: flex;
+  max-width: 75ch;
 }
 
 .clg-metaRow .clg-divider {
@@ -1262,6 +1284,7 @@ button {
   flex-wrap: wrap;
   gap: 10px;
   display: flex;
+  margin-bottom: 1.5rem;
 }
 
 .clg-tag {
@@ -1356,8 +1379,8 @@ button {
 }
 
 .clg-main {
-  padding-top: 40px;
-  padding-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .clg-layout {
@@ -1410,7 +1433,7 @@ button {
     background: var(--c-orange)
 } */
 .alumni_main .clg-metaRow {
-  margin: 25px 0 30px;
+  margin: 0px 0 20px;
 }
 .alumni_examListing {
   padding: 70px 0;
@@ -1589,13 +1612,14 @@ button {
 }
 .alumniAdvertiseWidget h5 {
   color: #fff;
-  font-size: 16px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
   font-weight: 700;
   margin: 0 0 8px;
 }
 .alumniAdvertiseWidget h2 {
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .alumniAdvertiseWidget p {
   color: rgba(255, 255, 255, 0.75);
@@ -1685,27 +1709,6 @@ button {
   object-fit: cover;
   display: block;
 }
-.alumniCard__play {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--c-blue);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    transform 0.2s ease;
-}
-.alumniCard__play:hover {
-  background: var(--c-orange);
-  color: var(--white);
-}
 
 .alumniCard__body {
   flex: 1;
@@ -1748,13 +1751,14 @@ button {
   flex-shrink: 0;
   font-size: 12px;
   font-weight: 700;
-  padding: 6px 12px;
+  padding: 4px 12px;
   border-radius: 20px;
   white-space: nowrap;
+  gap: 6px;
 }
 .alumniBadge--verified {
-  background: var(--c-orange);
-  color: #fff;
+  border: 1px solid var(--c-orange);
+  color: var(--c-orange);
 }
 .alumniBadge--sponsored {
   background: #1a9cd8;
@@ -1820,7 +1824,8 @@ button {
   height: 36px;
   border: none;
   border-radius: 50%;
-  background: #fff;
+  background: var(--c-orange);
+  color: #ffffff;
   cursor: pointer;
   font-size: 22px;
 }
@@ -1853,6 +1858,9 @@ button {
 .article h2 {
   margin: 1.3rem 0;
 }
+.accreditation .article h2 {
+  margin: 1.3rem 0 1rem;
+}
 .article h3 {
   font-size: 1.3rem;
 }
@@ -1878,7 +1886,7 @@ button {
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23FF4701'/%3E%3Cpath d='M7 12.5L10.5 16L17 9.5' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 .article .lede {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.6;
   color: var(--c-blue);
   font-weight: 600;
@@ -2099,8 +2107,11 @@ button {
   .examCalendar__grid {
     grid-template-columns: 240px 1fr 240px;
   }
+  .alumni_examListing .examLayout {
+    grid-template-columns: 1fr;
+  }
 }
-@media (width <= 992px) {
+@media (width <= 1199px) {
   .examCalendar {
     max-width: 100%;
   }
@@ -2110,7 +2121,7 @@ button {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .examCalendar__grid {
+  /* .examCalendar__grid {
     gap: 0;
   }
   .examMobileFilterToggle {
@@ -2135,7 +2146,7 @@ button {
     flex-wrap: wrap;
     justify-content: space-between;
     margin-top: 2rem;
-  }
+  } */
 
   .examCard__stat:nth-child(2n) {
     border-right: none;
@@ -2143,12 +2154,7 @@ button {
   .examCard__stat {
     border-bottom: 1px solid #edf0f6;
   }
-  .alumniCard {
-    flex-direction: column;
-  }
-  .alumniCard__media {
-    width: 100%;
-  }
+
   .alumniCard__share {
     align-self: flex-start;
   }
@@ -2156,8 +2162,33 @@ button {
     gap: 20px;
   }
 }
+@media (width <= 992px) {
+  .clg-layout {
+    grid-template-columns: 1fr;
+  }
+}
 
 @media (width <= 768px) {
+  .article .callout {
+    padding: 20px 20px 20px 25px;
+  }
+  .accreditation.clg-main {
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+
+  .accreditation .article .lede {
+    font-size: 1rem;
+  }
+  .clg-metaRow {
+    font-size: 1rem;
+  }
+  .alumniCard {
+    flex-direction: column;
+  }
+  .alumniCard__media {
+    width: 100%;
+  }
   .ad-section {
     width: 100%;
     padding: 40px 0 10px;

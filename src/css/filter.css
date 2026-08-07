@@ -1,0 +1,383 @@
+:root {
+  --brand: #0d1b3e;
+  --brand-dark: #5c1730;
+  --border: #e3e0da;
+  --text: #2c2c2a;
+  --text-muted: #6b6a66;
+  --bg: #ffffff;
+  --overlay: rgba(0, 0, 0, 0.5);
+}
+.examSortPanel {
+  display: none;
+}
+.layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.results {
+  flex: 1;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+/* ===== Exam Filters aside (desktop = normal in-flow sidebar) ===== */
+.examFilters {
+  max-width: 280px;
+  flex: 0 0 280px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+.examFilters__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.examFilters__head h4 {
+  margin: 0;
+  font-size: 16px;
+}
+.examFilters__clearAll {
+  background: none;
+  border: none;
+  color: var(--brand);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+}
+.examFilterGroup {
+  margin-bottom: 18px;
+}
+.examFilterGroup__title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  margin: 0 0 8px;
+}
+.examCheck {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+.examCheck span {
+  flex: 1;
+}
+.examCheck em {
+  font-style: normal;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+.examFilterGroup__more {
+  background: none;
+  border: none;
+  color: var(--brand);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 0 0;
+}
+.examFeeRange {
+  width: 100%;
+}
+.examFeeRange__labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Sticky apply/close bar — lives inside the aside, only shown in offcanvas mode */
+.examFilters__actions {
+  display: none;
+  gap: 10px;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding: 12px 0 8px;
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.examFilters__actions button {
+  flex: 1;
+  height: 44px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+.examFilters__applyBtn {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.examFilters__applyBtn:active {
+  background: var(--brand-dark);
+}
+.examFilters__closeBtn {
+  background: #fff;
+  color: var(--text);
+}
+
+/* ===== Sort by (dropdown, always visible in-page e.g. above results on desktop) ===== */
+.examSort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.examSort label {
+  font-size: 13px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+.examSort .selectWrap {
+  position: relative;
+  flex: 1;
+  max-width: 260px;
+}
+.examSort select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 34px 9px 12px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+.examSort .selectArrow {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* Mobile action bar (Sort by + Filter) + overlays — hidden on desktop */
+.examActionsBar {
+  display: none;
+}
+.examFiltersOverlay,
+.examSortOverlay {
+  display: none;
+}
+
+/* ===== Below 991px: aside becomes an offcanvas sliding left -> right,
+           sort becomes a bottom-sheet, both triggered from a fixed bar ===== */
+@media (max-width: 1199px) {
+  .layout {
+    display: block;
+  }
+
+  /* the in-page sort dropdown is replaced by the bottom-sheet trigger on mobile */
+  .examSort {
+    display: none;
+  }
+
+  .examActionsBar {
+    display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 52px;
+    z-index: 1040;
+    background: #fff;
+    border-top: 1px solid var(--border);
+  }
+  .examActionsBar button {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+  }
+  .examActionsBar button svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+  }
+  .examActionsBar__sortBtn {
+    background: #fff;
+    color: var(--text);
+    border-right: 1px solid var(--border);
+  }
+  .examActionsBar__sortBtn:active {
+    background: #f6f5f2;
+  }
+  .examActionsBar__filterBtn {
+    background: var(--brand);
+    color: #fff;
+  }
+  .examActionsBar__filterBtn:active {
+    background: var(--brand-dark);
+  }
+
+  .examFiltersOverlay,
+  .examSortOverlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: var(--overlay);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.28s ease;
+    z-index: 1049;
+  }
+  .examFiltersOverlay.isOpen,
+  .examSortOverlay.isOpen {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .examFilters {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: min(86vw, 340px);
+    max-width: 340px;
+    flex: none;
+    border-radius: 0;
+    border: none;
+    box-shadow: 2px 0 16px rgba(0, 0, 0, 0.15);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 16px 0px;
+  }
+  .examFilters.isOpen {
+    transform: translateX(0);
+  }
+  .examFilters__actions {
+    display: flex;
+  }
+
+  /* Sort bottom-sheet */
+  .examSortPanel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    max-height: 70vh;
+    background: #fff;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.18);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1050;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 14px 16px 20px;
+  }
+  .examSortPanel.isOpen {
+    transform: translateY(0);
+  }
+  .examSortPanel__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .examSortPanel__head h4 {
+    margin: 0;
+    font-size: 16px;
+  }
+  .examSortPanel__closeBtn {
+    background: none;
+    border: none;
+    padding: 4px;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .examSortPanel__closeBtn svg {
+    width: 22px;
+    height: 22px;
+  }
+  .examSortOptions {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .examSortOptions li {
+    border-bottom: 1px solid var(--border);
+  }
+  .examSortOptions li:last-child {
+    border-bottom: none;
+  }
+  .examSortOption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 13px 2px;
+    font-size: 15px;
+    color: var(--text);
+    cursor: pointer;
+  }
+  .examSortOption[aria-checked="true"] {
+    color: var(--brand);
+    font-weight: 600;
+  }
+  .examSortOption .examSortOption__dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    flex: none;
+    position: relative;
+  }
+  .examSortOption[aria-checked="true"] .examSortOption__dot {
+    border-color: var(--brand);
+  }
+  .examSortOption[aria-checked="true"] .examSortOption__dot::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  .examSortPanel {
+    display: block;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .examFilters,
+  .examFiltersOverlay,
+  .examSortPanel,
+  .examSortOverlay {
+    transition: none;
+  }
+}
