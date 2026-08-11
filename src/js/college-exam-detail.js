@@ -124,7 +124,16 @@ document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
 
   
 
+  
+
 /* ---------- Scroll Spy ---------- */
+
+/* =========================================================
+   Tab Navigation — Scroll Spy + Center-on-Click
+   - Load: sirf active tab set hota hai (no auto-scroll)
+   - Scroll: sirf active tab class update hoti hai (no auto-center)
+   - Click: tab center mein smooth scroll hokar aata hai
+   ========================================================= */
 
 var OFFSET = 100;
 
@@ -134,12 +143,55 @@ var sections = navLinks
   .map(link => document.querySelector(link.getAttribute("href")))
   .filter(Boolean);
 
+/* ---------- Set active tab (DOM class only) ---------- */
 function setActiveLink(activeLink) {
   navLinks.forEach(link => link.removeAttribute("aria-current"));
   if (activeLink) activeLink.setAttribute("aria-current", "true");
 }
 
-// Click
+/* ---------- Find the real horizontally-scrollable ancestor ---------- */
+function getScrollParent(el) {
+  var node = el;
+  while (node) {
+    var style = getComputedStyle(node);
+    var overflowX = style.overflowX;
+    var canScroll =
+      (overflowX === "auto" || overflowX === "scroll") &&
+      node.scrollWidth > node.clientWidth;
+
+    if (canScroll) return node;
+    node = node.parentElement;
+  }
+  return null;
+}
+
+/* ---------- Center a tab horizontally inside its scroll container ---------- */
+/* Ye function sirf isliye call hoti hai jab USER khud click kare */
+function centerActiveTab(link) {
+  if (!link) return;
+
+  var scrollContainer = getScrollParent(link);
+  if (!scrollContainer) return;
+
+  var containerRect = scrollContainer.getBoundingClientRect();
+  var linkRect = link.getBoundingClientRect();
+
+  var offset =
+    (linkRect.left + linkRect.width / 2) -
+    (containerRect.left + containerRect.width / 2);
+
+  var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+  var newScrollLeft = scrollContainer.scrollLeft + offset;
+
+  newScrollLeft = Math.max(0, Math.min(newScrollLeft, maxScroll));
+
+  scrollContainer.scrollTo({
+    left: newScrollLeft,
+    behavior: "smooth"
+  });
+}
+
+/* ---------- Click: page scroll + active set + tab center ---------- */
 navLinks.forEach(function (link) {
 
   link.addEventListener("click", function (e) {
@@ -147,7 +199,6 @@ navLinks.forEach(function (link) {
     e.preventDefault();
 
     var target = document.querySelector(this.getAttribute("href"));
-
     if (!target) return;
 
     var y = target.getBoundingClientRect().top + window.pageYOffset - OFFSET;
@@ -158,35 +209,43 @@ navLinks.forEach(function (link) {
     });
 
     setActiveLink(this);
+    centerActiveTab(this);   
 
   });
 
 });
 
-// Scroll Spy
+/* ---------- Scroll Spy: sirf active class update, NO centering ---------- */
 function updateActive() {
 
   let current = sections[0];
 
   sections.forEach(function (section) {
-
     if (window.pageYOffset + OFFSET >= section.offsetTop) {
       current = section;
     }
-
   });
 
   const active = navLinks.find(link => link.getAttribute("href") === "#" + current.id);
 
-  setActiveLink(active);
+  setActiveLink(active);   
 
 }
 
 window.addEventListener("scroll", updateActive, { passive: true });
 
-window.addEventListener("load", updateActive);
+
+window.addEventListener("load", function () {
+  updateActive();   
+});
 
 window.addEventListener("resize", updateActive);
+
+
+
+
+
+
 
 
 /* ---- 3) Entrance Exams Slider — lazy-loaded Swiper (CWV safe) ---- */
@@ -252,6 +311,31 @@ window.addEventListener("resize", updateActive);
       initEntranceSlider();
     }
   }
+
+
+
+//   const modal = document.getElementById("videoModal");
+// const frame = document.getElementById("videoFrame");
+
+// document.querySelectorAll(".alumniCardPlay").forEach(btn => {
+//     btn.addEventListener("click", () => {
+//         frame.src = btn.dataset.video;
+//         modal.classList.add("active");
+//     });
+// });
+
+// function closeVideo(){
+//     modal.classList.remove("active");
+//     frame.src = "";
+// }
+
+// document.querySelector(".videoModal__close").addEventListener("click", closeVideo);
+// document.querySelector(".videoModal__overlay").addEventListener("click", closeVideo);
+
+const header = document.querySelector(".clg-header"); if (!header) return; const modal = header.querySelector("#videoModal-second"); const frame = header.querySelector("#videoFrame-second"); if (!modal || !frame) return; /* ---------- Open Video ---------- */ header.querySelectorAll(".alumniCardPlay").forEach(btn => { btn.addEventListener("click", () => { frame.src = btn.dataset.video; modal.classList.add("active"); }); }); /* ---------- Close Video ---------- */ function closeVideo() { modal.classList.remove("active"); frame.src = ""; } /* ---------- Close Button ---------- */ const closeBtn = modal.querySelector(".videoModal__close"); if (closeBtn) { closeBtn.addEventListener("click", closeVideo); } /* ---------- Overlay ---------- */ const overlay = modal.querySelector(".videoModal__overlay"); if (overlay) { overlay.addEventListener("click", closeVideo); }
+
+
+
 
 })();
 

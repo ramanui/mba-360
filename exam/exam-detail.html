@@ -67,9 +67,10 @@
       <span aria-current="page">CAT</span>
     </nav>
 
+    <div class="clg-heroTop-wrap ex-detailhero ">
     <div class="clg-heroTop">
       <div class="clg-heroMain">
-        <div>
+     <div class="fg-div">
           <div class="clg-logoCard">
             <img src="/src/assets/images/cat-logo.webp" width="64" height="64" alt="CAT" loading="eager" fetchpriority="high" decoding="async"/>
           </div>
@@ -94,6 +95,24 @@
 
       
     </div>
+ <div class="alumniCard__media">
+                  <img src="/src/assets/images/slide-1.webp" alt="Rohan Deshpande video testimonial" loading="lazy">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video testimonial" data-video="https://www.youtube.com/embed/ZiliZI9lDnY?autoplay=1">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7L8 5z"></path></svg>
+                  </button>
+                </div>
+
+    </div>
+    <div class="videoModal" id="videoModal-second">
+                  <div class="videoModal__overlay"></div>
+                  <div class="videoModal__content">
+                    <button class="videoModal__close">&times;</button>
+                    <iframe id="videoFrame-second" src
+                      allow="autoplay; encrypted-media"
+                      allowfullscreen></iframe>
+                  </div>
+                </div>
+
   </div>
 </section>
 
@@ -116,14 +135,14 @@
   
 </nav>
 
-  <div class="container clg-main">
+  <div class="container clg-main exam-detail">
     <div class="clg-layout">
 
       <!-- ============ MAIN CONTENT ============ -->
       <div class="clg-content">
 
         <!-- Overview / About -->
-        <section id="overview" class="clg-section reveal" aria-labelledby="overview-heading">
+        <section id="overview" class="clg-section" aria-labelledby="overview-heading">
         
           <div class="clg-card clg-about" data-open="false" id="about-card">
             <h2 id="overview-heading" class="clg-section__title pl-0 ">About CAT 2025</h2>
@@ -1521,7 +1540,7 @@
             <section class="admissionJourney"
                 aria-labelledby="admissionJourneyHeading">
                 <div class="container">
-                    <div class="admissionJourneyInner revealright">
+                    <div class="admissionJourneyInner ">
                         <h2 class="marketing__heading"
                             id="admissionJourneyHeading">Master your admission
                             journey</h2>

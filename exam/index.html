@@ -34,7 +34,7 @@
             crossorigin>
 
     </head>
-    <body>
+    <body class="exam-lp">
         <include src="public/partials/header.html"></include>
 
         <main>
@@ -49,26 +49,58 @@
                             Exams</span></div>
                 </div>
             </section>
-
-            <section class="ad-section">
+            <section class="ad-section" aria-label="Our partner institutions">
                 <div class="container">
-                    <div class="ad-section__row">
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
+                    <div class="ad-section__marquee">
+                        <ul class="ad-section__track">
+                            <!-- original set -->
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <!-- duplicate set, hidden from AT, for seamless loop -->
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -259,6 +291,7 @@
                         </button> -->
 
                         <!-- Sidebar Filters -->
+                        <!-- Sidebar Filters -->
                         <aside class="examFilters" id="examFiltersPanel"
                             role="dialog" aria-modal="true"
                             aria-labelledby="examFiltersTitle"
@@ -280,8 +313,8 @@
                                         data-filter-group="level"><span>State
                                         Level</span><em>18</em></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="University Level"
-                                        data-filter-group="level"><span>University
+                                        value="Institute Level"
+                                        data-filter-group="level"><span>Institute
                                         Level</span><em>10</em></label>
                                 <label class="examCheck"><input type="checkbox"
                                         value="International"
@@ -289,7 +322,7 @@
                             </div>
 
                             <div class="examFilterGroup">
-                                <p class="examFilterGroup__title">Application
+                                <p class="examFilterGroup__title">Registration
                                     Status</p>
                                 <label class="examCheck"><input type="checkbox"
                                         value="Registration Open"
@@ -300,15 +333,16 @@
                                         data-filter-group="status"><span>Closing
                                         Soon</span><em>24</em></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="Upcoming"
-                                        data-filter-group="status"><span>Upcoming</span><em>8</em></label>
+                                        value="Upcoming Registration"
+                                        data-filter-group="status"><span>Upcoming
+                                        Registration</span><em>8</em></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="Closed / Result Out"
-                                        data-filter-group="status"><span>Closed
-                                        / Result Out</span><em>4</em></label>
+                                        value="Registration Closed"
+                                        data-filter-group="status"><span>Registration
+                                        Closed</span><em>4</em></label>
                             </div>
 
-                            <div class="examFilterGroup">
+                            <!-- <div class="examFilterGroup">
                                 <p class="examFilterGroup__title">Conducting
                                     Body</p>
                                 <label class="examCheck"><input type="checkbox"
@@ -360,29 +394,83 @@
                                         value="Both Modes Available"
                                         data-filter-group="mode"><span>Both
                                         Modes Available</span><em>8</em></label>
-                            </div>
+                            </div> -->
 
                             <div class="examFilterGroup">
                                 <p class="examFilterGroup__title">Exam Month</p>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="September 2025"
-                                        data-filter-group="month"><span>September
-                                        2025</span></label>
+                                        value="January"
+                                        data-filter-group="month"><span>January</span></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="October 2025"
-                                        data-filter-group="month"><span>October
-                                        2025</span></label>
+                                        value="February"
+                                        data-filter-group="month"><span>February</span></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="November 2025"
-                                        data-filter-group="month"><span>November
-                                        2025</span></label>
+                                        value="March"
+                                        data-filter-group="month"><span>March</span></label>
                                 <label class="examCheck"><input type="checkbox"
-                                        value="December 2025"
-                                        data-filter-group="month"><span>December
-                                        2025</span></label>
+                                        value="April"
+                                        data-filter-group="month"><span>April</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="May"
+                                        data-filter-group="month"><span>May</span></label>
+
+                                <div class="examFilterGroup__extra"
+                                    id="alumniCollegeExtra"
+                                    hidden>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="June"
+                                            data-filter-group="month"><span>June</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="July"
+                                            data-filter-group="month"><span>July</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="August"
+                                            data-filter-group="month"><span>August</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="September"
+                                            data-filter-group="month"><span>September</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="October"
+                                            data-filter-group="month"><span>October</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="November"
+                                            data-filter-group="month"><span>November</span></label>
+                                    <label class="examCheck"><input
+                                            type="checkbox"
+                                            value="December"
+                                            data-filter-group="month"><span>December</span></label>
+                                </div>
+                                <button class="examFilterGroup__more"
+                                    id="alumniCollegeMoreBtn">+ Show
+                                    more</button>
+
                             </div>
 
                             <div class="examFilterGroup">
+                                <p class="examFilterGroup__title">Application
+                                    Fee</p>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Below ₹1,000"
+                                        data-filter-group="fee"><span>Below
+                                        ₹1,000</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="₹1,000–2,000"
+                                        data-filter-group="fee"><span>₹1,000–2,000</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="₹2,000–3,000"
+                                        data-filter-group="fee"><span>₹2,000–3,000</span></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Above ₹3,000"
+                                        data-filter-group="fee"><span>Above
+                                        ₹3,000</span></label>
+                            </div>
+                            <!-- <div class="examFilterGroup">
                                 <p class="examFilterGroup__title">Application
                                     Fee</p>
                                 <input type="range" min="3" max="42" value="30"
@@ -391,7 +479,7 @@
                                         lakhs</span><span
                                         id="examFeeRangeValue">₹42
                                         lakhs</span></div>
-                            </div>
+                            </div> -->
 
                             <div class="examFilters__actions"> <!-- add this -->
                                 <button type="button"
@@ -416,13 +504,13 @@
 
                                     <div class="selectWrap">
                                         <select id="examSortSelect">
-                                            <option>Exam Date: Nearest
-                                                First</option>
-                                            <option>Application Fee: Low to
-                                                High</option>
-                                            <option>Accepting Colleges: High to
-                                                Low</option>
-                                            <option>Alphabetical</option>
+                                            <option>Recommended</option>
+                                            <option>Registration Closing
+                                                Soon</option>
+                                            <option>Upcoming Exam Date</option>
+                                            <option>Most Popular</option>
+                                            <option>Alphabetical (A-Z)</option>
+
                                         </select>
 
                                         <svg class="selectArrow"
@@ -450,12 +538,35 @@
                                 data-level="National Level"
                                 data-status="Registration Open"
                                 data-body="IIMs (CAT)" data-mode="Online (CBT)"
-                                data-month="November 2025">
+                                data-month="November" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo">
                                         <img src="/src/assets/images/cat.webp"
                                             alt="CAT logo" width="56"
                                             height="56" loading="lazy">
+                                    </div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="/demo/our-project/exam/exam-detail.html"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
                                     </div>
 
                                     <div class="examCard__info">
@@ -493,12 +604,35 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Closing Soon" data-body="XLRI"
                                 data-mode="Online (CBT)"
-                                data-month="December 2025">
+                                data-month="December" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
                                             alt="XAT logo" width="56"
                                             height="56" loading="lazy"></div>
+                                    <div class="examCard__actions">
+                                        <a
+                                            href="/demo/our-project/exam/exam-detail.html"
+                                            class="examBtn examBtn--solid">View
+                                            Details <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                        <a href="#"
+                                            class="examBtn examBtn--outline">Syllabus
+                                            PDF <svg width="16" height="16"
+                                                viewBox="0 0 24 24" fill="none"
+                                                aria-hidden="true"><path
+                                                    d="M7 17L17 7M17 7H8M17 7V16"
+                                                    stroke="currentColor"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path></svg></a>
+                                    </div>
 
                                     <div class="examCard__info">
                                         <h3>XAT 2026 — Xavier Aptitude Test</h3>
@@ -533,7 +667,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open"
                                 data-body="Symbiosis" data-mode="Online (CBT)"
-                                data-month="December 2025">
+                                data-month="December" data-fee="₹1,000–2,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/cat.webp"
@@ -598,7 +732,7 @@
                                 data-status="Registration Open"
                                 data-body="State Government"
                                 data-mode="Both Modes Available"
-                                data-month="October 2025">
+                                data-month="October" data-fee="₹1,000–2,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
@@ -662,7 +796,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open" data-body="NTA"
                                 data-mode="Online (CBT)"
-                                data-month="September 2025">
+                                data-month="September" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/cat.webp"
@@ -691,7 +825,6 @@
                                                     stroke-linecap="round"
                                                     stroke-linejoin="round"></path></svg></a>
                                     </div>
-
                                     <div class="examCard__info">
                                         <h3>CMAT 2025 — Common Management
                                             Admission Test</h3>
@@ -727,7 +860,7 @@
                                 data-level="National Level"
                                 data-status="Registration Open"
                                 data-body="IIMs (CAT)" data-mode="Online (CBT)"
-                                data-month="November 2025">
+                                data-month="November" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo">
                                         <img src="/src/assets/images/cat.webp"
@@ -793,7 +926,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Closing Soon" data-body="XLRI"
                                 data-mode="Online (CBT)"
-                                data-month="December 2025">
+                                data-month="December" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
@@ -857,7 +990,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open"
                                 data-body="Symbiosis" data-mode="Online (CBT)"
-                                data-month="December 2025">
+                                data-month="December" data-fee="₹1,000–2,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/cat.webp"
@@ -922,7 +1055,7 @@
                                 data-status="Registration Open"
                                 data-body="State Government"
                                 data-mode="Both Modes Available"
-                                data-month="October 2025">
+                                data-month="October" data-fee="₹1,000–2,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
@@ -986,7 +1119,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open" data-body="NTA"
                                 data-mode="Online (CBT)"
-                                data-month="September 2025">
+                                data-month="September" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
@@ -1049,7 +1182,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open" data-body="NTA"
                                 data-mode="Online (CBT)"
-                                data-month="September 2025">
+                                data-month="September" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/xat.webp"
@@ -1112,7 +1245,7 @@
                             <div class="examCard" data-level="National Level"
                                 data-status="Registration Open" data-body="NTA"
                                 data-mode="Online (CBT)"
-                                data-month="September 2025">
+                                data-month="September" data-fee="₹2,000–3,000">
                                 <div class="examCard__top">
                                     <div class="examCard__logo"><img
                                             src="/src/assets/images/cat.webp"

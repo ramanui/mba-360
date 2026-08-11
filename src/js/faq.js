@@ -1,6 +1,8 @@
 /* ---- FAQ Tabs ---- */
 
 
+
+
 var faqTabs = document.getElementById("examFaqTabs");
 var faqItemsForTabs = document.querySelectorAll("#examFaqList .examFaq__item");
 
@@ -20,6 +22,18 @@ function filterFaqByCategory(category){
 
     });
 
+}
+
+
+/* ---------- Center active tab horizontally (native, reliable) ---------- */
+function centerActiveFaqTab(tab){
+    if(!tab) return;
+
+    tab.scrollIntoView({
+        behavior: "smooth",
+        inline: "center",   // 👈 horizontal center
+        block: "nearest"    // 👈 vertical scroll trigger nahi hoga
+    });
 }
 
 
@@ -45,6 +59,7 @@ if(faqTabs){
 
             filterFaqByCategory(tab.getAttribute("data-category"));
 
+            centerActiveFaqTab(tab);   // 👈 sirf click pr center scroll
 
         });
 
@@ -56,6 +71,7 @@ if(faqTabs){
     var initialTab = faqTabs.querySelector(".examFaq__tab.is-active");
     if(initialTab){
         filterFaqByCategory(initialTab.getAttribute("data-category"));
+        // load pe centerActiveFaqTab() call NAHI kiya — isliye jump nahi hoga
     }
 
 

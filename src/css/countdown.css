@@ -139,6 +139,9 @@
   .examWidget {
     width: 41.5%;
   }
+  .examCountdown {
+    margin-top: 1.8rem;
+  }
 }
 
 @media (width <= 680px) {

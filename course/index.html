@@ -34,7 +34,7 @@
             crossorigin>
 
     </head>
-    <body>
+    <body class="course-lp">
         <include src="public/partials/header.html"></include>
 
         <main>
@@ -50,25 +50,58 @@
                 </div>
             </section>
 
-            <section class="ad-section">
+            <section class="ad-section" aria-label="Our partner institutions">
                 <div class="container">
-                    <div class="ad-section__row">
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
-                        <div class="ad-section__item">
-                            <img src="/src/assets/images/mdi-gurgaon.webp"
-                                alt="MDI Gurgaon">
-                        </div>
+                    <div class="ad-section__marquee">
+                        <ul class="ad-section__track">
+                            <!-- original set -->
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt="MDI Gurgaon" width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <!-- duplicate set, hidden from AT, for seamless loop -->
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                            <li class="ad-section__item" aria-hidden="true"><img
+                                    src="../src/assets/images/mdi-gurgaon.webp"
+                                    alt
+                                    width="200" height="120"
+                                    loading="lazy" decoding="async"></li>
+                        </ul>
                     </div>
                 </div>
             </section>
@@ -274,6 +307,12 @@
                                 <label class="examCheck"><input type="checkbox"
                                         value="Pune"
                                         data-filter-group="city"><span>Pune</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Chennai"
+                                        data-filter-group="city"><span>Chennai</span><em></em></label>
+                                <label class="examCheck"><input type="checkbox"
+                                        value="Chennai"
+                                        data-filter-group="city"><span>Chennai</span><em></em></label>
                                 <label class="examCheck"><input type="checkbox"
                                         value="Chennai"
                                         data-filter-group="city"><span>Chennai</span><em></em></label>

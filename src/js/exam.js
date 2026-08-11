@@ -30,7 +30,40 @@
 
   function init() {
     initExamFiltersModule();
+    initExamShowMoreToggle();
+    
   }
+
+   /* ---------------------------------------------------------
+     1) show more
+  --------------------------------------------------------- */
+//   function initExamShowMoreToggle() {
+//   var moreBtns = document.querySelectorAll(".examFilterGroup__more");
+
+//   if (!moreBtns.length) return;
+
+//   moreBtns.forEach(function (btn) {
+//     btn.addEventListener("click", function (e) {
+//       e.preventDefault();
+
+//       var extra = this.previousElementSibling;
+
+//       if (!extra) return;
+
+//       if (!extra.classList.contains("examFilterGroup__extra")) {
+//         return;
+//       }
+
+//       if (extra.hasAttribute("hidden")) {
+//         extra.removeAttribute("hidden");
+//         this.textContent = "- Show less";
+//       } else {
+//         extra.setAttribute("hidden", "");
+//         this.textContent = "+ Show more";
+//       }
+//     });
+//   });
+// }
 
   /* ---------------------------------------------------------
      1) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM

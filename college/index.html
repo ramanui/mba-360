@@ -54,7 +54,7 @@ scroll-margin-top: 100px;
   
 </style>
   </head>
-  <body>
+  <body class="college-lp">
 
     <include src="public/partials/header.html"></include>
 
@@ -70,21 +70,77 @@ scroll-margin-top: 100px;
         </div>
       </section>
 
-      <section class="ad-section">
+      <!-- <section class="ad-section">
         <div class="container">
           <div class="ad-section__row">
             <div class="ad-section__item">
-              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+              <img src="../src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
             </div>
             <div class="ad-section__item">
-              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+              <img src="../src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
             </div>
             <div class="ad-section__item">
-              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+              <img src="../src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
             </div>
             <div class="ad-section__item">
-              <img src="/src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
+              <img src="../src/assets/images/mdi-gurgaon.webp" alt="MDI Gurgaon">
             </div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="ad-section" aria-label="Our partner institutions">
+        <div class="container">
+          <div class="ad-section__marquee">
+            <ul class="ad-section__track">
+              <!-- original set -->
+              <li class="ad-section__item"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt="MDI Gurgaon" width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt="MDI Gurgaon" width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt="MDI Gurgaon" width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt="MDI Gurgaon" width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt="MDI Gurgaon" width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <!-- duplicate set, hidden from AT, for seamless loop -->
+              <li class="ad-section__item" aria-hidden="true"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt
+                  width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item" aria-hidden="true"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt
+                  width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item" aria-hidden="true"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt
+                  width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item" aria-hidden="true"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt
+                  width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+              <li class="ad-section__item" aria-hidden="true"><img
+                  src="../src/assets/images/mdi-gurgaon.webp"
+                  alt
+                  width="200" height="120"
+                  loading="lazy" decoding="async"></li>
+            </ul>
           </div>
         </div>
       </section>
@@ -276,6 +332,7 @@ scroll-margin-top: 100px;
                         </button> -->
 
             <!-- Sidebar Filters -->
+            <!-- Sidebar Filters -->
             <aside class="examFilters" id="examFiltersPanel">
               <div class="examFilters__head">
                 <h4>Filter Programmes</h4>
@@ -284,115 +341,462 @@ scroll-margin-top: 100px;
               </div>
 
               <div class="examFilterGroup">
+                <p class="examFilterGroup__title">State</p>
+
+                <label class="examCheck"><input type="checkbox"
+                    value="Andhra Pradesh"
+                    data-filter-group="state"><span>Andhra
+                    Pradesh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Arunachal Pradesh"
+                    data-filter-group="state"><span>Arunachal
+                    Pradesh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Assam"
+                    data-filter-group="state"><span>Assam</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Bihar"
+                    data-filter-group="state"><span>Bihar</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Chhattisgarh"
+                    data-filter-group="state"><span>Chhattisgarh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Goa"
+                    data-filter-group="state"><span>Goa</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Gujarat"
+                    data-filter-group="state"><span>Gujarat</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Haryana"
+                    data-filter-group="state"><span>Haryana</span><em></em></label>
+                <div class="examFilterGroup__extra" id="examStateExtra" hidden>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Himachal Pradesh"
+                      data-filter-group="state"><span>Himachal
+                      Pradesh</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Jharkhand"
+                      data-filter-group="state"><span>Jharkhand</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Karnataka"
+                      data-filter-group="state"><span>Karnataka</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Kerala"
+                      data-filter-group="state"><span>Kerala</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Madhya Pradesh"
+                      data-filter-group="state"><span>Madhya
+                      Pradesh</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Maharashtra"
+                      data-filter-group="state"><span>Maharashtra</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Manipur"
+                      data-filter-group="state"><span>Manipur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Meghalaya"
+                      data-filter-group="state"><span>Meghalaya</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Mizoram"
+                      data-filter-group="state"><span>Mizoram</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Nagaland"
+                      data-filter-group="state"><span>Nagaland</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Odisha"
+                      data-filter-group="state"><span>Odisha</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Punjab"
+                      data-filter-group="state"><span>Punjab</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Rajasthan"
+                      data-filter-group="state"><span>Rajasthan</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Sikkim"
+                      data-filter-group="state"><span>Sikkim</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Tamil Nadu"
+                      data-filter-group="state"><span>Tamil
+                      Nadu</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Telangana"
+                      data-filter-group="state"><span>Telangana</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Tripura"
+                      data-filter-group="state"><span>Tripura</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Uttar Pradesh"
+                      data-filter-group="state"><span>Uttar
+                      Pradesh</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Uttarakhand"
+                      data-filter-group="state"><span>Uttarakhand</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="West Bengal"
+                      data-filter-group="state"><span>West
+                      Bengal</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Delhi (NCT)"
+                      data-filter-group="state"><span>Delhi
+                      (NCT)</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Chandigarh"
+                      data-filter-group="state"><span>Chandigarh</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Jammu & Kashmir"
+                      data-filter-group="state"><span>Jammu &
+                      Kashmir</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Ladakh"
+                      data-filter-group="state"><span>Ladakh</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Puducherry"
+                      data-filter-group="state"><span>Puducherry</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Andaman & Nicobar Islands"
+                      data-filter-group="state"><span>Andaman & Nicobar
+                      Islands</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Dadra & Nagar Haveli and Daman & Diu"
+                      data-filter-group="state"><span>Dadra & Nagar Haveli and
+                      Daman &
+                      Diu</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Lakshadweep"
+                      data-filter-group="state"><span>Lakshadweep</span><em></em></label>
+                </div>
+                <button class="examFilterGroup__more" id="examStateMoreBtn">+
+                  Show
+                  more</button>
+              </div>
+
+              <!-- <div class="examFilterGroup">
+                <p class="examFilterGroup__title">City</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="Ahmedabad"
+                    data-filter-group="city"><span>Ahmedabad</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Bengaluru"
+                    data-filter-group="city"><span>Bengaluru</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Bhopal"
+                    data-filter-group="city"><span>Bhopal</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Bhubaneswar"
+                    data-filter-group="city"><span>Bhubaneswar</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Chandigarh"
+                    data-filter-group="city"><span>Chandigarh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Chennai"
+                    data-filter-group="city"><span>Chennai</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Coimbatore"
+                    data-filter-group="city"><span>Coimbatore</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Dehradun"
+                    data-filter-group="city"><span>Dehradun</span><em></em></label>
+                <div class="examFilterGroup__extra" id="examCityExtra" hidden>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Delhi NCR"
+                      data-filter-group="city"><span>Delhi
+                      NCR</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Ghaziabad"
+                      data-filter-group="city"><span>Ghaziabad</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Greater Noida"
+                      data-filter-group="city"><span>Greater
+                      Noida</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Gurugram"
+                      data-filter-group="city"><span>Gurugram</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Guwahati"
+                      data-filter-group="city"><span>Guwahati</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Hyderabad"
+                      data-filter-group="city"><span>Hyderabad</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Indore"
+                      data-filter-group="city"><span>Indore</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Jaipur"
+                      data-filter-group="city"><span>Jaipur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Jalandhar"
+                      data-filter-group="city"><span>Jalandhar</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Jammu"
+                      data-filter-group="city"><span>Jammu</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Jamshedpur"
+                      data-filter-group="city"><span>Jamshedpur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Kanpur"
+                      data-filter-group="city"><span>Kanpur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Kochi"
+                      data-filter-group="city"><span>Kochi</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Kolkata"
+                      data-filter-group="city"><span>Kolkata</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Kozhikode"
+                      data-filter-group="city"><span>Kozhikode</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Lucknow"
+                      data-filter-group="city"><span>Lucknow</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Ludhiana"
+                      data-filter-group="city"><span>Ludhiana</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Mumbai"
+                      data-filter-group="city"><span>Mumbai</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Mysuru"
+                      data-filter-group="city"><span>Mysuru</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Nagpur"
+                      data-filter-group="city"><span>Nagpur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Nashik"
+                      data-filter-group="city"><span>Nashik</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Noida"
+                      data-filter-group="city"><span>Noida</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Patna"
+                      data-filter-group="city"><span>Patna</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Pune"
+                      data-filter-group="city"><span>Pune</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Raipur"
+                      data-filter-group="city"><span>Raipur</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Ranchi"
+                      data-filter-group="city"><span>Ranchi</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="Surat"
+                      data-filter-group="city"><span>Surat</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Tiruchirappalli"
+                      data-filter-group="city"><span>Tiruchirappalli</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Vadodara"
+                      data-filter-group="city"><span>Vadodara</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Varanasi"
+                      data-filter-group="city"><span>Varanasi</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Visakhapatnam"
+                      data-filter-group="city"><span>Visakhapatnam</span><em></em></label>
+                </div>
+                <button class="examFilterGroup__more" id="examCityMoreBtn">+
+                  Show
+                  more</button>
+              </div> -->
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Institution Type</p>
+                <label class="examCheck"><input type="checkbox" value="IIM"
+                    data-filter-group="institutionType"><span>IIM</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="IIT"
+                    data-filter-group="institutionType"><span>IIT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Government"
+                    data-filter-group="institutionType"><span>Government</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Private"
+                    data-filter-group="institutionType"><span>Private</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Deemed University"
+                    data-filter-group="institutionType"><span>Deemed
+                    University</span><em></em></label>
+              </div>
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Accepted Entrance Exams</p>
+
+                <label class="examCheck"><input type="checkbox" value="CAT"
+                    data-filter-group="entranceExam"><span>CAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="XAT"
+                    data-filter-group="entranceExam"><span>XAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="NMAT"
+                    data-filter-group="entranceExam"><span>NMAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="SNAP"
+                    data-filter-group="entranceExam"><span>SNAP</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="CMAT"
+                    data-filter-group="entranceExam"><span>CMAT</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="MAT"
+                    data-filter-group="entranceExam"><span>MAT</span><em></em></label>
+                <div class="examFilterGroup__extra" id="examEntranceExamExtra"
+                  hidden>
+                  <label class="examCheck"><input type="checkbox" value="ATMA"
+                      data-filter-group="entranceExam"><span>ATMA</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="MAH MBA CET"
+                      data-filter-group="entranceExam"><span>MAH MBA
+                      CET</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="Karnataka PGCET"
+                      data-filter-group="entranceExam"><span>Karnataka
+                      PGCET</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="TS ICET"
+                      data-filter-group="entranceExam"><span>TS
+                      ICET</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="AP ICET"
+                      data-filter-group="entranceExam"><span>AP
+                      ICET</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="KMAT Karnataka"
+                      data-filter-group="entranceExam"><span>KMAT
+                      Karnataka</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="KMAT Kerala"
+                      data-filter-group="entranceExam"><span>KMAT
+                      Kerala</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="TANCET MBA"
+                      data-filter-group="entranceExam"><span>TANCET
+                      MBA</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="OJEE MBA"
+                      data-filter-group="entranceExam"><span>OJEE
+                      MBA</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="CUET UG"
+                      data-filter-group="entranceExam"><span>CUET
+                      UG</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox"
+                      value="CUET PG"
+                      data-filter-group="entranceExam"><span>CUET
+                      PG</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="GMAT"
+                      data-filter-group="entranceExam"><span>GMAT</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="GRE"
+                      data-filter-group="entranceExam"><span>GRE</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="IBSAT"
+                      data-filter-group="entranceExam"><span>IBSAT</span><em></em></label>
+                  <label class="examCheck"><input type="checkbox" value="MICAT"
+                      data-filter-group="entranceExam"><span>MICAT</span><em></em></label>
+                </div>
+                <button class="examFilterGroup__more"
+                  id="examEntranceExamMoreBtn">+ Show
+                  more</button>
+              </div>
+
+              <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Programme Type</p>
+                <label class="examCheck"><input type="checkbox" value="BBA"
+                    data-filter-group="programme"><span>BBA</span><em>4</em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="Full-Time MBA"
-                    data-filter-group="programme"><span>Full-Time
-                    MBA</span><em>6</em></label>
+                    value="BBA (Hons.)"
+                    data-filter-group="programme"><span>BBA
+                    (Hons.)</span><em>3</em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="Part-Time MBA"
-                    data-filter-group="programme"><span>Part-Time
-                    MBA</span><em>18</em></label>
+                    value="Integrated BBA + MBA"
+                    data-filter-group="programme"><span>Integrated BBA +
+                    MBA</span><em>2</em></label>
+                <label class="examCheck"><input type="checkbox" value="MBA"
+                    data-filter-group="programme"><span>MBA</span><em>20</em></label>
+                <label class="examCheck"><input type="checkbox" value="PGDM"
+                    data-filter-group="programme"><span>PGDM</span><em>12</em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="Executive MBA (EMBA)"
-                    data-filter-group="programme"><span>Executive MBA
-                    (EMBA)</span><em>10</em></label>
+                    value="Executive MBA"
+                    data-filter-group="programme"><span>Executive
+                    MBA</span><em>8</em></label>
                 <label class="examCheck"><input type="checkbox"
                     value="Online MBA"
                     data-filter-group="programme"><span>Online
                     MBA</span><em>6</em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="Distance Learning MBA"
-                    data-filter-group="programme"><span>Distance Learning
-                    MBA</span><em>6</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Integrated MBA"
-                    data-filter-group="programme"><span>Integrated
-                    MBA</span><em>6</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Global MBA"
-                    data-filter-group="programme"><span>Global
-                    MBA</span><em>6</em></label>
+                    value="Distance MBA"
+                    data-filter-group="programme"><span>Distance
+                    MBA</span><em>5</em></label>
               </div>
 
               <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Location / City</p>
-                <label class="examCheck"><input type="checkbox" value="Mumbai"
-                    data-filter-group="city"><span>Mumbai</span><em></em></label>
+                <p class="examFilterGroup__title">Study Mode</p>
                 <label class="examCheck"><input type="checkbox"
-                    value="Delhi/NCR"
-                    data-filter-group="city"><span>Delhi/NCR</span><em></em></label>
+                    value="Full-Time"
+                    data-filter-group="studyMode"><span>Full-Time</span><em></em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="Bangalore"
-                    data-filter-group="city"><span>Bangalore</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Hyderabad"
-                    data-filter-group="city"><span>Hyderabad</span><em></em></label>
-                <div class="examFilterGroup__extra" id="examCityExtra" hidden>
-                  <label class="examCheck"><input type="checkbox" value="Pune"
-                      data-filter-group="city"><span>Pune</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Chennai"
-                      data-filter-group="city"><span>Chennai</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Kolkata"
-                      data-filter-group="city"><span>Kolkata</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Ahmedabad"
-                      data-filter-group="city"><span>Ahmedabad</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Jamshedpur"
-                      data-filter-group="city"><span>Jamshedpur</span><em></em></label>
-                </div>
-                <button class="examFilterGroup__more" id="examCityMoreBtn">+
-                  Show more</button>
+                    value="Part-Time"
+                    data-filter-group="studyMode"><span>Part-Time</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Online"
+                    data-filter-group="studyMode"><span>Online</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Hybrid"
+                    data-filter-group="studyMode"><span>Hybrid</span><em></em></label>
+                <label class="examCheck"><input type="checkbox" value="Distance"
+                    data-filter-group="studyMode"><span>Distance</span><em></em></label>
               </div>
 
               <div class="examFilterGroup">
-                <p class="examFilterGroup__title">College Type</p>
-                <label class="examCheck"><input type="checkbox" value="IIMs"
-                    data-filter-group="collegeType"><span>IIMs</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Private"
-                    data-filter-group="collegeType"><span>Private</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Public"
-                    data-filter-group="collegeType"><span>Public</span><em></em></label>
+                <p class="examFilterGroup__title">Programme Fees</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="Below ₹5 Lakh"
+                    data-filter-group="feeRange"><span>Below ₹5
+                    Lakh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="₹5–10 Lakh"
+                    data-filter-group="feeRange"><span>₹5–10
+                    Lakh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="₹10–15 Lakh"
+                    data-filter-group="feeRange"><span>₹10–15
+                    Lakh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="₹15–20 Lakh"
+                    data-filter-group="feeRange"><span>₹15–20
+                    Lakh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="₹20–30 Lakh"
+                    data-filter-group="feeRange"><span>₹20–30
+                    Lakh</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Above ₹30 Lakh"
+                    data-filter-group="feeRange"><span>Above ₹30
+                    Lakh</span><em></em></label>
               </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Entrance Exam</p>
-                <label class="examCheck"><input type="checkbox" value="CAT"
-                    data-filter-group="entranceExam"><span>CAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="MAT"
-                    data-filter-group="entranceExam"><span>MAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="XAT"
-                    data-filter-group="entranceExam"><span>XAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="GMAT"
-                    data-filter-group="entranceExam"><span>GMAT</span><em></em></label>
-              </div>
-
-              <div class="examFilterGroup">
+              <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Total Fees</p>
                 <input type="range" min="3" max="42" value="42"
                   class="examFeeRange" id="examFeeRange">
                 <div class="examFeeRange__labels"><span>₹3 lakhs</span><span
                     id="examFeeRangeValue">₹42 lakhs</span></div>
-              </div>
+              </div> -->
 
               <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Accreditation</p>
+                <p class="examFilterGroup__title">Accreditations</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="AICTE Approved"
+                    data-filter-group="accreditation"><span>AICTE
+                    Approved</span><em>15</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="UGC Recognised"
+                    data-filter-group="accreditation"><span>UGC
+                    Recognised</span><em>10</em></label>
+                <label class="examCheck"><input type="checkbox" value="NAAC A++"
+                    data-filter-group="accreditation"><span>NAAC
+                    A++</span><em>5</em></label>
                 <label class="examCheck"><input type="checkbox" value="NAAC A+"
                     data-filter-group="accreditation"><span>NAAC
-                    A+</span><em>6</em></label>
-                <label class="examCheck"><input type="checkbox" value="NAAC A"
-                    data-filter-group="accreditation"><span>NAAC
-                    A</span><em>28</em></label>
+                    A+</span><em>8</em></label>
+                <label class="examCheck"><input type="checkbox" value="NBA"
+                    data-filter-group="accreditation"><span>NBA</span><em>6</em></label>
                 <label class="examCheck"><input type="checkbox" value="AACSB"
-                    data-filter-group="accreditation"><span>AACSB</span><em>10</em></label>
+                    data-filter-group="accreditation"><span>AACSB</span><em>4</em></label>
                 <label class="examCheck"><input type="checkbox" value="AMBA"
-                    data-filter-group="accreditation"><span>AMBA</span><em>4</em></label>
+                    data-filter-group="accreditation"><span>AMBA</span><em>3</em></label>
+                <label class="examCheck"><input type="checkbox" value="EQUIS"
+                    data-filter-group="accreditation"><span>EQUIS</span><em>2</em></label>
               </div>
 
               <div class="examFilterGroup">
+                <p class="examFilterGroup__title">Admission Status</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="Applications Open"
+                    data-filter-group="admissionStatus"><span>Applications
+                    Open</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Closing Within 7 Days"
+                    data-filter-group="admissionStatus"><span>Closing Within 7
+                    Days</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Closing Within 15 Days"
+                    data-filter-group="admissionStatus"><span>Closing Within 15
+                    Days</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Closing Within 30 Days"
+                    data-filter-group="admissionStatus"><span>Closing Within 30
+                    Days</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Upcoming Applications"
+                    data-filter-group="admissionStatus"><span>Upcoming
+                    Applications</span><em></em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="Admissions Closed"
+                    data-filter-group="admissionStatus"><span>Admissions
+                    Closed</span><em></em></label>
+              </div>
+
+              <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Avg. Placement Package</p>
                 <label class="examCheck"><input type="checkbox" value="20+ LPA"
                     data-filter-group="package"><span>20+
@@ -428,7 +832,7 @@ scroll-margin-top: 100px;
                 <label class="examCheck"><input type="checkbox" value="Top 100"
                     data-filter-group="nirf"><span>Top
                     100</span><em></em></label>
-              </div>
+              </div> -->
               <div class="examFilters__actions"> <!-- add this -->
                 <button type="button"
                   class="examFilters__closeBtn"
@@ -450,8 +854,13 @@ scroll-margin-top: 100px;
 
                   <div class="selectWrap">
                     <select id="examSortSelect">
-                      <option>NIRF Ranking: Best First</option>
-                      <option>Total Fees: Low to High</option>
+                      <option> Recommended</option>
+                      <option> Highest ROI</option>
+                      <option> Highest Average Salary</option>
+                      <option> Lowest Programme Fees</option>
+                      <option> Highest NIRF Rank</option>
+                      <option> Recently Updated</option>
+                      <option> Alphabetical (A-Z)</option>
                       <option>Alphabetical</option>
                     </select>
 
@@ -472,10 +881,14 @@ scroll-margin-top: 100px;
 
               <!-- Exam Card 1 -->
 
-              <div class="examCard" data-programme="Full-Time MBA"
-                data-city="Ahmedabad" data-college-type="IIMs"
-                data-entrance-exam="CAT" data-accreditation="NAAC A+"
-                data-package="40-50 LPA" data-nirf="1" data-fee="25.55">
+              <div class="examCard" data-programme="MBA"
+                data-state="Gujarat" data-city="Ahmedabad"
+                data-institution-type="IIM"
+                data-entrance-exam="CAT" data-study-mode="Full-Time"
+                data-accreditation="NAAC A+"
+                data-admission-status="Applications Open"
+                data-package="40-50 LPA" data-nirf="1" data-fee="25.55"
+                data-fee-range="₹20–30 Lakh">
                 <div class="examCard__top">
                   <div class="examCard__logo"><img
                       src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
@@ -521,16 +934,20 @@ scroll-margin-top: 100px;
                     class="examCard__stat"><strong>100%</strong><span>Placement
                       Rate</span></div>
                   <!-- <div
-                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
                 </div>
               </div>
 
               <!-- Exam Card 2 -->
 
-              <div class="examCard" data-programme="Full-Time MBA"
-                data-city="Bangalore" data-college-type="IIMs"
-                data-entrance-exam="CAT" data-accreditation="NAAC A+"
-                data-package="30-40 LPA" data-nirf="2" data-fee="24.50">
+              <div class="examCard" data-programme="MBA"
+                data-state="Karnataka" data-city="Bengaluru"
+                data-institution-type="IIM"
+                data-entrance-exam="CAT" data-study-mode="Full-Time"
+                data-accreditation="NAAC A+"
+                data-admission-status="Applications Open"
+                data-package="30-40 LPA" data-nirf="2" data-fee="24.50"
+                data-fee-range="₹20–30 Lakh">
                 <div class="examCard__top">
                   <div class="examCard__logo"><img
                       src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
@@ -576,16 +993,20 @@ scroll-margin-top: 100px;
                     class="examCard__stat"><strong>100%</strong><span>Placement
                       Rate</span></div>
                   <!-- <div
-                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
                 </div>
               </div>
 
               <!-- Exam Card 3 -->
 
-              <div class="examCard" data-programme="Executive MBA (EMBA)"
-                data-city="Jamshedpur" data-college-type="Private"
-                data-entrance-exam="XAT" data-accreditation="AACSB"
-                data-package="24-30 LPA" data-nirf="6" data-fee="23.00">
+              <div class="examCard" data-programme="Executive MBA"
+                data-state="Jharkhand" data-city="Jamshedpur"
+                data-institution-type="Private"
+                data-entrance-exam="XAT" data-study-mode="Part-Time"
+                data-accreditation="AACSB"
+                data-admission-status="Applications Open"
+                data-package="24-30 LPA" data-nirf="6" data-fee="23.00"
+                data-fee-range="₹20–30 Lakh">
                 <div class="examCard__top">
                   <div class="examCard__logo"><img
                       src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
@@ -636,10 +1057,14 @@ scroll-margin-top: 100px;
 
               <!-- Exam Card 4 -->
 
-              <div class="examCard" data-programme="Full-Time MBA"
-                data-city="Delhi/NCR" data-college-type="Public"
-                data-entrance-exam="CAT" data-accreditation="NAAC A"
-                data-package="32-40 LPA" data-nirf="4" data-fee="2.50">
+              <div class="examCard" data-programme="MBA"
+                data-state="Delhi (NCT)" data-city="Delhi NCR"
+                data-institution-type="Government"
+                data-entrance-exam="CAT" data-study-mode="Full-Time"
+                data-accreditation="NAAC A+"
+                data-admission-status="Applications Open"
+                data-package="32-40 LPA" data-nirf="4" data-fee="2.50"
+                data-fee-range="Below ₹5 Lakh">
                 <div class="examCard__top">
                   <div class="examCard__logo"><img
                       src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
@@ -690,9 +1115,13 @@ scroll-margin-top: 100px;
               <!-- Exam Card 5 -->
 
               <div class="examCard" data-programme="Online MBA"
-                data-city="Delhi/NCR" data-college-type="Private"
-                data-entrance-exam="GMAT" data-accreditation="AMBA"
-                data-package="20+ LPA" data-nirf="8" data-fee="19.50">
+                data-state="Haryana" data-city="Gurugram"
+                data-institution-type="Private"
+                data-entrance-exam="GMAT" data-study-mode="Online"
+                data-accreditation="AMBA"
+                data-admission-status="Applications Open"
+                data-package="20+ LPA" data-nirf="8" data-fee="19.50"
+                data-fee-range="₹15–20 Lakh">
                 <div class="examCard__top">
                   <div class="examCard__logo"><img
                       src="/src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
@@ -738,7 +1167,7 @@ scroll-margin-top: 100px;
                     class="examCard__stat"><strong>100%</strong><span>Placement
                       Rate</span></div>
                   <!-- <div
-                    class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
                 </div>
               </div>
 
@@ -885,7 +1314,7 @@ scroll-margin-top: 100px;
 
                   <div class="collegeCardFooter">
                     <a href="#" class="viewCoursesLink">
-                      View Courses
+                      View College
                       <svg width="14" height="14" viewBox="0 0 24 24"
                         fill="none" aria-hidden="true"><path
                           d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
@@ -941,7 +1370,7 @@ scroll-margin-top: 100px;
 
                   <div class="collegeCardFooter">
                     <a href="#" class="viewCoursesLink">
-                      View Courses
+                      View College
                       <svg width="14" height="14" viewBox="0 0 24 24"
                         fill="none" aria-hidden="true"><path
                           d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
@@ -962,7 +1391,7 @@ scroll-margin-top: 100px;
               </div>
 
               <div class="alumniAdvertiseWidget">
-                <h5>Advertise your programme here</h5>
+                <h5>Advertise your programme </h5>
                 <p>Reach 5,000+ working professionals actively comparing
                   Executive MBA programs on MBA 360.</p>
                 <div class="alumniAdvertiseWidget__stats">

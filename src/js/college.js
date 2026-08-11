@@ -6,10 +6,79 @@
   "use strict";
 
   document.addEventListener("DOMContentLoaded", () => {
-    initExamFiltersModule();
+    initExamShowMoreToggle();
+  initExamFiltersModule();
   });
 
+
+     /* ---------------------------------------------------------
+     1) show more
+  --------------------------------------------------------- */
   
+  function initExamShowMoreToggle() {
+  var moreBtns = document.querySelectorAll(".examFilterGroup__more");
+
+  if (!moreBtns.length) return;
+
+  moreBtns.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      var extra = this.previousElementSibling;
+
+      if (!extra) return;
+
+      if (!extra.classList.contains("examFilterGroup__extra")) {
+        return;
+      }
+
+      if (extra.hasAttribute("hidden")) {
+        extra.removeAttribute("hidden");
+        this.textContent = "- Show less";
+      } else {
+        extra.setAttribute("hidden", "");
+        this.textContent = "+ Show more";
+      }
+    });
+  });
+}
+
+  function initExamShowMoreToggle() {
+  if (document.body.dataset.examShowMoreInit === "true") {
+    return;
+  }
+
+  document.body.dataset.examShowMoreInit = "true";
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".examFilterGroup__more");
+
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var extra = btn.previousElementSibling;
+
+    if (!extra) return;
+
+    if (!extra.classList.contains("examFilterGroup__extra")) {
+      return;
+    }
+
+    var opened = extra.dataset.showMoreOpen === "true";
+
+    if (opened) {
+      extra.setAttribute("hidden", "");
+      extra.dataset.showMoreOpen = "false";
+      btn.textContent = "+ Show more";
+    } else {
+      extra.removeAttribute("hidden");
+      extra.dataset.showMoreOpen = "true";
+      btn.textContent = "- Show less";
+    }
+  });
+}
 
   /* ======================================================
      4) EXAM FILTERS + SORT + PAGINATION (NIRF ranking aware)
@@ -355,3 +424,7 @@
     applyExamFilters();
   }
 })();
+
+
+
+

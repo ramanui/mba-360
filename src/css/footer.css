@@ -141,7 +141,7 @@
 @media (max-width: 768px) {
   .site-footer__top {
     grid-template-columns: 1fr 1fr;
-    padding: 62px 0px 32px;
+    padding: 56px 0px 32px;
     gap: 32px;
   }
   .site-footer__bottom {
@@ -152,6 +152,12 @@
   }
   .botom-wrap {
     padding: 22px 16px 46px;
+  }
+  .college-lp .botom-wrap,
+  .exam-lp .botom-wrap,
+  .course-lp .botom-wrap,
+  .alumni-lp .botom-wrap {
+    padding: 22px 16px 86px;
   }
 }
 

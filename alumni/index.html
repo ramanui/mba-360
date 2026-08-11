@@ -32,7 +32,7 @@
       crossorigin>
 
   </head>
-  <body>
+  <body class="alumni-lp">
 
     <include src="public/partials/header.html"></include>
 
@@ -141,7 +141,7 @@
               </button>
             </div>
             <!-- Sort bottom-sheet (mobile only) -->
-            <div class="examSortPanel" id="examSortPanel"
+            <!-- <div class="examSortPanel" id="examSortPanel"
               role="dialog" aria-modal="true"
               aria-labelledby="examSortPanelTitle"
               aria-hidden="true">
@@ -183,7 +183,7 @@
                     data-value="Alphabetical"><span>Alphabetical</span><span
                       class="examSortOption__dot"></span></button></li>
               </ul>
-            </div>
+            </div> -->
 
             <!-- Sidebar Filters -->
             <aside class="examFilters" id="examFiltersPanel"
@@ -196,7 +196,7 @@
                   id="alumniFiltersClearAll">Clear all</button>
               </div>
 
-              <div class="examFilterGroup">
+              <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Sort by</p>
                 <label class="examCheck"><input type="checkbox"
                     name="alumniSort" value="Newest"
@@ -204,7 +204,7 @@
                 <label class="examCheck"><input type="checkbox"
                     name="alumniSort" value="Oldest"
                     data-filter-group="sort"><span>Oldest</span></label>
-              </div>
+              </div> -->
 
               <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Programme Type</p>
@@ -238,19 +238,22 @@
                     MBA</span><em></em></label>
               </div>
 
-              <div class="examFilterGroup">
+              <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">College</p>
                 <label class="examCheck"><input type="checkbox"
-                    value="IIM Ahmedabad" data-filter-group="college"><span>IIM
+                    value="IIM Ahmedabad"
+                    data-filter-group="college"><span>IIM
                     Ahmedabad</span><em></em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="IIM Bangalore" data-filter-group="college"><span>IIM
+                    value="IIM Bangalore"
+                    data-filter-group="college"><span>IIM
                     Bangalore</span><em></em></label>
                 <label class="examCheck"><input type="checkbox"
                     value="IIM Calcutta" data-filter-group="college"><span>IIM
                     Calcutta</span><em></em></label>
                 <label class="examCheck"><input type="checkbox"
-                    value="ISB Hyderabad" data-filter-group="college"><span>ISB
+                    value="ISB Hyderabad"
+                    data-filter-group="college"><span>ISB
                     Hyderabad</span><em></em></label>
                 <label class="examCheck"><input type="checkbox"
                     value="XLRI Jamshedpur"
@@ -266,18 +269,92 @@
                     value="SPJIMR Mumbai"
                     data-filter-group="college"><span>SPJIMR
                     Mumbai</span><em></em></label>
+
+                <div class="examFilterGroup__extra" id="examBodyExtra" hidden>
+                  <label class="examCheck">
+                    <input type="checkbox" value="Pune"
+                      data-filter-group="city">
+                    <span>Pune</span>
+                    <em></em>
+                  </label>
+
+                  <label class="examCheck">
+                    <input type="checkbox" value="Chennai"
+                      data-filter-group="city">
+                    <span>Chennai</span>
+                    <em></em>
+                  </label>
+
+                  <label class="examCheck">
+                    <input type="checkbox" value="Kolkata"
+                      data-filter-group="city">
+                    <span>Kolkata</span>
+                    <em></em>
+                  </label>
+
+                  <label class="examCheck">
+                    <input type="checkbox" value="Ahmedabad"
+                      data-filter-group="city">
+                    <span>Ahmedabad</span>
+                    <em></em>
+                  </label>
+
+                  <label class="examCheck">
+                    <input type="checkbox" value="Jamshedpur"
+                      data-filter-group="city">
+                    <span>Jamshedpur</span>
+                    <em></em>
+                  </label>
+                </div>
+
+                <button type="button" class="examFilterGroup__more"
+                  id="examBodyMoreBtn">
+                  + Show more
+                </button>
+
+              </div> -->
+
+              <div class="examFilterGroup">
+                <p class="examFilterGroup__title">College</p>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Ahmedabad" data-filter-group="college"><span>IIM
+                    Ahmedabad</span><em>1</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Bangalore" data-filter-group="college"><span>IIM
+                    Bangalore</span><em>1</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="IIM Calcutta" data-filter-group="college"><span>IIM
+                    Calcutta</span><em>1</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="ISB Hyderabad" data-filter-group="college"><span>ISB
+                    Hyderabad</span><em>1</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="XLRI Jamshedpur"
+                    data-filter-group="college"><span>XLRI
+                    Jamshedpur</span><em>1</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="FMS Delhi" data-filter-group="college"><span>FMS
+                    Delhi</span><em>1</em></label>
+                <label class="examCheck" style="display: none;"><input
+                    type="checkbox" value="MDI Gurgaon"
+                    data-filter-group="college"><span>MDI
+                    Gurgaon</span><em>0</em></label>
+                <label class="examCheck"><input type="checkbox"
+                    value="SPJIMR Mumbai"
+                    data-filter-group="college"><span>SPJIMR
+                    Mumbai</span><em>1</em></label>
                 <div class="examFilterGroup__extra" id="alumniCollegeExtra"
                   hidden>
                   <label class="examCheck"><input type="checkbox"
                       value="IIFT Delhi" data-filter-group="college"><span>IIFT
-                      Delhi</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="NMIMS Mumbai"
+                      Delhi</span><em>1</em></label>
+                  <label class="examCheck" style="display: none;"><input
+                      type="checkbox" value="NMIMS Mumbai"
                       data-filter-group="college"><span>NMIMS
-                      Mumbai</span><em></em></label>
+                      Mumbai</span><em>0</em></label>
                   <label class="examCheck"><input type="checkbox"
                       value="IIM Lucknow" data-filter-group="college"><span>IIM
-                      Lucknow</span><em></em></label>
+                      Lucknow</span><em>3</em></label>
                 </div>
                 <button class="examFilterGroup__more"
                   id="alumniCollegeMoreBtn">+ Show more</button>
@@ -311,7 +388,8 @@
               <div class="examMain__toolbar">
                 <p class="examMain__count">Showing <strong
                     id="alumniResultCount">25</strong> Alumni Speak</p>
-                <div class="examSort">
+
+                <!-- <div class="examSort">
                   <label for="alumniSortSelect">Sort by</label>
                   <div class="selectWrap">
                     <select id="alumniSortSelect">
@@ -327,7 +405,8 @@
                         stroke-linejoin="round" />
                     </svg>
                   </div>
-                </div>
+                </div> -->
+
               </div>
 
               <p id="alumniNoResults"
@@ -978,7 +1057,7 @@
               </div>
 
               <div class="alumniAdvertiseWidget">
-                <h5>Advertise your programme here</h5>
+                <h5>Advertise your programme</h5>
                 <p>Reach 5,000+ working professionals actively comparing
                   Executive MBA programs on MBA 360.</p>
                 <div class="alumniAdvertiseWidget__stats">
@@ -1075,375 +1154,875 @@ const frame = document.getElementById("videoFrame");
 
 document.querySelectorAll(".alumniCardPlay").forEach(btn => {
     btn.addEventListener("click", () => {
-        frame.src = btn.dataset.video;
-        modal.classList.add("active");
+        if (frame) {
+            frame.src = btn.dataset.video;
+        }
+
+        if (modal) {
+            modal.classList.add("active");
+        }
     });
 });
 
-function closeVideo(){
-    modal.classList.remove("active");
-    frame.src = "";
+function closeVideo() {
+    if (modal) {
+        modal.classList.remove("active");
+    }
+
+    if (frame) {
+        frame.src = "";
+    }
 }
 
-document.querySelector(".videoModal__close").addEventListener("click", closeVideo);
-document.querySelector(".videoModal__overlay").addEventListener("click", closeVideo);
+const videoCloseBtn = document.querySelector(".videoModal__close");
+const videoOverlay = document.querySelector(".videoModal__overlay");
+
+if (videoCloseBtn) {
+    videoCloseBtn.addEventListener("click", closeVideo);
+}
+
+if (videoOverlay) {
+    videoOverlay.addEventListener("click", closeVideo);
+}
+
+
+/* ==========================================================
+   Alumni Speak Filters
+   Sort By functionality removed
+   ========================================================== */
 
 (function () {
-"use strict";
+    "use strict";
 
 
-/* ---- Alumni Speak Filters ---- */
+    /* ---------- Mobile Filter Toggle ---------- */
 
-var examMobileFilterToggleBtn = document.getElementById("examMobileFilterToggle");
-var examMobileFiltersPanel = document.getElementById("examFiltersPanel");
+    var alumniMobileFilterToggleBtn =
+        document.getElementById("examMobileFilterToggle");
 
-if (alumniMobileFilterToggleBtn && alumniMobileFiltersPanel) {
-    alumniMobileFilterToggleBtn.addEventListener("click", function () {
-        var isOpen = alumniMobileFiltersPanel.classList.toggle("is-open");
-        alumniMobileFilterToggleBtn.classList.toggle("is-open", isOpen);
-        alumniMobileFilterToggleBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-    });
-}
+    var alumniMobileFiltersPanel =
+        document.getElementById("examFiltersPanel");
 
-var alumniActiveFiltersBar = document.getElementById("alumniActiveFilters");
-var alumniClearAllLink = document.getElementById("alumniClearAll");
-var alumniNoResultsEl = document.getElementById("alumniNoResults");
-var alumniResultCountEl = document.getElementById("alumniResultCount");
+    if (alumniMobileFilterToggleBtn && alumniMobileFiltersPanel) {
 
-/* Checkbox filters (programme, college, year) — drive matching */
-var alumniFilterInputs = document.querySelectorAll(
-    "#examFiltersPanel input[type='checkbox']:not([data-filter-group='sort'])"
-);
+        alumniMobileFilterToggleBtn.addEventListener("click", function () {
 
-/* Sort radio (Newest / Oldest) — drives order + shows as an active tag,
-   but does not remove cards from the result set */
-var alumniSortInputs = document.querySelectorAll(
-    "#examFiltersPanel input[type='checkbox'][data-filter-group='sort']"
-);
+            var isOpen =
+                alumniMobileFiltersPanel.classList.toggle("is-open");
 
-var alumniCardsList = Array.prototype.slice.call(
-    document.querySelectorAll(".alumniMain > .alumniCard")
-);
+            alumniMobileFilterToggleBtn.classList.toggle(
+                "is-open",
+                isOpen
+            );
 
-var alumniPaginationEl = document.getElementById("alumniPagination");
-var ALUMNI_CARDS_PER_PAGE = 8;
-var alumniCurrentPage = 1;
-var alumniSortSelect = document.getElementById("alumniSortSelect");
+            alumniMobileFilterToggleBtn.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
 
-/* Compute how many alumni cards actually exist for each filter value,
-   write that count into the <em> next to the checkbox, and hide any
-   filter option that has zero matching cards so it never shows by default. */
-function computeAlumniFilterCounts(){
-
-    var counts = {};
-
-    alumniCardsList.forEach(function(card){
-        [card.dataset.programme, card.dataset.college, card.dataset.year].forEach(function(val){
-            if(!val) return;
-            counts[val] = (counts[val] || 0) + 1;
-        });
-    });
-
-    alumniFilterInputs.forEach(function(input){
-        var count = counts[input.value] || 0;
-        var label = input.closest("label");
-        if(!label) return;
-
-        var emTag = label.querySelector("em");
-        if (emTag) emTag.textContent = count;
-
-        label.style.display = count === 0 ? "none" : "";
-    });
-}
-
-
-/* Sort the matched cards according to the toolbar "Sort by" dropdown.
-   Nearest First / Most Helpful keep the default listing order (falling
-   back to the sidebar Newest/Oldest radio if one is selected);
-   Newest First / Oldest First sort by the alumni's batch year. */
-function sortAlumniCards(cards){
-
-    var sorted = cards.slice();
-    var sortValue = alumniSortSelect ? alumniSortSelect.value : "Nearest First";
-
-    if (sortValue === "Newest First") {
-        sorted.sort(function(a, b){
-            return parseInt(b.dataset.year, 10) - parseInt(a.dataset.year, 10);
-        });
-        return sorted;
-    }
-
-    if (sortValue === "Oldest First") {
-        sorted.sort(function(a, b){
-            return parseInt(a.dataset.year, 10) - parseInt(b.dataset.year, 10);
-        });
-        return sorted;
-    }
-
-    /* "Nearest First" / "Most Helpful" — respect the sidebar Oldest/Newest
-       radio if the person has picked one there, otherwise default order */
-    var checkedSort = null;
-    alumniSortInputs.forEach(function(input){
-        if(input.checked) checkedSort = input.value;
-    });
-    if (checkedSort === "Oldest") {
-        sorted.reverse();
-    }
-
-    return sorted;
-}
-
-if (alumniSortSelect) {
-    alumniSortSelect.addEventListener("change", applyAlumniFilters);
-}
-
-function applyAlumniFilters(){
-
-    var selectedFilters = [];
-
-    alumniFilterInputs.forEach(function(input){
-        if(input.checked){
-            selectedFilters.push(input.value);
-        }
-    });
-
-    var matchedCards = [];
-
-    alumniCardsList.forEach(function(card){
-
-        var cardValues = [
-            card.dataset.programme,
-            card.dataset.college,
-            card.dataset.year
-        ];
-
-        var matched = selectedFilters.every(function(filter){
-            return cardValues.indexOf(filter) !== -1;
         });
 
-        if(selectedFilters.length === 0 || matched){
-            matchedCards.push(card);
-        } else {
-            card.style.display = "none";
-        }
-
-    });
-
-    /* Apply sort order from the toolbar "Sort by" dropdown
-       (falls back to the sidebar Newest/Oldest radio when relevant) */
-    matchedCards = sortAlumniCards(matchedCards);
-
-    if (alumniResultCountEl) alumniResultCountEl.textContent = matchedCards.length;
-    if (alumniNoResultsEl) alumniNoResultsEl.style.display = matchedCards.length === 0 ? "block" : "none";
-
-    alumniCurrentPage = 1;
-    renderAlumniPage(matchedCards);
-
-    updateAlumniActiveFilterTags();
-}
-
-
-function renderAlumniPage(matchedCards){
-
-    /* hide everything first, then show only current page in DOM order via appendChild */
-    alumniCardsList.forEach(function(card){ card.style.display = "none"; });
-
-    var totalPages = Math.max(1, Math.ceil(matchedCards.length / ALUMNI_CARDS_PER_PAGE));
-    if (alumniCurrentPage > totalPages) alumniCurrentPage = totalPages;
-
-    var startIndex = (alumniCurrentPage - 1) * ALUMNI_CARDS_PER_PAGE;
-    var endIndex = startIndex + ALUMNI_CARDS_PER_PAGE;
-    var pageCards = matchedCards.slice(startIndex, endIndex);
-
-    var alumniMainCol = document.querySelector(".alumniMain");
-    var alumniPaginationNode = document.getElementById("alumniPagination");
-
-    pageCards.forEach(function(card){
-        card.style.display = "";
-        alumniMainCol.insertBefore(card, alumniPaginationNode);
-    });
-
-    renderAlumniPaginationControls(totalPages, matchedCards);
-}
-
-
-function renderAlumniPaginationControls(totalPages, matchedCards){
-
-    if(!alumniPaginationEl) return;
-
-    alumniPaginationEl.innerHTML = "";
-
-    if (matchedCards.length === 0) return;
-
-    var prevBtn = document.createElement("button");
-    prevBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg> Prev';
-    prevBtn.disabled = alumniCurrentPage === 1;
-    prevBtn.addEventListener("click", function(){
-        if (alumniCurrentPage > 1) {
-            alumniCurrentPage--;
-            renderAlumniPage(matchedCards);
-            scrollToAlumniMain();
-        }
-    });
-    alumniPaginationEl.appendChild(prevBtn);
-
-    for (var ap = 1; ap <= totalPages; ap++) {
-        (function(pageNum){
-            var pageBtn = document.createElement("button");
-            pageBtn.textContent = pageNum;
-            if (pageNum === alumniCurrentPage) pageBtn.classList.add("is-active");
-            pageBtn.addEventListener("click", function(){
-                alumniCurrentPage = pageNum;
-                renderAlumniPage(matchedCards);
-                scrollToAlumniMain();
-            });
-            alumniPaginationEl.appendChild(pageBtn);
-        })(ap);
     }
 
-    var nextBtn = document.createElement("button");
-    nextBtn.innerHTML = 'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>';
-    nextBtn.disabled = alumniCurrentPage === totalPages;
-    nextBtn.addEventListener("click", function(){
-        if (alumniCurrentPage < totalPages) {
-            alumniCurrentPage++;
-            renderAlumniPage(matchedCards);
-            scrollToAlumniMain();
-        }
-    });
-    alumniPaginationEl.appendChild(nextBtn);
-}
+
+    /* ---------- Shared References ---------- */
+
+    var alumniActiveFiltersBar =
+        document.getElementById("alumniActiveFilters");
+
+    var alumniClearAllLink =
+        document.getElementById("alumniClearAll");
+
+    var alumniNoResultsEl =
+        document.getElementById("alumniNoResults");
+
+    var alumniResultCountEl =
+        document.getElementById("alumniResultCount");
 
 
-function scrollToAlumniMain(){
-    var alumniMainCol = document.querySelector(".alumniMain");
-    if (alumniMainCol) alumniMainCol.scrollIntoView({ behavior: "smooth", block: "start" });
-}
+    /* ---------- Checkbox Filters ---------- */
+
+    /*
+     * Sort filter completely removed.
+     * All remaining checkboxes are treated as normal filters.
+     */
+
+    var alumniFilterInputs =
+        document.querySelectorAll(
+            "#examFiltersPanel input[type='checkbox']"
+        );
 
 
-function updateAlumniActiveFilterTags(){
+    /* ---------- Alumni Cards ---------- */
 
-    if(!alumniActiveFiltersBar) return;
-
-    alumniActiveFiltersBar
-    .querySelectorAll(".examTag")
-    .forEach(function(tag){
-        tag.remove();
-    });
-
-    var hasAny = false;
-
-    function addAlumniTag(value, onRemove){
-        hasAny = true;
-        var tag = document.createElement("span");
-        tag.className = "examTag";
-        tag.innerHTML =
-        value +
-        ' <button aria-label="Remove filter" class="examTagRemove">' +
-        '<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
-        '<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
-        '<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
-        '</svg>' +
-        '</button>';
-
-        tag.querySelector("button").addEventListener("click", onRemove);
-
-        alumniActiveFiltersBar.insertBefore(tag, alumniClearAllLink);
-    }
-
-    alumniSortInputs.forEach(function(input){
-        if(input.checked){
-            addAlumniTag(input.value, function(){
-                input.checked = false;
-                applyAlumniFilters();
-            });
-        }
-    });
-
-    alumniFilterInputs.forEach(function(input){
-        if(input.checked){
-            addAlumniTag(input.value, function(){
-                input.checked = false;
-                applyAlumniFilters();
-            });
-        }
-    });
-
-    alumniActiveFiltersBar.style.display = hasAny ? "flex" : "none";
-}
+    var alumniCardsList =
+        Array.prototype.slice.call(
+            document.querySelectorAll(".alumniMain > .alumniCard")
+        );
 
 
-alumniFilterInputs.forEach(function(input){
-    input.addEventListener("change", applyAlumniFilters);
-});
+    /* ---------- Pagination ---------- */
 
-alumniSortInputs.forEach(function(input){
-    input.addEventListener("change", applyAlumniFilters);
-});
+    var alumniPaginationEl =
+        document.getElementById("alumniPagination");
+
+    var ALUMNI_CARDS_PER_PAGE = 6;
+
+    var alumniCurrentPage = 1;
 
 
-/* ---- Alumni Clear All Filters ---- */
+    /* ==========================================================
+       Compute Filter Counts
+       ========================================================== */
 
-var alumniFiltersClearAllBtn = document.getElementById("alumniFiltersClearAll");
+    function computeAlumniFilterCounts() {
 
-function clearAllAlumniFilters(){
+        var counts = {};
 
-    alumniFilterInputs.forEach(function(cb){
-        cb.checked = false;
-    });
-    alumniSortInputs.forEach(function(rb){
-        rb.checked = false;
-    });
+        alumniCardsList.forEach(function (card) {
 
-    applyAlumniFilters();
-}
+            [
+                card.dataset.programme,
+                card.dataset.college,
+                card.dataset.year
+            ].forEach(function (val) {
 
-if(alumniClearAllLink){
-    alumniClearAllLink.addEventListener("click",function(e){
-        e.preventDefault();
-        clearAllAlumniFilters();
-    });
-}
-
-if(alumniFiltersClearAllBtn){
-    alumniFiltersClearAllBtn.addEventListener("click", clearAllAlumniFilters);
-}
-
-/* ---- Alumni College "Show more" ---- */
-var alumniCollegeExtra = document.getElementById("alumniCollegeExtra");
-var alumniCollegeMoreBtn = document.getElementById("alumniCollegeMoreBtn");
-
-if (alumniCollegeExtra && alumniCollegeMoreBtn) {
-    alumniCollegeMoreBtn.addEventListener("click", function () {
-        var isHidden = alumniCollegeExtra.hasAttribute("hidden");
-        if (isHidden) {
-            alumniCollegeExtra.removeAttribute("hidden");
-            alumniCollegeMoreBtn.textContent = "− Show less";
-        } else {
-            alumniCollegeExtra.querySelectorAll("input[type='checkbox']").forEach(function (cb) {
-                if (cb.checked) {
-                    cb.checked = false;
-                    applyAlumniFilters();
+                if (!val) {
+                    return;
                 }
-            });
-            alumniCollegeExtra.setAttribute("hidden", "");
-            alumniCollegeMoreBtn.textContent = "+ Show more";
-        }
-    });
-}
 
-/* Run once on load: compute real per-filter counts (hiding any filter
-   option with zero matching cards), then render the first page */
-if (alumniCardsList.length) {
-    computeAlumniFilterCounts();
-    applyAlumniFilters();
-}
+                counts[val] =
+                    (counts[val] || 0) + 1;
+
+            });
+
+        });
+
+
+        alumniFilterInputs.forEach(function (input) {
+
+            var count =
+                counts[input.value] || 0;
+
+            var label =
+                input.closest("label");
+
+            if (!label) {
+                return;
+            }
+
+
+            var emTag =
+                label.querySelector("em");
+
+            if (emTag) {
+                emTag.textContent = count;
+            }
+
+
+            /*
+             * Hide filter option if no matching alumni card exists.
+             */
+            label.style.display =
+                count === 0 ? "none" : "";
+
+        });
+
+    }
+
+
+    /* ==========================================================
+       Apply Alumni Filters
+       ========================================================== */
+
+    function applyAlumniFilters() {
+
+        var selectedFilters = [];
+
+
+        /* Get selected filters */
+
+        alumniFilterInputs.forEach(function (input) {
+
+            if (input.checked) {
+                selectedFilters.push(input.value);
+            }
+
+        });
+
+
+        var matchedCards = [];
+
+
+        /* Match cards */
+
+        alumniCardsList.forEach(function (card) {
+
+            var cardValues = [
+                card.dataset.programme,
+                card.dataset.college,
+                card.dataset.year
+            ];
+
+
+            var matched =
+                selectedFilters.every(function (filter) {
+
+                    return cardValues.indexOf(filter) !== -1;
+
+                });
+
+
+            if (
+                selectedFilters.length === 0 ||
+                matched
+            ) {
+
+                matchedCards.push(card);
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+
+        /* Result count */
+
+        if (alumniResultCountEl) {
+
+            alumniResultCountEl.textContent =
+                matchedCards.length;
+
+        }
+
+
+        /* No results */
+
+        if (alumniNoResultsEl) {
+
+            alumniNoResultsEl.style.display =
+                matchedCards.length === 0
+                    ? "block"
+                    : "none";
+
+        }
+
+
+        /* Reset pagination */
+
+        alumniCurrentPage = 1;
+
+
+        /* Render */
+
+        renderAlumniPage(matchedCards);
+
+
+        /* Active filter tags */
+
+        updateAlumniActiveFilterTags();
+
+    }
+
+
+    /* ==========================================================
+       Render Alumni Page
+       ========================================================== */
+
+    function renderAlumniPage(matchedCards) {
+
+        /*
+         * Hide all cards first.
+         */
+
+        alumniCardsList.forEach(function (card) {
+
+            card.style.display = "none";
+
+        });
+
+
+        var totalPages =
+            Math.max(
+                1,
+                Math.ceil(
+                    matchedCards.length /
+                    ALUMNI_CARDS_PER_PAGE
+                )
+            );
+
+
+        if (alumniCurrentPage > totalPages) {
+
+            alumniCurrentPage = totalPages;
+
+        }
+
+
+        var startIndex =
+            (alumniCurrentPage - 1) *
+            ALUMNI_CARDS_PER_PAGE;
+
+        var endIndex =
+            startIndex +
+            ALUMNI_CARDS_PER_PAGE;
+
+
+        var pageCards =
+            matchedCards.slice(
+                startIndex,
+                endIndex
+            );
+
+
+        var alumniMainCol =
+            document.querySelector(".alumniMain");
+
+        var alumniPaginationNode =
+            document.getElementById("alumniPagination");
+
+
+        if (!alumniMainCol) {
+            return;
+        }
+
+
+        /*
+         * Show cards for current page.
+         */
+
+        pageCards.forEach(function (card) {
+
+            card.style.display = "";
+
+            if (alumniPaginationNode) {
+
+                alumniMainCol.insertBefore(
+                    card,
+                    alumniPaginationNode
+                );
+
+            } else {
+
+                alumniMainCol.appendChild(card);
+
+            }
+
+        });
+
+
+        renderAlumniPaginationControls(
+            totalPages,
+            matchedCards
+        );
+
+    }
+
+
+    /* ==========================================================
+       Pagination Controls
+       ========================================================== */
+
+    function renderAlumniPaginationControls(
+        totalPages,
+        matchedCards
+    ) {
+
+        if (!alumniPaginationEl) {
+            return;
+        }
+
+
+        alumniPaginationEl.innerHTML = "";
+
+
+        if (matchedCards.length === 0) {
+            return;
+        }
+
+
+        /* ---------- Previous Button ---------- */
+
+        var prevBtn =
+            document.createElement("button");
+
+
+        prevBtn.innerHTML =
+            '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+            '<path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>' +
+            '</svg> Prev';
+
+
+        prevBtn.disabled =
+            alumniCurrentPage === 1;
+
+
+        prevBtn.addEventListener(
+            "click",
+            function () {
+
+                if (alumniCurrentPage > 1) {
+
+                    alumniCurrentPage--;
+
+                    renderAlumniPage(
+                        matchedCards
+                    );
+
+                    scrollToAlumniMain();
+
+                }
+
+            }
+        );
+
+
+        alumniPaginationEl.appendChild(prevBtn);
+
+
+        /* ---------- Page Buttons ---------- */
+
+        for (
+            var ap = 1;
+            ap <= totalPages;
+            ap++
+        ) {
+
+            (function (pageNum) {
+
+                var pageBtn =
+                    document.createElement("button");
+
+
+                pageBtn.textContent =
+                    pageNum;
+
+
+                if (
+                    pageNum === alumniCurrentPage
+                ) {
+
+                    pageBtn.classList.add(
+                        "is-active"
+                    );
+
+                }
+
+
+                pageBtn.addEventListener(
+                    "click",
+                    function () {
+
+                        alumniCurrentPage =
+                            pageNum;
+
+                        renderAlumniPage(
+                            matchedCards
+                        );
+
+                        scrollToAlumniMain();
+
+                    }
+                );
+
+
+                alumniPaginationEl.appendChild(
+                    pageBtn
+                );
+
+            })(ap);
+
+        }
+
+
+        /* ---------- Next Button ---------- */
+
+        var nextBtn =
+            document.createElement("button");
+
+
+        nextBtn.innerHTML =
+            'Next <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">' +
+            '<path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>' +
+            '</svg>';
+
+
+        nextBtn.disabled =
+            alumniCurrentPage === totalPages;
+
+
+        nextBtn.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    alumniCurrentPage <
+                    totalPages
+                ) {
+
+                    alumniCurrentPage++;
+
+                    renderAlumniPage(
+                        matchedCards
+                    );
+
+                    scrollToAlumniMain();
+
+                }
+
+            }
+        );
+
+
+        alumniPaginationEl.appendChild(
+            nextBtn
+        );
+
+    }
+
+
+    /* ==========================================================
+       Scroll To Alumni Main
+       ========================================================== */
+
+    function scrollToAlumniMain() {
+
+        var alumniMainCol =
+            document.querySelector(".alumniMain");
+
+
+        if (alumniMainCol) {
+
+            alumniMainCol.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    }
+
+
+    /* ==========================================================
+       Active Filter Tags
+       ========================================================== */
+
+    function updateAlumniActiveFilterTags() {
+
+        if (!alumniActiveFiltersBar) {
+            return;
+        }
+
+
+        /*
+         * Remove existing tags.
+         */
+
+        alumniActiveFiltersBar
+            .querySelectorAll(".examTag")
+            .forEach(function (tag) {
+
+                tag.remove();
+
+            });
+
+
+        var hasAny = false;
+
+
+        function addAlumniTag(
+            value,
+            onRemove
+        ) {
+
+            hasAny = true;
+
+
+            var tag =
+                document.createElement("span");
+
+
+            tag.className =
+                "examTag";
+
+
+            tag.innerHTML =
+                value +
+                ' <button aria-label="Remove filter" class="examTagRemove">' +
+                '<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+                '<line x1="1" y1="1" x2="9" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+                '<line x1="9" y1="1" x2="1" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>' +
+                '</svg>' +
+                '</button>';
+
+
+            var removeBtn =
+                tag.querySelector("button");
+
+
+            if (removeBtn) {
+
+                removeBtn.addEventListener(
+                    "click",
+                    onRemove
+                );
+
+            }
+
+
+            if (alumniClearAllLink) {
+
+                alumniActiveFiltersBar.insertBefore(
+                    tag,
+                    alumniClearAllLink
+                );
+
+            } else {
+
+                alumniActiveFiltersBar.appendChild(
+                    tag
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Only normal filters.
+         * Sort tags completely removed.
+         */
+
+        alumniFilterInputs.forEach(
+            function (input) {
+
+                if (input.checked) {
+
+                    addAlumniTag(
+                        input.value,
+                        function () {
+
+                            input.checked = false;
+
+                            applyAlumniFilters();
+
+                        }
+                    );
+
+                }
+
+            }
+        );
+
+
+        alumniActiveFiltersBar.style.display =
+            hasAny ? "flex" : "none";
+
+    }
+
+
+    /* ==========================================================
+       Filter Change Events
+       ========================================================== */
+
+    alumniFilterInputs.forEach(
+        function (input) {
+
+            input.addEventListener(
+                "change",
+                applyAlumniFilters
+            );
+
+        }
+    );
+
+
+    /* ==========================================================
+       Clear All Filters
+       ========================================================== */
+
+    var alumniFiltersClearAllBtn =
+        document.getElementById(
+            "alumniFiltersClearAll"
+        );
+
+
+    function clearAllAlumniFilters() {
+
+        alumniFilterInputs.forEach(
+            function (cb) {
+
+                cb.checked = false;
+
+            }
+        );
+
+
+        applyAlumniFilters();
+
+    }
+
+
+    if (alumniClearAllLink) {
+
+        alumniClearAllLink.addEventListener(
+            "click",
+            function (e) {
+
+                e.preventDefault();
+
+                clearAllAlumniFilters();
+
+            }
+        );
+
+    }
+
+
+    if (alumniFiltersClearAllBtn) {
+
+        alumniFiltersClearAllBtn.addEventListener(
+            "click",
+            clearAllAlumniFilters
+        );
+
+    }
+
+
+    /* ==========================================================
+       Alumni College Show More
+       ========================================================== */
+
+    var alumniCollegeExtra =
+        document.getElementById(
+            "alumniCollegeExtra"
+        );
+
+    var alumniCollegeMoreBtn =
+        document.getElementById(
+            "alumniCollegeMoreBtn"
+        );
+
+
+    if (
+        alumniCollegeExtra &&
+        alumniCollegeMoreBtn
+    ) {
+
+        alumniCollegeMoreBtn.addEventListener(
+            "click",
+            function () {
+
+                var isHidden =
+                    alumniCollegeExtra.hasAttribute(
+                        "hidden"
+                    );
+
+
+                if (isHidden) {
+
+                    alumniCollegeExtra.removeAttribute(
+                        "hidden"
+                    );
+
+                    alumniCollegeMoreBtn.textContent =
+                        "− Show less";
+
+                } else {
+
+                    alumniCollegeExtra
+                        .querySelectorAll(
+                            "input[type='checkbox']"
+                        )
+                        .forEach(function (cb) {
+
+                            if (cb.checked) {
+
+                                cb.checked = false;
+
+                                applyAlumniFilters();
+
+                            }
+
+                        });
+
+
+                    alumniCollegeExtra.setAttribute(
+                        "hidden",
+                        ""
+                    );
+
+                    alumniCollegeMoreBtn.textContent =
+                        "+ Show more";
+
+                }
+
+            }
+        );
+
+    }
+
+
+    /* ==========================================================
+       Initial Load
+       ========================================================== */
+
+    if (alumniCardsList.length) {
+
+        computeAlumniFilterCounts();
+
+        applyAlumniFilters();
+
+    }
 
 
 })();
 
-
 </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  document.addEventListener("click", function (e) {
+
+    var btn = e.target.closest(".examFilterGroup__more");
+
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    /*
+     * Button ke same parent/group ke andar
+     * .examFilterGroup__extra find karo.
+     */
+   function initExamShowMoreToggle() {
+    const moreBtns = document.querySelectorAll(".examFilterGroup__more");
+    if (!moreBtns.length) return;
+
+    moreBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const extra = this.previousElementSibling;
+        if (!extra) return;
+        const isHidden = extra.hasAttribute("hidden");
+
+        if (isHidden) {
+          extra.removeAttribute("hidden");
+          this.textContent = this.textContent.replace("Show more", "Show less").replace("+", "-");
+        } else {
+          extra.setAttribute("hidden", "");
+          this.textContent = this.textContent.replace("Show less", "Show more").replace("-", "+");
+        }
+      });
+    });
+  }
+
+});
+</script>
+
     <include src="public/partials/footer.html"></include>
     <script type="module" src="/src/js/alumni-import.js" defer></script>
 

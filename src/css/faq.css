@@ -173,6 +173,9 @@
     padding: 6px 32px;
   }
   .examFaq {
-    padding-bottom: 10px;
+    padding-bottom: 60px;
+  }
+  .examFaq__question {
+    padding: 1rem;
   }
 }

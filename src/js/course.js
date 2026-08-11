@@ -11,6 +11,8 @@
      after reveal (frees memory, avoids layout thrash)
    - Accordion uses event delegation (1 listener, not N)
    ========================================================= */
+
+   
 (function () {
   "use strict";
 
@@ -45,27 +47,42 @@
   /* ---------------------------------------------------------
      2) EXAM FILTER GROUP — "Show more / Show less" toggle
   --------------------------------------------------------- */
-  function initExamShowMoreToggle() {
-    var moreBtns = document.querySelectorAll(".examFilterGroup__more");
-    if (!moreBtns.length) return;
-
-    moreBtns.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var extra = this.previousElementSibling;
-        if (!extra) return;
-        var isHidden = extra.hasAttribute("hidden");
-
-        if (isHidden) {
-          extra.removeAttribute("hidden");
-          this.textContent = this.textContent.replace("Show more", "Show less").replace("+", "-");
-        } else {
-          extra.setAttribute("hidden", "");
-          this.textContent = this.textContent.replace("Show less", "Show more").replace("-", "+");
-        }
-      });
-    });
+function initExamShowMoreToggle() {
+  if (document.body.dataset.examShowMoreInit === "true") {
+    return;
   }
 
+  document.body.dataset.examShowMoreInit = "true";
+
+  document.addEventListener("click", function (e) {
+    var btn = e.target.closest(".examFilterGroup__more");
+
+    if (!btn) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    var extra = btn.previousElementSibling;
+
+    if (!extra) return;
+
+    if (!extra.classList.contains("examFilterGroup__extra")) {
+      return;
+    }
+
+    var opened = extra.dataset.showMoreOpen === "true";
+
+    if (opened) {
+      extra.setAttribute("hidden", "");
+      extra.dataset.showMoreOpen = "false";
+      btn.textContent = "+ Show more";
+    } else {
+      extra.removeAttribute("hidden");
+      extra.dataset.showMoreOpen = "true";
+      btn.textContent = "- Show less";
+    }
+  });
+}
   /* ---------------------------------------------------------
      3) EXAM FILTERS + SORT + PAGINATION + ADMISSION FORM
   --------------------------------------------------------- */
