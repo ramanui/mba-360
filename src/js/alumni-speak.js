@@ -1,11 +1,9 @@
-import Swiper from "swiper";
-import { Navigation } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 
 (function () {
   /* ---------- Video popup ---------- */
+
   var modal = document.getElementById("videoModal");
   var frameHost = document.getElementById("videoFrame");
   var lastTrigger = null;
@@ -16,56 +14,76 @@ import "swiper/css/navigation";
     lastTrigger = trigger;
 
     var iframe = document.createElement("iframe");
+
     iframe.src =
       "https://www.youtube.com/embed/" +
       videoId +
       "?autoplay=1&enablejsapi=1&si=6xLLtDiLX8I-VGiE";
 
     iframe.title = "Alumni video story";
+
     iframe.setAttribute(
       "allow",
       "autoplay; encrypted-media; picture-in-picture"
     );
+
     iframe.setAttribute("allowfullscreen", "");
+
     iframe.setAttribute("loading", "lazy");
 
     frameHost.innerHTML = "";
+
     frameHost.appendChild(iframe);
 
     modal.setAttribute("data-open", "true");
     modal.setAttribute("aria-hidden", "false");
+
     document.body.style.overflow = "hidden";
 
     var closeBtn = modal.querySelector(".videoModalClose");
-    if (closeBtn) closeBtn.focus();
+
+    if (closeBtn) {
+      closeBtn.focus();
+    }
   }
 
   function closeVideo() {
     if (!modal || !frameHost) return;
 
     frameHost.innerHTML = "";
+
     modal.setAttribute("data-open", "false");
     modal.setAttribute("aria-hidden", "true");
+
     document.body.style.overflow = "";
 
-    if (lastTrigger) lastTrigger.focus();
+    if (lastTrigger) {
+      lastTrigger.focus();
+    }
   }
 
   if (modal && frameHost) {
-    document.querySelectorAll(".alumniCardPlay").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        var card = btn.closest(".alumniCard");
-        var videoId = card ? card.getAttribute("data-video-id") : null;
+    document
+      .querySelectorAll(".alumniCardPlay")
+      .forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var card = btn.closest(".alumniCard");
 
-        if (videoId) {
-          openVideo(videoId, btn);
-        }
+          var videoId = card
+            ? card.getAttribute("data-video-id")
+            : null;
+
+          if (videoId) {
+            openVideo(videoId, btn);
+          }
+        });
       });
-    });
 
-    modal.querySelectorAll("[data-close]").forEach(function (el) {
-      el.addEventListener("click", closeVideo);
-    });
+    modal
+      .querySelectorAll("[data-close]")
+      .forEach(function (el) {
+        el.addEventListener("click", closeVideo);
+      });
 
     document.addEventListener("keydown", function (e) {
       if (
@@ -80,15 +98,40 @@ import "swiper/css/navigation";
   /* ---------- Swiper ---------- */
 
   var alumniSwiperInstance = null;
+  var swiperPromise = null;
 
-  function initAlumniSwiper() {
+  // Load Swiper dynamically
+  function loadSwiper() {
+    if (!swiperPromise) {
+      swiperPromise = Promise.all([
+        import("swiper"),
+        import("swiper/modules"),
+      ]);
+    }
+
+    return swiperPromise;
+  }
+
+  async function initAlumniSwiper() {
     var swiperEl = document.querySelector(".alumniSwiper");
-    if (!swiperEl || swiperEl.dataset.inited === "true") return;
+
+    if (!swiperEl || swiperEl.dataset.inited === "true") {
+      return;
+    }
 
     swiperEl.dataset.inited = "true";
 
     var wrapperEl = swiperEl.querySelector(".swiper-wrapper");
-    if (!wrapperEl) return;
+
+    if (!wrapperEl) {
+      return;
+    }
+
+    // Load Swiper only when Alumni slider exists
+    var [swiperModule, modulesModule] = await loadSwiper();
+
+    var Swiper = swiperModule.default;
+    var Navigation = modulesModule.Navigation;
 
     function getSlidesPerView() {
       var w = window.innerWidth;
@@ -110,19 +153,24 @@ import "swiper/css/navigation";
       }
 
       var totalSlides = wrapperEl.children.length;
+
       var slidesPerView = getSlidesPerView();
 
       alumniSwiperInstance = new Swiper(swiperEl, {
         modules: [Navigation],
 
         slidesPerView: 1.15,
+
         spaceBetween: 20,
 
-        loop: totalSlides > Math.ceil(slidesPerView),
+        loop:
+          totalSlides > Math.ceil(slidesPerView),
+
         rewind: false,
 
         navigation: {
           nextEl: document.getElementById("alumniNext"),
+
           prevEl: document.getElementById("alumniPrev"),
         },
 
@@ -131,18 +179,22 @@ import "swiper/css/navigation";
             slidesPerView: 1.5,
             spaceBetween: 20,
           },
+
           767: {
             slidesPerView: 2.5,
             spaceBetween: 20,
           },
+
           1024: {
             slidesPerView: 3.5,
             spaceBetween: 24,
           },
+
           1366: {
             slidesPerView: 3.5,
             spaceBetween: 24,
           },
+
           1600: {
             slidesPerView: 4.5,
             spaceBetween: 24,
@@ -156,19 +208,30 @@ import "swiper/css/navigation";
       }
     }
 
+    // Initial slider
     buildSwiper();
 
+    // Resize
     var resizeTimer;
 
     window.addEventListener("resize", function () {
       clearTimeout(resizeTimer);
 
-      resizeTimer = setTimeout(buildSwiper, 200);
+      resizeTimer = setTimeout(function () {
+        buildSwiper();
+      }, 200);
     });
   }
 
+  // -----------------------------------------
+  // DOM Ready
+  // -----------------------------------------
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initAlumniSwiper);
+    document.addEventListener(
+      "DOMContentLoaded",
+      initAlumniSwiper
+    );
   } else {
     initAlumniSwiper();
   }
