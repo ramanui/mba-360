@@ -33,6 +33,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         index: resolve(__dirname, "index.html"),
+        "member-registration": resolve(__dirname, "member-registration.html"),
+         "member-login": resolve(__dirname, "member-login.html"),
+         "password-reset": resolve(__dirname, "password-reset.html"),
      
         glossary: resolve(__dirname, "glossary.html"),
       accreditation: resolve(__dirname, "glossary/accreditation.html"),
