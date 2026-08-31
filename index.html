@@ -1,0 +1,1772 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>MBA 360</title>
+    <meta name="description" content="DGTL">
+    <meta name="theme-color" content="#ff4701">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/mba-html-discovery/favicon.svg" sizes="32x32">
+    <link rel="apple-touch-icon" href="/mba-html-discovery/favicon.svg" sizes="180x180">
+
+    <link rel="preload" as="image" href="/mba-html-discovery/assets/college-student-CXcl8EgH.webp" fetchpriority="high">
+    <!-- <link
+      rel="preload"
+      as="image"
+      href="./src/assets/images/college-student.webp"
+       imagesrcset="
+    ./src/assets/images/mba-360-banner-640.webp 640w,
+    ./src/assets/images/mba-1024-banner.webp 1024w,
+    ./src/assets/images/mba-360-banner.webp 1920w" 
+    imagesizes="100vw"
+    fetchpriority="high" /> -->
+
+    <!-- Google Fonts (Ultra Optimized) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair:ital,wght@0,600;0,800;1,600;1,800&display=swap"
+      rel="stylesheet"> -->
+
+    <link rel="preload" href="/mba-html-discovery/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <link rel="preload" href="/mba-html-discovery/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+
+    <!-- Critical CSS inline (BEST for FCP) -->
+
+    <style>
+      .mbaHero {
+  width: 100%;
+  min-height: 430px;
+  padding: 80px 0 90px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  contain: paint;
+}
+
+.mbaHeroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* overlay css */
+.mbaHero {
+  position: relative;
+}
+
+.mbaHeroBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.mbaHero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 27, 62, 0.75) 0%,
+    rgba(13, 27, 62, 0.7) 45%,
+    rgba(13, 27, 62, 0.35) 100%
+  );
+  z-index: 1;
+}
+
+.mbaHero .container {
+  position: relative;
+  z-index: 2;
+}
+/* overlay css */
+
+.mbaHeroInner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.mbaHeroTitle {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+.mbaHeroInner .mbaHeroTitle {
+  margin-inline: auto;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+.mbaHeroSubtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.mbaHeroSearch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 8px 8px 8px 24px;
+  max-width: 700px;
+  height: 44px;
+  margin: 0 auto;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+.mbaHeroSearch svg{ width:24px; height:24px; color: #ff4701; opacity: 0.6; }
+.mbaHeroSearch svg path{ stroke-width: 2;  stroke: #ff4701;}
+
+.mbaHeroSearchIcon {
+  align-self: center;
+  color: #a4abb8;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+.mbaHeroSearchInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Inter", sans-serif;
+  font-size: 0.98rem;
+  color: var(--text-dark, #0d1b3e);
+  margin-right: 1rem;
+  max-height: 37px;
+  padding-inline: 8px;
+}
+
+.mbaHeroSearchInput::placeholder {
+  color: #a4abb8;
+}
+
+.mbaHeroSearchBtn {
+  flex: 0 0 auto;
+  align-self: center;
+  height: 40px;
+  background-color: var(--c-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0 32px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.mbaHeroSearchBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 71, 1, 0.35);
+}
+
+.mbaHeroSearchBtn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+}
+
+
+
+@media (max-width: 768px) {
+.mbaHero {
+    padding: 0 0 0.3rem 0;
+        display: flex;
+        align-items: center;
+        min-height: 400px;
+  }
+
+.mbaHeroSearchIcon{ top:20px; position: absolute;}
+  .mbaHeroSubtitle {
+    font-size: 15px;
+    margin-bottom: 28px;
+  }
+
+  .mbaHeroSearch {
+    height: 58px;
+    padding: 5px 5px 5px 16px;
+    border-radius: 10px;
+  }
+
+  .mbaHeroSearchInput {
+    font-size: 14px;
+  }
+
+  .mbaHeroSearchBtn {
+    font-size: 13px;
+    padding: 0 18px;
+  }
+
+
+}
+
+
+@media (max-width: 768px) {
+.mbaHeroSearch {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 14px 16px;
+    border-radius: 10px;
+    position:relative;
+  }
+
+  .mbaHeroSearchInput {
+    flex: 1 1 100%;
+    width: 100%;
+    height: auto;
+    padding: 10px 28px 14px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mbaHeroSearchBtn {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+  }
+}
+    </style>
+    <script type="module" crossorigin="" src="/mba-html-discovery/assets/index-D7Lshd8_.js"></script>
+    <link rel="modulepreload" crossorigin="" href="/mba-html-discovery/assets/common-CrbfKtlj.js">
+    <link rel="modulepreload" crossorigin="" href="/mba-html-discovery/assets/rolldown-runtime-DK3Fl9T5.js">
+    <link rel="modulepreload" crossorigin="" href="/mba-html-discovery/assets/swiper-BEIjiCPV.js">
+    <link rel="modulepreload" crossorigin="" href="/mba-html-discovery/assets/navigation-D1kQYByQ.js">
+    <link rel="modulepreload" crossorigin="" href="/mba-html-discovery/assets/preload-helper-DaKClKhw.js">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/common-DLAnYg_v.css">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/swiper-HzbfsHSZ.css">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/navigation-_Ms0R5o1.css">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/index-DpbMKdZT.css">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/entrace-exam-Cnivvwo7.css">
+    <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/alumni-speak-7a_EyRhq.css">
+  </head>
+
+  <header class="site-header">
+        <div class="container site-header__inner">
+                <a class="site-header__logo-link" href="/mba-html-discovery/" aria-label="MBA 360 Home">
+                        <img class="site-header__logo" src="/mba-html-discovery/discovermba.webp" alt="MBA 360" width="300" height="79" loading="eager">
+                </a>
+
+                <nav class="site-nav" aria-label="Primary">
+                        <ul class="site-nav__list">
+                                <li><a class="site-nav__link" href="/mba-html-discovery/exam/">Exams
+                                        </a></li>
+                                <li><a class="site-nav__link" href="/mba-html-discovery/college/">Colleges</a></li>
+
+                                <li><a class="site-nav__link" href="/mba-html-discovery/course/">Courses</a></li>
+                                <!-- <li><a class="site-nav__link"
+                        href="/community">Community</a></li> -->
+                                <li><a class="site-nav__link" href="/mba-html-discovery/alumni/">Alumni</a></li>
+                                <li><a class="site-nav__link" href="/mba-html-discovery/glossary.html">Glossary</a></li>
+                                <li><a class="site-nav__link" href="/mba-html-discovery/blog/">Blog</a></li>
+                        </ul>
+                </nav>
+
+                <div class="site-header__actions">
+                        <a class="btn btn--outline" href="/mba-html-discovery/member-login.html">Login</a>
+                        <a class="btn btn--solid" href="/mba-html-discovery/member-registration.html">Register</a>
+                </div>
+        </div>
+</header>
+
+
+  <main>
+    <!-- ============================================
+     HERO SECTION MARKUP
+============================================= -->
+    <section class="mbaHero" aria-label="MBA360 Hero Search">
+      <img src="/mba-html-discovery/assets/college-student-CXcl8EgH.webp" srcset="./src/assets/images/mba-360-banner-640.webp 640w, /mba-html-discovery/assets/mba-1024-banner-Bp84Z5v4.webp 1024w, /mba-html-discovery/assets/college-student-CXcl8EgH.webp 1920w" sizes="100vw" alt="From the Right Exam to the Right College" title="From the Right Exam to the Right College" class="mbaHeroBg" width="1920" height="530" fetchpriority="high" loading="eager" decoding="async">
+      <div class="container">
+        <div class="mbaHeroInner">
+          <h1 class="mbaHeroTitle ">
+            From The Right Exam To The Right College
+          </h1>
+
+          <p class="mbaHeroSubtitle ">
+            MBA 360 helps you navigate India's management education landscape
+          </p>
+
+          <form class="mbaHeroSearch reveal " role="search" action="/search" method="get">
+            <label for="mbaHeroSearchInput" class="admissionJourneyLabel">Search
+              CAT, XAT and MBA exams...</label>
+
+            <svg class="mbaHeroSearchIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"></circle>
+              <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+            </svg>
+
+            <input type="search" id="searchBox" name="q" class="mbaHeroSearchInput" placeholder="Search for college" autocomplete="off">
+
+            <button type="submit" class="mbaHeroSearchBtn">Search</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="topColleges" aria-labelledby="topCollegesHeading">
+      <div class="container">
+        <h2 id="topCollegesHeading" class="marketing__heading">Top MBA
+          Colleges</h2>
+        <p class="topColleges-sub">Discover, compare and connect with India's
+          top management institutions.</p>
+
+        <div class="collegeFilters" role="group" aria-label="Filter colleges by type">
+          <button type="button" class="collegeFilterBtn" data-filter="all" aria-pressed="true">All Colleges</button>
+          <button type="button" class="collegeFilterBtn" data-filter="iim" aria-pressed="false">IIMs</button>
+          <button type="button" class="collegeFilterBtn" data-filter="private" aria-pressed="false">Private</button>
+          <button type="button" class="collegeFilterBtn" data-filter="public" aria-pressed="false">Public</button>
+        </div>
+
+        <div class="collegeSliderWrap">
+          <div class="swiper collegeSwiper">
+            <ul class="swiper-wrapper collegeGrid" role="list">
+
+              <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="IIM Ahmedabad logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIMA</h3>
+                  <p class="collegeCardLocation" itemprop="address">Ahmedabad,
+                    Gujarat</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹19.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹19
+                        Lakh</span><span class="collegeStatLabel">Avg
+                        Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">95%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+                  <p class="collegeCardLocation" itemprop="address">Bangalore,
+                    Karnataka</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download
+                      Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+                  <p class="collegeCardLocation" itemprop="address">Bangalore,
+                    Karnataka</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download
+                      Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="IIM Bangalore logo" width="136" height="75" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+                  <p class="collegeCardLocation" itemprop="address">Bangalore,
+                    Karnataka</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹21.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">94%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Bangalore brochure">Download
+                      Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="iim" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="IIM Calcutta logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">IIM Calcutta</h3>
+                  <p class="collegeCardLocation" itemprop="address">Kolkata,
+                    West Bengal</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹17.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹23.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">98%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIM Calcutta brochure">Download
+                      Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi p-1</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi p-2</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi p-3</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi p-4</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="private" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi p-5</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi
+                    public1</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi
+                    public2</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi
+                    public3</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi
+                    public4</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+              <li class="swiper-slide collegeCard" data-category="public" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/CollegeOrUniversity">
+                <div class="collegeCardLogo">
+                  <img src="/mba-html-discovery/assets/iima-QxNlGTQc.webp" alt="FMS Delhi logo" width="116" height="69" loading="lazy" decoding="async" itemprop="logo">
+                </div>
+                <div class="collegeCardBody">
+                  <h3 class="collegeCardName" itemprop="name">FMS Delhi
+                    public5</h3>
+                  <p class="collegeCardLocation" itemprop="address">Delhi -
+                    NCR</p>
+
+                  <div class="collegeStats">
+                    <div class="collegeStat"><span class="collegeStatValue">₹15.5 Lakh</span><span class="collegeStatLabel">Total Fees</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">₹22.5 Lakh</span><span class="collegeStatLabel">Avg Package</span></div>
+                    <div class="collegeStat"><span class="collegeStatValue">89%ile</span><span class="collegeStatLabel">Cutoff</span></div>
+                  </div>
+
+                  <p class="collegeAccepting">Accepting</p>
+                  <ul class="collegeTags">
+                    <li class="collegeTag">CAT</li>
+                    <li class="collegeTag">XAT</li>
+                    <li class="collegeTag">GMAT</li>
+                  </ul>
+
+                  <div class="collegeCardFooter">
+                    <a href="/mba-html-discovery/college/college-detail.html" class="viewCoursesLink">View College
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </a>
+                    <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download FMS Delhi brochure">Download Brochure
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+
+          <button type="button" class="collegeSlidePrev" id="collegePrev" aria-label="Previous colleges">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+          <button type="button" class="collegeSlideNext" id="collegeNext" aria-label="Next colleges">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="entranceExams" aria-labelledby="entranceExamsHeading">
+      <div class="container">
+        <h2 id="entranceExamsHeading" class="marketing__heading">
+          Entrance exams
+        </h2>
+        <p class="topColleges-sub">
+          Complete guides for all management entrance exams.
+        </p>
+        <div class="entranceE">
+          <div class="swiper entranceExams__slider ">
+            <ul class="swiper-wrapper entranceExams__list">
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="/mba-html-discovery/assets/xat-logo-DcJavG2I.webp" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Common Admission Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore CAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,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PiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MThGRDMzQUM4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MThGRDMzQUQ4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOEZEMzNBQThDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOEZEMzNBQjhDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgA=" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Xavier Aptitude Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore GMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,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PiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MThGRDMzQUM4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MThGRDMzQUQ4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOEZEMzNBQThDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOEZEMzNBQjhDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgA=" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Graduate Management Admission
+                      Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore GMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,UklGRvYLAABXRUJQVlA4WAoAAAAUAAAAbQAALgAAQUxQSGoEAAABkIVt//k1b1iYjTDb9mq2bW+52bZt27Zt27bt9f183oPfr6Ha2Q4iYgLwn8p8AVO27109vK2Py7+g+LJXtP+4p44LHKK2JBPDSFVVKkld7Y0o3Ws/SVUlVZVKnssUlbmspEr4KsYYnvKIwvxERUVFxKiKGBHhJEvJob16JwIQM3jAwIKefXoNymSTrF/3IZUsiXr0G5wbSNCpX8+ePbp379EvNEYE8LhD+UUjRkSF7woBmE1yGgCPG2RoSZKrLc5LSE63BJBcAeT4wHAfJ44AoVQRFVUVERURIyqcBmAClT9qAknPkf6+JE1VAJV/kpwAwGUTla8yI7tFlOSTCOC4japKpaiqqKhSVHklmYXkrWRIcoYMKEYqD7khzgmqcjyAXN9Isi9S7rt0/pvKo3OXt8f/e57XqSpKVRVVVSFJ4de8FiE5EwntVKl+CCEpHAdgKPnF8GoMuLqkvE76O7u7Ovy9XM8pRmyNiIgREWMMywATKZ9/6s+qsc6RAT7UMPJstiv88kw5Hohzmu+6vGNYNQAet8i2iJDlfqqqqEWMGCNGRNSwPDCJPLSIvJTiABlQlLxwnD8vf+OcebSU+cFjHifIBQC8b5F+EaOyUu3FqiqiVGEVYCp5JvN9csAWu0Nl3pP8Xno1OQ6YQumNbsqH6QCvG2TbiFHwLcWIERFjFTFGRQwrAlPIq2hG/f5BGViUvBCzPw1XOW+1xH3CT618u/+g+Nn5RYx096gqqir2RkREVUsBk8kb0ZxW0hpYjDwfJ/5l/vDFLnICWpJhnz9/M8ItzvC8TrZMVDS8hD5pHNMkgVvWePD0BOIUSe2UOVcuLwAuR6iioqqiImJEVFX4KZfNTXdkeEpDBhQlLyZFw/dTHZx3k2Oc1lBoVX2Xz6ZRhdNxHFwcHWMh/akNK4seO46mbIXjV6N77du/f+D7p30XuQPoTzHGqIgxxoSJMcaECW8mt7nuBvjTCAN8yPNJ4JIhJlz2ksMyveGPTVNmTJn/RjkMHtfIxoXuHxs9t3qlaVg9PElQ4a3vS6741Cr3wcMFR69xz96+Yo5kBVwAZH7PMGPUGGPCjBEjRozhEgebm26A20aSgcXIqx6wRttN9mpP3ooJAFvIqzESXScb+V6ueWDeginBuFIz35UOE+adWD7Zr9/pnYMWdwKQIDpsHSdTrWI1KlQR/VYVwGzyvjuAfK/J0OLko1Q2rkfJqfvImbC2I9kq0SOyabkbZY5VO341OfpdKLd+8qY2MmDexHOTZ5/sv7dYSIMl3nbwPEcqqaKqQlWqcrUL4ODbo0tjJwCo3LV9Jq/OndrGsnGuFxJSuW5I53Q2cTt27FncrXlwl6yeHRaFxDqwDHDqs2KST2D6JulbdOzr6jwoR6MFA4qFOoWDAg+oqqSoioqq8FwKAA740w74gw4It/BJH/x9n/OkqKgxIiLkuQxwQCSN5gqHvwfPqe9IGlFR0qxNgSg///yLtL29ooILHKI8IGnN9h07BdVJi/+BA1ZQOCBQBAAAkBMAnQEqbgAvAD6RQJhJpaOiISerALASCWIAzIhf0RJRIT+3Au1DegK7C+q9AT67zFml99GUm9p8yOKbvPqAH5989P/g8oP0d7BX6s9TP9oPZg/Zkub9bK5wapmQ8F5AakA+GCgovC5f3U2SCKUirmD0LOSqQNP1ZWg//V95mzL/Tvg+2qTYCbnBrdcGXpbNDAg/w2CZD2MO9vSs2wiOBOhpQUVgAP7+k6DnQQVLx6NAOhH2gbxMWqLYnbwwnQ/HQZ3flWXkkPnDww+EGIz+gslqOUKfw9V7YR7nirjyQZ47YXCkY4sfU8qdhYrfCUbppYdMFRf5sGzPlh5s3FRFDvvhlE4TWhTaFfTWsaeqrqVciDN8mjXR4W0yRvpfjG3Q+uF+P//8dkf/4muOtzCeUiq/2G//8Dml9/36lhofctzJbf76agJsN1zet84NayagvtNiCqqIAV/k57aj+PWj/oKf7Ov/76O2ESf8fPIAn1F3ylNezYHkzEEtgcauAHnxuMWpIIfU6CnSAPj9eaBqqirdFvvC7RBRmW0WOG8NNCRudR3icNs5J1s7olOib/oAdy1Mv4F6r6yzkHNiRnSOmLOuJ12uvmztrk3c/xRofGYO/4IWWXPga2/9L0S4N4hVNGXWwJq0ch9UzkNRjfaSZTj8syLdbP5T9ChovQbpyW6tAP8MrpGrKtRvvPyEAEaHPiers4Mywl/rwV72Db/qeuSCJN6MdJFNrXGPp80Chd7h2plSHeNtKsraF/AgCq/PPNZJ/n4Lvu5LWfJwrzWQsyQk1OW89jJuaHweCg/FqnpKluTadfzO3UUJBMRR3LxQ8m5RkbXOf60fyGw5ZMwpemlb9Ffm6KkzIrdyTGQAmzJNO3dL4N3f1KO04YDIZzoibAxiNi8FhCfBYgN3quRDi+MTgIwPcuIVQatSORZ96vqfsT5jmiLAzv0yeEDWbqTKgM1DSk3gisgm2E38Tlen+ybf7Rvey2g1krSZrQe/mbSP/RLupTSaRtAY1iRdjHGELyM7rBcqywBicpvnvrIgEhVzSFB60P96u6tsVJbs+XZDt/zyYttd+wtBxAtf8woNrOmbnilRYNNsy0Y+Pf7vYQK8WOBWBH6y5Xa6K3eVKiCFcj4LyFysVr2FtVqf2NPF+POc1tjcsMplqVZS8qSqhpno8Mbrf9S82CTYc/r9aKfQW4i6YbnsjWQjFfbIlKqj5Q/Lgsnv6ViN7i8tdp8Bsl9N4rS2ocua1CMFzeRQpXFuVahq5xtG+GCJbpAYA5eTSAmiijdrmTP9Tm+ZIvySXwnYyq6YSGg150MwGtVgShwq/Xsp0/Ph7NKTnFit+Oj7HdKuCadfSrkYgOcvTBoCo38bs8KGuazJle7f4QJzisaxaO/7LfXYfj0JhbDMm1ZRfKYf7YWMK2RtINjLy+ryJ0JAJxV16RyqkJrMEqep/+Hn/MYvJ/9W5TriCAX4AAAAWE1QIA0DAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0OCA3OS4xNjQwMzYsIDIwMTkvMDgvMTMtMDE6MDY6NTcgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCAyMS4wIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo1NEVENkJFMjhDQzkxMUYxODlDODk4MDBFOEEwREZCNyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo1NEVENkJFMzhDQzkxMUYxODlDODk4MDBFOEEwREZCNyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjU0RUQ2QkUwOENDOTExRjE4OUM4OTgwMEU4QTBERkI3IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjU0RUQ2QkUxOENDOTExRjE4OUM4OTgwMEU4QTBERkI3Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+AA==" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">NMAT by GMAC</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore NMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <!-- SNAP: cut off in screenshot, placeholder copy — confirm exact values -->
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,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PiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MThGRDMzQUM4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MThGRDMzQUQ4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOEZEMzNBQThDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOEZEMzNBQjhDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgA=" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Symbiosis National Aptitude
+                      Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore GMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,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PiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MThGRDMzQUM4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MThGRDMzQUQ4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOEZEMzNBQThDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOEZEMzNBQjhDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgA=" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Symbiosis National Aptitude
+                      Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore GMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="/mba-html-discovery/assets/cat-logo-DJg_gCsO.webp" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Common Admission Test</h3>
+
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore CAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+
+              <li class="swiper-slide entranceExams__item">
+                <article class="examCard">
+                  <div class="examCard__top">
+                    <img src="data:image/webp;base64,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PiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMCAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MThGRDMzQUM4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MThGRDMzQUQ4Q0M5MTFGMUE1MjJEM0MxMjRDOUI1QUQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxOEZEMzNBQThDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxOEZEMzNBQjhDQzkxMUYxQTUyMkQzQzEyNEM5QjVBRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PgA=" alt="xat" loading="lazy" decoding="async" width="80" height="34">
+
+                    <h3 class="examCard__title">Common Admission Test</h3>
+                    <!-- <div class="examCard__meta">
+                    <span class="examCard__metaLabel">Exam date:</span>
+                    <span class="examCard__metaValue">Nov 29, 2026</span>
+                  </div> -->
+                  </div>
+
+                  <dl class="examCard__specs">
+
+                    <div class="examCard__spec">
+                      <dt>Exam date:</dt>
+                      <dd>Nov 29, 2026</dd>
+                    </div>
+                    <div class="examCard__spec">
+                      <dt>Exam Mode</dt>
+                      <dd>Computer Based Test</dd>
+                    </div>
+                  </dl>
+
+                  <button href="/demo/mba-360/cat/" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Explore GMAT
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  </button>
+                </article>
+              </li>
+            </ul>
+
+          </div>
+          <button type="button" class="entranceSlidePrev" id="entrancePrev" aria-label="Previous">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+
+          <button type="button" class="entranceSlideNext" id="entranceNext" aria-label="Next">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================
+       SECTION 1 — Decision tools
+       ============================================= -->
+    <section class="decisionTools" aria-labelledby="decision-tools-heading">
+      <div class="container">
+        <h2 id="decision-tools-heading" class="marketing__heading">Decision
+          tools</h2>
+        <p class="topColleges-sub">Free tools to help you decide. No login
+          required.</p>
+
+        <ul class="decisionTools__grid">
+          <li class="decisionCard reveal">
+            <div class="fmm">
+              <span class="decisionCard__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false">
+                  <circle cx="11" cy="11" r="7"></circle>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+              </span>
+              <h3 class="decisionCard__title">Find My MBA</h3>
+            </div>
+
+            <p class="decisionCard__desc">Answer 6 questions about your profile,
+              goals, and budget. Get a personalised shortlist of colleges that
+              match you exactly.</p>
+
+            <!-- <a href="javascript:void(0)" type="submit"
+              class="admissionJourneySubmit">
+              Take the quiz
+              <svg viewBox="0 0 26 26" width="28" height="28" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </a> -->
+
+            <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Take the quiz
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </li>
+
+          <li class="decisionCard reveal delay-1">
+            <div class="fmm">
+              <span class="decisionCard__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" role="img" aria-hidden="true" focusable="false">
+                  <rect x="3" y="4" width="18" height="13" rx="2"></rect>
+                  <line x1="8" y1="21" x2="16" y2="21"></line>
+                  <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+              </span>
+              <h3 class="decisionCard__title">Education Loan EMI Calculator</h3>
+            </div>
+            <p class="decisionCard__desc">Compare education loan EMIs across
+              banks. See total interest paid, tax benefits, and the real cost of
+              your MBA.</p>
+
+            <!-- <a href="javascript:void(0)" type="submit"
+              class="admissionJourneySubmit">
+              Calculate EMI
+              <svg viewBox="0 0 26 26" width="28" height="28" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </a> -->
+            <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure">Calculate EMI
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================
+       SECTION 2 — Management education for every stage
+       ============================================= -->
+    <section class="managementEdu" aria-labelledby="management-edu-heading">
+      <div class="managementEdu__bg" aria-hidden="true"></div>
+      <div class="container">
+        <h2 id="management-edu-heading" class="marketing__heading managementEdu__heading">Management education
+          for every stage</h2>
+        <p class="topColleges-sub">Explore management education designed for
+          every stage of your academic and professional journey</p>
+
+        <ul class="managementEdu__grid">
+          <li class="eduCard revealleft">
+            <span class="eduCard__tag">For working professionals</span>
+            <h3 class="eduCard__title">Executive MBA — your career, accelerated.
+              No career break needed.</h3>
+            <p class="eduCard__desc">Part-time, weekend, and online programs
+              from IIMs, ISB, XLRI, and SPJIMR. Compare by experience level,
+              industry, and format.</p>
+
+            <!-- <a href="javascript:void(0)" type="submit"
+              class="admissionJourneySubmit">
+              Explore Executive MBA
+              <svg viewBox="0 0 26 26" width="28" height="28" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </a> -->
+
+            <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure"> Explore Executive MBA
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </li>
+
+          <li class="eduCard revealright">
+            <span class="eduCard__tag">For young achievers · Class 12 &
+              above</span>
+            <h3 class="eduCard__title">BBA & IPM — Explore management education
+              designed.</h3>
+            <p class="eduCard__desc">Integrated Programme in Management at IIMs,
+              top BBA colleges, IPMAT preparation, and the complete
+              pathway to a top MBA.</p>
+            <!-- <a href="javascript:void(0)" type="submit"
+              class="admissionJourneySubmit">
+              Explore BBA/IPM
+              <svg viewBox="0 0 26 26" width="28" height="28" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </a> -->
+
+            <button href="javascript:void(0)" class="downloadBrochureBtn" aria-label="Download IIMA brochure"> Calculate EMI
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="alumniJourney home-as" aria-labelledby="alumniJourneyTitle" itemscope="" itemtype="https://schema.org/ItemList">
+      <div class="container">
+
+        <!-- <header class="alumniJourneyHead reveal">
+      <div>
+        <span class="alumniJourneyEyebrow">Alumni Outcomes</span>
+        <h2 id="alumniJourneyTitle">Where SOIL takes you next</h2>
+        <p>Real journeys — before SOIL, during the PGDM, and where they are today.</p>
+      </div>
+      <div class="alumniJourneyNav">
+        <button type="button" class="alumniNavBtn" id="alumniPrev" aria-label="Previous alumni story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button type="button" class="alumniNavBtn" id="alumniNext" aria-label="Next alumni story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </header> -->
+
+        <div class="as-head">
+          <div>
+            <h2 id="alumni-heading" class="marketing__heading reveal visible">Alumni speak</h2>
+
+            <p class="topColleges-sub">Verified video testimonials from real
+              alumni.</p>
+          </div>
+
+        </div>
+        <div class="alumni-slider">
+
+          <div class="swiper alumniSwiper">
+            <div class="swiper-wrapper">
+
+              <!-- SLIDE 1 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="gLyns5_dCDY">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Rajat Prakash" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=44" width="52" height="52" loading="lazy" decoding="async" alt="Rajat Prakash">
+                    <div>
+                      <h3 class="alumniCardName">Rajat Prakash</h3>
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Client Servicing Associate</p>
+                      <p class="tlSub">Financial services</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Finance</p>
+                      <p class="tlSub">2-Year, Manesar</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Business Manager —
+                        Wealth &amp; Premier Banking</p>
+                      <p class="tlSub">BFSI</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 2 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="33QeHqVdM5I">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Keshvi Gautam" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=45" width="52" height="52" loading="lazy" decoding="async" alt="Keshvi Gautam">
+                    <div>
+                      <h3 class="alumniCardName">Keshvi Gautam</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">System Engineer</p>
+                      <p class="tlSub">IT Services</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Analytics</p>
+                      <p class="tlSub">Domain-shift track</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Business
+                        Architecture Senior Analyst</p>
+                      <p class="tlSub">Global consulting</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 3 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="1XUi1nA2lyQ">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Nikhil Arora" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=46" width="52" height="52" loading="lazy" decoding="async" alt="Nikhil Arora">
+                    <div>
+                      <h3 class="alumniCardName">Nikhil Arora</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Fresh Graduate</p>
+                      <p class="tlSub">B.Tech, no work experience</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRmoGAABXRUJQVlA4WAoAAAAwAAAANQAAFAAASUNDUMgBAAAAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADZBTFBIIQAAAAEfIBAgFjjyP2UjImIJRAIkJJP/RziUbIzo/wTg+4T5AABWUDggUgQAANAYAJ0BKjYAFQA+GQqEQaEFAwFVBABhLMATpoAPgPiPlAwt7SwYDbH+YD9T/Wq9AHkzdYB6AHlmext/f/9p+zvtPXcHU+ekfjd+4GXF+3/jj+UnCAfir6nf61+O35SbgDxMvl39o/Jf+n6wx/Wvyx/nPIA9Rf+f/3T8lvcZ/evyV9Vn4z/M/79+Xv0B/xH+R/2/8l/7h//P+/4kP1E9hj9Xgg748ecOc6m3GB+aBN2FegtmYpfUEJZRFG3nu/uTQALChzVls0jxwMflKiPWMAD+//6UklSJvf3KwJtC74AeZ8aJiujSyHIeT3dEHOU5fVHXrVFVcFiOBqvxyLorwgd5fI0AnUiv42Gj7sPfYW+5k3WcrPjDtFsFRJCpOtcLcqKTO52fGrhfTYIs2JrQzrWVzAfA6yUOHwtwc34i9TMXf1rGSKtIXPut23oJkbGP77QA0lG9t0LGP8v3Cfi7VIB7dLBmbc5u7vg3pnrq3PZ/zXBhnx3ac3gyF8z8slPtnaslfSgeC+X//+o3OcaO2i//2nB5h4HtVZ4sN0ePxffTWuWG8QGwn1ZLZiosN6V40okzR3/9pmPSpgoP/3MKHJ4mIfXHn9i6JQYVslKiKCVN/aDxXVIt9FDO4n9FmWwRMDcd+y/PmIW8y7+7Z2JpC5n+2LXqabBJlLfvF+MJNIPd+C9XkJrxLNAMjP4s0hDqvoVO8v6eMriff7x+NNXOUGhWNT1XBZiolEiwuwJ2vnJ9F/8tcdIaosDTJn//oMBR5x3q7q4jllb74GlZ0a95Fsqu3PDjH6f83v2z0Pa+PeNv6YoYBvoG2r/3fy55qDnDhSSBCGOH22f9GIzaa9dPfLiAx17iZunm9Mff+P4ju3kvYRmgHUf9ImDzNIGr7PsuOZrr0H3d5MLVSJb8+Slf6BXnIXeqb7f1KAL/7uVcC+QOoh8mjoF9LqQFd49mapjKAeUaAcFsKg2m+Cn6k//TddPTQJ+n8vZibw7+LmibO+cMuBEyRtl5xPANTn6hUz+f+UngMTIe230sVvV2ATCWZutgP3CrO9LEJyv3T+/LlqOvV/0J9hCEOhqY1MyOvPbkrHkoB9GeJkKVp7cQ1RZmpgrzldbpOPD/dCktcOqK//RFv/VEaD0HvfyzPCo9Q29bGWkkbTUtNodn1dTcNZWQ+ZGrNaxJqvBcaIBT74Ptud4imaQ4AMPNqxpYAfwyRWwSNv3VSJXxuPpHyVpwf/+ku9JH/GwCtsD76wH5Dm1T+l0tznqzc1HJhrRtIVLj/zV1+n+koH9mjRXGKYmmLz4HtYwRggGrc8X/4deyKmzsVqpuqjMikGKm24pN9djfFBzm9vkGq5mTFkbL/y98fYUD1gZkjy3HnMB9b+BndhGpXe+utwZzBTNJSAC9eZ/xJiNeVM8QDIQaScNgXb/foWL0yMyRx3//HK+GI+4a+cKiBSIwBT4I+Im0O+FIlA41vqhgAAAA" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Marketing</p>
+                      <p class="tlSub">Design Thinking track</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Assistant Brand
+                        Manager</p>
+                      <p class="tlSub">Consumer goods</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 4 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="nqmrrkUvhRw">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Shreya Kapoor" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=47" width="52" height="52" loading="lazy" decoding="async" alt="Shreya Kapoor">
+                    <div>
+                      <h3 class="alumniCardName">Shreya Kapoor</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRuAJAABXRUJQVlA4WAoAAAAQAAAARQAAGAAAQUxQSDIDAAABkC3btmk749q2bdtGbNu2bdvmcZxzrm3Htm0b82GfvW8q+wciYgLAT5vUBfK+4Lt+/zNnDm0dHB3gY8ont+L7Y6NWbDugKCjd0dWYN75Pqo3gtlOwd+++bQeqTwbBhRe6dyRAZk725uWLVwtOTtt4PkAyHbCITEhLc+HilxRjD8AiPk5pij10AzW4qMguAcNIEQYA6uPqli8oWvwmGJue/yC6uVZXWezuV0RXljpARkQf3hNRlfGQ6xlcWpMHutAwsNrfWb913AaZbj49F5QRVTgx2rykV8V1RHs1h2Yryv5Spbxgjt4m6sdBq0IInx9zwNHh4jZpl1MBAhLBMOoIXbYAgt7SPC9905iF3dWhqWHReM1SXRdY/qE9B9eb1jhyE5x7Xy+ZuWOukEQA9AtpBDRO0Sxw1T51Qw8Aln7owGFwNgLeTOCm1m68eEWVkGQAEPHiglEAnVLlZHHxnl2zVNetGbvphKnTPnk7YFZfdG9coArN8lEJLCgj526/VwIqumZm5poM8wt3bZultnG+SDgPc/csfe096aV17IP+deuBk4PAlkNufb9PAUzyv319u0brn62fu3PbDgND/QJZ5JXSeZsLseaiOmRj2HQu/LTNIAFgcODhC6o0/meb561bO8UqOWBIxanj0a+eiR3FZUBlN7ZpdFTb8s8DMwAwuVlr2IyObKqzli3eAiy5nLulU578WMSeC02t4f3cFwLaByD56c8EqK+lQjcAuHrGGIDZ+bs2St7GsCHxSJciNTvE9lGHR1cDGAxzB1bXxIcdprLE1jOJZqgCOpX0cEBai2V0zgiA1dX7jow1H8fGxMQk+2kAMDo15EjHjZPAWedJRs7EfGI+mQqm4WFiPh+kwXj1Sxkp/RQEQGNVUb9r3a/34CQ+HHfVpvUeeY50WTBYu2/JObY8GkyNqcu0GGHi7Nzc3IKdTgBg2N7w/IGYqxtt2cY+M742SwX/rRrYXe6I2h2Vrp4fxtj12mLFKS3w0j7vzOJ5uw8EwnLaxTrLhffswNdhR0okO/YcrlT08pXf8gF/rRNbDRndKa3d6uubHcFvVc/tioptSeB9XIGsvw6UA1ZQOCCIBgAAMCEAnQEqRgAZAAAAACWwAnTNocp+q/khyju7vdzaETGcoPPz6gPxX6Fv9u6pPmA/YD+6e0x0gH6oekB7B3oIfpX6VX/F/wHwT/tF/yP8d8Bv8n/omaAfwD8AP0g8Z/5b+AH7b9kz3R9Mv2by1nzb8Sv2w/2Hsq/irxBP8N/lH4s/tx/kM4a+Kfzf8Zf3L/2Hq4/gH4V+Jn6if4b/NfxU2gD+Nfyb+f/jb/lvgQ/Vfxw9dH4V/KP5t+R/0B/wr+Jfz7+y/rJ/S/+p3AHsE/pH8+p4bLuXUHeimqzpHdL4nTk4ipLApb674SreKuSFk8Hz2I9udn87X5VL6kC/5eAvvNxNFLmzZo7fh6yl93nnN//qgAD+469HK5gr3Doro4SndNX3p77X/v4JQNeX0deOVGxaOXDASZNM2G309Q4BUHMfjSkebuubMHf7c2W/SozYUjAOMLLd6kiSmShSgXedtW7hcBvNtoPYOSgv//1jDu7N+nnlK+jH9lOLtfacaYyyR8RWLOQUE7NxajkVjrKzLB8kwXrvCF8eRwSQJ//8s2CZnTonscZB3JLvOQp/7l92gCba0Lp56/7gkqgf5ERLNobxfXPHHAanGwdkvOEatN3/LuZcahMifk93r3cmjfzwauR8G1/5WfTG9L3vEm1TDw+IW6BQLI39klDeGtZBJphd92/Q6gWRvtmHyHue4lHkaLwmKiAeucApvZSiWpdBgwNOqeIBVH84/0OSpljeHsK9NR2fwfKI4AoamUKPoeb3v+qlrIpfOpgBCHZdsi3Z6tjtGyyQtyvkCKFPgtX8+uKcB2AfXb4RaqOtbOs1BgOCvq7xoNL6eJ7VOdeoMIhNYsmue8VkSHWEGVpsOiJ3xfvNM8Okj1lzsYhXQbYgexM0/0RktDRi1O9lxdLvsQpTKuEs5pT/wD8aE0WNZjbIg9m0C7ZhvuF0qdJF6kRWeemjKmflMg9EeroJazhTDMGslNhwExdySoGh/cXBKCcxjV+sRi+mXyzXA9e3IRnjk8GxT/y+jJ+k3V8OVCwUt22IStjNKOdawbhYd12P/9SSRUauFfomNPOOJLBd8Gz57dpHH9hw4D6DLGcASdO+iBP2JCz8ZmjKpXmdYl+thMlbJURuONSjx+P6BUX3tBQ+m5Wa88VDrmI4RhMbyxhBLyRLJ7ggVxyQNWO05EshgcnzP6TrfaCLLTgGjzYG5J/f/PZhiC32z/vQthgH6RNvXxpcNRP2Epf3kBPv+iBZymhfRAbnO5sm7q5VMk3DNiD6tdDke2wDyd9pEiiBKiQfuzfvrwRJV2clTck1Tc/VJyvp+6w4cGbSfBy4EetRviSNe3zG25/DwE3yf7aTmBjvyljkqotR24gl8el8H29dut4dFSuXBKKWiqVG/82u4WZtbEeTwVhjK1ZYAdOv9TkT4IBTKt/TDE84nS+HV/iaoIP0IjbT7Ie/wrzdNwA1kFdI0BjhOfGWX0+K5V/Fhjq8L/A6X7clHeN7p4qkgWpknUgNmjcx33ttXeDrCIpvGXL4EJhC8nmz/dqOcMt0aXrFGI1+j5MILwkEP0VGHA/+mO/p8PORQR4WXyItiaINGaoB7Hhz5I2z76kECAbEz9lpP/mOk4VU0YEOv/Pui6BeHfDRERf+XMVQPaWcCDPUOTlUZJzy3fUHFLyl1Auc+dAlC52fGXkXTusacHpF6QP8jOapHWJ/a2B/aRNDFut1pexUhMt6tunF+La5iOOwYl9CoVeF92T43scnYuCoC7hH/n231z1uKI2xzl8IOf+vDp9TbYboulMRiYY3/N7AZZeS0J+fpDpvf8///IZxg8qLO3QzTv9xqTx9lKCIHVSoXC4qLzCgYBFVlCD97BAKUFKiXWyPDLA7YrfYR+M5IokXdP0aAX95uTkzPPgfCXgx4j+TXq8VQcgqvl19w8liEzozSnPQhjlO/z0SfeJMVs5CvqxhoGgam3GG6llgfg9rVhiAnxSLl0Hgmf/5MKOxBaQGKJ39Jf3EbJ9ynx+shP27v0ib6hMYPtdoOTG4EPxU1Pn5QtyitVoicvrO+9trTeiqb9AwO06vZUcPGStG50hved/eP/QDmXiWHhOABPtUKPPeUfixU7NnRnhc1aZKA2vZzW1jd3phN2hTP8DpYtEKCy9nCdNFB7J0oqXDHTODNy73JxXkhbiHdOMFb8glDFVDx5ayKatbkb/Ud39GdKq/YQBK8fYpAfqQ6hAAAA==" width="54" height="21" loading="lazy" decoding="async" alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Junior Associate</p>
+                      <p class="tlSub">EdTech operations</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Analytics</p>
+                      <p class="tlSub">Live capstone projects</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Senior Data
+                        Analyst</p>
+                      <p class="tlSub">Technology</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 5 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="wubJqRtFFvE">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Aman Verma" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=48" width="52" height="52" loading="lazy" decoding="async" alt="Aman Verma">
+                    <div>
+                      <h3 class="alumniCardName">Aman Verma</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="DGTL"></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Graduate Engineer</p>
+                      <p class="tlSub">Automotive manufacturing</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Operations</p>
+                      <p class="tlSub">Summer internship, L&amp;T</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Manager — Supply
+                        Chain Planning</p>
+                      <p class="tlSub">Industrials</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+              <!-- SLIDE 6 -->
+              <div class="swiper-slide">
+                <article class="alumniCard" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/Person" data-video-id="CYO-_DE3nW">
+                  <button type="button" class="alumniCardPlay" aria-label="Play video story of Priya Nair" aria-haspopup="dialog">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg>
+                  </button>
+                  <div class="alumniCardHeader">
+                    <img class="alumniCardAvatar" src="https://i.pravatar.cc/120?img=49" width="52" height="52" loading="lazy" decoding="async" alt="Priya Nair">
+                    <div>
+                      <h3 class="alumniCardName">Priya Nair</h3>
+
+                    </div>
+                  </div>
+                  <ol class="tl">
+                    <li class="tlStep">
+                      <span class="tlMarker" aria-hidden="true"><img src="/mba-html-discovery/assets/cat-logo-DJg_gCsO.webp" width="26" height="26" loading="lazy" decoding="async" alt=""></span>
+                      <!-- <p class="tlLabel">Before SOIL</p> -->
+                      <p class="tlTitle">Fresh Graduate</p>
+                      <p class="tlSub">B.Com honours</p>
+                    </li>
+                    <li class="tlStep tlStep--current">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,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" width="54" height="21" loading="lazy" decoding="async" alt="SPJMIR"></span>
+                      <!-- <p class="tlLabel">At SOIL</p> -->
+                      <p class="tlTitle">PGDM · Finance</p>
+                      <p class="tlSub">CFA-aligned electives</p>
+                    </li>
+                    <li class="tlStep tlStep--now">
+                      <span class="tlMarker" aria-hidden="true"><img src="data:image/webp;base64,UklGRoABAABXRUJQVlA4WAoAAAAQAAAASQAASQAAQUxQSEYAAAABP0CYbbT9BnL+iqcREcFzJtTUttN8C1QJURIDNAE5OMD/nlBGhoj+T4DTFyR34CdGkA1YT1isx0OHnjCH3ukF2R1YkH41VlA4IBQBAAAQCgCdASpKAEoAPpFEnkmlpCMhKPbZWLASCUAaNyGf4gbSnyj8RvyA5ALuNggPsA91f8zwiv9M/RAyQD0gAORe763WjO3bwy0gz+zfi381B7qlS+7SiAI3gADoVPYVKBz3zFC24Sn1hFecEos0UlQO/8e2fEm18ovXkmgfKJwrhuMn/5NsY/RCv8m8ify6+f2vykWBHH6BCvdk6k9M0C/DhZ9ZRZKBBWtsuTX/CMTya/4fqkS4HgmK2ofJKB/4p1v7E4IDjm854DJIIzCVZuuE+9EdFMY/FY65/6/EdjAfpw3Muf/vOTOBry+BFXhcVH+H+//LqVfuid177nB9/uyaItQp+eZLQ0EzuWMO3YBCWaAAAAA=" width="26" height="26" loading="lazy" decoding="async" alt="Microsoft"></span>
+                      <!-- <p class="tlLabel">Now</p> -->
+                      <p class="tlTitle" itemprop="jobTitle">Equity Research
+                        Analyst</p>
+                      <p class="tlSub">Global markets</p>
+                    </li>
+                  </ol>
+                </article>
+              </div>
+
+            </div>
+
+          </div>
+          <button type="button" class="alumniNavBtnPrev as-nav-btn" id="alumniPrev" aria-label="Previous alumni story">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+          <button type="button" class="alumniNavBtnNext as-nav-btn" id="alumniNext" aria-label="Next alumni story">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+
+      </div></section>
+
+      <!-- Video popup (iframe built only on click; destroyed on close) -->
+      <div class="videoModal" id="videoModal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Alumni video story">
+        <div class="videoModalBackdrop" data-close=""></div>
+        <div class="videoModalBox">
+          <div class="videoModalFrame" id="videoFrame"></div>
+          <button type="button" class="videoModalClose" data-close="" aria-label="Close video">&times;</button>
+        </div>
+      </div>
+
+      <!-- ================= LATEST FROM MBA 360 SECTION ================= -->
+      <section class="lfm-section" aria-labelledby="lfmHeading" itemscope="" itemtype="https://schema.org/ItemList">
+        <div class="container">
+
+          <div class="lfm-head reveal">
+            <h2 id="lfmHeading" class="marketing__heading">Latest
+              from MBA 360</h2>
+            <p class="topColleges-sub">Exam analysis, placement reports,
+              strategy guides, alumni interviews.</p>
+          </div>
+
+          <div class="lfm-grid">
+
+            <!-- Featured Card 1 -->
+            <a href="/mba-html-discovery/blog/blog-detail.html" class="lfm-card lfm-card--feature revealleft delay-1" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="1">
+              <article itemprop="item" itemscope="" itemtype="https://schema.org/Article">
+                <div class="lfm-media">
+                  <img src="/mba-html-discovery/assets/hand-shake-Dv4BbBnN.webp" alt="6-month CAT 2026 preparation plan week by week guide" itemprop="image" loading="lazy" decoding="async" width="560" height="360">
+                  <span class="lfm-tag lfm-tag--strategy">Strategy</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+                <div class="lfm-body">
+                  <h3 class="lfm-heading" itemprop="headline">6-month CAT 2026
+                    preparation plan — week-by-week guide</h3>
+                  <div class="lfm-meta">
+                    <img src="data:image/webp;base64,UklGRjoCAABXRUJQVlA4WAoAAAAQAAAAGQAAGQAAQUxQSPgAAAABgCNb2/Lkwd0rd3dtmY8qLe4SKXF32UG0Q2ILCAvIDO500P/DAiCygQf9YhuIiAnAn4ob/5d4FiFbQkVikvb/Jq4YuN9aAsDI4H62QU3PaGIJFfw/STtKnHzPvKUGCAw45xQZA8S/GSUKX+cBLPKQLAnuwq+gH5JKcD2/EFx1GOQIkQtUC5EGNAghk+wh75FL0oVukmYJHJ2fLyLTfX4+g8zz8/MemWBGllCrSwChHisBVOr+EokUki+oIHkGFUmrBPat1kWkGKzWHmRarNZOQMNDD4sRVCu3DXQFpeSDrSUeKmvaQHV6D81AncKgmuMAYOAw8KUuAFZQOCAcAQAAcAoAnQEqGgAaAD4pEIZCIaEMBgMADAFCWwAnTKEcDeAfiryZ+rnea0Af0D8gOoA3AH6Af0D+Ae//0Lv8A4AD9gPQb/y38z+AD9gP1m9jL/rgNn9ZQn0lCxOFLgAA/riRWb9v/8XI7s2isUxPIcnXhcc7tPo/94Q4RYCdRwojz0wEr/+0EZ9St0PhzEf96V2MdQof5xJv/mTMW1s7nHzQn6XRKFjoUJs2S6scoigl2lgqw7JaCXlnlXmQpORijthpsb824/lvv9v3edMFHS/S+QBBzDM9/xcfcMDTYj+2Yxlotyi7wRbnaCGiIz3Oi/Kc7Z8zZjlaZABCS4beG7jA4WuYlFKrFseiG6ZI6DJG/5/6Qn8OSCp6HWI1AAA=" alt="Calender" itemprop="image" loading="lazy" decoding="async" width="26" height="26">
+                    <time itemprop="datePublished" datetime="2026-05-14">May 14,
+                      2026</time>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <!-- Featured Card 2 -->
+            <a href="/mba-html-discovery/blog/blog-detail.html" class="lfm-card lfm-card--feature reveal delay-2" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+              <meta itemprop="position" content="2">
+              <article itemprop="item" itemscope="" itemtype="https://schema.org/Article">
+                <div class="lfm-media">
+                  <img src="/mba-html-discovery/assets/hand-shake-Dv4BbBnN.webp" alt="IIM final placements 2025 full data across all 21 IIMs" itemprop="image" loading="lazy" decoding="async" width="560" height="360">
+                  <span class="lfm-tag lfm-tag--placements">Placements</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </div>
+                <div class="lfm-body">
+                  <h3 class="lfm-heading" itemprop="headline">IIM final
+                    placements 2025 — full data across all 21 IIMs</h3>
+                  <div class="lfm-meta">
+                    <img src="data:image/webp;base64,UklGRjoCAABXRUJQVlA4WAoAAAAQAAAAGQAAGQAAQUxQSPgAAAABgCNb2/Lkwd0rd3dtmY8qLe4SKXF32UG0Q2ILCAvIDO500P/DAiCygQf9YhuIiAnAn4ob/5d4FiFbQkVikvb/Jq4YuN9aAsDI4H62QU3PaGIJFfw/STtKnHzPvKUGCAw45xQZA8S/GSUKX+cBLPKQLAnuwq+gH5JKcD2/EFx1GOQIkQtUC5EGNAghk+wh75FL0oVukmYJHJ2fLyLTfX4+g8zz8/MemWBGllCrSwChHisBVOr+EokUki+oIHkGFUmrBPat1kWkGKzWHmRarNZOQMNDD4sRVCu3DXQFpeSDrSUeKmvaQHV6D81AncKgmuMAYOAw8KUuAFZQOCAcAQAAcAoAnQEqGgAaAD4pEIZCIaEMBgMADAFCWwAnTKEcDeAfiryZ+rnea0Af0D8gOoA3AH6Af0D+Ae//0Lv8A4AD9gPQb/y38z+AD9gP1m9jL/rgNn9ZQn0lCxOFLgAA/riRWb9v/8XI7s2isUxPIcnXhcc7tPo/94Q4RYCdRwojz0wEr/+0EZ9St0PhzEf96V2MdQof5xJv/mTMW1s7nHzQn6XRKFjoUJs2S6scoigl2lgqw7JaCXlnlXmQpORijthpsb824/lvv9v3edMFHS/S+QBBzDM9/xcfcMDTYj+2Yxlotyi7wRbnaCGiIz3Oi/Kc7Z8zZjlaZABCS4beG7jA4WuYlFKrFseiG6ZI6DJG/5/6Qn8OSCp6HWI1AAA=" alt="Calender" itemprop="image" loading="lazy" decoding="async" width="26" height="26">
+                    <time itemprop="datePublished" datetime="2026-06-14">June
+                      14, 2026</time>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <!-- Right Column: Text List Cards -->
+            <div class="lfm-list revealright delay-2">
+
+              <a href="/mba-html-discovery/blog/blog-detail.html" class="lfm-card lfm-card--text" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                <meta itemprop="position" content="3">
+                <article itemprop="item" itemscope="" itemtype="https://schema.org/Article">
+                  <span class="lfm-tag lfm-tag--interview">Interview</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <h3 class="lfm-heading lfm-heading--sm" itemprop="headline">SPJIMR Director interview — admissions,
+                    DCC evolution, 2026 vision</h3>
+                  <div class="lfm-meta">
+                    <img src="data:image/webp;base64,UklGRjoCAABXRUJQVlA4WAoAAAAQAAAAGQAAGQAAQUxQSPgAAAABgCNb2/Lkwd0rd3dtmY8qLe4SKXF32UG0Q2ILCAvIDO500P/DAiCygQf9YhuIiAnAn4ob/5d4FiFbQkVikvb/Jq4YuN9aAsDI4H62QU3PaGIJFfw/STtKnHzPvKUGCAw45xQZA8S/GSUKX+cBLPKQLAnuwq+gH5JKcD2/EFx1GOQIkQtUC5EGNAghk+wh75FL0oVukmYJHJ2fLyLTfX4+g8zz8/MemWBGllCrSwChHisBVOr+EokUki+oIHkGFUmrBPat1kWkGKzWHmRarNZOQMNDD4sRVCu3DXQFpeSDrSUeKmvaQHV6D81AncKgmuMAYOAw8KUuAFZQOCAcAQAAcAoAnQEqGgAaAD4pEIZCIaEMBgMADAFCWwAnTKEcDeAfiryZ+rnea0Af0D8gOoA3AH6Af0D+Ae//0Lv8A4AD9gPQb/y38z+AD9gP1m9jL/rgNn9ZQn0lCxOFLgAA/riRWb9v/8XI7s2isUxPIcnXhcc7tPo/94Q4RYCdRwojz0wEr/+0EZ9St0PhzEf96V2MdQof5xJv/mTMW1s7nHzQn6XRKFjoUJs2S6scoigl2lgqw7JaCXlnlXmQpORijthpsb824/lvv9v3edMFHS/S+QBBzDM9/xcfcMDTYj+2Yxlotyi7wRbnaCGiIz3Oi/Kc7Z8zZjlaZABCS4beG7jA4WuYlFKrFseiG6ZI6DJG/5/6Qn8OSCp6HWI1AAA=" alt="Calender" itemprop="image" loading="lazy" decoding="async" width="26" height="26">
+                    <time itemprop="datePublished" datetime="2026-04-10">Apr 10,
+                      2026</time>
+                  </div>
+                </article>
+              </a>
+
+              <a href="/mba-html-discovery/blog/blog-detail.html" class="lfm-card lfm-card--text" itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                <meta itemprop="position" content="4">
+                <article itemprop="item" itemscope="" itemtype="https://schema.org/Article">
+                  <span class="lfm-tag lfm-tag--exec">Exec MBA</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                  <h3 class="lfm-heading lfm-heading--sm" itemprop="headline">Is
+                    EMBA worth it at 35? ROI analysis across 8 top programs</h3>
+                  <div class="lfm-meta">
+                    <img src="data:image/webp;base64,UklGRjoCAABXRUJQVlA4WAoAAAAQAAAAGQAAGQAAQUxQSPgAAAABgCNb2/Lkwd0rd3dtmY8qLe4SKXF32UG0Q2ILCAvIDO500P/DAiCygQf9YhuIiAnAn4ob/5d4FiFbQkVikvb/Jq4YuN9aAsDI4H62QU3PaGIJFfw/STtKnHzPvKUGCAw45xQZA8S/GSUKX+cBLPKQLAnuwq+gH5JKcD2/EFx1GOQIkQtUC5EGNAghk+wh75FL0oVukmYJHJ2fLyLTfX4+g8zz8/MemWBGllCrSwChHisBVOr+EokUki+oIHkGFUmrBPat1kWkGKzWHmRarNZOQMNDD4sRVCu3DXQFpeSDrSUeKmvaQHV6D81AncKgmuMAYOAw8KUuAFZQOCAcAQAAcAoAnQEqGgAaAD4pEIZCIaEMBgMADAFCWwAnTKEcDeAfiryZ+rnea0Af0D8gOoA3AH6Af0D+Ae//0Lv8A4AD9gPQb/y38z+AD9gP1m9jL/rgNn9ZQn0lCxOFLgAA/riRWb9v/8XI7s2isUxPIcnXhcc7tPo/94Q4RYCdRwojz0wEr/+0EZ9St0PhzEf96V2MdQof5xJv/mTMW1s7nHzQn6XRKFjoUJs2S6scoigl2lgqw7JaCXlnlXmQpORijthpsb824/lvv9v3edMFHS/S+QBBzDM9/xcfcMDTYj+2Yxlotyi7wRbnaCGiIz3Oi/Kc7Z8zZjlaZABCS4beG7jA4WuYlFKrFseiG6ZI6DJG/5/6Qn8OSCp6HWI1AAA=" alt="Calender" itemprop="image" loading="lazy" decoding="async" width="26" height="26">
+                    <time itemprop="datePublished" datetime="2026-03-22">Mar 22,
+                      2026</time>
+                  </div>
+                </article>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- ===== Master Your Admission Journey (Subscribe) Section ===== -->
+    <section class="admissionJourney" aria-labelledby="admissionJourneyHeading">
+      <div class="container">
+        <div class="admissionJourneyInner ">
+          <h2 class="marketing__heading" id="admissionJourneyHeading">Master your admission
+            journey</h2>
+          <p class="admissionJourneyText">Weekly briefing on exam
+            updates, admission deadlines, placement reports, and
+            editorial analysis. No spam. Unsubscribe
+            anytime.</p>
+
+          <form class="admissionJourneyForm" id="admissionJourneyForm" novalidate="">
+            <label for="admissionJourneyEmail" class="admissionJourneyLabel">Email
+              address</label>
+            <div class="admissionJourneyField">
+              <input type="email" id="admissionJourneyEmail" name="email" class="admissionJourneyInput" placeholder="Your email address" autocomplete="email" required="" aria-describedby="admissionJourneyError">
+              <button type="submit" class="admissionJourneySubmit">
+                Subscribe
+                <svg viewBox="0 0 26 26" width="28" height="28" fill="none" aria-hidden="true">
+                  <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </div>
+            <p class="admissionJourneyError" id="admissionJourneyError" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+     <footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__top">
+
+            <div class="site-footer__brand">
+                <a href="/mba-html-discovery/" aria-label="MBA 360 Home">
+                    <img class="site-footer__logo" src="/mba-html-discovery/discovermba.webp" alt="MBA 360 Logo" width="200" height="35" fetchpriority="high" decoding="async" loading="eager">
+                </a>
+                <p class="site-footer__desc">
+                    India's full-spectrum MBA discovery portal. For fresh
+                    graduates,
+                    working professionals, and MBA colleges.
+                </p>
+            </div>
+
+            <nav class="site-footer__col" aria-labelledby="footer-students">
+                <h2 id="footer-students" class="site-footer__heading">Students</h2>
+                <ul>
+                    <li><a href="/mba-html-discovery/exam/">Exams</a></li>
+                    <li><a href="/mba-html-discovery/college/">Colleges</a></li>
+                    <li><a href="/mba-html-discovery/course/">Executive
+                            MBA</a></li>
+                    <!-- <li><a href="/bba-ipm">BBA / IPM</a></li> -->
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-tools">
+                <h2 id="footer-tools" class="site-footer__heading">Tools</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">Find my MBA</a></li>
+                    <li><a href="javascript:void(0)">EMI calculator</a></li>
+                    <li><a href="javascript:void(0)">Percentile
+                            predictor</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-community">
+                <h2 id="footer-community" class="site-footer__heading">Community</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">Forum</a></li>
+                    <li><a href="/mba-html-discovery/alumni/">Alumni
+                            network</a></li>
+                    <li><a href="/mba-html-discovery/blog/">Blogs</a></li>
+                    <li><a href="javascript:void(0)">News</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-company">
+                <h2 id="footer-company" class="site-footer__heading">Company</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">About us</a></li>
+                    <li><a href="javascript:void(0)">Advertise</a></li>
+                    <li><a href="javascript:void(0)">Contact</a></li>
+                    <li><a href="javascript:void(0)">Privacy policy</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div class="botom-wrap">
+        <div class="container site-footer__bottom">
+            <p class="site-footer__copy">
+                &copy; <span id="footer-year">2026</span> MBA 360. All rights
+                reserved. Ad-free. Built for aspirants.
+            </p>
+
+            <ul class="site-footer__social">
+                <li>
+                    <a href="https://linkedin.com/company/mba360" aria-label="MBA360 on LinkedIn" rel="noopener noreferrer" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V21h-4V9Z" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/mba360" aria-label="MBA360 on X" rel="noopener noreferrer" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+                            <path d="M18.9 2h3.3l-7.2 8.2L23.4 22h-6.6l-5.2-6.8L5.6 22H2.3l7.7-8.8L1.4 2H8.2l4.7 6.2L18.9 2Zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20Z" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</footer>
+
+    <!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+    <script defer="">
+    (function () {
+      var selectors = '.reveal, .revealleft, .revealright';
+      var elements = document.querySelectorAll(selectors);
+
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+  <script src="/mba-html-discovery/js/auth.js"></script>
+</html>

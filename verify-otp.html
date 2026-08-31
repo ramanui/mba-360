@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>College LP</title>
+        <meta name="description" content="DGTL">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="/mba-html-discovery/favicon.svg" sizes="32x32">
+        <link rel="apple-touch-icon" href="/mba-html-discovery/favicon.svg" sizes="180x180">
+
+        <link rel="preload" as="image" href="../src/assets/images/stay-updated-with-mba-news.webp" fetchpriority="high">
+
+        <!-- Google Fonts (Ultra Optimized) -->
+
+        <link rel="preload" href="/mba-html-discovery/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+
+        <link rel="preload" href="/mba-html-discovery/fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin="">
+
+        <!-- Critical CSS inline (BEST for FCP) -->
+        <style>
+
+</style>
+      <script type="module" crossorigin="" src="/mba-html-discovery/assets/common-CrbfKtlj.js"></script>
+      <script type="module" crossorigin="" src="/mba-html-discovery/assets/rolldown-runtime-DK3Fl9T5.js"></script>
+      <script type="module" crossorigin="" src="/mba-html-discovery/assets/swiper-BEIjiCPV.js"></script>
+      <script type="module" crossorigin="" src="/mba-html-discovery/assets/preload-helper-DaKClKhw.js"></script>
+      <script type="module" crossorigin="" src="/mba-html-discovery/assets/login-import-BkfvS8cX.js"></script>
+      <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/common-DLAnYg_v.css">
+      <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/swiper-HzbfsHSZ.css">
+      <link rel="stylesheet" crossorigin="" href="/mba-html-discovery/assets/login-import-DJyCO5lZ.css">
+    </head>
+    <body>
+
+        <!-- <include src="public/partials/header.html"></include> -->
+
+        <main>
+            <section class="authPage">
+
+                <!-- ===================== LEFT: VERIFY OTP FORM ===================== -->
+                <div class="authPage__form">
+                    <div class="authPage__formInner">
+                        <div class="admin-logo">
+                            <a class="site-header__logo-link" href="/mba-html-discovery/" aria-label="MBA 360 Home">
+                                <img class="site-header__logo" src="/mba-html-discovery/discovermba.webp" alt="MBA 360" width="300" height="79" loading="eager">
+                            </a>
+                        </div>
+
+                        <h1 class="authPage__heading reset">Enter
+                            verification code</h1>
+                        <p class="create" id="otpIntroText">
+                            We've sent a 4 digit code to your email
+                            address. Enter it below to continue.
+                        </p>
+
+                        <form
+                            id="verifyOtpForm"
+                            class="authPage__formFields"
+                            novalidate
+                        >
+
+                            <div class="formGroup">
+
+                                <div class="formGroup__inputWrap">
+
+                                    <input
+                                        type="text"
+                                        id="otp"
+                                        name="otp"
+                                        maxlength="4"
+                                        inputmode="numeric"
+                                        autocomplete="one-time-code"
+                                        placeholder="Enter 4 digit code"
+                                        required
+                                    >
+
+                                    <span
+                                        class="formGroup__requiredStar"
+                                    >*</span>
+
+                                </div>
+
+                                <div
+                                    class="formGroup__error"
+                                    id="otpError"
+                                >
+                                    Please enter the 4 digit code
+                                </div>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="authPage__submit"
+                                id="verifyBtn"
+                            >
+
+                                <span class="btn-text">
+                                    VERIFY CODE
+                                </span>
+
+                                <span
+                                    class="btn-spinner"
+                                    style="display:none;"
+                                >
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    Verifying...
+                                </span>
+
+                                <svg
+                                    width="14"
+                                    height="14"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    ></path>
+                                </svg>
+
+                            </button>
+
+
+                            <p class="forgot">
+
+                                <a
+                                    href="/mba-html-discovery/password-reset.html"
+                                    class="authPage__link"
+                                >
+
+                                    <span class="back">
+
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true"
+                                        >
+                                            <path d="M19 12H5M11 5l-7 7 7 7"></path>
+                                        </svg>
+
+                                        Back to reset
+
+                                    </span>
+
+                                </a>
+
+                            </p>
+
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- ===================== RIGHT: VISUAL PANEL ===================== -->
+                <div class="authPage__visual">
+                    <div class="authPage__shapes" aria-hidden="true">
+                        <span class="shape shape--circle"></span>
+                        <span class="shape shape--square"></span>
+                        <span class="shape shape--triangle"></span>
+                    </div>
+
+                    <div class="authPage__visualInner">
+
+                        <div class="authPage__media ">
+                            <div class="swiper joinNetworkSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="/mba-html-discovery/assets/college-student-CXcl8EgH.webp" alt="Fundraising professionals networking at a TFN community event" width="1104" height="614" fetchpriority="high" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/mba-html-discovery/assets/college-student-CXcl8EgH.webp" alt="TFN members collaborating during a fundraising workshop" width="1104" height="614" loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="/mba-html-discovery/assets/college-student-CXcl8EgH.webp" alt="TFN community celebrating a successful campaign" width="1104" height="614" loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                        </div>
+
+                        <div class="authPage__content reveal delay-2">
+                            <h2 class="authPage__visualHeading">Join The
+                                Discover MBA </h2>
+                            <p class="authPage__visualText">
+                                Explore leading MBA brands and discover the
+                                programmes, institutions, and opportunities
+                                shaping the future of business education.
+                                Compare what each brand offers, understand their
+                                unique strengths, and find the right fit for
+                                your career and professional goals.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+        <!-- <include src="public/partials/footer.html"></include> -->
+        <!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+
+        <script>
+    (function () {
+      var selectors = '.reveal, .revealleft, .revealright';
+      var elements = document.querySelectorAll(selectors);
+
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      elements.forEach(function (el) { observer.observe(el); });
+    })();
+  </script>
+
+  <script>
+
+const params = new URLSearchParams(window.location.search);
+const email = params.get('email') || '';
+
+if (email === '') {
+
+    window.location.href =
+        '/mba-html-discovery/password-reset.html';
+
+} else {
+
+    document.getElementById('otpIntroText').textContent =
+        "We've sent a 4 digit code to " + email + ". Enter it below to continue.";
+}
+
+
+document
+    .getElementById('verifyOtpForm')
+    .addEventListener('submit', async function (e) {
+
+        e.preventDefault();
+
+
+        const otp =
+            document
+                .getElementById('otp')
+                .value
+                .trim();
+
+
+        const otpError =
+            document.getElementById('otpError');
+
+
+        const verifyBtn =
+            document.getElementById('verifyBtn');
+
+
+        const btnText =
+            verifyBtn.querySelector('.btn-text');
+
+
+        const btnSpinner =
+            verifyBtn.querySelector('.btn-spinner');
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Clear error
+        |--------------------------------------------------------------------------
+        */
+
+        otpError.style.display = 'none';
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Validate OTP
+        |--------------------------------------------------------------------------
+        */
+
+        if (!/^[0-9]{4}$/.test(otp)) {
+
+            otpError.textContent =
+                'Please enter a valid 4 digit code';
+
+            otpError.style.display = 'block';
+
+            return;
+        }
+
+
+        /*
+        |--------------------------------------------------------------------------
+        | Loading
+        |--------------------------------------------------------------------------
+        */
+
+        verifyBtn.disabled = true;
+
+        btnText.style.display = 'none';
+
+        btnSpinner.style.display = 'inline';
+
+
+        try {
+
+            const response =
+                await fetch(
+                    '/mba-html-discovery/api/auth/verify-otp.php',
+                    {
+                        method: 'POST',
+
+                        headers: {
+                            'Content-Type':
+                                'application/json'
+                        },
+
+                        credentials: 'include',
+
+                        body: JSON.stringify({
+                            email: email,
+                            otp: otp
+                        })
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            if (!result.success) {
+
+                otpError.textContent =
+                    result.message;
+
+                otpError.style.display =
+                    'block';
+
+                return;
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | OTP verified
+            |--------------------------------------------------------------------------
+            */
+
+            window.location.href =
+                '/mba-html-discovery/new-password.html';
+
+
+        } catch (error) {
+
+            console.error(error);
+
+            otpError.textContent =
+                'Something went wrong. Please try again.';
+
+            otpError.style.display =
+                'block';
+
+
+        } finally {
+
+            verifyBtn.disabled = false;
+
+            btnText.style.display = 'inline';
+
+            btnSpinner.style.display = 'none';
+
+        }
+
+    });
+
+</script>
+
+    </body>
+</html>
