@@ -20,10 +20,7 @@
 main {
   padding-top: var(--header-height);
 }
-.site-wrap {
-  display: flex;
-  gap: 50px;
-}
+
 .site-header.is-scrolled {
   box-shadow: 0 8px 24px rgba(13, 27, 62, 0.1);
 }
@@ -86,6 +83,10 @@ main {
 /* =========================================================
    NAV
 ========================================================= */
+nav {
+  display: flex;
+  gap: 30px;
+}
 
 .site-nav__mobile-topbar {
   display: none;
@@ -642,6 +643,9 @@ main {
 ========================================================= */
 
 @media (max-width: 991px) {
+  nav {
+    display: block;
+  }
   .site-header__toggle {
     display: inline-flex;
   }
@@ -833,10 +837,10 @@ main {
 ========================================================= */
 
 @media (max-width: 576px) {
-  .site-header__toggle {
+  /* .site-header__toggle {
     position: absolute;
     right: 0px;
-  }
+  } */
   .site-header__inner {
     min-height: 72px;
   }
