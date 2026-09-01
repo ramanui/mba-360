@@ -642,9 +642,6 @@ main {
 ========================================================= */
 
 @media (max-width: 991px) {
-  .site-wrap {
-    display: none;
-  }
   .site-header__toggle {
     display: inline-flex;
   }
@@ -756,7 +753,7 @@ main {
   .site-header__actions--mobile {
     display: flex;
 
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
 
     margin-top: 24px;
@@ -836,6 +833,10 @@ main {
 ========================================================= */
 
 @media (max-width: 576px) {
+  .site-header__toggle {
+    position: absolute;
+    right: 0px;
+  }
   .site-header__inner {
     min-height: 72px;
   }
