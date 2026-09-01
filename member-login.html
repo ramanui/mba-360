@@ -37,36 +37,50 @@
     </head>
     <body>
 
-        <include src="public/partials/header.html"></include>
+        <!-- <include src="public/partials/header.html"></include> -->
 
         <main>
             <section class="authPage">
 
                 <!-- ===================== LEFT: SIGN IN FORM ===================== -->
                 <div class="authPage__form">
-                    <div class="authPage__formInner">
 
-                        <h1 class="authPage__heading">Sign in to your
+                    <div class="authPage__formInner">
+                        <div class="admin-logo">
+                            <a class="site-header__logo-link"
+                                href="/demo/our-project/"
+                                aria-label="MBA 360 Home">
+                                <img class="site-header__logo"
+                                    src="/discovermba.webp"
+                                    alt="MBA 360" width="300" height="79"
+                                    loading="eager">
+                            </a>
+                        </div>
+                        <h1 class="authPage__heading sign">Sign in to your
                             account</h1>
                         <p class="authPage__subtext">
-                            <a href="#" class="authPage__link">Create an account
+                            Don't have an account? <a
+                                href="/demo/our-project/member-registration.html"
+                                class="authPage__link">Create an account
                             </a></p>
 
                         <form id="registrationForm" class="authPage__formFields"
-                            action="https://www.thefundraisersnetwork.com/member-registration"
+                            action="/demo/our-project/member-registration"
                             method="POST" novalidate>
                             <input type="hidden" name="_token"
                                 value="DMohSvZBZqO15HHj3EWib4WIzo8ategHoo6sI5wu"
                                 autocomplete="off">
 
                             <div class="formGroup">
-                                <label for="loginEmail">Email Address <span
-                                        class="formGroup__req">*</span></label>
+                                <!-- <label for="loginEmail">Email Address <span
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="email" id="loginEmail"
                                         name="email"
                                         placeholder="Enter your email"
                                         autocomplete="email" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="1.8"
@@ -83,13 +97,15 @@
                             </div>
 
                             <div class="formGroup">
-                                <label for="loginPassword">Password <span
-                                        class="formGroup__req">*</span></label>
+                                <!-- <label for="loginPassword">Password <span
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="password" id="loginPassword"
                                         name="password"
-                                        placeholder="Enter your password (min 6 characters)"
+                                        placeholder="Enter your password"
                                         autocomplete="new-password" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <button type="button"
                                         class="formGroup__toggle"
                                         data-toggle="loginPassword"
@@ -107,8 +123,8 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="formGroup__strength"
-                                    id="passwordStrength"></div>
+                                <!-- <div class="formGroup__strength"
+                                    id="passwordStrength"></div> -->
                                 <div class="formGroup__error"
                                     id="passwordError">Please enter a
                                     password</div>
@@ -121,19 +137,23 @@
                                     style="display:none;"><i
                                         class="fas fa-spinner fa-spin"></i>
                                     Logging in...</span>
-                                <svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
+                                <svg
+                                    width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none"
+                                    aria-hidden="true"><path
+                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg>
                             </button>
 
                             <p class="forgot">
                                 <span class="forgot-password-txt">Forgot
                                     password? </span>
                                 <a href="/demo/our-project/password-reset.html">
-                                    <span>click here to reset </span>
+                                    <span class="authPage__link">click here to
+                                        reset </span>
                                 </a>
                             </p>
                         </form>

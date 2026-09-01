@@ -10,3 +10,4 @@ import "./college-detail-fix.js";
 import "./college-exam-detail.js";
 import "./faq.js";
 import "../css/footer.css";
+import "../js/menu.js";

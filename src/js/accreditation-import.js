@@ -3,3 +3,4 @@ import "../css/common.css";
 import "../css/glossary.css";
 import "../css/exam-college-bba-lp.css";
 import "../css/footer.css";
+import "../js/menu.js";

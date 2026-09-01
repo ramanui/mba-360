@@ -3,6 +3,7 @@ import "../css/common.css";
 import "../css/home.css";
 import "../css/entrace-exam.css";
 import "../css/alumni-speak.css";
+import "../js/menu.js";
 import "../js/home.js";
 import "../js/alumni-speak.js";
 

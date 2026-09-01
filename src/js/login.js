@@ -62,6 +62,31 @@ import "swiper/css/pagination";
 
 
 
+function positionStar(input, star) {
+  const canvas = positionStar.canvas || (positionStar.canvas = document.createElement('canvas'));
+  const ctx = canvas.getContext('2d');
+  const cs = getComputedStyle(input);
+
+  ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+  const textWidth = ctx.measureText(input.placeholder).width;
+
+  const paddingLeft = parseFloat(cs.paddingLeft);
+  star.style.left = (paddingLeft + textWidth + 4) + 'px'; // +4px small gap
+}
+
+// Sabhi required inputs ke liye
+document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
+  const input = wrap.querySelector('input');
+  const star = wrap.querySelector('.formGroup__requiredStar');
+  if (input && star) {
+    positionStar(input, star);
+    window.addEventListener('resize', () => positionStar(input, star));
+  }
+});
+
+
+
+
     /* ---------- Password show/hide (works for both password fields) ---------- */
     document.querySelectorAll(".formGroup__toggle").forEach((toggleBtn) => {
       toggleBtn.addEventListener("click", () => {

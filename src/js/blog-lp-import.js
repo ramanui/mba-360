@@ -3,3 +3,4 @@ import "../css/common.css";
 import "../css/blog-main.css";
 import "./videoLibrary.js";
 import "../css/footer.css";
+import "../js/menu.js";

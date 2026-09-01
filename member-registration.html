@@ -37,7 +37,7 @@
     </head>
     <body>
 
-        <include src="public/partials/header.html"></include>
+        <!-- <include src="public/partials/header.html"></include> -->
 
         <main>
             <section class="authPage">
@@ -45,10 +45,21 @@
                 <!-- ===================== LEFT: SIGN IN FORM ===================== -->
                 <div class="authPage__form">
                     <div class="authPage__formInner">
+                        <div class="admin-logo">
+                            <a class="site-header__logo-link"
+                                href="/demo/our-project/"
+                                aria-label="MBA 360 Home">
+                                <img class="site-header__logo"
+                                    src="/discovermba.webp"
+                                    alt="MBA 360" width="300" height="79"
+                                    loading="eager">
+                            </a>
+                        </div>
 
                         <h1 class="authPage__heading">Create your account</h1>
                         <p class="authPage__subtext">Already have an account? <a
-                                href="#" class="authPage__link">Log in</a></p>
+                                href="/demo/our-project/member-login.html"
+                                class="authPage__link">Log in</a></p>
 
                         <form id="registrationForm" class="authPage__formFields"
                             action="https://www.thefundraisersnetwork.com/member-registration"
@@ -58,12 +69,14 @@
                                 autocomplete="off">
 
                             <div class="formGroup">
-                                <label for="name">Full Name <span
-                                        class="formGroup__req">*</span></label>
+                                <!-- <label for="name">Full Name <span
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="text" id="name" name="name"
-                                        placeholder="Enter your full name"
+                                        placeholder="Enter your full name "
                                         required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24"
                                         fill="none"
@@ -73,8 +86,9 @@
                                         stroke-linejoin="round"
                                         aria-hidden="true">
 
-                                        <path d="M8 8a4 4 0 1 0 8 0" />
-                                        <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7" />
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                        <path
+                                            d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"></path>
 
                                     </svg>
                                 </div>
@@ -84,13 +98,15 @@
                             </div>
 
                             <div class="formGroup">
-                                <label for="loginEmail">Email Address <span
-                                        class="formGroup__req">*</span></label>
+                                <!-- <label for="loginEmail">Email Address <span
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="email" id="loginEmail"
                                         name="email"
                                         placeholder="Enter your email"
                                         autocomplete="email" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="1.8"
@@ -107,8 +123,8 @@
                             </div>
 
                             <div class="formGroup">
-                                <label for="phone">Phone Number <span
-                                        class="formGroup__optional">(Optional)</span></label>
+                                <!-- <label for="phone">Phone Number <span
+                                        class="formGroup__optional">(Optional)</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="tel" id="phone" name="phone"
                                         placeholder="Enter your phone number (optional)">
@@ -128,7 +144,7 @@
                             </div>
 
                             <!-- Studying In — custom select (react-select style hooks) -->
-                            <div class="formGroup">
+                            <div class="formGroup mt-1">
                                 <div
                                     class="careers_register_select_card studyin_modal white_bg"
                                     id="studyingInSelect">
@@ -150,8 +166,8 @@
                                                     an option</div>
                                             </div>
                                             <div class="css-1wy0on6">
-                                                <span
-                                                    class="css-1uei4ir-indicatorSeparator"></span>
+                                                <!-- <span
+                                                    class="css-1uei4ir-indicatorSeparator"></span> -->
                                                 <div
                                                     class="css-4vyd02-indicatorContainer"
                                                     aria-hidden="true">
@@ -162,7 +178,7 @@
                                                         height="1em" width="1em"
                                                         xmlns="http://www.w3.org/2000/svg">
                                                         <path fill="none"
-                                                            d="M0 0h24v24H0V0z"></path><path
+                                                            d></path><path
                                                             d="M7 10l5 5 5-5H7z"></path>
                                                     </svg>
                                                 </div>
@@ -200,13 +216,15 @@
                             </div>
 
                             <div class="formGroup">
-                                <label for="loginPassword">Password <span
-                                        class="formGroup__req">*</span></label>
+                                <!-- <label for="loginPassword">Password <span
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="password" id="loginPassword"
                                         name="password"
-                                        placeholder="Enter your password (min 6 characters)"
+                                        placeholder="Enter your password"
                                         autocomplete="new-password" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <button type="button"
                                         class="formGroup__toggle"
                                         data-toggle="loginPassword"
@@ -224,23 +242,25 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <div class="formGroup__strength"
-                                    id="passwordStrength"></div>
+                                <!-- <div class="formGroup__strength"
+                                    id="passwordStrength"></div> -->
                                 <div class="formGroup__error"
                                     id="passwordError">Please enter a
                                     password</div>
                             </div>
 
                             <div class="formGroup">
-                                <label for="password_confirmation">Confirm
+                                <!-- <label for="password_confirmation">Confirm
                                     Password <span
-                                        class="formGroup__req">*</span></label>
+                                        class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="password"
                                         id="password_confirmation"
                                         name="password_confirmation"
                                         placeholder="Confirm your password"
                                         autocomplete="new-password" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
                                     <button type="button"
                                         class="formGroup__toggle"
                                         data-toggle="password_confirmation"
@@ -294,19 +314,23 @@
                                     and conditions</div>
                             </div>
 
-                            <button type="submit" class="authPage__submit"
+                            <button type="submit"
+                                class="authPage__submit authPage__submit--shine"
                                 id="submitBtn">
                                 <span class="btn-text">Register Now</span>
                                 <span class="btn-spinner"
                                     style="display:none;"><i
                                         class="fas fa-spinner fa-spin"></i>
                                     Registering...</span>
-                                <svg viewBox="0 0 24 24" fill="none"
-                                    stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M5 12h14M13 5l7 7-7 7" />
-                                </svg>
+                                <svg
+                                    width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none"
+                                    aria-hidden="true"><path
+                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg>
                             </button>
                         </form>
 

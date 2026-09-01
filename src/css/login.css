@@ -2,6 +2,50 @@
    AUTH PAGE (Sign In) — split screen layout
    Reuses .container, .reveal, .delay-* conventions from common.css
 ========================================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  max-width: 100%;
+}
+
+.authPage__form {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-orange) transparent;
+}
+
+/* Chrome, Edge, Safari */
+.authPage__form::-webkit-scrollbar {
+  width: 7px;
+}
+
+.authPage__form::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+.authPage__form::-webkit-scrollbar-thumb {
+  background: var(--c-orange);
+  border-radius: 10px;
+}
+
+.authPage__form::-webkit-scrollbar-thumb:hover {
+  background: var(--c-orange);
+}
 
 .authPage {
   --ap-green: #0c6f56;
@@ -18,26 +62,58 @@
   width: 100%;
 }
 
+.formGroup__inputWrap {
+  position: relative;
+}
+
+.formGroup__requiredStar {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-orange);
+  pointer-events: none;
+  font-family: inherit; /* input jaisa hi font */
+}
+
+.formGroup__inputWrap input:focus + .formGroup__requiredStar,
+.formGroup__inputWrap input:not(:placeholder-shown) + .formGroup__requiredStar {
+  display: none;
+}
+
 /* ---------------------------------------------------------------
    LEFT — Sign in form
 --------------------------------------------------------------- */
-.authPage__form {
-  flex: 0 0 44%;
-  max-width: 44%;
+
+.create {
+  font-size: 0.95rem;
+}
+.back {
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+.authPage__form {
+  flex: 0 0 34%;
+  max-width: 34%;
+  display: flex;
+  /* align-items: center; */
   justify-content: center;
   background-color: #ffffff;
-  padding: 48px 24px;
+  padding: 34px 50px;
   box-sizing: border-box;
   max-height: 100vh;
   overflow-y: auto;
 }
+.admin-logo {
+  margin-bottom: 1rem;
+  margin-top: 0rem;
+}
 
 .authPage__formInner {
   width: 100%;
-  max-width: 440px;
-  padding: 24px 0;
+  max-width: 100%;
+  padding: 0px 0;
 }
 
 .authPage__logo {
@@ -47,22 +123,27 @@
 }
 
 .authPage__logo img {
-  width: 180px;
+  width: 100px;
   height: auto;
   display: block;
 }
+.forgot {
+  width: 100%;
+  text-align: center;
+}
 
 .authPage__heading {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #111827;
   margin-bottom: 10px;
+  margin-top: 2.5rem;
 }
 
 .authPage__subtext {
   font-size: 0.95rem;
   color: var(--ap-text-muted);
-  margin-bottom: 32px;
+  margin-bottom: 1.2rem;
 }
 
 .authPage__link {
@@ -71,13 +152,14 @@
   text-decoration: none;
 }
 .authPage__link:hover {
-  text-decoration: underline;
+  /* text-decoration: underline; */
+  color: var(--c-blue);
 }
 
 .authPage__formFields {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px 16px;
+  gap: 18px 16px;
 }
 
 .formGroup {
@@ -113,12 +195,12 @@
 .formGroup input {
   width: 100%;
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--ap-input-text);
   background-color: var(--ap-input-bg);
   border: 1px solid transparent;
   border-radius: 8px;
-  padding: 15px 44px 15px 16px;
+  padding: 11px 44px 11px 16px;
   outline: none;
   box-sizing: border-box;
   transition:
@@ -139,8 +221,8 @@
 .formGroup__icon {
   position: absolute;
   right: 16px;
-  width: 19px;
-  height: 19px;
+  width: 18px;
+  height: 18px;
   color: var(--c-orange);
   pointer-events: none;
 }
@@ -173,9 +255,9 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
-  min-height: 52px;
+  min-height: 50px;
   background-color: var(--c-blue);
   color: #ffffff;
   border: none;
@@ -184,16 +266,22 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 16px 24px;
+  padding: 14px 20px;
   margin-top: 8px;
   cursor: pointer;
   transition:
-    background-color 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
+    background-color 0.2s,
+    transform 0.15s,
+    box-shadow 0.2s;
+}
+.authPage__submit:hover svg {
+  transform: translate(2px, -2px);
+}
+.authPage__submit svg {
+  transition: transform 0.2s;
 }
 .authPage__submit:hover {
-  background-color: var(--ap-green-dark);
+  background-color: var(--c-orange);
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(12, 111, 86, 0.25);
 }
@@ -202,16 +290,29 @@
   box-shadow: none;
 }
 .authPage__submit:focus-visible {
-  outline: 2px solid var(--ap-green-dark);
+  outline: 2px solid var(--c-orange);
   outline-offset: 2px;
 }
 
 .authPage__submit svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
+.authPage__submit {
+  animation: chatBounce 2.4s ease-in-out infinite;
+}
+
+@keyframes chatBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
 .authPage__forgot {
   flex: 1 1 100%;
   text-align: center;
@@ -224,7 +325,7 @@
 .formGroup__strength {
   font-size: 0.8rem;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 4px;
   min-height: 1em;
 }
 .formGroup__strength--weak {
@@ -284,16 +385,19 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 50px;
+  min-height: 40px;
   background-color: var(--ap-input-bg);
   border: 1px solid transparent;
   border-radius: 8px;
-  padding: 14px 12px 14px 16px;
+  padding: 11px 12px 11px 16px;
   box-sizing: border-box;
   cursor: pointer;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
+}
+.mt-1 {
+  margin-top: 1rem;
 }
 
 .css-8rmoi2-control:hover {
@@ -444,8 +548,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   margin-top: 2px;
   background-color: #ffffff;
   border: 1.5px solid #c7ccd6;
@@ -453,6 +557,7 @@
   transition:
     background-color 0.15s ease,
     border-color 0.15s ease;
+  margin-top: 0.3rem;
 }
 
 .formGroup__checkBox svg {
@@ -541,17 +646,17 @@
 
 .shape {
   position: absolute;
-  border-color: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.09);
   border-style: solid;
 }
 
 .shape--circle {
-  width: 130px;
-  height: 130px;
+  width: 80px;
+  height: 80px;
   border-width: 2px;
   border-radius: 50%;
-  top: 8%;
-  left: 6%;
+  bottom: 3%;
+  left: 60%;
   animation: apFloatY 7s ease-in-out infinite;
 }
 
@@ -561,7 +666,7 @@
   border-width: 2px;
   border-radius: 12px;
   bottom: 14%;
-  left: 3%;
+  left: 10%;
   transform: rotate(18deg);
   animation: apFloatX 9s ease-in-out infinite;
 }
@@ -571,8 +676,9 @@
   height: 0;
   border-left: 55px solid transparent;
   border-right: 55px solid transparent;
-  border-bottom: 90px solid rgba(255, 255, 255, 0.1);
-  top: 42%;
+  border-bottom: 90px solid rgba(255, 255, 255, 0.04);
+  border-top: 0;
+  bottom: 18%;
   right: 4%;
   animation: apFloatY 8s ease-in-out infinite reverse;
 }
@@ -613,7 +719,7 @@
 .joinNetworkSwiper img {
   width: 100%;
   height: auto;
-  aspect-ratio: 1104 / 614;
+  aspect-ratio: 1104 / 534;
   object-fit: cover;
 }
 
@@ -687,7 +793,15 @@
 /* =========================================================================
    RESPONSIVE — descending order
 ========================================================================= */
+
 @media (max-width: 1199px) {
+  .authPage__form {
+    padding: 38px 30px 38px 30px;
+  }
+  .authPage__form {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
   .authPage__icons {
     grid-template-columns: repeat(2, 60px);
     right: 16px;
@@ -718,11 +832,16 @@
   .authPage__visual {
     padding: 48px 24px 60px;
   }
+
+  .authPage__form {
+    max-height: none;
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
   .authPage__media {
-    margin-bottom: 48px;
+    margin-bottom: 32px;
   }
   .authPage__icons {
     position: static;
@@ -741,16 +860,52 @@
 }
 
 @media (max-width: 600px) {
+  .shape--circle {
+    width: 40px;
+    height: 40px;
+    bottom: 30%;
+    right: 4%;
+    bottom: 45%;
+  }
+  .shape--square {
+    width: 40px;
+    height: 40px;
+    bottom: 2%;
+  }
+  .shape--triangle {
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 60px solid rgba(255, 255, 255, 0.1);
+    border-top: 0;
+    bottom: 18%;
+    right: 4%;
+    animation: apFloatY 8s ease-in-out infinite reverse;
+  }
   .authPage__form {
-    padding: 36px 18px;
+    padding: 16px 18px 30px 18px;
   }
   .authPage__visual {
-    padding: 40px 18px 48px;
+    padding: 54px 18px 48px;
   }
   .authPage__heading {
     font-size: 1.5rem;
   }
   .authPage__icons {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .authPage__heading {
+    margin-top: 1.5rem;
+  }
+  .authPage__submit {
+    min-height: 44px;
+    padding: 10px 20px;
+  }
+  .formGroup__toggle .iconEye,
+  .formGroup__icon,
+  .css-4vyd02-indicatorContainer svg {
+    width: 16px;
+    height: 16px;
   }
 }
