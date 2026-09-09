@@ -827,7 +827,7 @@ nav {
     display: none;
   }
 
-  .downloadBrochureBtn {
+  .site-header__inner .downloadBrochureBtn {
     width: 100%;
   }
 }
