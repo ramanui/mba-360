@@ -5,7 +5,6 @@ import "swiper/css/pagination";
   "use strict";
 
   document.addEventListener("DOMContentLoaded", async () => {
-
     // =========================================
     // Load Swiper dynamically
     // =========================================
@@ -28,7 +27,6 @@ import "swiper/css/pagination";
     const Swiper = swiperModule.default;
     const { Autoplay, Pagination } = modulesModule;
 
-
     // =========================================
     // Join Network Swiper
     // =========================================
@@ -36,73 +34,70 @@ import "swiper/css/pagination";
     const sliderEl = document.querySelector(".joinNetworkSwiper");
 
     if (sliderEl) {
+      new Swiper(sliderEl, {
+        modules: [Autoplay, Pagination],
 
-     new Swiper(sliderEl, {
-  modules: [Autoplay, Pagination],
+        loop: true,
+        speed: 700,
 
-  loop: true,
-  speed: 700,
+        slidesPerView: 1,
+        spaceBetween: 20,
 
-  slidesPerView: 1,
-  spaceBetween: 20,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        },
 
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-
-  pagination: {
-    el: sliderEl.querySelector(".swiper-pagination"),
-    clickable: true,
-  },
-});
-
+        pagination: {
+          el: sliderEl.querySelector(".swiper-pagination"),
+          clickable: true,
+        },
+      });
     }
 
+    function positionStar(input, star) {
+      const canvas =
+        positionStar.canvas ||
+        (positionStar.canvas = document.createElement("canvas"));
+      const ctx = canvas.getContext("2d");
+      const cs = getComputedStyle(input);
 
+      ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
+      const textWidth = ctx.measureText(input.placeholder).width;
 
-function positionStar(input, star) {
-  const canvas = positionStar.canvas || (positionStar.canvas = document.createElement('canvas'));
-  const ctx = canvas.getContext('2d');
-  const cs = getComputedStyle(input);
+      const paddingLeft = parseFloat(cs.paddingLeft);
+      star.style.left = paddingLeft + textWidth + 4 + "px"; // +4px small gap
+    }
 
-  ctx.font = `${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
-  const textWidth = ctx.measureText(input.placeholder).width;
-
-  const paddingLeft = parseFloat(cs.paddingLeft);
-  star.style.left = (paddingLeft + textWidth + 4) + 'px'; // +4px small gap
-}
-
-// Sabhi required inputs ke liye
-document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
-  const input = wrap.querySelector('input');
-  const star = wrap.querySelector('.formGroup__requiredStar');
-  if (input && star) {
-    positionStar(input, star);
-    window.addEventListener('resize', () => positionStar(input, star));
-  }
-});
-
-
-
+    // Sabhi required inputs ke liye
+    document.querySelectorAll(".formGroup__inputWrap").forEach((wrap) => {
+      const input = wrap.querySelector("input");
+      const star = wrap.querySelector(".formGroup__requiredStar");
+      if (input && star) {
+        positionStar(input, star);
+        window.addEventListener("resize", () => positionStar(input, star));
+      }
+    });
 
     /* ---------- Password show/hide (works for both password fields) ---------- */
     document.querySelectorAll(".formGroup__toggle").forEach((toggleBtn) => {
       toggleBtn.addEventListener("click", () => {
         const targetId = toggleBtn.getAttribute("data-toggle");
-        const input = targetId ? document.getElementById(targetId) : toggleBtn.closest(".formGroup__inputWrap").querySelector("input");
+        const input = targetId
+          ? document.getElementById(targetId)
+          : toggleBtn.closest(".formGroup__inputWrap").querySelector("input");
         if (!input) return;
 
         const isHidden = input.type === "password";
         input.type = isHidden ? "text" : "password";
         toggleBtn.setAttribute("aria-pressed", String(isHidden));
-        toggleBtn.setAttribute("aria-label", isHidden ? "Hide password" : "Show password");
+        toggleBtn.setAttribute(
+          "aria-label",
+          isHidden ? "Hide password" : "Show password",
+        );
       });
     });
-
-
-
 
     /* ---------- Custom Select: "Studying In" ---------- */
     const selectCard = document.getElementById("studyingInSelect");
@@ -192,7 +187,9 @@ document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
       const confirmInput = document.getElementById("password_confirmation");
       const termsInput = document.getElementById("terms");
       const submitBtn = document.getElementById("submitBtn");
-      const educationLevelInput = document.getElementById("educationLevelInput");
+      const educationLevelInput = document.getElementById(
+        "educationLevelInput",
+      );
 
       const nameError = document.getElementById("nameError");
       const emailError = document.getElementById("emailError");
@@ -217,25 +214,37 @@ document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
       regForm.addEventListener("submit", (e) => {
         let isValid = true;
 
-        if (!nameInput.value.trim()) { showError(nameInput, nameError); isValid = false; }
-        else clearError(nameInput, nameError);
+        if (!nameInput.value.trim()) {
+          showError(nameInput, nameError);
+          isValid = false;
+        } else clearError(nameInput, nameError);
 
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(emailInput.value.trim())) { showError(emailInput, emailError); isValid = false; }
-        else clearError(emailInput, emailError);
+        if (!emailPattern.test(emailInput.value.trim())) {
+          showError(emailInput, emailError);
+          isValid = false;
+        } else clearError(emailInput, emailError);
 
-        if (phoneInput.value.trim() && !/^[0-9+\-\s()]{7,15}$/.test(phoneInput.value.trim())) {
-          showError(phoneInput, phoneError); isValid = false;
+        if (
+          phoneInput.value.trim() &&
+          !/^[0-9+\-\s()]{7,15}$/.test(phoneInput.value.trim())
+        ) {
+          showError(phoneInput, phoneError);
+          isValid = false;
         } else {
           phoneInput.classList.remove("is-invalid");
           phoneError.classList.remove("is-visible");
         }
 
-        if (passwordInput.value.length < 6) { showError(passwordInput, passwordError); isValid = false; }
-        else clearError(passwordInput, passwordError);
+        if (passwordInput.value.length < 6) {
+          showError(passwordInput, passwordError);
+          isValid = false;
+        } else clearError(passwordInput, passwordError);
 
-        if (!confirmInput.value || confirmInput.value !== passwordInput.value) { showError(confirmInput, confirmError); isValid = false; }
-        else clearError(confirmInput, confirmError);
+        if (!confirmInput.value || confirmInput.value !== passwordInput.value) {
+          showError(confirmInput, confirmError);
+          isValid = false;
+        } else clearError(confirmInput, confirmError);
 
         if (!educationLevelInput.value) {
           studyingInErrorField.classList.add("is-visible");
@@ -244,10 +253,15 @@ document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
           studyingInErrorField.classList.remove("is-visible");
         }
 
-        if (!termsInput.checked) { termsError.classList.add("is-visible"); isValid = false; }
-        else termsError.classList.remove("is-visible");
+        if (!termsInput.checked) {
+          termsError.classList.add("is-visible");
+          isValid = false;
+        } else termsError.classList.remove("is-visible");
 
-        if (!isValid) { e.preventDefault(); return; }
+        if (!isValid) {
+          e.preventDefault();
+          return;
+        }
 
         const btnText = submitBtn.querySelector(".btn-text");
         const btnSpinner = submitBtn.querySelector(".btn-spinner");
@@ -265,16 +279,24 @@ document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
         });
       };
       liveClear(nameInput, nameError, (v) => v.trim().length > 0);
-      liveClear(emailInput, emailError, (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()));
+      liveClear(emailInput, emailError, (v) =>
+        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()),
+      );
       liveClear(passwordInput, passwordError, (v) => v.length >= 6);
-      liveClear(confirmInput, confirmError, (v) => v === passwordInput.value && v.length > 0);
+      liveClear(
+        confirmInput,
+        confirmError,
+        (v) => v === passwordInput.value && v.length > 0,
+      );
       termsInput.addEventListener("change", () => {
         if (termsInput.checked) termsError.classList.remove("is-visible");
       });
     }
 
     /* ---------- Reveal on scroll (single observer, project convention) ---------- */
-    const revealEls = document.querySelectorAll(".reveal, .revealleft, .revealright");
+    const revealEls = document.querySelectorAll(
+      ".reveal, .revealleft, .revealright",
+    );
     if (revealEls.length) {
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver(
@@ -286,13 +308,12 @@ document.querySelectorAll('.formGroup__inputWrap').forEach(wrap => {
               }
             });
           },
-          { threshold: 0.15 }
+          { threshold: 0.15 },
         );
         revealEls.forEach((el) => observer.observe(el));
       } else {
         revealEls.forEach((el) => el.classList.add("visible"));
       }
     }
-
   });
 })();

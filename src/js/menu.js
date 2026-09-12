@@ -220,22 +220,52 @@
       popular: {
         label: "By Location",
         items: [
-          ["Best MBA Colleges in Delhi NCR", "/demo/our-project/college/"],
-          ["Best MBA Colleges in Bangalore", "/demo/our-project/college/"],
-          ["Best MBA Colleges in Chennai", "/demo/our-project/college/"],
-          ["Best MBA Colleges in Mumbai", "/demo/our-project/college/"],
-          ["Best MBA Colleges in Kolkata", "/demo/our-project/college/"],
-          ["Best MBA Colleges in Hyderabad", "/demo/our-project/college/"],
+          [
+            "Best MBA Colleges in Delhi NCR",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Best MBA Colleges in Bangalore",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Best MBA Colleges in Chennai",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Best MBA Colleges in Mumbai",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Best MBA Colleges in Kolkata",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Best MBA Colleges in Hyderabad",
+            "/demo/our-project/college/college-detail.html",
+          ],
         ],
       },
 
       category: {
         label: "By Programmes offered",
         items: [
-          ["Full Time Programmes", "/demo/our-project/college/"],
-          ["Part Time Programmes", "/demo/our-project/college/"],
-          ["Online Programmes", "/demo/our-project/college/"],
-          ["Hybrid Programmes", "/demo/our-project/college/"],
+          [
+            "Full Time Programmes",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Part Time Programmes",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Online Programmes",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Hybrid Programmes",
+            "/demo/our-project/college/college-detail.html",
+          ],
         ],
       },
 
@@ -243,9 +273,18 @@
         label: "By Type",
         items: [
           ["IIMs", "/demo/our-project/college/"],
-          ["Government MBA Colleges", "/demo/our-project/college/"],
-          ["Private MBA Colleges", "/demo/our-project/college/"],
-          ["Deemed University", "/demo/our-project/college/"],
+          [
+            "Government MBA Colleges",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Private MBA Colleges",
+            "/demo/our-project/college/college-detail.html",
+          ],
+          [
+            "Deemed University",
+            "/demo/our-project/college/college-detail.html",
+          ],
         ],
       },
 
@@ -276,16 +315,16 @@
       },
 
       trending: [
-        ["MBA vs PGDM", "/demo/our-project/college/"],
-        ["IIM fees 2026", "/demo/our-project/college/"],
-        ["FMS Delhi admission", "/demo/our-project/college/"],
-        ["MBA without CAT", "/demo/our-project/college/"],
-        ["Highest salary MBA", "/demo/our-project/college/"],
+        ["MBA vs PGDM", "/demo/our-project/course/"],
+        ["IIM fees 2026", "/demo/our-project/course/"],
+        ["FMS Delhi admission", "/demo/our-project/course/"],
+        ["MBA without CAT", "/demo/our-project/course/"],
+        ["Highest salary MBA", "/demo/our-project/course/"],
       ],
 
       button: {
         text: "View all MBA Colleges",
-        url: "/demo/our-project/college/",
+        url: "/demo/our-project/course/",
       },
     },
 
@@ -293,27 +332,27 @@
       popular: {
         label: "Popular BBA Colleges",
         items: [
-          ["Christ University", "/demo/our-project/college/"],
-          ["NMIMS", "/demo/our-project/college/"],
-          ["Symbiosis", "/demo/our-project/college/"],
-          ["IIM Indore IPM", "/demo/our-project/college/"],
+          ["Christ University", "/demo/course/"],
+          ["NMIMS", "/demo/our-project/course/"],
+          ["Symbiosis", "/demo/our-project/course/"],
+          ["IIM Indore IPM", "/demo/our-project/course/"],
         ],
       },
 
       category: {
         label: "By Location",
         items: [
-          ["BBA Colleges in Delhi NCR", "/colleges/"],
-          ["BBA Colleges in Mumbai", "/colleges/bba/mumbai"],
-          ["BBA Colleges in Bangalore", "/colleges/bba/bangalore"],
-          ["BBA Colleges in Pune", "/colleges/bba/pune"],
+          ["BBA Colleges in Delhi NCR", "/course/"],
+          ["BBA Colleges in Mumbai", "/course"],
+          ["BBA Colleges in Bangalore", "/course"],
+          ["BBA Colleges in Pune", "/course"],
         ],
       },
 
       level: {
         label: "By Type",
         items: [
-          ["Government Colleges", "/colleges/bba/government"],
+          ["Government Colleges", "/colleges/"],
           ["Private Colleges", "/colleges/bba/private"],
           ["Deemed Universities", "/colleges/bba/deemed"],
         ],
@@ -355,7 +394,7 @@
 
       button: {
         text: "View all BBA Colleges",
-        url: "/colleges/",
+        url: "/course/",
       },
     },
 
@@ -789,28 +828,28 @@
       popular: {
         label: "Popular Stories",
         items: [
-          ["IIM Alumni Journeys", "/alumni/iim-journeys"],
-          ["Career Switch Stories", "/alumni/career-switch"],
-          ["Entrepreneur Alumni", "/alumni/entrepreneurs"],
-          ["Leadership Stories", "/alumni/leaders"],
+          ["IIM Alumni Journeys", "/alumni/"],
+          ["Career Switch Stories", "/alumni/"],
+          ["Entrepreneur Alumni", "/alumni/"],
+          ["Leadership Stories", "/alumni/"],
         ],
       },
 
       category: {
         label: "Engage",
         items: [
-          ["Mentorship Programme", "/alumni/mentorship"],
-          ["Alumni Meetups", "/alumni/meetups"],
-          ["Referral Network", "/alumni/referrals"],
+          ["Mentorship Programme", "/alumni/"],
+          ["Alumni Meetups", "/alumni/"],
+          ["Referral Network", "/alumni/"],
         ],
       },
 
       level: {
         label: "By Batch",
         items: [
-          ["Batch of 2024", "/alumni/batch-2024"],
-          ["Batch of 2023", "/alumni/batch-2023"],
-          ["Batch of 2022", "/alumni/batch-2022"],
+          ["Batch of 2024", "/alumni/"],
+          ["Batch of 2023", "/alumni/"],
+          ["Batch of 2022", "/alumni/"],
         ],
       },
 

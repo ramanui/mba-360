@@ -7,6 +7,37 @@
    SPJIMR PROFILE PAGE — page-specific styles
    Built on tokens/utilities from style.css
 ========================================================= */
+
+[id="dates"] {
+  scroll-margin-top: 100px;
+}
+[id="programmes"] {
+  scroll-margin-top: 100px;
+}
+[id="reviews"] {
+  scroll-margin-top: 100px;
+}
+[id="dates"] {
+  scroll-margin-top: 100px;
+}
+[id="ranking"] {
+  scroll-margin-top: 70px;
+}
+[id="overview"] {
+  scroll-margin-top: 100px;
+}
+[id="placements"] {
+  scroll-margin-top: 100px;
+}
+[id="reviews"] {
+  scroll-margin-top: 140px;
+}
+[id="similar"] {
+  scroll-margin-top: 140px;
+}
+[id="alumni"] {
+  scroll-margin-top: 40px;
+}
 .clg-heroTop-wrap {
   display: flex;
   gap: 20px;

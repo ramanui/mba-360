@@ -228,6 +228,12 @@ ul {
   padding-top: 0 !important;
 }
 
+.site-header__logo {
+  width: auto;
+  height: 58px;
+  display: block;
+}
+
 /* ============================================
    Admission Journey (Subscribe) Section
    ============================================= */

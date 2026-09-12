@@ -30,10 +30,6 @@
             type="font/woff2"
             crossorigin>
 
-        <!-- Critical CSS inline (BEST for FCP) -->
-        <style>
-
-</style>
     </head>
     <body>
 
@@ -247,7 +243,7 @@
                             </ul> -->
                         </div>
 
-                        <div class="authPage__content reveal delay-2">
+                        <div class="authPage__content ">
                             <h2 class="authPage__visualHeading">Join The
                                 Discover MBA </h2>
                             <p class="authPage__visualText">
@@ -274,26 +270,6 @@
         <!-- ============================================================
        SCROLL REVEAL SCRIPT
   ============================================================ -->
-
-        <script>
-    (function () {
-      var selectors = '.reveal, .revealleft, .revealright';
-      var elements = document.querySelectorAll(selectors);
-
-      if (!elements.length) return;
-
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.25 });
-
-      elements.forEach(function (el) { observer.observe(el); });
-    })();
-  </script>
 
     </body>
 </html>

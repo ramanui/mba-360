@@ -6,6 +6,7 @@ import "../css/filter.css";
 import "../css/exam-college-bba-lp.css";
 import "../css/faq.css";
 import "../css/footer.css";
+import "./menu.js";
 import "./course.js";
 import "./faq.js";
 import "./filter.js";
