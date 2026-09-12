@@ -24,7 +24,7 @@ import "swiper/css/navigation";
     iframe.title = "Alumni video story";
     iframe.setAttribute(
       "allow",
-      "autoplay; encrypted-media; picture-in-picture"
+      "autoplay; encrypted-media; picture-in-picture",
     );
     iframe.setAttribute("allowfullscreen", "");
     iframe.setAttribute("loading", "lazy");
@@ -68,10 +68,7 @@ import "swiper/css/navigation";
     });
 
     document.addEventListener("keydown", function (e) {
-      if (
-        e.key === "Escape" &&
-        modal.getAttribute("data-open") === "true"
-      ) {
+      if (e.key === "Escape" && modal.getAttribute("data-open") === "true") {
         closeVideo();
       }
     });
@@ -174,11 +171,6 @@ import "swiper/css/navigation";
   }
 })();
 
-
-
-
-
-
 (function () {
   "use strict";
 
@@ -221,51 +213,39 @@ import "swiper/css/navigation";
 
   // });
 
-
   /* ---------- Tabs ---------- */
 
   document.querySelectorAll("[data-tablist]").forEach(function (list) {
-
-    var buttons = Array.from(
-      list.querySelectorAll("[role='tab']")
-    );
+    var buttons = Array.from(list.querySelectorAll("[role='tab']"));
 
     function activateTab(btn) {
-
       buttons.forEach(function (b) {
-
         b.setAttribute("aria-selected", "false");
         b.setAttribute("tabindex", "-1");
 
-        var panel = document.getElementById(
-          b.getAttribute("aria-controls")
-        );
+        var panel = document.getElementById(b.getAttribute("aria-controls"));
 
         if (panel) {
           panel.hidden = true;
         }
-
       });
 
       btn.setAttribute("aria-selected", "true");
       btn.setAttribute("tabindex", "0");
 
       var activePanel = document.getElementById(
-        btn.getAttribute("aria-controls")
+        btn.getAttribute("aria-controls"),
       );
 
       if (activePanel) {
         activePanel.hidden = false;
       }
-
     }
 
     buttons.forEach(function (btn) {
-
       btn.addEventListener("click", function () {
         activateTab(btn);
       });
-
     });
 
     // Initial active tab
@@ -277,9 +257,311 @@ import "swiper/css/navigation";
     if (active) {
       activateTab(active);
     }
-
   });
-
 })();
 
+("use strict");
 
+/* =========================================================
+   College Tab Navigation — Scroll Spy
+   ========================================================= */
+
+(function initScrollSpy() {
+  const OFFSET = 100;
+  const navLinks = [...document.querySelectorAll(".clg-tabnav__list a")];
+
+  if (!navLinks.length) return;
+
+  let sections = [];
+  let ticking = false;
+  let isClickScrolling = false;
+
+  /* ---------------- Cache Sections ---------------- */
+
+  function cacheSections() {
+    sections = navLinks
+      .map((link) => {
+        const target = document.querySelector(link.getAttribute("href"));
+
+        return target
+          ? {
+              id: target.id,
+              element: target,
+              top: 0,
+            }
+          : null;
+      })
+      .filter(Boolean);
+
+    updateSectionPositions();
+  }
+
+  function updateSectionPositions() {
+    const scrollY = window.scrollY;
+
+    sections.forEach((section) => {
+      section.top = section.element.getBoundingClientRect().top + scrollY;
+    });
+  }
+
+  /* ---------------- Active Link ---------------- */
+
+  function setActiveLink(activeLink) {
+    navLinks.forEach((link) => {
+      link.removeAttribute("aria-current");
+    });
+
+    if (activeLink) {
+      activeLink.setAttribute("aria-current", "true");
+    }
+  }
+
+  /* ---------------- Scroll Spy ---------------- */
+
+  function updateActiveSection() {
+    ticking = false;
+
+    if (isClickScrolling || !sections.length) return;
+
+    const scrollY = window.scrollY + OFFSET + 5;
+    let currentSection = sections[0];
+
+    for (const section of sections) {
+      if (scrollY >= section.top) {
+        currentSection = section;
+      } else {
+        break;
+      }
+    }
+
+    const activeLink = navLinks.find(
+      (link) => link.getAttribute("href") === `#${currentSection.id}`,
+    );
+
+    setActiveLink(activeLink);
+  }
+
+  function requestUpdate() {
+    if (ticking) return;
+
+    ticking = true;
+    requestAnimationFrame(updateActiveSection);
+  }
+
+  /* ---------------- Click Navigation ---------------- */
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const target = document.querySelector(link.getAttribute("href"));
+
+      if (!target) return;
+
+      isClickScrolling = true;
+
+      setActiveLink(link);
+
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY - OFFSET;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+
+      /*
+       * Smooth scroll normally finishes quickly.
+       * Recalculate positions after scrolling.
+       */
+      setTimeout(() => {
+        cacheSections();
+        isClickScrolling = false;
+        updateActiveSection();
+      }, 600);
+    });
+  });
+
+  /* ---------------- Init ---------------- */
+
+  cacheSections();
+  updateActiveSection();
+
+  window.addEventListener("scroll", requestUpdate, {
+    passive: true,
+  });
+
+  window.addEventListener(
+    "resize",
+    () => {
+      cacheSections();
+      requestUpdate();
+    },
+    { passive: true },
+  );
+
+  window.addEventListener("load", () => {
+    cacheSections();
+    updateActiveSection();
+  });
+})();
+
+/* =========================================================
+   Reveal Animation
+   ========================================================= */
+
+(function initRevealAnimation() {
+  const elements = document.querySelectorAll(
+    ".reveal, .revealleft, .revealright",
+  );
+
+  if (!elements.length || !("IntersectionObserver" in window)) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.25,
+    },
+  );
+
+  elements.forEach((element) => {
+    observer.observe(element);
+  });
+})();
+
+/* =========================================================
+   Tabs
+   ========================================================= */
+
+(function initTabs() {
+  const tabLists = document.querySelectorAll("[data-tablist]");
+
+  if (!tabLists.length) return;
+
+  tabLists.forEach((tabList) => {
+    const buttons = [...tabList.querySelectorAll("[role='tab']")];
+
+    if (!buttons.length) return;
+
+    /* ---------------- Get Tab Panels ---------------- */
+
+    const panels = buttons
+      .map((button) => {
+        const panelId = button.getAttribute("aria-controls");
+
+        return panelId ? document.getElementById(panelId) : null;
+      })
+      .filter(Boolean);
+
+    /* ---------------- Find Scroll Container ---------------- */
+
+    function getScrollParent(element) {
+      let parent = element.parentElement;
+
+      while (parent) {
+        const style = getComputedStyle(parent);
+        const canScroll =
+          (style.overflowX === "auto" || style.overflowX === "scroll") &&
+          parent.scrollWidth > parent.clientWidth;
+
+        if (canScroll) {
+          return parent;
+        }
+
+        parent = parent.parentElement;
+      }
+
+      return null;
+    }
+
+    /* ---------------- Center Active Tab ---------------- */
+
+    function centerActiveTab(button) {
+      const scrollContainer = getScrollParent(button);
+
+      if (!scrollContainer) return;
+
+      const containerRect = scrollContainer.getBoundingClientRect();
+
+      const buttonRect = button.getBoundingClientRect();
+
+      const offset =
+        buttonRect.left +
+        buttonRect.width / 2 -
+        (containerRect.left + containerRect.width / 2);
+
+      const maxScroll =
+        scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+      const newScrollLeft = Math.max(
+        0,
+        Math.min(scrollContainer.scrollLeft + offset, maxScroll),
+      );
+
+      scrollContainer.scrollTo({
+        left: newScrollLeft,
+        behavior: "smooth",
+      });
+    }
+
+    /* ---------------- Activate Tab ---------------- */
+
+    function activateTab(button, shouldCenter = false) {
+      buttons.forEach((tab) => {
+        const isActive = tab === button;
+
+        tab.setAttribute("aria-selected", String(isActive));
+
+        tab.setAttribute("tabindex", isActive ? "0" : "-1");
+      });
+
+      panels.forEach((panel) => {
+        const isActive = panel.id === button.getAttribute("aria-controls");
+
+        panel.hidden = !isActive;
+
+        /*
+         * Keep display property in sync with hidden state
+         * for existing CSS/layout compatibility.
+         */
+        panel.style.display = isActive ? "block" : "none";
+      });
+
+      if (shouldCenter) {
+        centerActiveTab(button);
+      }
+    }
+
+    /* ---------------- Click Events ---------------- */
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        activateTab(button, true);
+      });
+    });
+
+    /* ---------------- Initial Tab ---------------- */
+
+    const activeTab =
+      buttons.find(
+        (button) => button.getAttribute("aria-selected") === "true",
+      ) || buttons[0];
+
+    if (activeTab) {
+      /*
+       * Do not center on initial page load.
+       * This prevents unwanted horizontal page movement.
+       */
+      activateTab(activeTab);
+    }
+  });
+})();

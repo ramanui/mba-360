@@ -495,50 +495,5 @@ scroll-margin-top: 100px;
         <include src="public/partials/footer.html"></include>
         <script type="module" src="src/js/glossary-import.js" defer></script>
 
-        <script>
-document.addEventListener('DOMContentLoaded', function () {
-  const searchInput = document.getElementById('glossarySearch');
-  const groups = document.querySelectorAll('.glossary-group');
-  const navLinks = document.querySelectorAll('.glossary-alpha-nav a');
-
-  // live search filter
-  if (searchInput) {
-    searchInput.addEventListener('input', () => {
-      const q = searchInput.value.trim().toLowerCase();
-
-      groups.forEach((group) => {
-        const terms = group.querySelectorAll('.glossary-term');
-        let anyVisible = false;
-
-        terms.forEach((term) => {
-          const match = term.textContent.toLowerCase().includes(q);
-          term.classList.toggle('is-hidden', !match);
-          if (match) anyVisible = true;
-        });
-
-        group.classList.toggle('is-hidden', !anyVisible);
-      });
-    });
-  }
-
-  // highlight nav letter based on scroll position
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const letter = entry.target.getAttribute('data-group-letter');
-          navLinks.forEach((a) => a.classList.remove('is-active'));
-          const activeLink = document.querySelector(`.glossary-alpha-nav a[data-letter="${letter}"]`);
-          if (activeLink) activeLink.classList.add('is-active');
-        }
-      });
-    },
-    { rootMargin: '-20% 0px -70% 0px' }
-  );
-
-  groups.forEach((group) => observer.observe(group));
-});
-</script>
-
     </body>
 </html>

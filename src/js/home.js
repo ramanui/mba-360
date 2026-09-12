@@ -1,9 +1,7 @@
-
 import "swiper/css";
 import "swiper/css/navigation";
 
 document.addEventListener("DOMContentLoaded", async () => {
-
   // =========================================
   // Load Swiper dynamically
   // =========================================
@@ -12,10 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   function loadSwiper() {
     if (!swiperPromise) {
-      swiperPromise = Promise.all([
-        import("swiper"),
-        import("swiper/modules"),
-      ]);
+      swiperPromise = Promise.all([import("swiper"), import("swiper/modules")]);
     }
 
     return swiperPromise;
@@ -26,7 +21,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   const Swiper = swiperModule.default;
   const { Navigation, Keyboard } = modulesModule;
 
-
   // =========================================
   // SEARCH HOME ANIMATION
   // =========================================
@@ -36,26 +30,21 @@ document.addEventListener("DOMContentLoaded", async () => {
     "IIM Ahmedabad and top B-schools...",
     "MBA admissions, fees and placements...",
     "Executive MBA and career growth...",
-    "colleges, compare and decide..."
+    "colleges, compare and decide...",
   ];
 
   const input = document.getElementById("searchBox");
 
   if (input) {
-
     let wordIndex = 0;
     let charIndex = 0;
     let deleting = false;
 
     function animatePlaceholder() {
-
       const word = words[wordIndex];
 
       if (!deleting) {
-
-        input.placeholder =
-          "Search for " +
-          word.substring(0, charIndex + 1);
+        input.placeholder = "Search for " + word.substring(0, charIndex + 1);
 
         charIndex++;
 
@@ -65,12 +54,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           setTimeout(animatePlaceholder, 1500);
           return;
         }
-
       } else {
-
-        input.placeholder =
-          "Search for " +
-          word.substring(0, charIndex - 1);
+        input.placeholder = "Search for " + word.substring(0, charIndex - 1);
 
         charIndex--;
 
@@ -80,15 +65,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
 
-      setTimeout(
-        animatePlaceholder,
-        deleting ? 60 : 120
-      );
+      setTimeout(animatePlaceholder, deleting ? 60 : 120);
     }
 
     animatePlaceholder();
   }
-
 
   // =========================================
   // COLLEGE SLIDER
@@ -97,27 +78,21 @@ document.addEventListener("DOMContentLoaded", async () => {
   const swiperEl = document.querySelector(".collegeSwiper");
 
   if (swiperEl) {
+    const wrapperEl = swiperEl.querySelector(".swiper-wrapper");
 
-    const wrapperEl =
-      swiperEl.querySelector(".swiper-wrapper");
-
-    const filterBtns =
-      document.querySelectorAll(".collegeFilterBtn");
+    const filterBtns = document.querySelectorAll(".collegeFilterBtn");
 
     if (wrapperEl) {
-
       // Store original slides
       const allSlides = [...wrapperEl.children];
 
       let collegeSwiper = null;
-
 
       // ---------------------------------------
       // Responsive slides
       // ---------------------------------------
 
       function getSlidesPerView() {
-
         const w = window.innerWidth;
 
         if (w >= 2000) return 4;
@@ -130,48 +105,38 @@ document.addEventListener("DOMContentLoaded", async () => {
         return 1.15;
       }
 
-
       // ---------------------------------------
       // Build College Swiper
       // ---------------------------------------
 
       function buildSwiper() {
-
         if (collegeSwiper) {
           collegeSwiper.destroy(true, true);
           collegeSwiper = null;
         }
 
-        const totalSlides =
-          wrapperEl.children.length;
+        const totalSlides = wrapperEl.children.length;
 
-        const slidesPerView =
-          getSlidesPerView();
+        const slidesPerView = getSlidesPerView();
 
         collegeSwiper = new Swiper(swiperEl, {
-
           modules: [Navigation],
 
           slidesPerView: 1.15,
 
           spaceBetween: 20,
 
-          loop:
-            totalSlides >
-            Math.ceil(slidesPerView),
+          loop: totalSlides > Math.ceil(slidesPerView),
 
           rewind: false,
 
           navigation: {
-            nextEl:
-              document.querySelector("#collegeNext"),
+            nextEl: document.querySelector("#collegeNext"),
 
-            prevEl:
-              document.querySelector("#collegePrev"),
+            prevEl: document.querySelector("#collegePrev"),
           },
 
           breakpoints: {
-
             480: {
               slidesPerView: 1.2,
               spaceBetween: 10,
@@ -196,10 +161,8 @@ document.addEventListener("DOMContentLoaded", async () => {
               slidesPerView: 4.5,
               spaceBetween: 22,
             },
-
           },
         });
-
 
         // Re-init navigation
         if (collegeSwiper.navigation) {
@@ -208,61 +171,37 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
       }
 
-
       // Initial College Slider
       buildSwiper();
-
 
       // ---------------------------------------
       // College Filter
       // ---------------------------------------
 
       filterBtns.forEach((btn) => {
-
         btn.addEventListener("click", () => {
-
           filterBtns.forEach((b) => {
-            b.setAttribute(
-              "aria-pressed",
-              "false"
-            );
+            b.setAttribute("aria-pressed", "false");
           });
 
-          btn.setAttribute(
-            "aria-pressed",
-            "true"
-          );
+          btn.setAttribute("aria-pressed", "true");
 
-
-          const filter =
-            btn.dataset.filter;
-
+          const filter = btn.dataset.filter;
 
           const slides =
             filter === "all"
-
               ? allSlides
-
-              : allSlides.filter(
-                  (slide) =>
-                    slide.dataset.category === filter
-                );
-
+              : allSlides.filter((slide) => slide.dataset.category === filter);
 
           wrapperEl.innerHTML = "";
-
 
           slides.forEach((slide) => {
             wrapperEl.appendChild(slide);
           });
 
-
           buildSwiper();
-
         });
-
       });
-
 
       // ---------------------------------------
       // College Slider Resize
@@ -271,39 +210,24 @@ document.addEventListener("DOMContentLoaded", async () => {
       let resizeTimer;
 
       window.addEventListener("resize", () => {
-
         clearTimeout(resizeTimer);
 
         resizeTimer = setTimeout(() => {
-
           buildSwiper();
-
         }, 200);
-
       });
-
     }
   }
-
 
   // =========================================
   // ENTRANCE EXAM SLIDER
   // =========================================
 
-  const entranceSlider =
-    document.querySelector(
-      ".entranceExams__slider"
-    );
-
+  const entranceSlider = document.querySelector(".entranceExams__slider");
 
   if (entranceSlider) {
-
     new Swiper(entranceSlider, {
-
-      modules: [
-        Navigation,
-        Keyboard
-      ],
+      modules: [Navigation, Keyboard],
 
       slidesPerView: 1.15,
 
@@ -313,117 +237,70 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       speed: 700,
 
-
       // autoplay: {
       //   delay: 2500,
       //   disableOnInteraction: false,
       //   pauseOnMouseEnter: true,
       // },
 
-
       navigation: {
-
         nextEl: "#entranceNext",
 
         prevEl: "#entrancePrev",
-
       },
-
 
       keyboard: {
         enabled: true,
       },
 
-
       breakpoints: {
-
         600: {
-
           slidesPerView: 2.2,
 
           spaceBetween: 20,
-
         },
 
         992: {
-
           slidesPerView: 3.2,
 
           spaceBetween: 24,
-
         },
 
         1500: {
-
           slidesPerView: 3.5,
 
           spaceBetween: 24,
-
         },
 
         1800: {
-
           slidesPerView: 4.5,
 
           spaceBetween: 24,
-
         },
-
       },
-
     });
-
   }
-
 });
 
-  
+(function () {
+  var selectors = ".reveal, .revealleft, .revealright";
+  var elements = document.querySelectorAll(selectors);
 
-//search home animation
-const words = [
-    "CAT, XAT and MBA exams...",
-    "IIM Ahmedabad and top B-schools...",
-    "MBA admissions, fees and placements...",
-    "Executive MBA and career growth...",
-    "colleges, compare and decide..."
-];
+  if (!elements.length) return;
 
-const input = document.getElementById("searchBox");
-
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
-
-function animatePlaceholder(){
-
-    const word = words[wordIndex];
-
-    if(!deleting){
-        input.placeholder = "Search for " + word.substring(0, charIndex + 1);
-        charIndex++;
-
-        if(charIndex === word.length){
-            deleting = true;
-            setTimeout(animatePlaceholder,1500);
-            return;
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
-    }else{
-        input.placeholder = "Search for " + word.substring(0, charIndex - 1);
-        charIndex--;
+      });
+    },
+    { threshold: 0.25 },
+  );
 
-        if(charIndex === 0){
-            deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
-        }
-    }
-
-    setTimeout(animatePlaceholder, deleting ? 60 : 120);
-}
-
-animatePlaceholder();
-
-
-
-
-
-
+  elements.forEach(function (el) {
+    observer.observe(el);
+  });
+})();

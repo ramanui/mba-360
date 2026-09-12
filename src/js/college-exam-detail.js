@@ -1,10 +1,5 @@
-
-
-
-
 (function () {
   "use strict";
-
 
   /* ---------- Generic accordion ---------- */
   function wireToggle(trigger, container) {
@@ -22,51 +17,43 @@
     });
   }
 
-
   // click Expand
 
-document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
+  document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
+    var target = null;
 
-  var target = null;
+    // Accordion ke andar hai
+    var accordion = trigger.closest(".clg-accordion");
 
-  // Accordion ke andar hai
-  var accordion = trigger.closest(".clg-accordion");
+    if (accordion) {
+      target = accordion.querySelector(
+        "#" + trigger.getAttribute("data-toggle-target"),
+      );
+    } else {
+      // About card jaisa normal element
+      target = document.getElementById(
+        trigger.getAttribute("data-toggle-target"),
+      );
+    }
 
-  if (accordion) {
-    target = accordion.querySelector(
-      "#" + trigger.getAttribute("data-toggle-target")
-    );
-  } else {
-    // About card jaisa normal element
-    target = document.getElementById(
-      trigger.getAttribute("data-toggle-target")
-    );
-  }
-
-  if (target) {
-    wireToggle(trigger, target);
-  }
-
-});
-
+    if (target) {
+      wireToggle(trigger, target);
+    }
+  });
 
   /* ---------- Tabs ---------- */
   document.querySelectorAll("[data-tablist]").forEach(function (list) {
-
     var buttons = Array.from(list.querySelectorAll("[role='tab']"));
 
     buttons.forEach(function (btn) {
-
       btn.addEventListener("click", function () {
-
         buttons.forEach(function (b) {
-
           b.setAttribute("aria-selected", "false");
 
           var scope = list.parentElement;
 
           var panel = scope.querySelector(
-            "#" + CSS.escape(b.getAttribute("aria-controls"))
+            "#" + CSS.escape(b.getAttribute("aria-controls")),
           );
 
           if (panel) panel.hidden = true;
@@ -77,179 +64,186 @@ document.querySelectorAll("[data-toggle-target]").forEach(function (trigger) {
         var scope = list.parentElement;
 
         var activePanel = scope.querySelector(
-          "#" + CSS.escape(btn.getAttribute("aria-controls"))
+          "#" + CSS.escape(btn.getAttribute("aria-controls")),
         );
 
         if (activePanel) activePanel.hidden = false;
-
       });
-
     });
-
   });
 
+  /* ---------------- Center Active Tab ---------------- */
+
+  function centerActiveTab(button) {
+    const scrollContainer = getScrollParent(button);
+
+    if (!scrollContainer) return;
+
+    const containerRect = scrollContainer.getBoundingClientRect();
+
+    const buttonRect = button.getBoundingClientRect();
+
+    const offset =
+      buttonRect.left +
+      buttonRect.width / 2 -
+      (containerRect.left + containerRect.width / 2);
+
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    const newScrollLeft = Math.max(
+      0,
+      Math.min(scrollContainer.scrollLeft + offset, maxScroll),
+    );
+
+    scrollContainer.scrollTo({
+      left: newScrollLeft,
+      behavior: "smooth",
+    });
+  }
 
   /* ---------- Scroll reveal ---------- */
-  var revealTargets = document.querySelectorAll(".reveal, .revealleft, .revealright");
+  var revealTargets = document.querySelectorAll(
+    ".reveal, .revealleft, .revealright",
+  );
 
   if ("IntersectionObserver" in window && revealTargets.length) {
-
-    var revealObserver = new IntersectionObserver(function (entries, obs) {
-
-      entries.forEach(function (entry) {
-
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          obs.unobserve(entry.target);
-        }
-
-      });
-
-    }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -40px 0px"
-    });
+    var revealObserver = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -40px 0px",
+      },
+    );
 
     revealTargets.forEach(function (el) {
       revealObserver.observe(el);
     });
-
   } else {
-
     revealTargets.forEach(function (el) {
       el.classList.add("visible");
     });
-
   }
 
-  
+  /* ---------- Scroll Spy ---------- */
 
-  
-
-/* ---------- Scroll Spy ---------- */
-
-/* =========================================================
+  /* =========================================================
    Tab Navigation — Scroll Spy + Center-on-Click
    - Load: sirf active tab set hota hai (no auto-scroll)
    - Scroll: sirf active tab class update hoti hai (no auto-center)
    - Click: tab center mein smooth scroll hokar aata hai
    ========================================================= */
 
-var OFFSET = 100;
+  var OFFSET = 100;
 
-var navLinks = [...document.querySelectorAll(".clg-tabnav__list a")];
+  var navLinks = [...document.querySelectorAll(".clg-tabnav__list a")];
 
-var sections = navLinks
-  .map(link => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
+  var sections = navLinks
+    .map((link) => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
 
-/* ---------- Set active tab (DOM class only) ---------- */
-function setActiveLink(activeLink) {
-  navLinks.forEach(link => link.removeAttribute("aria-current"));
-  if (activeLink) activeLink.setAttribute("aria-current", "true");
-}
-
-/* ---------- Find the real horizontally-scrollable ancestor ---------- */
-function getScrollParent(el) {
-  var node = el;
-  while (node) {
-    var style = getComputedStyle(node);
-    var overflowX = style.overflowX;
-    var canScroll =
-      (overflowX === "auto" || overflowX === "scroll") &&
-      node.scrollWidth > node.clientWidth;
-
-    if (canScroll) return node;
-    node = node.parentElement;
+  /* ---------- Set active tab (DOM class only) ---------- */
+  function setActiveLink(activeLink) {
+    navLinks.forEach((link) => link.removeAttribute("aria-current"));
+    if (activeLink) activeLink.setAttribute("aria-current", "true");
   }
-  return null;
-}
 
-/* ---------- Center a tab horizontally inside its scroll container ---------- */
-/* Ye function sirf isliye call hoti hai jab USER khud click kare */
-function centerActiveTab(link) {
-  if (!link) return;
+  /* ---------- Find the real horizontally-scrollable ancestor ---------- */
+  function getScrollParent(el) {
+    var node = el;
+    while (node) {
+      var style = getComputedStyle(node);
+      var overflowX = style.overflowX;
+      var canScroll =
+        (overflowX === "auto" || overflowX === "scroll") &&
+        node.scrollWidth > node.clientWidth;
 
-  var scrollContainer = getScrollParent(link);
-  if (!scrollContainer) return;
+      if (canScroll) return node;
+      node = node.parentElement;
+    }
+    return null;
+  }
 
-  var containerRect = scrollContainer.getBoundingClientRect();
-  var linkRect = link.getBoundingClientRect();
+  /* ---------- Center a tab horizontally inside its scroll container ---------- */
+  /* Ye function sirf isliye call hoti hai jab USER khud click kare */
+  function centerActiveTab(link) {
+    if (!link) return;
 
-  var offset =
-    (linkRect.left + linkRect.width / 2) -
-    (containerRect.left + containerRect.width / 2);
+    var scrollContainer = getScrollParent(link);
+    if (!scrollContainer) return;
 
-  var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-  var newScrollLeft = scrollContainer.scrollLeft + offset;
+    var containerRect = scrollContainer.getBoundingClientRect();
+    var linkRect = link.getBoundingClientRect();
 
-  newScrollLeft = Math.max(0, Math.min(newScrollLeft, maxScroll));
+    var offset =
+      linkRect.left +
+      linkRect.width / 2 -
+      (containerRect.left + containerRect.width / 2);
 
-  scrollContainer.scrollTo({
-    left: newScrollLeft,
-    behavior: "smooth"
+    var maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+    var newScrollLeft = scrollContainer.scrollLeft + offset;
+
+    newScrollLeft = Math.max(0, Math.min(newScrollLeft, maxScroll));
+
+    scrollContainer.scrollTo({
+      left: newScrollLeft,
+      behavior: "smooth",
+    });
+  }
+
+  /* ---------- Click: page scroll + active set + tab center ---------- */
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      var target = document.querySelector(this.getAttribute("href"));
+      if (!target) return;
+
+      var y = target.getBoundingClientRect().top + window.pageYOffset - OFFSET;
+
+      window.scrollTo({
+        top: y,
+        behavior: "smooth",
+      });
+
+      setActiveLink(this);
+      centerActiveTab(this);
+    });
   });
-}
 
-/* ---------- Click: page scroll + active set + tab center ---------- */
-navLinks.forEach(function (link) {
+  /* ---------- Scroll Spy: sirf active class update, NO centering ---------- */
+  function updateActive() {
+    let current = sections[0];
 
-  link.addEventListener("click", function (e) {
-
-    e.preventDefault();
-
-    var target = document.querySelector(this.getAttribute("href"));
-    if (!target) return;
-
-    var y = target.getBoundingClientRect().top + window.pageYOffset - OFFSET;
-
-    window.scrollTo({
-      top: y,
-      behavior: "smooth"
+    sections.forEach(function (section) {
+      if (window.pageYOffset + OFFSET >= section.offsetTop) {
+        current = section;
+      }
     });
 
-    setActiveLink(this);
-    centerActiveTab(this);   
+    const active = navLinks.find(
+      (link) => link.getAttribute("href") === "#" + current.id,
+    );
 
+    setActiveLink(active);
+  }
+
+  window.addEventListener("scroll", updateActive, { passive: true });
+
+  window.addEventListener("load", function () {
+    updateActive();
   });
 
-});
+  window.addEventListener("resize", updateActive);
 
-/* ---------- Scroll Spy: sirf active class update, NO centering ---------- */
-function updateActive() {
-
-  let current = sections[0];
-
-  sections.forEach(function (section) {
-    if (window.pageYOffset + OFFSET >= section.offsetTop) {
-      current = section;
-    }
-  });
-
-  const active = navLinks.find(link => link.getAttribute("href") === "#" + current.id);
-
-  setActiveLink(active);   
-
-}
-
-window.addEventListener("scroll", updateActive, { passive: true });
-
-
-window.addEventListener("load", function () {
-  updateActive();   
-});
-
-window.addEventListener("resize", updateActive);
-
-
-
-
-
-
-
-
-/* ---- 3) Entrance Exams Slider — lazy-loaded Swiper (CWV safe) ---- */
-  var entranceSlider = document.querySelector('.entranceExams__slider');
+  /* ---- 3) Entrance Exams Slider — lazy-loaded Swiper (CWV safe) ---- */
+  var entranceSlider = document.querySelector(".entranceExams__slider");
 
   if (entranceSlider) {
     var swiperLoaded = false;
@@ -259,10 +253,10 @@ window.addEventListener("resize", updateActive);
       swiperLoaded = true;
 
       Promise.all([
-        import('swiper'),
-        import('swiper/modules'),
-        import('swiper/css'),
-        import('swiper/css/navigation')
+        import("swiper"),
+        import("swiper/modules"),
+        import("swiper/css"),
+        import("swiper/css/navigation"),
       ]).then(function (mods) {
         var Swiper = mods[0].default;
         var Navigation = mods[1].Navigation;
@@ -277,8 +271,8 @@ window.addEventListener("resize", updateActive);
           speed: 700,
 
           navigation: {
-            nextEl: '#entranceNext',
-            prevEl: '#entrancePrev',
+            nextEl: "#entranceNext",
+            prevEl: "#entrancePrev",
           },
 
           keyboard: {
@@ -295,15 +289,18 @@ window.addEventListener("resize", updateActive);
       });
     };
 
-    if ('IntersectionObserver' in window) {
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            initEntranceSlider();
-            observer.unobserve(entranceSlider);
-          }
-        });
-      }, { rootMargin: '200px 0px' });
+    if ("IntersectionObserver" in window) {
+      var observer = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              initEntranceSlider();
+              observer.unobserve(entranceSlider);
+            }
+          });
+        },
+        { rootMargin: "200px 0px" },
+      );
 
       observer.observe(entranceSlider);
     } else {
@@ -312,35 +309,50 @@ window.addEventListener("resize", updateActive);
     }
   }
 
+  //   const modal = document.getElementById("videoModal");
+  // const frame = document.getElementById("videoFrame");
 
+  // document.querySelectorAll(".alumniCardPlay").forEach(btn => {
+  //     btn.addEventListener("click", () => {
+  //         frame.src = btn.dataset.video;
+  //         modal.classList.add("active");
+  //     });
+  // });
 
-//   const modal = document.getElementById("videoModal");
-// const frame = document.getElementById("videoFrame");
+  // function closeVideo(){
+  //     modal.classList.remove("active");
+  //     frame.src = "";
+  // }
 
-// document.querySelectorAll(".alumniCardPlay").forEach(btn => {
-//     btn.addEventListener("click", () => {
-//         frame.src = btn.dataset.video;
-//         modal.classList.add("active");
-//     });
-// });
+  // document.querySelector(".videoModal__close").addEventListener("click", closeVideo);
+  // document.querySelector(".videoModal__overlay").addEventListener("click", closeVideo);
 
-// function closeVideo(){
-//     modal.classList.remove("active");
-//     frame.src = "";
-// }
-
-// document.querySelector(".videoModal__close").addEventListener("click", closeVideo);
-// document.querySelector(".videoModal__overlay").addEventListener("click", closeVideo);
-
-const header = document.querySelector(".clg-header"); if (!header) return; const modal = header.querySelector("#videoModal-second"); const frame = header.querySelector("#videoFrame-second"); if (!modal || !frame) return; /* ---------- Open Video ---------- */ header.querySelectorAll(".alumniCardPlay").forEach(btn => { btn.addEventListener("click", () => { frame.src = btn.dataset.video; modal.classList.add("active"); }); }); /* ---------- Close Video ---------- */ function closeVideo() { modal.classList.remove("active"); frame.src = ""; } /* ---------- Close Button ---------- */ const closeBtn = modal.querySelector(".videoModal__close"); if (closeBtn) { closeBtn.addEventListener("click", closeVideo); } /* ---------- Overlay ---------- */ const overlay = modal.querySelector(".videoModal__overlay"); if (overlay) { overlay.addEventListener("click", closeVideo); }
-
-
-
-
+  const header = document.querySelector(".clg-header");
+  if (!header) return;
+  const modal = header.querySelector("#videoModal-second");
+  const frame = header.querySelector("#videoFrame-second");
+  if (!modal || !frame) return;
+  /* ---------- Open Video ---------- */ header
+    .querySelectorAll(".alumniCardPlay")
+    .forEach((btn) => {
+      btn.addEventListener("click", () => {
+        frame.src = btn.dataset.video;
+        modal.classList.add("active");
+      });
+    });
+  /* ---------- Close Video ---------- */ function closeVideo() {
+    modal.classList.remove("active");
+    frame.src = "";
+  }
+  /* ---------- Close Button ---------- */ const closeBtn =
+    modal.querySelector(".videoModal__close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeVideo);
+  }
+  /* ---------- Overlay ---------- */ const overlay = modal.querySelector(
+    ".videoModal__overlay",
+  );
+  if (overlay) {
+    overlay.addEventListener("click", closeVideo);
+  }
 })();
-
-
-
-
-
-
