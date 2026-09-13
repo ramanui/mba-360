@@ -9,34 +9,34 @@
 ========================================================= */
 
 [id="dates"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180px;
 }
 [id="programmes"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180;
 }
 [id="reviews"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180x;
 }
 [id="dates"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180px;
 }
 [id="ranking"] {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 150px;
 }
 [id="overview"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180px;
 }
 [id="placements"] {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 180px;
 }
 [id="reviews"] {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 220px;
 }
 [id="similar"] {
-  scroll-margin-top: 140px;
+  scroll-margin-top: 220px;
 }
 [id="alumni"] {
-  scroll-margin-top: 40px;
+  scroll-margin-top: 120px;
 }
 .clg-heroTop-wrap {
   display: flex;
@@ -467,7 +467,7 @@
 
 .clg-tabnav {
   position: sticky;
-  top: 0;
+  top: 80px;
   z-index: 50;
   background: #ffffff;
   /* border-bottom: 2px solid rgba(13, 27, 62, 1); */
@@ -562,7 +562,7 @@
   flex-direction: column;
   gap: 20px;
   position: sticky;
-  top: 110px;
+  top: 190px;
 }
 
 .clg-section hr {
