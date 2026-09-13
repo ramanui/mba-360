@@ -1,0 +1,1734 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <title>College LP</title>
+        <meta name="description" content="DGTL">
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="./favicon.svg"
+            sizes="32x32">
+        <link rel="apple-touch-icon" href="./favicon.svg" sizes="180x180">
+
+        <link rel="preload" as="image"
+            href="../src/assets/images/stay-updated-with-mba-news.webp"
+            fetchpriority="high">
+
+        <!-- Google Fonts (Ultra Optimized) -->
+
+        <link rel="preload"
+            href="./fonts/Inter-Regular.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+        <link rel="preload"
+            href="./fonts/Inter-Bold.woff2"
+            as="font"
+            type="font/woff2"
+            crossorigin>
+
+        <link rel="stylesheet" href="./src/vendor/swiper/swiper-bundle.min.css">
+<link rel="stylesheet" href="./src/css/common.css">
+    <link rel="stylesheet" href="./src/css/login.css">
+  </head>
+    <body>
+
+        <!-- 
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="site-header" id="siteHeader">
+
+        <div class="container site-header__inner">
+
+                <!-- LOGO -->
+                <a
+                        class="site-header__logo-link"
+                        href="/demo/our-project/"
+                        aria-label="Discover MBA Home">
+                        <img
+                                class="site-header__logo-img"
+                                src="./discovermba.webp"
+                                alt="MBA 360"
+                                width="300"
+                                height="79"
+                                loading="eager"
+                                alt="Discover MBA">
+                </a>
+
+                <!-- MOBILE TOGGLE -->
+                <button
+                        class="site-header__toggle"
+                        id="navToggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="siteNav"
+                        aria-label="Open menu">
+
+                        <svg
+                                class="icon-menu"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                aria-hidden="true">
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <line x1="3" y1="12" x2="21" y2="12" />
+                                <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+
+                        <svg
+                                class="icon-close"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                aria-hidden="true">
+                                <line x1="5" y1="5" x2="19" y2="19" />
+                                <line x1="19" y1="5" x2="5" y2="19" />
+                        </svg>
+
+                </button>
+
+                <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+                <nav
+                        class="site-nav"
+                        id="siteNav"
+                        aria-label="Primary navigation">
+
+                        <!-- MOBILE TOP -->
+                        <div class="site-nav__mobile-topbar">
+
+                                <a
+                                        class="site-nav__mobile-logo-link"
+                                        href="/"
+                                        aria-label="Discover MBA Home">
+                                        <img
+                                                class="site-nav__mobile-logo"
+                                                src="https://designawebsite.co.in/demo/our-project/discovermba.webp"
+                                                alt="Discover MBA"
+                                                width="112"
+                                                height="34"
+                                                decoding="async">
+                                </a>
+
+                                <button
+                                        class="site-nav__mobile-close"
+                                        id="navCloseBtn"
+                                        type="button"
+                                        aria-label="Close menu">
+                                        <svg
+                                                viewBox="0 0 24 24"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                aria-hidden="true">
+                                                <line x1="5" y1="5"
+                                                        x2="19"
+                                                        y2="19" />
+                                                <line x1="19" y1="5"
+                                                        x2="5"
+                                                        y2="19" />
+                                        </svg>
+                                </button>
+
+                        </div>
+
+                        <ul class="site-nav__list">
+
+                                <!-- =================================================
+             EXAMS
+        ================================================== -->
+
+                                <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaExams">
+                                                Exams
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu container"
+                                                id="megaExams">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <!-- FEATURED -->
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">MBA
+                                                                                Exams</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/demo/our-project/exam/"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="cat">
+                                                                                        CAT
+                                                                                        Exam
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/demo/our-project/exam/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="xat">
+                                                                                        XAT
+                                                                                        Exam
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/demo/our-project/exam/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="gmat">
+                                                                                        GMAT
+                                                                                        Exam
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <!-- COLUMN 2 -->
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        Popular
+                                                                        Exams
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <!-- COLUMN 3 -->
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        By
+                                                                        Category
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <!-- COLUMN 4 -->
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Level
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/demo/our-project/exam/"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        View
+                                                                        all
+                                                                        Exams
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+                                                        <!-- PROMO -->
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Recommended
+                                                                        for
+                                                                        CAT
+                                                                        Aspirants</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li>
+
+                                <!-- =================================================
+             COLLEGES
+        ================================================== -->
+
+                                <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaColleges">
+                                                Colleges
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu container"
+                                                id="megaColleges">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">MBA
+                                                                                Colleges</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/colleges/"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="mba">
+                                                                                        MBA
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/colleges/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="bba">
+                                                                                        BBA
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/colleges/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="integrated">
+                                                                                        Integrated
+                                                                                        MBA
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        By
+                                                                        Location
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        By
+                                                                        Programmes
+                                                                        offered
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Type
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/colleges"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        View
+                                                                        all
+                                                                        Colleges
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+                                                        <!-- PROMO -->
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Top
+                                                                        MBA
+                                                                        Colleges
+                                                                        to
+                                                                        Explore</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li>
+
+                                <!-- =================================================
+             EXECUTIVE MBA
+        ================================================== -->
+
+                                <!-- <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaExec">
+                                                Executive MBA
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu" id="megaExec">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">Executive
+                                                                                MBA</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/executive-mba"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="top">
+                                                                                        Top
+                                                                                        Executive
+                                                                                        MBA
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/executive-mba/online"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="online">
+                                                                                        Online
+                                                                                        Executive
+                                                                                        MBA
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        Popular
+                                                                        Programmes
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        By
+                                                                        Format
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Duration
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/executive-mba"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        View all
+                                                                        Executive
+                                                                        MBA
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Top
+                                                                        Executive
+                                                                        MBA
+                                                                        Programmes</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li> -->
+
+                                <!-- =================================================
+             BBA / IPM
+        ================================================== -->
+
+                                <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaBba">
+                                                Courses
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu"
+                                                id="megaBba">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">BBA
+                                                                                &amp;
+                                                                                IPM</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/course/"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="bba">
+                                                                                        BBA
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/course/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="ipm">
+                                                                                        IPM
+                                                                                        Colleges
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        Popular
+                                                                        Colleges
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        By
+                                                                        Location
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Type
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/bba-ipm"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        View
+                                                                        all
+                                                                        BBA
+                                                                        /
+                                                                        IPM
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Top
+                                                                        BBA
+                                                                        Colleges
+                                                                        to
+                                                                        Explore</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li>
+
+                                <!-- =================================================
+             COMMUNITY
+        ================================================== -->
+
+                                <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaCommunity">
+                                                Forum
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu"
+                                                id="megaCommunity">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">Forum</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/community/discussions"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="discussion">
+                                                                                        Discussions
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/community/college-reviews"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="reviews">
+                                                                                        College
+                                                                                        Reviews
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        Popular
+                                                                        Topics
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        Resources
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Interest
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/community"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        Join
+                                                                        Community
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Popular
+                                                                        Among
+                                                                        the
+                                                                        Community</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li>
+
+                                <!-- =================================================
+             ALUMNI
+        ================================================== -->
+
+                                <li class="site-nav__item--mega">
+
+                                        <button
+                                                class="site-nav__link"
+                                                type="button"
+                                                data-menu-trigger
+                                                aria-haspopup="true"
+                                                aria-expanded="false"
+                                                aria-controls="megaAlumni">
+                                                Alumni
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </button>
+
+                                        <div class="mega-menu"
+                                                id="megaAlumni">
+
+                                                <div
+                                                        class="container mega-menu__inner">
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--featured">
+
+                                                                <div
+                                                                        class="mega-menu__featured-top">
+                                                                        <p
+                                                                                class="mega-menu__title">Alumni</p>
+                                                                </div>
+
+                                                                <ul
+                                                                        class="mega-menu__list">
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/alumni/"
+                                                                                        class="mega-menu__link mega-menu__link--active"
+                                                                                        data-menu="success">
+                                                                                        Success
+                                                                                        Stories
+                                                                                </a>
+                                                                        </li>
+
+                                                                        <li>
+                                                                                <a
+                                                                                        href="/alumni/"
+                                                                                        class="mega-menu__link"
+                                                                                        data-menu="network">
+                                                                                        Alumni
+                                                                                        Network
+                                                                                </a>
+                                                                        </li>
+
+                                                                </ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="popular">
+                                                                        Popular
+                                                                        Stories
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="popular"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="category">
+                                                                        Engage
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="category"></ul>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__col mega-menu__col--type">
+
+                                                                <p
+                                                                        class="mega-menu__label"
+                                                                        data-target-label="level">
+                                                                        By
+                                                                        Batch
+                                                                </p>
+
+                                                                <ul
+                                                                        class="mega-menu__list"
+                                                                        data-target-list="level"></ul>
+
+                                                                <a
+                                                                        href="/alumni"
+                                                                        class="downloadBrochureBtn"
+                                                                        data-target-button>
+                                                                        View
+                                                                        all
+                                                                        Alumni
+
+                                                                        <svg
+                                                                                width="14"
+                                                                                height="14"
+                                                                                viewBox="0 0 24 24"
+                                                                                fill="none"
+                                                                                aria-hidden="true">
+                                                                                <path
+                                                                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                                                                        stroke="currentColor"
+                                                                                        stroke-width="2"
+                                                                                        stroke-linecap="round"
+                                                                                        stroke-linejoin="round" />
+                                                                        </svg>
+
+                                                                </a>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__promo">
+
+                                                                <p
+                                                                        class="mega-menu__promo-title"
+                                                                        data-target-promo-title>Where
+                                                                        Our
+                                                                        Alumni
+                                                                        Studied</p>
+
+                                                                <div
+                                                                        class="mega-menu__marquee">
+
+                                                                        <div
+                                                                                class="mega-menu__marquee-track"
+                                                                                data-target-track="promo"></div>
+
+                                                                </div>
+
+                                                        </div>
+
+                                                        <div
+                                                                class="mega-menu__trending">
+
+                                                                <span
+                                                                        class="mega-menu__trending-label">
+                                                                        Trending:
+                                                                </span>
+
+                                                                <div
+                                                                        class="mega-menu__trending-tags"
+                                                                        data-target-trending></div>
+
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+
+                                </li>
+
+                                <li class="site-nav__item--mega">
+
+                                        <a
+                                                href="/demo/our-project/glossary.html"
+                                                class="site-nav__link"
+                                                type="button">
+                                                Glossary
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </a>
+
+                                </li>
+
+                                <li class="site-nav__item--mega">
+
+                                        <a
+                                                href="/demo/our-project/blog/"
+                                                class="site-nav__link"
+                                                type="button">
+                                                Blog
+
+                                                <svg
+                                                        class="site-nav__chevron"
+                                                        viewBox="0 0 24 24"
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        stroke-width="2.4"
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        aria-hidden="true">
+                                                        <polyline
+                                                                points="6 9 12 15 18 9" />
+                                                </svg>
+
+                                        </a>
+
+                                </li>
+
+                        </ul>
+
+                        <!-- MOBILE ACTIONS -->
+
+                        <div
+                                class="site-header__actions site-header__actions--mobile">
+
+                                <a
+                                        class="btn btn--outline"
+                                        href="/demo/our-project/member-login.html">
+                                        Login
+                                </a>
+
+                                <a
+                                        class="btn btn--solid"
+                                        href="/demo/our-project/member-registration.html">
+                                        Register
+                                </a>
+
+                        </div>
+                        <!-- DESKTOP ACTIONS -->
+
+                        <div class="site-header__actions">
+
+                                <a
+                                        class="btn btn--outline"
+                                        href="/login">
+                                        Login
+                                </a>
+
+                                <a
+                                        class="btn btn--solid"
+                                        href="/register">
+                                        Register
+                                </a>
+
+                        </div>
+
+                </nav>
+
+        </div>
+
+</header>
+<div
+        class="site-header__backdrop"
+        id="navBackdrop"
+        hidden></div>
+ -->
+
+        <main>
+            <section class="authPage">
+
+                <!-- ===================== LEFT: SIGN IN FORM ===================== -->
+                <div class="authPage__form">
+
+                    <div class="authPage__formInner">
+                        <div class="admin-logo">
+                            <a class="site-header__logo-link"
+                                href="/demo/our-project/"
+                                aria-label="MBA 360 Home">
+                                <img class="site-header__logo"
+                                    src="./discovermba.webp"
+                                    alt="MBA 360" width="300" height="79"
+                                    loading="eager">
+                            </a>
+                        </div>
+                        <h1 class="authPage__heading sign">Sign in to your
+                            account</h1>
+                        <p class="authPage__subtext">
+                            Don't have an account? <a
+                                href="/demo/our-project/member-registration.html"
+                                class="authPage__link">Create an account
+                            </a></p>
+
+                        <form id="registrationForm" class="authPage__formFields"
+                            action="/demo/our-project/member-registration"
+                            method="POST" novalidate>
+                            <input type="hidden" name="_token"
+                                value="DMohSvZBZqO15HHj3EWib4WIzo8ategHoo6sI5wu"
+                                autocomplete="off">
+
+                            <div class="formGroup">
+                                <!-- <label for="loginEmail">Email Address <span
+                                        class="formGroup__req">*</span></label> -->
+                                <div class="formGroup__inputWrap">
+                                    <input type="email" id="loginEmail"
+                                        name="email"
+                                        placeholder="Enter your email"
+                                        autocomplete="email" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
+                                    <svg class="formGroup__icon"
+                                        viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <rect x="2" y="4" width="20" height="16"
+                                            rx="2" /><path d="m22 6-10 7L2 6" />
+                                    </svg>
+                                </div>
+                                <div class="formGroup__error"
+                                    id="emailError">Please enter your email
+                                    address</div>
+                            </div>
+
+                            <div class="formGroup">
+                                <!-- <label for="loginPassword">Password <span
+                                        class="formGroup__req">*</span></label> -->
+                                <div class="formGroup__inputWrap">
+                                    <input type="password" id="loginPassword"
+                                        name="password"
+                                        placeholder="Enter your password"
+                                        autocomplete="new-password" required>
+                                    <span class="formGroup__requiredStar"
+                                        id="nameStar">*</span>
+                                    <button type="button"
+                                        class="formGroup__toggle"
+                                        data-toggle="loginPassword"
+                                        aria-label="Show password"
+                                        aria-pressed="false">
+                                        <svg class="iconEye" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor"
+                                            stroke-width="1.8"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            aria-hidden="true">
+                                            <path
+                                                d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7Z" /><circle
+                                                cx="12" cy="12" r="3" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <!-- <div class="formGroup__strength"
+                                    id="passwordStrength"></div> -->
+                                <div class="formGroup__error"
+                                    id="passwordError">Please enter a
+                                    password</div>
+                            </div>
+
+                            <button type="submit" class="authPage__submit"
+                                id="submitBtn">
+                                <span class="btn-text">Login</span>
+                                <span class="btn-spinner"
+                                    style="display:none;"><i
+                                        class="fas fa-spinner fa-spin"></i>
+                                    Logging in...</span>
+                                <svg
+                                    width="14" height="14"
+                                    viewBox="0 0 24 24" fill="none"
+                                    aria-hidden="true"><path
+                                        d="M7 17L17 7M17 7H8M17 7V16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"></path></svg>
+                            </button>
+
+                            <p class="forgot">
+                                <span class="forgot-password-txt">Forgot
+                                    password? </span>
+                                <a href="/demo/our-project/password-reset.html">
+                                    <span class="authPage__link">click here to
+                                        reset </span>
+                                </a>
+                            </p>
+                        </form>
+
+                    </div>
+                </div>
+
+                <!-- ===================== RIGHT: VISUAL PANEL ===================== -->
+                <div class="authPage__visual">
+                    <div class="authPage__shapes" aria-hidden="true">
+                        <span class="shape shape--circle"></span>
+                        <span class="shape shape--square"></span>
+                        <span class="shape shape--triangle"></span>
+                    </div>
+
+                    <div class="authPage__visualInner">
+
+                        <div class="authPage__media ">
+                            <div class="swiper joinNetworkSwiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://designawebsite.co.in/demo/our-project/assets/college-student-CXcl8EgH.webp"
+                                            alt="Fundraising professionals networking at a TFN community event"
+                                            width="1104" height="614"
+                                            fetchpriority="high"
+                                            decoding="async">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://designawebsite.co.in/demo/our-project/assets/college-student-CXcl8EgH.webp"
+                                            alt="TFN members collaborating during a fundraising workshop"
+                                            width="1104" height="614"
+                                            loading="lazy" decoding="async">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img
+                                            src="https://designawebsite.co.in/demo/our-project/assets/college-student-CXcl8EgH.webp"
+                                            alt="TFN community celebrating a successful campaign"
+                                            width="1104" height="614"
+                                            loading="lazy" decoding="async">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+
+                            <!-- <ul class="authPage__icons" role="list">
+                                <li class="authPage__iconBox">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M12 3 2 8l10 5 10-5-10-5Z" /><path
+                                            d="M6 10.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-5.5" />
+                                    </svg>
+                                </li>
+                                <li class="authPage__iconBox">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="12" cy="8" r="4" /><path
+                                            d="M4 21c0-4 3.5-7 8-7s8 3 8 7" />
+                                    </svg>
+                                </li>
+                                <li class="authPage__iconBox">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <circle cx="7" cy="7" r="3" /><circle
+                                            cx="17" cy="7" r="3" /><path
+                                            d="M2 21c0-3.3 2.2-5.5 5-5.5s5 2.2 5 5.5M12 21c0-3.3 2.2-5.5 5-5.5s5 2.2 5 5.5" />
+                                    </svg>
+                                </li>
+                                <li class="authPage__iconBox">
+                                    <svg viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <path
+                                            d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z" /><path
+                                            d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20" />
+                                    </svg>
+                                </li>
+                            </ul> -->
+                        </div>
+
+                        <div class="authPage__content ">
+                            <h2 class="authPage__visualHeading">Join The
+                                Discover MBA </h2>
+                            <p class="authPage__visualText">
+                                Explore leading MBA brands and discover the
+                                programmes, institutions, and opportunities
+                                shaping the future of business education.
+                                Compare what each brand offers, understand their
+                                unique strengths, and find the right fit for
+                                your career and professional goals.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <!-- ============================================================
+       FOOTER 
+  ============================================================ -->
+        <!--  <footer class="site-footer">
+    <div class="container">
+        <div class="site-footer__top">
+
+            <div class="site-footer__brand">
+                <a href="/demo/our-project/" aria-label="MBA 360 Home">
+                    <img class="site-footer__logo"
+                        src="./discovermba.webp"
+                        alt="MBA 360 Logo"
+                        width="200" height="35" fetchpriority="high"
+                        decoding="async" loading="eager">
+                </a>
+                <p class="site-footer__desc">
+                    India's full-spectrum MBA discovery portal. For fresh
+                    graduates,
+                    working professionals, and MBA colleges.
+                </p>
+            </div>
+
+            <nav class="site-footer__col" aria-labelledby="footer-students">
+                <h2 id="footer-students"
+                    class="site-footer__heading">Students</h2>
+                <ul>
+                    <li><a href="/demo/our-project/exam/">Exams</a></li>
+                    <li><a href="/demo/our-project/college/">Colleges</a></li>
+                    <li><a href="/demo/our-project/course/">Executive
+                            MBA</a></li>
+                    <!-- <li><a href="/bba-ipm">BBA / IPM</a></li> -->
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-tools">
+                <h2 id="footer-tools" class="site-footer__heading">Tools</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">Find my MBA</a></li>
+                    <li><a href="javascript:void(0)">EMI calculator</a></li>
+                    <li><a href="javascript:void(0)">Percentile
+                            predictor</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-community">
+                <h2 id="footer-community"
+                    class="site-footer__heading">Community</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">Forum</a></li>
+                    <li><a href="/demo/our-project/alumni/">Alumni
+                            network</a></li>
+                    <li><a href="/demo/our-project/blog/">Blogs</a></li>
+                    <li><a href="javascript:void(0)">News</a></li>
+                </ul>
+            </nav>
+
+            <nav class="site-footer__col" aria-labelledby="footer-company">
+                <h2 id="footer-company"
+                    class="site-footer__heading">Company</h2>
+                <ul>
+                    <li><a href="javascript:void(0)">About us</a></li>
+                    <li><a href="javascript:void(0)">Advertise</a></li>
+                    <li><a href="javascript:void(0)">Contact</a></li>
+                    <li><a href="javascript:void(0)">Privacy policy</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+
+    <div class="botom-wrap">
+        <div class="container site-footer__bottom">
+            <p class="site-footer__copy">
+                &copy; <span id="footer-year">2026</span> MBA 360. All rights
+                reserved. Ad-free. Built for aspirants.
+            </p>
+
+            <ul class="site-footer__social">
+                <li>
+                    <a href="https://linkedin.com/company/mba360"
+                        aria-label="MBA360 on LinkedIn"
+                        rel="noopener noreferrer" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24"
+                            fill="none" aria-hidden="true" focusable="false">
+                            <path
+                                d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97V21h-4V9Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://x.com/mba360" aria-label="MBA360 on X"
+                        rel="noopener noreferrer" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" aria-hidden="true" focusable="false">
+                            <path
+                                d="M18.9 2h3.3l-7.2 8.2L23.4 22h-6.6l-5.2-6.8L5.6 22H2.3l7.7-8.8L1.4 2H8.2l4.7 6.2L18.9 2Zm-1.2 18h1.8L7.4 3.9H5.5L17.7 20Z"
+                                fill="currentColor" />
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</footer> -->
+<!-- ============================================================
+       SCROLL REVEAL SCRIPT
+  ============================================================ -->
+
+    <script src="./src/vendor/swiper/swiper-bundle.min.js" defer></script>
+        <script src="./src/js/login.js" defer></script>
+  </body>
+</html>
