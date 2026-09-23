@@ -27,9 +27,11 @@ function sendVerificationEmail(
         $mail->Password   = SMTP_PASSWORD;
         $mail->Port       = SMTP_PORT;
 
-        if (strtolower(SMTP_ENCRYPTION) === 'ssl') {
+        $encryption = strtolower(SMTP_ENCRYPTION);
+
+        if ($encryption === 'ssl') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-        } else {
+        } elseif ($encryption === 'tls') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         }
 

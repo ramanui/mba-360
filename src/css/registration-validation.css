@@ -1,0 +1,49 @@
+.formGroup__error {
+    display: none;
+    margin-top: 6px;
+    color: #dc3545;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.formGroup__error.is-visible {
+    display: block;
+}
+
+.formGroup__inputWrap input.is-error {
+    border-color: #dc3545;
+}
+
+.formGroup__inputWrap input[aria-invalid="true"] {
+    border-color: #dc3545;
+}
+
+#studyingInControl[aria-invalid="true"] {
+    border-color: #dc3545;
+}
+
+.formGroup--terms .formGroup__error {
+    margin-top: 6px;
+}
+
+#submitBtn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.registrationResponse {
+    margin: 24px 0;
+    padding: 14px 16px;
+    border: 1px solid #198754;
+    border-radius: 6px;
+    background: #f0fff5;
+    color: #146c43;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.registrationResponse.is-error {
+    border-color: #dc3545;
+    background: #fff5f5;
+    color: #b02a37;
+}

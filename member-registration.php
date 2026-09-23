@@ -1,54 +1,242 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+<?php
+declare(strict_types=1);
 
-        <title>College LP</title>
-        <meta name="description" content="DGTL">
+session_start();
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="./favicon.svg"
-            sizes="32x32">
-        <link rel="apple-touch-icon" href="./favicon.svg" sizes="180x180">
+require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/database.php';
+require_once __DIR__ . '/includes/helpers.php';
+require_once __DIR__ . '/includes/mailer.php';
 
-        <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
-            fetchpriority="high">
+$pageTitle = 'Create Account | Discover MBA';
+$metaDescription = 'Create your Discover MBA account.';
 
-        <!-- Google Fonts (Ultra Optimized) -->
+$pageCss = [
+    'swiper-bundle.min.css',
+    'common.css',
+    'login.css',
+    'registration-validation.css',
+];
 
-        <link rel="preload"
-            href="./fonts/Inter-Regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+$pageJs = [
+    'swiper-bundle.min.js',
+    'registration.js',
+];
 
-        <link rel="preload"
-            href="./fonts/Inter-Bold.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+$authenicationRequired = false;
 
-        <link rel="stylesheet" href="./src/css/swiper-bundle.min.css">
-<link rel="stylesheet" href="./src/css/common.css">
-    <link rel="stylesheet" href="./src/css/login.css">
-  </head>
-    <body>
+if (isPostRequest()) {
+    $name = trim((string)($_POST['name'] ?? ''));
+    $email = mb_strtolower(trim((string)($_POST['email'] ?? '')));
+    $phone = trim((string)($_POST['phone'] ?? ''));
+    $educationLevel = trim((string)($_POST['education_level'] ?? ''));
+    $password = (string)($_POST['password'] ?? '');
+    $confirmPassword = (string)($_POST['password_confirmation'] ?? '');
+    $terms = isset($_POST['terms']) && $_POST['terms'] === '1';
+    $csrf = $_POST['csrf_token'] ?? null;
 
-        <!-- 
+    if (!verifyCsrfToken(is_string($csrf) ? $csrf : null)) {
+        jsonResponse([
+            'success' => false,
+            'message' => 'Your session has expired. Please refresh the page and try again.',
+        ], 419);
+    }
 
-<!-- =========================================================
-     HEADER
-========================================================= -->
-<?php /*?>
-<?php require __DIR__ . '/includes/header.php'; ?>
-<div
-        class="site-header__backdrop"
-        id="navBackdrop"
-        hidden></div>
-<?php */?>
+    $fieldErrors = [];
 
+    if ($name === '') {
+        $fieldErrors['name'] = 'Please enter your full name.';
+    } elseif (mb_strlen($name) < 2) {
+        $fieldErrors['name'] = 'Name must contain at least 2 characters.';
+    } elseif (mb_strlen($name) > 100) {
+        $fieldErrors['name'] = 'Name cannot exceed 100 characters.';
+    } elseif (!preg_match("/^[A-Za-zÀ-ÿ]+(?:[\s'-][A-Za-zÀ-ÿ]+)*$/u", $name)) {
+        $fieldErrors['name'] = 'Please enter a valid name.';
+    }
+
+    if ($email === '') {
+        $fieldErrors['email'] = 'Please enter your email address.';
+    } elseif (mb_strlen($email) > 150) {
+        $fieldErrors['email'] = 'Email address cannot exceed 150 characters.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $fieldErrors['email'] = 'Please enter a valid email address.';
+    } elseif (isDisposableEmail($email)) {
+        $fieldErrors['email'] = 'Disposable email addresses are not allowed.';
+    }
+
+    if ($phone !== '' && !preg_match('/^[0-9]{10}$/', $phone)) {
+        $fieldErrors['phone'] = 'Please enter a valid 10-digit mobile number.';
+    } elseif ($phone !== '' && !preg_match('/^[6-9]/', $phone)) {
+        $fieldErrors['phone'] = 'Number not valid.';
+    }
+
+    $allowedEducationLevels = [
+        'school',
+        'undergraduate',
+        'postgraduate',
+        'working_professional',
+        'other',
+    ];
+
+    if ($educationLevel === '') {
+        $fieldErrors['education_level'] = 'Please select your education level.';
+    } elseif (!in_array($educationLevel, $allowedEducationLevels, true)) {
+        $fieldErrors['education_level'] = 'Please select a valid education level.';
+    }
+
+    if ($password === '') {
+        $fieldErrors['password'] = 'Please enter a password.';
+    } elseif (strlen($password) < 8) {
+        $fieldErrors['password'] = 'Password must contain at least 8 characters.';
+    } elseif (strlen($password) > 128) {
+        $fieldErrors['password'] = 'Password cannot exceed 128 characters.';
+    } elseif (preg_match('/\s/', $password)) {
+        $fieldErrors['password'] = 'Password cannot contain spaces.';
+    } elseif (!preg_match('/[A-Z]/', $password)) {
+        $fieldErrors['password'] = 'Password must contain at least one uppercase letter.';
+    } elseif (!preg_match('/[a-z]/', $password)) {
+        $fieldErrors['password'] = 'Password must contain at least one lowercase letter.';
+    } elseif (!preg_match('/[0-9]/', $password)) {
+        $fieldErrors['password'] = 'Password must contain at least one number.';
+    }
+
+    if ($confirmPassword === '') {
+        $fieldErrors['confirm_password'] = 'Please confirm your password.';
+    } elseif ($password !== $confirmPassword) {
+        $fieldErrors['confirm_password'] = 'Passwords do not match.';
+    }
+
+    if (!$terms) {
+        $fieldErrors['terms'] = 'Please accept the communication consent.';
+    }
+
+    if ($fieldErrors) {
+        jsonResponse([
+            'success' => false,
+            'fieldErrors' => $fieldErrors,
+            'message' => 'Please correct the highlighted fields.',
+        ], 422);
+    }
+
+    if (IS_PRODUCTION) {
+        $clientIp = (string)($_SERVER['REMOTE_ADDR'] ?? 'unknown');
+
+        try {
+            $ipLimitExceeded = registrationRateLimitExceeded(
+                $pdo,
+                registrationRateLimitKey('ip', $clientIp)
+            );
+            $emailLimitExceeded = registrationRateLimitExceeded(
+                $pdo,
+                registrationRateLimitKey('email', $email)
+            );
+        } catch (PDOException $e) {
+            error_log('Registration rate-limit check failed: ' . $e->getMessage());
+            jsonResponse([
+                'success' => false,
+                'message' => 'Registration is temporarily unavailable. Please try again later.',
+            ], 503);
+        }
+
+        if ($ipLimitExceeded || $emailLimitExceeded) {
+            jsonResponse([
+                'success' => false,
+                'message' => 'Too many registration attempts. Please try again in 5 minutes.',
+            ], 429);
+        }
+    }
+
+    $stmt = $pdo->prepare(
+        'SELECT id
+         FROM users
+         WHERE email = ?
+         LIMIT 1'
+    );
+    $stmt->execute([$email]);
+    $existingUser = $stmt->fetch();
+
+    if ($existingUser) {
+        jsonResponse([
+            'success' => false,
+            'fieldErrors' => [
+                'email' => 'This email address is already registered. Please log in.',
+            ],
+            'message' => 'Email already registered.',
+        ], 409);
+    }
+
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    $verificationToken = bin2hex(random_bytes(32));
+    $verificationExpires = date('Y-m-d H:i:s', time() + VERIFICATION_TOKEN_TTL);
+
+    $stmt = $pdo->prepare(
+        'INSERT INTO users
+            (
+                name,
+                email,
+                phone,
+                education_level,
+                password,
+                communication_consent,
+                email_verification_token,
+                email_verification_expires
+            )
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
+    );
+
+    try {
+        $stmt->execute([
+            $name,
+            $email,
+            $phone !== '' ? $phone : null,
+            $educationLevel,
+            $passwordHash,
+            $terms ? 1 : 0,
+            $verificationToken,
+            $verificationExpires,
+        ]);
+    } catch (PDOException $e) {
+        if ($e->getCode() === '23000') {
+            jsonResponse([
+                'success' => false,
+                'fieldErrors' => [
+                    'email' => 'This email address is already registered. Please log in.',
+                ],
+                'message' => 'Email already registered.',
+            ], 409);
+        }
+
+        throw $e;
+    }
+
+    $verifyUrl = APP_BASE_URL .
+        '/verify-email.php?token=' .
+        urlencode($verificationToken);
+
+    if (!sendVerificationEmail($email, $name, $verifyUrl)) {
+        error_log("Verification email failed for {$email}");
+
+        jsonResponse([
+            'success' => false,
+            'completed' => true,
+            'message' => 'Your account was created, but we could not send the verification email. Please contact support.',
+        ], 500);
+    }
+
+    $_SESSION['registration_email'] = $email;
+
+    jsonResponse([
+        'success' => true,
+        'message' => 'Registration successful. Please check your email to verify your account.',
+        'redirect' => APP_BASE_PATH . '/registration-success.php',
+    ]);
+}
+
+$csrfToken = csrfToken();
+
+require __DIR__ . '/includes/head.php';
+
+?>
         <main>
             <section class="authPage">
 
@@ -71,22 +259,29 @@
                                 href="./member-login.php"
                                 class="authPage__link">Log in</a></p>
 
+                        <div id="registrationResponse"
+                            class="registrationResponse"
+                            role="status"
+                            aria-live="polite"
+                            hidden></div>
+
                         <form id="registrationForm" class="authPage__formFields"
-                            action="https://www.thefundraisersnetwork.com/member-registration"
+                            action=""
                             method="POST" novalidate>
-                            <input type="hidden" name="_token"
-                                value="DMohSvZBZqO15HHj3EWib4WIzo8ategHoo6sI5wu"
-                                autocomplete="off">
+                            <input type="hidden" name="csrf_token"
+                                value="<?= e($csrfToken) ?>" autocomplete="off">
 
                             <div class="formGroup">
                                 <!-- <label for="name">Full Name <span
                                         class="formGroup__req">*</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="text" id="name" name="name"
-                                        placeholder="Enter your full name "
-                                        required>
+                                        placeholder="Enter your full name"
+                                         maxlength="100"
+                                         aria-describedby="nameError"
+                                       >
                                     <span class="formGroup__requiredStar"
-                                        id="nameStar">*</span>
+                                        >*</span>
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24"
                                         fill="none"
@@ -103,8 +298,7 @@
                                     </svg>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="nameError">Please enter your full
-                                    name</div>
+                                    id="nameError"></div>
                             </div>
 
                             <div class="formGroup">
@@ -114,9 +308,9 @@
                                     <input type="email" id="loginEmail"
                                         name="email"
                                         placeholder="Enter your email"
-                                        autocomplete="email" required>
+                                        autocomplete="email">
                                     <span class="formGroup__requiredStar"
-                                        id="nameStar">*</span>
+                                        >*</span>
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="1.8"
@@ -128,8 +322,7 @@
                                     </svg>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="emailError">Please enter your email
-                                    address</div>
+                                    id="emailError"></div>
                             </div>
 
                             <div class="formGroup">
@@ -137,7 +330,10 @@
                                         class="formGroup__optional">(Optional)</span></label> -->
                                 <div class="formGroup__inputWrap">
                                     <input type="tel" id="phone" name="phone"
-                                        placeholder="Enter your phone number (optional)">
+                                        placeholder="Enter your phone number (optional)"
+                                         maxlength="10"
+                                         inputmode="numeric"
+                                         aria-describedby="phoneError">
                                     <svg class="formGroup__icon"
                                         viewBox="0 0 24 24" fill="none"
                                         stroke="currentColor" stroke-width="1.8"
@@ -149,8 +345,7 @@
                                     </svg>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="phoneError">Please enter a valid phone
-                                    number</div>
+                                    id="phoneError"></div>
                             </div>
 
                             <!-- Studying In — custom select (react-select style hooks) -->
@@ -221,8 +416,7 @@
                                         In</span>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="studyingInError">Please select an
-                                    option</div>
+                                    id="studyingInError"></div>
                             </div>
 
                             <div class="formGroup">
@@ -232,9 +426,9 @@
                                     <input type="password" id="loginPassword"
                                         name="password"
                                         placeholder="Enter your password"
-                                        autocomplete="new-password" required>
+                                        autocomplete="new-password">
                                     <span class="formGroup__requiredStar"
-                                        id="nameStar">*</span>
+                                        >*</span>
                                     <button type="button"
                                         class="formGroup__toggle"
                                         data-toggle="loginPassword"
@@ -255,8 +449,7 @@
                                 <!-- <div class="formGroup__strength"
                                     id="passwordStrength"></div> -->
                                 <div class="formGroup__error"
-                                    id="passwordError">Please enter a
-                                    password</div>
+                                    id="passwordError"></div>
                             </div>
 
                             <div class="formGroup">
@@ -268,9 +461,9 @@
                                         id="password_confirmation"
                                         name="password_confirmation"
                                         placeholder="Confirm your password"
-                                        autocomplete="new-password" required>
+                                        autocomplete="new-password">
                                     <span class="formGroup__requiredStar"
-                                        id="nameStar">*</span>
+                                        >*</span>
                                     <button type="button"
                                         class="formGroup__toggle"
                                         data-toggle="password_confirmation"
@@ -289,15 +482,14 @@
                                     </button>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="confirmPasswordError">Passwords do not
-                                    match</div>
+                                    id="confirmPasswordError"></div>
                             </div>
 
                             <div class="formGroup formGroup--terms">
                                 <div class="formGroup__check">
                                     <input type="checkbox" id="terms"
                                         name="terms" value="1"
-                                        class="formGroup__checkInput" required>
+                                        class="formGroup__checkInput">
                                     <label for="terms"
                                         class="formGroup__checkLabel">
                                         <span class="formGroup__checkBox"
@@ -320,8 +512,7 @@
                                     </label>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="termsError">You must agree to the terms
-                                    and conditions</div>
+                                    id="termsError"></div>
                             </div>
 
                             <button type="submit"
@@ -343,7 +534,6 @@
                                         stroke-linejoin="round"></path></svg>
                             </button>
                         </form>
-
                     </div>
                 </div>
 
@@ -406,11 +596,5 @@
 
             </section>
         </main>
-
-      
-
-  
-    <script src="./src/js/swiper-bundle.min.js" defer></script>
-        <script src="./src/js/login.js" defer></script>
   </body>
     </html>
