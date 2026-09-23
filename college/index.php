@@ -1,326 +1,270 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+<?php
 
-    <title>College LP</title>
-    <meta name="description" content="DGTL">
+$pageTitle = 'MBA 360 - Colleges';
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../favicon.svg"
-      sizes="32x32">
-    <link rel="apple-touch-icon" href="../favicon.svg" sizes="180x180">
+$metaDescription = 'Find MBA colleges, courses, entrance exams and admission information.';
 
-    <!-- Preload LCP Hero Image (Mobile + Desktop) -->
-    <!-- <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
-            media="(max-width: 767px)" fetchpriority="high">
-        <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
-            media="(min-width: 768px)" fetchpriority="high"> -->
+$pageCss = [
+  'countdown.css',
+  'glossary.css',
+  'filter.css',
+  'exam-college-bba-lp.css',
+  'faq.css',
+];
 
-    <link rel="preload" as="image"
-      href="../src/assets/images/stay-updated-with-mba-news.webp"
-      fetchpriority="high">
+$authenicationRequired = true;
 
-    <!-- Google Fonts (Ultra Optimized) -->
+require __DIR__ . '/../includes/head.php';
+require __DIR__ . '/../includes/header.php';
 
-    <link rel="preload"
-      href="../fonts/Inter-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin>
+?>
 
-    <link rel="preload"
-      href="../fonts/Inter-Bold.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin>
+<main>
+  <section class="hero" aria-labelledby="page-heading reveal">
+    <div class="bg-image"></div>
+    <div class="overlay"></div>
+    <div class="container">
+      <h1 id="page-heading" class="hero__title">Find the Right College
+        for Your Future</h1>
+      <div class="breadcrumb"><a href="../index.php">Home</a> <span
+          aria-hidden="true">›</span> <span>Colleges</span></div>
+    </div>
+  </section>
 
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <section class="ad-section" aria-label="Our partner institutions">
+    <div class="container">
+      <div class="ad-section__marquee">
+        <ul class="ad-section__track">
+          <!-- original set -->
+          <li class="ad-section__item"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt="MDI Gurgaon" width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt="MDI Gurgaon" width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt="MDI Gurgaon" width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt="MDI Gurgaon" width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt="MDI Gurgaon" width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <!-- duplicate set, hidden from AT, for seamless loop -->
+          <li class="ad-section__item" aria-hidden="true"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt
+              width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item" aria-hidden="true"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt
+              width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item" aria-hidden="true"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt
+              width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item" aria-hidden="true"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt
+              width="200" height="120"
+              loading="lazy" decoding="async"></li>
+          <li class="ad-section__item" aria-hidden="true"><img
+              src="../src/assets/images/mdi-gurgaon.webp"
+              alt
+              width="200" height="120"
+              loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
-            rel="stylesheet"> -->
+  <section class="clg-section reveal">
+    <div class="container">
 
-    <!-- Critical CSS inline (BEST for FCP) -->
-    <style>
-
-          [id="programmes"] {
-scroll-margin-top: 100px;
-}
-  
-</style>
-      <link rel="stylesheet" href="../src/css/header.css">
-    <link rel="stylesheet" href="../src/css/common.css">
-    <link rel="stylesheet" href="../src/css/countdown.css">
-    <link rel="stylesheet" href="../src/css/glossary.css">
-    <link rel="stylesheet" href="../src/css/filter.css">
-    <link rel="stylesheet" href="../src/css/exam-college-bba-lp.css">
-    <link rel="stylesheet" href="../src/css/faq.css">
-    <link rel="stylesheet" href="../src/css/footer.css">
-  </head>
-  <body class="college-lp">
-
-    
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
-
-<?php require __DIR__ . '/../includes/header.php'; ?>
-<div
-        class="site-header__backdrop"
-        id="navBackdrop"
-        hidden></div>
-
-
-    <main>
-      <section class="hero" aria-labelledby="page-heading reveal">
-        <div class="bg-image"></div>
-        <div class="overlay"></div>
-        <div class="container">
-          <h1 id="page-heading" class="hero__title">Find the Right College
-            for Your Future</h1>
-          <div class="breadcrumb"><a href="../index.php">Home</a> <span
-              aria-hidden="true">›</span> <span>Colleges</span></div>
-        </div>
-      </section>
-
-      <section class="ad-section" aria-label="Our partner institutions">
-        <div class="container">
-          <div class="ad-section__marquee">
-            <ul class="ad-section__track">
-              <!-- original set -->
-              <li class="ad-section__item"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt="MDI Gurgaon" width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt="MDI Gurgaon" width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt="MDI Gurgaon" width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt="MDI Gurgaon" width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt="MDI Gurgaon" width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <!-- duplicate set, hidden from AT, for seamless loop -->
-              <li class="ad-section__item" aria-hidden="true"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt
-                  width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item" aria-hidden="true"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt
-                  width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item" aria-hidden="true"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt
-                  width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item" aria-hidden="true"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt
-                  width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-              <li class="ad-section__item" aria-hidden="true"><img
-                  src="../src/assets/images/mdi-gurgaon.webp"
-                  alt
-                  width="200" height="120"
-                  loading="lazy" decoding="async"></li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="clg-section reveal">
-        <div class="container">
-
-          <div class="clg-card clg-about" data-open="false"
-            id="about-card">
-            <div class="clg-about__body">
-              <h2 class=" top_heading
+      <div class="clg-card clg-about" data-open="false"
+        id="about-card">
+        <div class="clg-about__body">
+          <h2 class=" top_heading
                 marketing__heading-small">MBA Entrance Exams</h2>
-              <div class="clg-about__intro">
-                <p>Lorem Ipsum is simply dummy text of the
-                  printing and typesetting industry. Lorem
-                  Ipsum has been the industry's standard dummy
-                  text ever since 1966 Lorem Ipsum is simply
-                  dummy text of the printing and typesetting
-                  industry. Lorem Ipsum is simply dummy text
-                  of the printing and typesetting industry.
-                  Lorem Ipsum has been the industry's standard
-                  dummy text ever since 1966 Lorem Ipsum is
-                  simply dummy text of the. Lorem Ipsum is
-                  simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum is simply
-                  dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the
-                  industry's standard dummy text ever</p>
-              </div>
+          <div class="clg-about__intro">
+            <p>Lorem Ipsum is simply dummy text of the
+              printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy
+              text ever since 1966 Lorem Ipsum is simply
+              dummy text of the printing and typesetting
+              industry. Lorem Ipsum is simply dummy text
+              of the printing and typesetting industry.
+              Lorem Ipsum has been the industry's standard
+              dummy text ever since 1966 Lorem Ipsum is
+              simply dummy text of the. Lorem Ipsum is
+              simply dummy text of the printing and
+              typesetting industry. Lorem Ipsum is simply
+              dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the
+              industry's standard dummy text ever</p>
+          </div>
 
-            </div>
-            <div class="clg-about__more" id="about-more">
-              <div>
-                <div class="clg-about__body">
-                  <p>Lorem Ipsum is simply dummy text of the
-                    printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard
-                    dummy text ever since 1966 Lorem Ipsum
-                    is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is
-                    simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text
-                    ever since 1966 Lorem Ipsum is simply
-                    dummy text of the. Lorem Ipsum is simply
-                    dummy text of the printing and
-                    typesetting industry. Lorem Ipsum is
-                    simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has
-                    been the industry's standard dummy text
-                    ever</p>
-                </div>
-              </div>
-            </div>
-            <div class="clg-expandRow">
-              <button type="button" class="clg-expandBtn"
-                id="about-expand-btn"
-                data-toggle-target="about-card"
-                aria-expanded="false" aria-controls="about-more"
-                aria-label="Show more about SPJIMR">
-                <svg width="18" height="18" viewBox="0 0 24 24"
-                  fill="none" aria-hidden="true"><path
-                    d="M6 9l6 6 6-6" stroke="currentColor"
-                    stroke-width="2.2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"></path></svg>
-              </button>
+        </div>
+        <div class="clg-about__more" id="about-more">
+          <div>
+            <div class="clg-about__body">
+              <p>Lorem Ipsum is simply dummy text of the
+                printing and typesetting industry. Lorem
+                Ipsum has been the industry's standard
+                dummy text ever since 1966 Lorem Ipsum
+                is simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum is
+                simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has
+                been the industry's standard dummy text
+                ever since 1966 Lorem Ipsum is simply
+                dummy text of the. Lorem Ipsum is simply
+                dummy text of the printing and
+                typesetting industry. Lorem Ipsum is
+                simply dummy text of the printing and
+                typesetting industry. Lorem Ipsum has
+                been the industry's standard dummy text
+                ever</p>
             </div>
           </div>
         </div>
-      </section>
+        <div class="clg-expandRow">
+          <button type="button" class="clg-expandBtn"
+            id="about-expand-btn"
+            data-toggle-target="about-card"
+            aria-expanded="false" aria-controls="about-more"
+            aria-label="Show more about SPJIMR">
+            <svg width="18" height="18" viewBox="0 0 24 24"
+              fill="none" aria-hidden="true">
+              <path
+                d="M6 9l6 6 6-6" stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <section class="examListing">
-        <div class="container">
+  <section class="examListing">
+    <div class="container">
 
-          <div class="examActiveFilters" id="examActiveFilters"
-            style="display:none;">
-            <span class="examActiveFilters__label">Active
-              Filters:</span>
-            <a href="#" class="examActiveFilters__clear"
-              id="examClearAll">Clear All ✕</a>
+      <div class="examActiveFilters" id="examActiveFilters"
+        style="display:none;">
+        <span class="examActiveFilters__label">Active
+          Filters:</span>
+        <a href="#" class="examActiveFilters__clear"
+          id="examClearAll">Clear All ✕</a>
+      </div>
+
+      <div class="examFiltersToggleWrap"
+        id="examFiltersToggleWrap">
+
+      </div> <!--add this-->
+      <div class="examFiltersOverlay"
+        id="examFiltersOverlay"></div>
+      <div class="examSortOverlay" id="examSortOverlay"></div>
+      <!-- add this -->
+
+      <div class="examLayout layout ">
+
+        <div class="examActionsBar">
+          <button type="button"
+            class="examActionsBar__sortBtn"
+            id="examSortToggleBtn"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="examSortPanel">
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M3 6h13M3 12h9M3 18h5"></path>
+            </svg>
+            Sort by
+          </button>
+          <button type="button"
+            class="examActionsBar__filterBtn"
+            id="examFiltersToggleBtn"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+            aria-controls="examFiltersPanel">
+            <svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+              <circle cx="9" cy="6" r="1.6"
+                fill="currentColor"
+                stroke="none"></circle>
+              <circle cx="15" cy="12" r="1.6"
+                fill="currentColor"
+                stroke="none"></circle>
+              <circle cx="9" cy="18" r="1.6"
+                fill="currentColor"
+                stroke="none"></circle>
+            </svg>
+            Filters
+          </button>
+        </div>
+        <!-- Sort bottom-sheet (mobile only) -->
+        <div class="examSortPanel" id="examSortPanel"
+          role="dialog" aria-modal="true"
+          aria-labelledby="examSortPanelTitle"
+          aria-hidden="true">
+          <div class="examSortPanel__head">
+            <h4 id="examSortPanelTitle">Sort by</h4>
+            <button type="button"
+              class="examSortPanel__closeBtn"
+              id="examSortCloseBtn" aria-label="Close">
+              <svg viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <line x1="6" y1="6" x2="18"
+                  y2="18"></line>
+                <line x1="18" y1="6" x2="6"
+                  y2="18"></line>
+              </svg>
+            </button>
           </div>
-
-          <div class="examFiltersToggleWrap"
-            id="examFiltersToggleWrap">
-
-          </div> <!--add this-->
-          <div class="examFiltersOverlay"
-            id="examFiltersOverlay"></div>
-          <div class="examSortOverlay" id="examSortOverlay"></div>
-          <!-- add this -->
-
-          <div class="examLayout layout ">
-
-            <div class="examActionsBar">
-              <button type="button"
-                class="examActionsBar__sortBtn"
-                id="examSortToggleBtn"
-                aria-haspopup="dialog"
-                aria-expanded="false"
-                aria-controls="examSortPanel">
-                <svg viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <path d="M3 6h13M3 12h9M3 18h5"></path>
-                </svg>
-                Sort by
-              </button>
-              <button type="button"
-                class="examActionsBar__filterBtn"
-                id="examFiltersToggleBtn"
-                aria-haspopup="dialog"
-                aria-expanded="false"
-                aria-controls="examFiltersPanel">
-                <svg viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round">
-                  <line x1="4" y1="6" x2="20" y2="6"></line>
-                  <line x1="4" y1="12" x2="20" y2="12"></line>
-                  <line x1="4" y1="18" x2="20" y2="18"></line>
-                  <circle cx="9" cy="6" r="1.6"
-                    fill="currentColor"
-                    stroke="none"></circle>
-                  <circle cx="15" cy="12" r="1.6"
-                    fill="currentColor"
-                    stroke="none"></circle>
-                  <circle cx="9" cy="18" r="1.6"
-                    fill="currentColor"
-                    stroke="none"></circle>
-                </svg>
-                Filters
-              </button>
-            </div>
-            <!-- Sort bottom-sheet (mobile only) -->
-            <div class="examSortPanel" id="examSortPanel"
-              role="dialog" aria-modal="true"
-              aria-labelledby="examSortPanelTitle"
-              aria-hidden="true">
-              <div class="examSortPanel__head">
-                <h4 id="examSortPanelTitle">Sort by</h4>
-                <button type="button"
-                  class="examSortPanel__closeBtn"
-                  id="examSortCloseBtn" aria-label="Close">
-                  <svg viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round">
-                    <line x1="6" y1="6" x2="18"
-                      y2="18"></line>
-                    <line x1="18" y1="6" x2="6"
-                      y2="18"></line>
-                  </svg>
-                </button>
-              </div>
-              <ul class="examSortOptions" id="examSortOptions"
-                role="radiogroup"
-                aria-labelledby="examSortPanelTitle">
-                <li><button type="button" class="examSortOption"
-                    role="radio" aria-checked="true"
-                    data-value="Exam Date: Nearest First"><span>Exam
-                      Date: Nearest First</span><span
-                      class="examSortOption__dot"></span></button></li>
-                <li><button type="button" class="examSortOption"
-                    role="radio" aria-checked="false"
-                    data-value="Application Fee: Low to High"><span>Application
-                      Fee: Low to High</span><span
-                      class="examSortOption__dot"></span></button></li>
-                <li><button type="button" class="examSortOption"
-                    role="radio" aria-checked="false"
-                    data-value="Accepting Colleges: High to Low"><span>Accepting
-                      Colleges: High to Low</span><span
-                      class="examSortOption__dot"></span></button></li>
-                <li><button type="button" class="examSortOption"
-                    role="radio" aria-checked="false"
-                    data-value="Alphabetical"><span>Alphabetical</span><span
-                      class="examSortOption__dot"></span></button></li>
-              </ul>
-            </div>
-            <!-- Mobile Filter Toggle -->
-            <!-- <button type="button" class="examMobileFilterToggle"
+          <ul class="examSortOptions" id="examSortOptions"
+            role="radiogroup"
+            aria-labelledby="examSortPanelTitle">
+            <li><button type="button" class="examSortOption"
+                role="radio" aria-checked="true"
+                data-value="Exam Date: Nearest First"><span>Exam
+                  Date: Nearest First</span><span
+                  class="examSortOption__dot"></span></button></li>
+            <li><button type="button" class="examSortOption"
+                role="radio" aria-checked="false"
+                data-value="Application Fee: Low to High"><span>Application
+                  Fee: Low to High</span><span
+                  class="examSortOption__dot"></span></button></li>
+            <li><button type="button" class="examSortOption"
+                role="radio" aria-checked="false"
+                data-value="Accepting Colleges: High to Low"><span>Accepting
+                  Colleges: High to Low</span><span
+                  class="examSortOption__dot"></span></button></li>
+            <li><button type="button" class="examSortOption"
+                role="radio" aria-checked="false"
+                data-value="Alphabetical"><span>Alphabetical</span><span
+                  class="examSortOption__dot"></span></button></li>
+          </ul>
+        </div>
+        <!-- Mobile Filter Toggle -->
+        <!-- <button type="button" class="examMobileFilterToggle"
                             id="examMobileFilterToggle" aria-expanded="false"
                             aria-controls="examFiltersPanel">
                             <span>Filters</span>
@@ -331,136 +275,136 @@ scroll-margin-top: 100px;
                                     stroke-linejoin="round"></path></svg>
                         </button> -->
 
-            <!-- Sidebar Filters -->
-            <!-- Sidebar Filters -->
-            <aside class="examFilters" id="examFiltersPanel">
-              <div class="examFilters__head">
-                <h4>Filter Programmes</h4>
-                <button class="examFilters__clearAll"
-                  id="examFiltersClearAll">Clear all</button>
-              </div>
+        <!-- Sidebar Filters -->
+        <!-- Sidebar Filters -->
+        <aside class="examFilters" id="examFiltersPanel">
+          <div class="examFilters__head">
+            <h4>Filter Programmes</h4>
+            <button class="examFilters__clearAll"
+              id="examFiltersClearAll">Clear all</button>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">State</p>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">State</p>
 
-                <label class="examCheck"><input type="checkbox"
-                    value="Andhra Pradesh"
-                    data-filter-group="state"><span>Andhra
-                    Pradesh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Arunachal Pradesh"
-                    data-filter-group="state"><span>Arunachal
-                    Pradesh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Assam"
-                    data-filter-group="state"><span>Assam</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Bihar"
-                    data-filter-group="state"><span>Bihar</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Chhattisgarh"
-                    data-filter-group="state"><span>Chhattisgarh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Goa"
-                    data-filter-group="state"><span>Goa</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Gujarat"
-                    data-filter-group="state"><span>Gujarat</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Haryana"
-                    data-filter-group="state"><span>Haryana</span><em></em></label>
-                <div class="examFilterGroup__extra" id="examStateExtra" hidden>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Himachal Pradesh"
-                      data-filter-group="state"><span>Himachal
-                      Pradesh</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Jharkhand"
-                      data-filter-group="state"><span>Jharkhand</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Karnataka"
-                      data-filter-group="state"><span>Karnataka</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="Kerala"
-                      data-filter-group="state"><span>Kerala</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Madhya Pradesh"
-                      data-filter-group="state"><span>Madhya
-                      Pradesh</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Maharashtra"
-                      data-filter-group="state"><span>Maharashtra</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Manipur"
-                      data-filter-group="state"><span>Manipur</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Meghalaya"
-                      data-filter-group="state"><span>Meghalaya</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Mizoram"
-                      data-filter-group="state"><span>Mizoram</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Nagaland"
-                      data-filter-group="state"><span>Nagaland</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="Odisha"
-                      data-filter-group="state"><span>Odisha</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="Punjab"
-                      data-filter-group="state"><span>Punjab</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Rajasthan"
-                      data-filter-group="state"><span>Rajasthan</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="Sikkim"
-                      data-filter-group="state"><span>Sikkim</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Tamil Nadu"
-                      data-filter-group="state"><span>Tamil
-                      Nadu</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Telangana"
-                      data-filter-group="state"><span>Telangana</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Tripura"
-                      data-filter-group="state"><span>Tripura</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Uttar Pradesh"
-                      data-filter-group="state"><span>Uttar
-                      Pradesh</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Uttarakhand"
-                      data-filter-group="state"><span>Uttarakhand</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="West Bengal"
-                      data-filter-group="state"><span>West
-                      Bengal</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Delhi (NCT)"
-                      data-filter-group="state"><span>Delhi
-                      (NCT)</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Chandigarh"
-                      data-filter-group="state"><span>Chandigarh</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Jammu & Kashmir"
-                      data-filter-group="state"><span>Jammu &
-                      Kashmir</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="Ladakh"
-                      data-filter-group="state"><span>Ladakh</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Puducherry"
-                      data-filter-group="state"><span>Puducherry</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Andaman & Nicobar Islands"
-                      data-filter-group="state"><span>Andaman & Nicobar
-                      Islands</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Dadra & Nagar Haveli and Daman & Diu"
-                      data-filter-group="state"><span>Dadra & Nagar Haveli and
-                      Daman &
-                      Diu</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Lakshadweep"
-                      data-filter-group="state"><span>Lakshadweep</span><em></em></label>
-                </div>
-                <button class="examFilterGroup__more" id="examStateMoreBtn">+
-                  Show
-                  more</button>
-              </div>
+            <label class="examCheck"><input type="checkbox"
+                value="Andhra Pradesh"
+                data-filter-group="state"><span>Andhra
+                Pradesh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Arunachal Pradesh"
+                data-filter-group="state"><span>Arunachal
+                Pradesh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Assam"
+                data-filter-group="state"><span>Assam</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Bihar"
+                data-filter-group="state"><span>Bihar</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Chhattisgarh"
+                data-filter-group="state"><span>Chhattisgarh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Goa"
+                data-filter-group="state"><span>Goa</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Gujarat"
+                data-filter-group="state"><span>Gujarat</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Haryana"
+                data-filter-group="state"><span>Haryana</span><em></em></label>
+            <div class="examFilterGroup__extra" id="examStateExtra" hidden>
+              <label class="examCheck"><input type="checkbox"
+                  value="Himachal Pradesh"
+                  data-filter-group="state"><span>Himachal
+                  Pradesh</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Jharkhand"
+                  data-filter-group="state"><span>Jharkhand</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Karnataka"
+                  data-filter-group="state"><span>Karnataka</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="Kerala"
+                  data-filter-group="state"><span>Kerala</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Madhya Pradesh"
+                  data-filter-group="state"><span>Madhya
+                  Pradesh</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Maharashtra"
+                  data-filter-group="state"><span>Maharashtra</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Manipur"
+                  data-filter-group="state"><span>Manipur</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Meghalaya"
+                  data-filter-group="state"><span>Meghalaya</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Mizoram"
+                  data-filter-group="state"><span>Mizoram</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Nagaland"
+                  data-filter-group="state"><span>Nagaland</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="Odisha"
+                  data-filter-group="state"><span>Odisha</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="Punjab"
+                  data-filter-group="state"><span>Punjab</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Rajasthan"
+                  data-filter-group="state"><span>Rajasthan</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="Sikkim"
+                  data-filter-group="state"><span>Sikkim</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Tamil Nadu"
+                  data-filter-group="state"><span>Tamil
+                  Nadu</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Telangana"
+                  data-filter-group="state"><span>Telangana</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Tripura"
+                  data-filter-group="state"><span>Tripura</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Uttar Pradesh"
+                  data-filter-group="state"><span>Uttar
+                  Pradesh</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Uttarakhand"
+                  data-filter-group="state"><span>Uttarakhand</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="West Bengal"
+                  data-filter-group="state"><span>West
+                  Bengal</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Delhi (NCT)"
+                  data-filter-group="state"><span>Delhi
+                  (NCT)</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Chandigarh"
+                  data-filter-group="state"><span>Chandigarh</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Jammu & Kashmir"
+                  data-filter-group="state"><span>Jammu &
+                  Kashmir</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="Ladakh"
+                  data-filter-group="state"><span>Ladakh</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Puducherry"
+                  data-filter-group="state"><span>Puducherry</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Andaman & Nicobar Islands"
+                  data-filter-group="state"><span>Andaman & Nicobar
+                  Islands</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Dadra & Nagar Haveli and Daman & Diu"
+                  data-filter-group="state"><span>Dadra & Nagar Haveli and
+                  Daman &
+                  Diu</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Lakshadweep"
+                  data-filter-group="state"><span>Lakshadweep</span><em></em></label>
+            </div>
+            <button class="examFilterGroup__more" id="examStateMoreBtn">+
+              Show
+              more</button>
+          </div>
 
-              <!-- <div class="examFilterGroup">
+          <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">City</p>
                 <label class="examCheck"><input type="checkbox"
                     value="Ahmedabad"
@@ -570,171 +514,171 @@ scroll-margin-top: 100px;
                   more</button>
               </div> -->
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Institution Type</p>
-                <label class="examCheck"><input type="checkbox" value="IIM"
-                    data-filter-group="institutionType"><span>IIM</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="IIT"
-                    data-filter-group="institutionType"><span>IIT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Government"
-                    data-filter-group="institutionType"><span>Government</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Private"
-                    data-filter-group="institutionType"><span>Private</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Deemed University"
-                    data-filter-group="institutionType"><span>Deemed
-                    University</span><em></em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Institution Type</p>
+            <label class="examCheck"><input type="checkbox" value="IIM"
+                data-filter-group="institutionType"><span>IIM</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="IIT"
+                data-filter-group="institutionType"><span>IIT</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Government"
+                data-filter-group="institutionType"><span>Government</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Private"
+                data-filter-group="institutionType"><span>Private</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Deemed University"
+                data-filter-group="institutionType"><span>Deemed
+                University</span><em></em></label>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Accepted Entrance Exams</p>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Accepted Entrance Exams</p>
 
-                <label class="examCheck"><input type="checkbox" value="CAT"
-                    data-filter-group="entranceExam"><span>CAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="XAT"
-                    data-filter-group="entranceExam"><span>XAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="NMAT"
-                    data-filter-group="entranceExam"><span>NMAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="SNAP"
-                    data-filter-group="entranceExam"><span>SNAP</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="CMAT"
-                    data-filter-group="entranceExam"><span>CMAT</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="MAT"
-                    data-filter-group="entranceExam"><span>MAT</span><em></em></label>
-                <div class="examFilterGroup__extra" id="examEntranceExamExtra"
-                  hidden>
-                  <label class="examCheck"><input type="checkbox" value="ATMA"
-                      data-filter-group="entranceExam"><span>ATMA</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="MAH MBA CET"
-                      data-filter-group="entranceExam"><span>MAH MBA
-                      CET</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="Karnataka PGCET"
-                      data-filter-group="entranceExam"><span>Karnataka
-                      PGCET</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="TS ICET"
-                      data-filter-group="entranceExam"><span>TS
-                      ICET</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="AP ICET"
-                      data-filter-group="entranceExam"><span>AP
-                      ICET</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="KMAT Karnataka"
-                      data-filter-group="entranceExam"><span>KMAT
-                      Karnataka</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="KMAT Kerala"
-                      data-filter-group="entranceExam"><span>KMAT
-                      Kerala</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="TANCET MBA"
-                      data-filter-group="entranceExam"><span>TANCET
-                      MBA</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="OJEE MBA"
-                      data-filter-group="entranceExam"><span>OJEE
-                      MBA</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="CUET UG"
-                      data-filter-group="entranceExam"><span>CUET
-                      UG</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox"
-                      value="CUET PG"
-                      data-filter-group="entranceExam"><span>CUET
-                      PG</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="GMAT"
-                      data-filter-group="entranceExam"><span>GMAT</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="GRE"
-                      data-filter-group="entranceExam"><span>GRE</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="IBSAT"
-                      data-filter-group="entranceExam"><span>IBSAT</span><em></em></label>
-                  <label class="examCheck"><input type="checkbox" value="MICAT"
-                      data-filter-group="entranceExam"><span>MICAT</span><em></em></label>
-                </div>
-                <button class="examFilterGroup__more"
-                  id="examEntranceExamMoreBtn">+ Show
-                  more</button>
-              </div>
+            <label class="examCheck"><input type="checkbox" value="CAT"
+                data-filter-group="entranceExam"><span>CAT</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="XAT"
+                data-filter-group="entranceExam"><span>XAT</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="NMAT"
+                data-filter-group="entranceExam"><span>NMAT</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="SNAP"
+                data-filter-group="entranceExam"><span>SNAP</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="CMAT"
+                data-filter-group="entranceExam"><span>CMAT</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="MAT"
+                data-filter-group="entranceExam"><span>MAT</span><em></em></label>
+            <div class="examFilterGroup__extra" id="examEntranceExamExtra"
+              hidden>
+              <label class="examCheck"><input type="checkbox" value="ATMA"
+                  data-filter-group="entranceExam"><span>ATMA</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="MAH MBA CET"
+                  data-filter-group="entranceExam"><span>MAH MBA
+                  CET</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="Karnataka PGCET"
+                  data-filter-group="entranceExam"><span>Karnataka
+                  PGCET</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="TS ICET"
+                  data-filter-group="entranceExam"><span>TS
+                  ICET</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="AP ICET"
+                  data-filter-group="entranceExam"><span>AP
+                  ICET</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="KMAT Karnataka"
+                  data-filter-group="entranceExam"><span>KMAT
+                  Karnataka</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="KMAT Kerala"
+                  data-filter-group="entranceExam"><span>KMAT
+                  Kerala</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="TANCET MBA"
+                  data-filter-group="entranceExam"><span>TANCET
+                  MBA</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="OJEE MBA"
+                  data-filter-group="entranceExam"><span>OJEE
+                  MBA</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="CUET UG"
+                  data-filter-group="entranceExam"><span>CUET
+                  UG</span><em></em></label>
+              <label class="examCheck"><input type="checkbox"
+                  value="CUET PG"
+                  data-filter-group="entranceExam"><span>CUET
+                  PG</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="GMAT"
+                  data-filter-group="entranceExam"><span>GMAT</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="GRE"
+                  data-filter-group="entranceExam"><span>GRE</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="IBSAT"
+                  data-filter-group="entranceExam"><span>IBSAT</span><em></em></label>
+              <label class="examCheck"><input type="checkbox" value="MICAT"
+                  data-filter-group="entranceExam"><span>MICAT</span><em></em></label>
+            </div>
+            <button class="examFilterGroup__more"
+              id="examEntranceExamMoreBtn">+ Show
+              more</button>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Programme Type</p>
-                <label class="examCheck"><input type="checkbox" value="BBA"
-                    data-filter-group="programme"><span>BBA</span><em>4</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="BBA (Hons.)"
-                    data-filter-group="programme"><span>BBA
-                    (Hons.)</span><em>3</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Integrated BBA + MBA"
-                    data-filter-group="programme"><span>Integrated BBA +
-                    MBA</span><em>2</em></label>
-                <label class="examCheck"><input type="checkbox" value="MBA"
-                    data-filter-group="programme"><span>MBA</span><em>20</em></label>
-                <label class="examCheck"><input type="checkbox" value="PGDM"
-                    data-filter-group="programme"><span>PGDM</span><em>12</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Executive MBA"
-                    data-filter-group="programme"><span>Executive
-                    MBA</span><em>8</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Online MBA"
-                    data-filter-group="programme"><span>Online
-                    MBA</span><em>6</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Distance MBA"
-                    data-filter-group="programme"><span>Distance
-                    MBA</span><em>5</em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Programme Type</p>
+            <label class="examCheck"><input type="checkbox" value="BBA"
+                data-filter-group="programme"><span>BBA</span><em>4</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="BBA (Hons.)"
+                data-filter-group="programme"><span>BBA
+                (Hons.)</span><em>3</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Integrated BBA + MBA"
+                data-filter-group="programme"><span>Integrated BBA +
+                MBA</span><em>2</em></label>
+            <label class="examCheck"><input type="checkbox" value="MBA"
+                data-filter-group="programme"><span>MBA</span><em>20</em></label>
+            <label class="examCheck"><input type="checkbox" value="PGDM"
+                data-filter-group="programme"><span>PGDM</span><em>12</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Executive MBA"
+                data-filter-group="programme"><span>Executive
+                MBA</span><em>8</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Online MBA"
+                data-filter-group="programme"><span>Online
+                MBA</span><em>6</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Distance MBA"
+                data-filter-group="programme"><span>Distance
+                MBA</span><em>5</em></label>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Study Mode</p>
-                <label class="examCheck"><input type="checkbox"
-                    value="Full-Time"
-                    data-filter-group="studyMode"><span>Full-Time</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Part-Time"
-                    data-filter-group="studyMode"><span>Part-Time</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Online"
-                    data-filter-group="studyMode"><span>Online</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Hybrid"
-                    data-filter-group="studyMode"><span>Hybrid</span><em></em></label>
-                <label class="examCheck"><input type="checkbox" value="Distance"
-                    data-filter-group="studyMode"><span>Distance</span><em></em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Study Mode</p>
+            <label class="examCheck"><input type="checkbox"
+                value="Full-Time"
+                data-filter-group="studyMode"><span>Full-Time</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Part-Time"
+                data-filter-group="studyMode"><span>Part-Time</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Online"
+                data-filter-group="studyMode"><span>Online</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Hybrid"
+                data-filter-group="studyMode"><span>Hybrid</span><em></em></label>
+            <label class="examCheck"><input type="checkbox" value="Distance"
+                data-filter-group="studyMode"><span>Distance</span><em></em></label>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Programme Fees</p>
-                <label class="examCheck"><input type="checkbox"
-                    value="Below ₹5 Lakh"
-                    data-filter-group="feeRange"><span>Below ₹5
-                    Lakh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="₹5–10 Lakh"
-                    data-filter-group="feeRange"><span>₹5–10
-                    Lakh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="₹10–15 Lakh"
-                    data-filter-group="feeRange"><span>₹10–15
-                    Lakh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="₹15–20 Lakh"
-                    data-filter-group="feeRange"><span>₹15–20
-                    Lakh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="₹20–30 Lakh"
-                    data-filter-group="feeRange"><span>₹20–30
-                    Lakh</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Above ₹30 Lakh"
-                    data-filter-group="feeRange"><span>Above ₹30
-                    Lakh</span><em></em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Programme Fees</p>
+            <label class="examCheck"><input type="checkbox"
+                value="Below ₹5 Lakh"
+                data-filter-group="feeRange"><span>Below ₹5
+                Lakh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="₹5–10 Lakh"
+                data-filter-group="feeRange"><span>₹5–10
+                Lakh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="₹10–15 Lakh"
+                data-filter-group="feeRange"><span>₹10–15
+                Lakh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="₹15–20 Lakh"
+                data-filter-group="feeRange"><span>₹15–20
+                Lakh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="₹20–30 Lakh"
+                data-filter-group="feeRange"><span>₹20–30
+                Lakh</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Above ₹30 Lakh"
+                data-filter-group="feeRange"><span>Above ₹30
+                Lakh</span><em></em></label>
+          </div>
 
-              <!-- <div class="examFilterGroup">
+          <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Total Fees</p>
                 <input type="range" min="3" max="42" value="42"
                   class="examFeeRange" id="examFeeRange">
@@ -742,61 +686,61 @@ scroll-margin-top: 100px;
                     id="examFeeRangeValue">₹42 lakhs</span></div>
               </div> -->
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Accreditations</p>
-                <label class="examCheck"><input type="checkbox"
-                    value="AICTE Approved"
-                    data-filter-group="accreditation"><span>AICTE
-                    Approved</span><em>15</em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="UGC Recognised"
-                    data-filter-group="accreditation"><span>UGC
-                    Recognised</span><em>10</em></label>
-                <label class="examCheck"><input type="checkbox" value="NAAC A++"
-                    data-filter-group="accreditation"><span>NAAC
-                    A++</span><em>5</em></label>
-                <label class="examCheck"><input type="checkbox" value="NAAC A+"
-                    data-filter-group="accreditation"><span>NAAC
-                    A+</span><em>8</em></label>
-                <label class="examCheck"><input type="checkbox" value="NBA"
-                    data-filter-group="accreditation"><span>NBA</span><em>6</em></label>
-                <label class="examCheck"><input type="checkbox" value="AACSB"
-                    data-filter-group="accreditation"><span>AACSB</span><em>4</em></label>
-                <label class="examCheck"><input type="checkbox" value="AMBA"
-                    data-filter-group="accreditation"><span>AMBA</span><em>3</em></label>
-                <label class="examCheck"><input type="checkbox" value="EQUIS"
-                    data-filter-group="accreditation"><span>EQUIS</span><em>2</em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Accreditations</p>
+            <label class="examCheck"><input type="checkbox"
+                value="AICTE Approved"
+                data-filter-group="accreditation"><span>AICTE
+                Approved</span><em>15</em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="UGC Recognised"
+                data-filter-group="accreditation"><span>UGC
+                Recognised</span><em>10</em></label>
+            <label class="examCheck"><input type="checkbox" value="NAAC A++"
+                data-filter-group="accreditation"><span>NAAC
+                A++</span><em>5</em></label>
+            <label class="examCheck"><input type="checkbox" value="NAAC A+"
+                data-filter-group="accreditation"><span>NAAC
+                A+</span><em>8</em></label>
+            <label class="examCheck"><input type="checkbox" value="NBA"
+                data-filter-group="accreditation"><span>NBA</span><em>6</em></label>
+            <label class="examCheck"><input type="checkbox" value="AACSB"
+                data-filter-group="accreditation"><span>AACSB</span><em>4</em></label>
+            <label class="examCheck"><input type="checkbox" value="AMBA"
+                data-filter-group="accreditation"><span>AMBA</span><em>3</em></label>
+            <label class="examCheck"><input type="checkbox" value="EQUIS"
+                data-filter-group="accreditation"><span>EQUIS</span><em>2</em></label>
+          </div>
 
-              <div class="examFilterGroup">
-                <p class="examFilterGroup__title">Admission Status</p>
-                <label class="examCheck"><input type="checkbox"
-                    value="Applications Open"
-                    data-filter-group="admissionStatus"><span>Applications
-                    Open</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Closing Within 7 Days"
-                    data-filter-group="admissionStatus"><span>Closing Within 7
-                    Days</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Closing Within 15 Days"
-                    data-filter-group="admissionStatus"><span>Closing Within 15
-                    Days</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Closing Within 30 Days"
-                    data-filter-group="admissionStatus"><span>Closing Within 30
-                    Days</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Upcoming Applications"
-                    data-filter-group="admissionStatus"><span>Upcoming
-                    Applications</span><em></em></label>
-                <label class="examCheck"><input type="checkbox"
-                    value="Admissions Closed"
-                    data-filter-group="admissionStatus"><span>Admissions
-                    Closed</span><em></em></label>
-              </div>
+          <div class="examFilterGroup">
+            <p class="examFilterGroup__title">Admission Status</p>
+            <label class="examCheck"><input type="checkbox"
+                value="Applications Open"
+                data-filter-group="admissionStatus"><span>Applications
+                Open</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Closing Within 7 Days"
+                data-filter-group="admissionStatus"><span>Closing Within 7
+                Days</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Closing Within 15 Days"
+                data-filter-group="admissionStatus"><span>Closing Within 15
+                Days</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Closing Within 30 Days"
+                data-filter-group="admissionStatus"><span>Closing Within 30
+                Days</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Upcoming Applications"
+                data-filter-group="admissionStatus"><span>Upcoming
+                Applications</span><em></em></label>
+            <label class="examCheck"><input type="checkbox"
+                value="Admissions Closed"
+                data-filter-group="admissionStatus"><span>Admissions
+                Closed</span><em></em></label>
+          </div>
 
-              <!-- <div class="examFilterGroup">
+          <!-- <div class="examFilterGroup">
                 <p class="examFilterGroup__title">Avg. Placement Package</p>
                 <label class="examCheck"><input type="checkbox" value="20+ LPA"
                     data-filter-group="package"><span>20+
@@ -833,1160 +777,1257 @@ scroll-margin-top: 100px;
                     data-filter-group="nirf"><span>Top
                     100</span><em></em></label>
               </div> -->
-              <div class="examFilters__actions"> <!-- add this -->
-                <button type="button"
-                  class="examFilters__closeBtn"
-                  id="examFiltersCloseBtn">Close</button>
-                <button type="button"
-                  class="examFilters__applyBtn"
-                  id="examFiltersApplyBtn">Apply</button>
+          <div class="examFilters__actions"> <!-- add this -->
+            <button type="button"
+              class="examFilters__closeBtn"
+              id="examFiltersCloseBtn">Close</button>
+            <button type="button"
+              class="examFilters__applyBtn"
+              id="examFiltersApplyBtn">Apply</button>
+          </div>
+        </aside>
+
+        <!-- Main content -->
+        <div class="examMain">
+          <div class="examMain__toolbar">
+            <p class="examMain__count">Showing <strong
+                id="examResultCount">5</strong> of <strong
+                id="examTotalCount">5</strong> MBA Colleges in India</p>
+            <div class="examSort">
+              <label for="examSortSelect">Sort by</label>
+
+              <div class="selectWrap">
+                <select id="examSortSelect">
+                  <option> Recommended</option>
+                  <option> Highest ROI</option>
+                  <option> Highest Average Salary</option>
+                  <option> Lowest Programme Fees</option>
+                  <option> Highest NIRF Rank</option>
+                  <option> Recently Updated</option>
+                  <option> Alphabetical (A-Z)</option>
+                  <option>Alphabetical</option>
+                </select>
+
+                <svg class="selectArrow" viewBox="0 0 24 24" fill="none"
+                  aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
               </div>
-            </aside>
-
-            <!-- Main content -->
-            <div class="examMain">
-              <div class="examMain__toolbar">
-                <p class="examMain__count">Showing <strong
-                    id="examResultCount">5</strong> of <strong
-                    id="examTotalCount">5</strong> MBA Colleges in India</p>
-                <div class="examSort">
-                  <label for="examSortSelect">Sort by</label>
-
-                  <div class="selectWrap">
-                    <select id="examSortSelect">
-                      <option> Recommended</option>
-                      <option> Highest ROI</option>
-                      <option> Highest Average Salary</option>
-                      <option> Lowest Programme Fees</option>
-                      <option> Highest NIRF Rank</option>
-                      <option> Recently Updated</option>
-                      <option> Alphabetical (A-Z)</option>
-                      <option>Alphabetical</option>
-                    </select>
-
-                    <svg class="selectArrow" viewBox="0 0 24 24" fill="none"
-                      aria-hidden="true">
-                      <path d="M6 9L12 15L18 9" stroke="currentColor"
-                        stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-              <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
-              <p id="examNoResults"
-                style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
-                exams match the selected filters. Try clearing some filters.</p>
-
-              <!-- Exam Card 1 -->
-
-              <div class="examCard" data-programme="MBA"
-                data-state="Gujarat" data-city="Ahmedabad"
-                data-institution-type="IIM"
-                data-entrance-exam="CAT" data-study-mode="Full-Time"
-                data-accreditation="NAAC A+"
-                data-admission-status="Applications Open"
-                data-package="40-50 LPA" data-nirf="1" data-fee="25.55"
-                data-fee-range="₹20–30 Lakh">
-                <div class="examCard__top">
-                  <div class="examCard__logo"><img
-                      src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
-                      width="56" height="56" loading="lazy"></div>
-
-                  <div class="examCard__actions">
-                    <a
-                      href="../college/college-detail.php"
-                      class="examBtn examBtn--solid">View College <svg
-                        width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
-                          stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                    <a href="#" class="examBtn examBtn--outline">Download
-                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                  </div>
-
-                  <div class="examCard__info">
-                    <h3>Indian Institute of Management, Ahmedabad (IIM-A)</h3>
-                    <p>Ahmedabad, Gujarat</p>
-                    <div class="examCard__badges">
-                      <span class="examBadge">NIRF #1</span>
-                      <span class="examBadge">Government</span>
-                      <span class="examBadge">NAAC A++</span>
-                      <span class="examBadge">AICTE Approved</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="examCard__stats">
-                  <div class="examCard__stat"><strong>₹8.47 - 25.55
-                      L</strong><span>Total Fees</span></div>
-                  <div class="examCard__stat"><strong>₹1.02
-                      Cr</strong><span>Highest Package</span></div>
-                  <div class="examCard__stat"><strong>₹42
-                      LPA</strong><span>Average Package</span></div>
-                  <div
-                    class="examCard__stat"><strong>100%</strong><span>Placement
-                      Rate</span></div>
-                  <!-- <div
-        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
-                </div>
-              </div>
-
-              <!-- Exam Card 2 -->
-
-              <div class="examCard" data-programme="MBA"
-                data-state="Karnataka" data-city="Bengaluru"
-                data-institution-type="IIM"
-                data-entrance-exam="CAT" data-study-mode="Full-Time"
-                data-accreditation="NAAC A+"
-                data-admission-status="Applications Open"
-                data-package="30-40 LPA" data-nirf="2" data-fee="24.50"
-                data-fee-range="₹20–30 Lakh">
-                <div class="examCard__top">
-                  <div class="examCard__logo"><img
-                      src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
-                      width="56" height="56" loading="lazy"></div>
-
-                  <div class="examCard__actions">
-                    <a
-                      href="../college/college-detail.php"
-                      class="examBtn examBtn--solid">View College <svg
-                        width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
-                          stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                    <a href="#" class="examBtn examBtn--outline">Download
-                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                  </div>
-
-                  <div class="examCard__info">
-                    <h3>Indian Institute of Management, Bangalore (IIM-B)</h3>
-                    <p>Bangalore, Karnataka</p>
-                    <div class="examCard__badges">
-                      <span class="examBadge">NIRF #2</span>
-                      <span class="examBadge">Government</span>
-                      <span class="examBadge">NAAC A++</span>
-                      <span class="examBadge">AICTE Approved</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="examCard__stats">
-                  <div class="examCard__stat"><strong>₹8.30 - 24.50
-                      L</strong><span>Total Fees</span></div>
-                  <div class="examCard__stat"><strong>₹1.02
-                      Cr</strong><span>Highest Package</span></div>
-                  <div class="examCard__stat"><strong>₹35
-                      LPA</strong><span>Average Package</span></div>
-                  <div
-                    class="examCard__stat"><strong>100%</strong><span>Placement
-                      Rate</span></div>
-                  <!-- <div
-        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
-                </div>
-              </div>
-
-              <!-- Exam Card 3 -->
-
-              <div class="examCard" data-programme="Executive MBA"
-                data-state="Jharkhand" data-city="Jamshedpur"
-                data-institution-type="Private"
-                data-entrance-exam="XAT" data-study-mode="Part-Time"
-                data-accreditation="AACSB"
-                data-admission-status="Applications Open"
-                data-package="24-30 LPA" data-nirf="6" data-fee="23.00"
-                data-fee-range="₹20–30 Lakh">
-                <div class="examCard__top">
-                  <div class="examCard__logo"><img
-                      src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
-                      width="56" height="56" loading="lazy"></div>
-
-                  <div class="examCard__actions">
-                    <a
-                      href="../college/college-detail.php"
-                      class="examBtn examBtn--solid">View College <svg
-                        width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
-                          stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                    <a href="#" class="examBtn examBtn--outline">Download
-                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                  </div>
-
-                  <div class="examCard__info">
-                    <h3>Xavier School of Management (XLRI), Jamshedpur</h3>
-                    <p>Jamshedpur, Jharkhand</p>
-                    <div class="examCard__badges">
-                      <span class="examBadge">NIRF #6</span>
-                      <span class="examBadge">Private</span>
-                      <span class="examBadge">NAAC A+</span>
-                      <span class="examBadge">AICTE Approved</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="examCard__stats">
-                  <div class="examCard__stat"><strong>₹10.50 - 23.00
-                      L</strong><span>Total Fees</span></div>
-                  <div class="examCard__stat"><strong>₹1.02
-                      Cr</strong><span>Highest Package</span></div>
-                  <div class="examCard__stat"><strong>₹29
-                      LPA</strong><span>Average Package</span></div>
-                  <div
-                    class="examCard__stat"><strong>100%</strong><span>Placement
-                      Rate</span></div>
-
-                </div>
-              </div>
-
-              <!-- Exam Card 4 -->
-
-              <div class="examCard" data-programme="MBA"
-                data-state="Delhi (NCT)" data-city="Delhi NCR"
-                data-institution-type="Government"
-                data-entrance-exam="CAT" data-study-mode="Full-Time"
-                data-accreditation="NAAC A+"
-                data-admission-status="Applications Open"
-                data-package="32-40 LPA" data-nirf="4" data-fee="2.50"
-                data-fee-range="Below ₹5 Lakh">
-                <div class="examCard__top">
-                  <div class="examCard__logo"><img
-                      src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
-                      width="56" height="56" loading="lazy"></div>
-                  <div class="examCard__actions">
-                    <a
-                      href="../college/college-detail.php"
-                      class="examBtn examBtn--solid">View College <svg
-                        width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
-                          stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                    <a href="#" class="examBtn examBtn--outline">Download
-                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                  </div>
-
-                  <div class="examCard__info">
-                    <h3>Faculty of Management Studies, Delhi (FMS)</h3>
-                    <p>New Delhi, Delhi/NCR</p>
-                    <div class="examCard__badges">
-                      <span class="examBadge">NIRF #4</span>
-                      <span class="examBadge">Government</span>
-                      <span class="examBadge">NAAC A</span>
-                      <span class="examBadge">AICTE Approved</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="examCard__stats">
-                  <div class="examCard__stat"><strong>₹1.50 - 2.50
-                      L</strong><span>Total Fees</span></div>
-                  <div class="examCard__stat"><strong>₹1.02
-                      Cr</strong><span>Highest Package</span></div>
-                  <div class="examCard__stat"><strong>₹32
-                      LPA</strong><span>Average Package</span></div>
-                  <div
-                    class="examCard__stat"><strong>100%</strong><span>Placement
-                      Rate</span></div>
-
-                </div>
-              </div>
-
-              <!-- Exam Card 5 -->
-
-              <div class="examCard" data-programme="Online MBA"
-                data-state="Haryana" data-city="Gurugram"
-                data-institution-type="Private"
-                data-entrance-exam="GMAT" data-study-mode="Online"
-                data-accreditation="AMBA"
-                data-admission-status="Applications Open"
-                data-package="20+ LPA" data-nirf="8" data-fee="19.50"
-                data-fee-range="₹15–20 Lakh">
-                <div class="examCard__top">
-                  <div class="examCard__logo"><img
-                      src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
-                      width="56" height="56" loading="lazy"></div>
-
-                  <div class="examCard__actions">
-                    <a
-                      href="../college/college-detail.php"
-                      class="examBtn examBtn--solid">View College <svg
-                        width="16" height="16" viewBox="0 0 24 24" fill="none"
-                        aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
-                          stroke="currentColor" stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                    <a href="#" class="examBtn examBtn--outline">Download
-                      Brochure <svg width="16" height="16" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg></a>
-                  </div>
-
-                  <div class="examCard__info">
-                    <h3>Management Development Institute, Gurgaon (MDI)</h3>
-                    <p>Gurgaon, Haryana</p>
-                    <div class="examCard__badges">
-                      <span class="examBadge">NIRF #8</span>
-                      <span class="examBadge">Autonomous</span>
-                      <span class="examBadge">NAAC A</span>
-                      <span class="examBadge">AICTE Approved</span>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="examCard__stats">
-                  <div class="examCard__stat"><strong>₹17.00 - 19.50
-                      L</strong><span>Total Fees</span></div>
-                  <div class="examCard__stat"><strong>₹1.02
-                      Cr</strong><span>Highest Package</span></div>
-                  <div class="examCard__stat"><strong>₹27
-                      LPA</strong><span>Average Package</span></div>
-                  <div
-                    class="examCard__stat"><strong>100%</strong><span>Placement
-                      Rate</span></div>
-                  <!-- <div
-        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
-                </div>
-              </div>
-
-              <div class="examPagination" id="examPagination"></div>
-
             </div>
+          </div>
 
-            <!-- Right sidebar -->
-            <aside class="examAside">
+          <!-- <div style="margin: 10px 0 25px;"><img src="assets/ads.webp" alt=""></div> -->
+          <p id="examNoResults"
+            style="display:none; text-align:center; padding:40px 0; color:#8a92a6; font-size:15px;">No
+            exams match the selected filters. Try clearing some filters.</p>
 
-              <div class="clg-sideCard clg-admissionsWidget">
-                <h3 class="clg-sideCard__title">Admissions open now</h3>
+          <!-- Exam Card 1 -->
 
-                <ul class="clg-admissionsList">
-                  <li class="clg-admissionItem">
-                    <div class="logo-date">
+          <div class="examCard" data-programme="MBA"
+            data-state="Gujarat" data-city="Ahmedabad"
+            data-institution-type="IIM"
+            data-entrance-exam="CAT" data-study-mode="Full-Time"
+            data-accreditation="NAAC A+"
+            data-admission-status="Applications Open"
+            data-package="40-50 LPA" data-nirf="1" data-fee="25.55"
+            data-fee-range="₹20–30 Lakh">
+            <div class="examCard__top">
+              <div class="examCard__logo"><img
+                  src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                  width="56" height="56" loading="lazy"></div>
 
-                      <img class="clg-admissionItem__logo"
-                        src="../src/assets/images/isb-hyderabad.webp" width="58" height="23"
-                        alt="ISB logo">
-
-                      <div class="clg-admissionItem__info">
-                        <p class="clg-admissionItem__name">ISB PGPpro</p>
-                        <p class="clg-admissionItem__deadline">Deadline: Jun 15,
-                          2026</p>
-                        <a href="javascript:void(0)" class="downloadBrochureBtn"
-                          aria-label="Apply now"> Apply now
-                          <svg width="14" height="14" viewBox="0 0 24 24"
-                            fill="none" aria-hidden="true"><path
-                              d="M7 17L17 7M17 7H8M17 7V16"
-                              stroke="currentColor"
-                              stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"></path></svg>
-                        </a>
-                      </div>
-                    </div>
-
-                    <!-- <a class="clg-admissionItem__cta" href="#">Apply now</a> -->
-
-                  </li>
-
-                  <li class="clg-admissionItem">
-                    <div class="logo-date">
-                      <img class="clg-admissionItem__logo"
-                        src="../src/assets/images/spjimr.webp" width="54" height="21" alt="SPJIMR logo">
-                      <div class="clg-admissionItem__info">
-                        <p class="clg-admissionItem__name">SPJIMR PGEMP</p>
-                        <p class="clg-admissionItem__deadline">Deadline: Jun 30,
-                          2026</p>
-                        <a href="javascript:void(0)" class="downloadBrochureBtn"
-                          aria-label="Apply now"> Apply now
-                          <svg width="14" height="14" viewBox="0 0 24 24"
-                            fill="none" aria-hidden="true"><path
-                              d="M7 17L17 7M17 7H8M17 7V16"
-                              stroke="currentColor"
-                              stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"></path></svg>
-                        </a>
-                      </div>
-                    </div>
-
-                  </li>
-
-                  <li class="clg-admissionItem">
-                    <div class="logo-date">
-                      <img class="clg-admissionItem__logo"
-                        src="../src/assets/images/iim.webp" width="43" height="41"
-                        alt="IIM Calcutta logo">
-                      <div class="clg-admissionItem__info">
-                        <p class="clg-admissionItem__name">IIM-C EPGM</p>
-                        <p class="clg-admissionItem__deadline">Deadline: Jul 31,
-                          2026</p>
-                        <a href="javascript:void(0)" class="downloadBrochureBtn"
-                          aria-label="Apply now"> Apply now
-                          <svg width="14" height="14" viewBox="0 0 24 24"
-                            fill="none" aria-hidden="true"><path
-                              d="M7 17L17 7M17 7H8M17 7V16"
-                              stroke="currentColor"
-                              stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"></path></svg>
-                        </a>
-                      </div>
-                    </div>
-
-                  </li>
-
-                  <li class="clg-admissionItem">
-                    <div class="logo-date">
-                      <img class="clg-admissionItem__logo"
-                        src="../src/assets/images/mdi.webp" width="54" height="27" alt="MDI logo">
-                      <div class="clg-admissionItem__info">
-                        <p class="clg-admissionItem__name">MDI NMP</p>
-                        <p class="clg-admissionItem__deadline">Deadline: Aug
-                          2026</p>
-                        <a href="javascript:void(0)" class="downloadBrochureBtn"
-                          aria-label="Apply now"> Apply now
-                          <svg width="14" height="14" viewBox="0 0 24 24"
-                            fill="none" aria-hidden="true"><path
-                              d="M7 17L17 7M17 7H8M17 7V16"
-                              stroke="currentColor"
-                              stroke-width="2" stroke-linecap="round"
-                              stroke-linejoin="round"></path></svg>
-                        </a>
-                      </div>
-                    </div>
-
-                  </li>
-                </ul>
-              </div>
-
-              <div class="collegeCard" itemprop="itemListElement" itemscope
-                itemtype="https://schema.org/CollegeOrUniversity">
-                <div class="collegeCardLogo">
-                  <img src="../src/assets/images/iima-DED8g9td.webp"
-                    alt="IIM Ahmedabad logo" width="160" height="64"
-                    loading="lazy" decoding="async" itemprop="logo">
-                </div>
-                <div class="collegeCardBody">
-                  <h3 class="collegeCardName" itemprop="name">IIMA</h3>
-                  <p class="collegeCardLocation" itemprop="address">Ahmedabad,
-                    Gujarat</p>
-
-                  <div class="collegeStats">
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">₹19.5 Lakh</span>
-                      <span class="collegeStatLabel">Total Fees</span>
-                    </div>
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">₹19 Lakh</span>
-                      <span class="collegeStatLabel">Avg Package</span>
-                    </div>
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">95%ile</span>
-                      <span class="collegeStatLabel">Cutoff</span>
-                    </div>
-                  </div>
-
-                  <p class="collegeAccepting">Accepting</p>
-                  <ul class="collegeTags">
-                    <li class="collegeTag">CAT</li>
-                    <li class="collegeTag">XAT</li>
-                    <li class="collegeTag">GMAT</li>
-                  </ul>
-
-                  <div class="collegeCardFooter">
-                    <a href="#" class="viewCoursesLink">
-                      View College
-                      <svg width="14" height="14" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg>
-                    </a>
-                    <a href="#" class="downloadBrochureBtn"
-                      aria-label="Download IIMA brochure">
-                      Download Brochure
-                      <svg width="14" height="14" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="collegeCard" itemprop="itemListElement" itemscope
-                itemtype="https://schema.org/CollegeOrUniversity">
-                <div class="collegeCardLogo">
-                  <img src="../src/assets/images/iim-banglore.webp"
-                    alt="IIM Bangalore logo" width="160" height="64"
-                    loading="lazy" decoding="async" itemprop="logo">
-                </div>
-                <div class="collegeCardBody">
-                  <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
-                  <p class="collegeCardLocation" itemprop="address">Bangalore,
-                    Karnataka</p>
-
-                  <div class="collegeStats">
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">₹21.5 Lakh</span>
-                      <span class="collegeStatLabel">Total Fees</span>
-                    </div>
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">₹21.5 Lakh</span>
-                      <span class="collegeStatLabel">Avg Package</span>
-                    </div>
-                    <div class="collegeStat">
-                      <span class="collegeStatValue">94%ile</span>
-                      <span class="collegeStatLabel">Cutoff</span>
-                    </div>
-                  </div>
-
-                  <p class="collegeAccepting">Accepting</p>
-                  <ul class="collegeTags">
-                    <li class="collegeTag">CAT</li>
-                    <li class="collegeTag">XAT</li>
-                    <li class="collegeTag">GMAT</li>
-                  </ul>
-
-                  <div class="collegeCardFooter">
-                    <a href="#" class="viewCoursesLink">
-                      View College
-                      <svg width="14" height="14" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg>
-                    </a>
-                    <a href="#" class="downloadBrochureBtn"
-                      aria-label="Download IIM Bangalore brochure">
-                      Download Brochure
-                      <svg width="14" height="14" viewBox="0 0 24 24"
-                        fill="none" aria-hidden="true"><path
-                          d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
-                          stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round"></path></svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="alumniAdvertiseWidget">
-                <h5>Advertise your programme </h5>
-                <p>Reach 5,000+ working professionals actively comparing
-                  Executive MBA programs on MBA 360.</p>
-                <div class="alumniAdvertiseWidget__stats">
-                  <div><strong>5K+</strong><span>Monthly visitors</span></div>
-                  <div><strong>₹40L+</strong><span>Avg CTC</span></div>
-                  <div><strong>PPL</strong><span>Pay-per-lead</span></div>
-                  <div><strong>3.8×</strong><span>Lead quality</span></div>
-                </div>
-                <a href="#" class="alumniAdvertiseWidget__cta">Advertise here
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                    aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16"
+              <div class="examCard__actions">
+                <a
+                  href="../college/college-detail.php"
+                  class="examBtn examBtn--solid">View College <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H8M17 7V16"
                       stroke="currentColor" stroke-width="2"
                       stroke-linecap="round"
-                      stroke-linejoin="round"></path></svg></a>
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+                <a href="#" class="examBtn examBtn--outline">Download
+                  Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
               </div>
-            </aside>
 
-          </div>
-        </div>
-      </section>
+              <div class="examCard__info">
+                <h3>Indian Institute of Management, Ahmedabad (IIM-A)</h3>
+                <p>Ahmedabad, Gujarat</p>
+                <div class="examCard__badges">
+                  <span class="examBadge">NIRF #1</span>
+                  <span class="examBadge">Government</span>
+                  <span class="examBadge">NAAC A++</span>
+                  <span class="examBadge">AICTE Approved</span>
+                </div>
+              </div>
 
-      <section class="examCalendar reveal">
-        <div class="container">
-          <div class="examCalendar__grid">
-            <div class="examCalendar__head">
-              <h2 class="marketing__heading">Top 20 MBA Colleges in India - NIRF
-                Rankings 2026</h2>
-              <p>Source: NIRF India Rankings 2025 (Management Category). Data
-                updated July 2025.</p>
             </div>
-
-            <div class="examCalendar__disclaimer">
-              <strong>Disclaimer:</strong> Fee structures and placement data are
-              sourced from official institutional disclosures and may vary.
-              Please verify directly with the institute before making admission
-              decisions.
-            </div>
-
-            <div class="examCalendar__tableWrap examTable__wrapScroll">
-              <table class="examTable">
-                <thead>
-                  <tr>
-                    <th>NIRF Rank</th>
-                    <th>College Name</th>
-                    <th>City</th>
-                    <th>Type</th>
-                    <th>Avg Package</th>
-                    <th>Entrance Exam</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="examTable__name">1</td>
-                    <td class="examTable__name">IIM Ahmedabad</td>
-                    <td>Ahmedabad</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹42 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">2</td>
-                    <td class="examTable__name">IIM Bangalore</td>
-                    <td>Bangalore</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹35 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">3</td>
-                    <td class="examTable__name">IIM Calcutta</td>
-                    <td>Kolkata</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹34 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">4</td>
-                    <td class="examTable__name">FMS Delhi</td>
-                    <td>New Delhi</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹32 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">5</td>
-                    <td class="examTable__name">IIM Lucknow</td>
-                    <td>Lucknow</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹30 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">6</td>
-                    <td class="examTable__name">XLRI Jamshedpur</td>
-                    <td>Jamshedpur</td>
-                    <td>Private</td>
-                    <td><span class="examTable__count">₹29 LPA</span></td>
-                    <td>XAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">7</td>
-                    <td class="examTable__name">IIM Kozhikode</td>
-                    <td>Kozhikode</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹28 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">8</td>
-                    <td class="examTable__name">MDI Gurgaon</td>
-                    <td>Gurgaon</td>
-                    <td>Autonomous</td>
-                    <td><span class="examTable__count">₹27 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">9</td>
-                    <td class="examTable__name">JBIMS Mumbai</td>
-                    <td>Mumbai</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹28 LPA</span></td>
-                    <td>MH-CET</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">10</td>
-                    <td class="examTable__name">IIM Indore</td>
-                    <td>Indore</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹25 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">11</td>
-                    <td class="examTable__name">IIM Udaipur</td>
-                    <td>Udaipur</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹22 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">12</td>
-                    <td class="examTable__name">NITIE Mumbai (IIM Mumbai)</td>
-                    <td>Mumbai</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹24 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">13</td>
-                    <td class="examTable__name">NMIMS Mumbai</td>
-                    <td>Mumbai</td>
-                    <td>Deemed</td>
-                    <td><span class="examTable__count">₹18 LPA</span></td>
-                    <td>NMAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">14</td>
-                    <td class="examTable__name">IIM Shillong</td>
-                    <td>Shillong</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹20 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr>
-                    <td class="examTable__name">15</td>
-                    <td class="examTable__name">Great Lakes Chennai</td>
-                    <td>Chennai</td>
-                    <td>Private</td>
-                    <td><span class="examTable__count">₹16.5 LPA</span></td>
-                    <td>CAT/XAT/GMAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <!-- Extra exams: hidden until "View All" is clicked -->
-
-                  <tr class="examTable__extraRow" style="display:none;">
-                    <td class="examTable__name">16</td>
-                    <td class="examTable__name">IIM Ahmedabad</td>
-                    <td>Ahmedabad</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹42 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr class="examTable__extraRow" style="display:none;">
-                    <td class="examTable__name">17</td>
-                    <td class="examTable__name">IIM Bangalore</td>
-                    <td>Bangalore</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹35 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr class="examTable__extraRow" style="display:none;">
-                    <td class="examTable__name">18</td>
-                    <td class="examTable__name">IIM Calcutta</td>
-                    <td>Kolkata</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹34 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-
-                  <tr class="examTable__extraRow" style="display:none;">
-                    <td class="examTable__name">19</td>
-                    <td class="examTable__name">FMS Delhi</td>
-                    <td>New Delhi</td>
-                    <td>Government</td>
-                    <td><span class="examTable__count">₹32 LPA</span></td>
-                    <td>CAT</td>
-                    <td><button class="examTable__apply">Apply</button></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="examCalendar__viewAll">
-              <button id="examViewAllBtn">View Full NIRF Top 100 List <span
-                  aria-hidden="true"><svg width="18" height="18"
-                    viewBox="0 0 24 24" fill="none" aria-hidden="true"><path
-                      d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"></path></svg></span></button>
+            <div class="examCard__stats">
+              <div class="examCard__stat"><strong>₹8.47 - 25.55
+                  L</strong><span>Total Fees</span></div>
+              <div class="examCard__stat"><strong>₹1.02
+                  Cr</strong><span>Highest Package</span></div>
+              <div class="examCard__stat"><strong>₹42
+                  LPA</strong><span>Average Package</span></div>
+              <div
+                class="examCard__stat"><strong>100%</strong><span>Placement
+                  Rate</span></div>
+              <!-- <div
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
             </div>
           </div>
-        </div>
-      </section>
 
-      <section class="examFaq reveal">
-        <div class="container">
-          <div class="examFaq__grid">
-            <div class="examFaq__head">
-              <h2 class="marketing__heading">Frequently Asked Questions — MBA
-                Colleges in India</h2>
-              <p>Everything you need to know about MBA admissions, fees, and
-                career prospects</p>
-            </div>
+          <!-- Exam Card 2 -->
 
-            <div class="examFaq__tabs" id="examFaqTabs">
-              <button class="examFaq__tab is-active"
-                data-category="rankings">Rankings</button>
-              <button class="examFaq__tab" data-category="fees">Fees</button>
-              <button class="examFaq__tab"
-                data-category="admissions">Admissions</button>
-              <button class="examFaq__tab" data-category="salary">Salary &amp;
-                Placement</button>
-              <button class="examFaq__tab"
-                data-category="eligibility">Eligibility</button>
-              <button class="examFaq__tab"
-                data-category="specializations">Specializations</button>
-              <button class="examFaq__tab"
-                data-category="scholarships">Scholarships</button>
-            </div>
+          <div class="examCard" data-programme="MBA"
+            data-state="Karnataka" data-city="Bengaluru"
+            data-institution-type="IIM"
+            data-entrance-exam="CAT" data-study-mode="Full-Time"
+            data-accreditation="NAAC A+"
+            data-admission-status="Applications Open"
+            data-package="30-40 LPA" data-nirf="2" data-fee="24.50"
+            data-fee-range="₹20–30 Lakh">
+            <div class="examCard__top">
+              <div class="examCard__logo"><img
+                  src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                  width="56" height="56" loading="lazy"></div>
 
-            <div class="examFaq__list" id="examFaqList">
-              <div class="examFaq__item" data-category="rankings">
-                <button class="examFaq__question">Which is the No. 1 MBA college
-                  in India 2025?<span class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>IIM Ahmedabad is consistently
-                    ranked the No. 1 MBA college in India, followed closely by
-                    IIM Bangalore and IIM Calcutta, based on NIRF rankings,
-                    placement records, and faculty quality.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="rankings">
-                <button class="examFaq__question">How are MBA colleges ranked in
-                  India — NIRF vs private rankings?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>NIRF is the official government
-                    ranking based on teaching, research, placements and
-                    outreach, while private rankings (like those by business
-                    magazines) also factor in brand perception and industry
-                    surveys — so the two lists can differ slightly.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="rankings">
-                <button class="examFaq__question">Which is the No. 1 MBA college
-                  in India 2025?<span class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>IIM Ahmedabad is consistently
-                    ranked the No. 1 MBA college in India, followed closely by
-                    IIM Bangalore and IIM Calcutta, based on NIRF rankings,
-                    placement records, and faculty quality.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="rankings">
-                <button class="examFaq__question">How are MBA colleges ranked in
-                  India — NIRF vs private rankings?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>NIRF is the official government
-                    ranking based on teaching, research, placements and
-                    outreach, while private rankings (like those by business
-                    magazines) also factor in brand perception and industry
-                    surveys — so the two lists can differ slightly.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="fees">
-                <button class="examFaq__question">What is the cheapest top MBA
-                  college in India?<span class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Government-run institutes and
-                    university departments such as FMS Delhi and JBIMS Mumbai
-                    offer top-tier MBA education at a fraction of the cost of
-                    private B-schools.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="fees">
-                <button class="examFaq__question">What is the average total fee
-                  for a 2-year MBA at IIMs?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>The total fee for a 2-year PGP
-                    at most IIMs typically ranges between ₹20-25 lakhs, though
-                    newer and smaller IIMs are usually on the lower end of that
-                    range.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="fees">
-                <button class="examFaq__question">What is the cheapest top MBA
-                  college in India?<span class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Government-run institutes and
-                    university departments such as FMS Delhi and JBIMS Mumbai
-                    offer top-tier MBA education at a fraction of the cost of
-                    private B-schools.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="fees">
-                <button class="examFaq__question">What is the average total fee
-                  for a 2-year MBA at IIMs?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>The total fee for a 2-year PGP
-                    at most IIMs typically ranges between ₹20-25 lakhs, though
-                    newer and smaller IIMs are usually on the lower end of that
-                    range.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="admissions">
-                <button class="examFaq__question">How many MBA entrance exams
-                  should I appear for?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most aspirants appear for 3-4
-                    exams such as CAT, XAT, SNAP and NMAT to maximise their
-                    chances of getting into a good B-school.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="admissions">
-                <button class="examFaq__question">What is the typical MBA
-                  admission process after the entrance exam?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most B-schools shortlist
-                    candidates for a Written Ability Test (WAT) followed by a
-                    Group Discussion and Personal Interview (GD-PI), with the
-                    final selection based on a combination of exam score,
-                    academic record, work experience, and interview
-                    performance.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="admissions">
-                <button class="examFaq__question">How many MBA entrance exams
-                  should I appear for?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most aspirants appear for 3-4
-                    exams such as CAT, XAT, SNAP and NMAT to maximise their
-                    chances of getting into a good B-school.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="admissions">
-                <button class="examFaq__question">What is the typical MBA
-                  admission process after the entrance exam?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most B-schools shortlist
-                    candidates for a Written Ability Test (WAT) followed by a
-                    Group Discussion and Personal Interview (GD-PI), with the
-                    final selection based on a combination of exam score,
-                    academic record, work experience, and interview
-                    performance.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="salary">
-                <button class="examFaq__question">What is the average salary
-                  after MBA from IIM?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>The average placement package
-                    across the older IIMs ranges between ₹25-33 LPA, with top
-                    recruiters offering significantly higher packages in
-                    consulting and finance roles.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="salary">
-                <button class="examFaq__question">Which companies recruit the
-                  most at top B-schools?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Consulting firms (McKinsey, BCG,
-                    Bain), major banks, and consumer goods companies are
-                    consistently among the top recruiters at premier Indian
-                    B-schools every placement season.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="salary">
-                <button class="examFaq__question">What is the average salary
-                  after MBA from IIM?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>The average placement package
-                    across the older IIMs ranges between ₹25-33 LPA, with top
-                    recruiters offering significantly higher packages in
-                    consulting and finance roles.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="salary">
-                <button class="examFaq__question">Which companies recruit the
-                  most at top B-schools?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Consulting firms (McKinsey, BCG,
-                    Bain), major banks, and consumer goods companies are
-                    consistently among the top recruiters at premier Indian
-                    B-schools every placement season.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="eligibility">
-                <button class="examFaq__question">Is work experience mandatory
-                  for MBA admission in India?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Work experience is not mandatory
-                    for most MBA programs, but exams like the Executive MBA and
-                    certain XLRI/IIM programs give preference to candidates with
-                    2+ years of experience.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="eligibility">
-                <button class="examFaq__question">What is the minimum percentage
-                  required for MBA entrance exams?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most exams require a minimum of
-                    50% marks (45% for reserved categories) in a bachelor's
-                    degree from a recognised university to be eligible to
-                    apply.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="eligibility">
-                <button class="examFaq__question">Is work experience mandatory
-                  for MBA admission in India?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Work experience is not mandatory
-                    for most MBA programs, but exams like the Executive MBA and
-                    certain XLRI/IIM programs give preference to candidates with
-                    2+ years of experience.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="eligibility">
-                <button class="examFaq__question">What is the minimum percentage
-                  required for MBA entrance exams?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most exams require a minimum of
-                    50% marks (45% for reserved categories) in a bachelor's
-                    degree from a recognised university to be eligible to
-                    apply.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="specializations">
-                <button class="examFaq__question">Which MBA specialization has
-                  the highest salary in India 2025?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Finance, Consulting, and Product
-                    Management specializations continue to command the highest
-                    average salaries for MBA graduates in India.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="specializations">
-                <button class="examFaq__question">Can I switch my specialization
-                  after the first year of MBA?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most 2-year MBA programs let
-                    students choose their specialization only after the first
-                    year, once they've had exposure to core subjects across
-                    finance, marketing, operations and HR.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="specializations">
-                <button class="examFaq__question">Which MBA specialization has
-                  the highest salary in India 2025?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Finance, Consulting, and Product
-                    Management specializations continue to command the highest
-                    average salaries for MBA graduates in India.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="specializations">
-                <button class="examFaq__question">Can I switch my specialization
-                  after the first year of MBA?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Most 2-year MBA programs let
-                    students choose their specialization only after the first
-                    year, once they've had exposure to core subjects across
-                    finance, marketing, operations and HR.</p></div>
-              </div>
-
-              <div class="examFaq__item" data-category="scholarships">
-                <button class="examFaq__question">Are scholarships available for
-                  MBA students in India?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Yes, most B-schools offer merit
-                    and need-based scholarships, and government schemes along
-                    with bank education loans are also widely used to fund MBA
-                    fees.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="scholarships">
-                <button class="examFaq__question">Do IIMs offer fee waivers
-                  based on family income?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Yes, IIMs offer significant fee
-                    waivers (up to 100% at some campuses) for students whose
-                    family income falls below a specified threshold, in addition
-                    to need-based financial assistance.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="scholarships">
-                <button class="examFaq__question">Are scholarships available for
-                  MBA students in India?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Yes, most B-schools offer merit
-                    and need-based scholarships, and government schemes along
-                    with bank education loans are also widely used to fund MBA
-                    fees.</p></div>
-              </div>
-              <div class="examFaq__item" data-category="scholarships">
-                <button class="examFaq__question">Do IIMs offer fee waivers
-                  based on family income?<span
-                    class="examFaq__icon">+</span></button>
-                <div class="examFaq__answer"><p>Yes, IIMs offer significant fee
-                    waivers (up to 100% at some campuses) for students whose
-                    family income falls below a specified threshold, in addition
-                    to need-based financial assistance.</p></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="admissionJourney"
-        aria-labelledby="admissionJourneyHeading">
-        <div class="container">
-          <div class="admissionJourneyInner reveal">
-            <h2 class="marketing__heading" id="admissionJourneyHeading">Master
-              your admission
-              journey</h2>
-            <p class="admissionJourneyText">Weekly briefing on exam
-              updates, admission deadlines, placement reports, and
-              editorial analysis. No spam. Unsubscribe
-              anytime.</p>
-
-            <form class="admissionJourneyForm" id="admissionJourneyForm"
-              novalidate>
-              <label for="admissionJourneyEmail"
-                class="admissionJourneyLabel">Email
-                address</label>
-              <div class="admissionJourneyField">
-                <input type="email" id="admissionJourneyEmail" name="email"
-                  class="admissionJourneyInput" placeholder="Your email address"
-                  autocomplete="email" required
-                  aria-describedby="admissionJourneyError">
-                <button type="submit" class="admissionJourneySubmit">
-                  Subscribe
-                  <svg viewBox="0 0 26 26" width="22" height="22" fill="none"
+              <div class="examCard__actions">
+                <a
+                  href="../college/college-detail.php"
+                  class="examBtn examBtn--solid">View College <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none"
                     aria-hidden="true">
-                    <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                    <path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+                <a href="#" class="examBtn examBtn--outline">Download
+                  Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+              </div>
+
+              <div class="examCard__info">
+                <h3>Indian Institute of Management, Bangalore (IIM-B)</h3>
+                <p>Bangalore, Karnataka</p>
+                <div class="examCard__badges">
+                  <span class="examBadge">NIRF #2</span>
+                  <span class="examBadge">Government</span>
+                  <span class="examBadge">NAAC A++</span>
+                  <span class="examBadge">AICTE Approved</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="examCard__stats">
+              <div class="examCard__stat"><strong>₹8.30 - 24.50
+                  L</strong><span>Total Fees</span></div>
+              <div class="examCard__stat"><strong>₹1.02
+                  Cr</strong><span>Highest Package</span></div>
+              <div class="examCard__stat"><strong>₹35
+                  LPA</strong><span>Average Package</span></div>
+              <div
+                class="examCard__stat"><strong>100%</strong><span>Placement
+                  Rate</span></div>
+              <!-- <div
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
+            </div>
+          </div>
+
+          <!-- Exam Card 3 -->
+
+          <div class="examCard" data-programme="Executive MBA"
+            data-state="Jharkhand" data-city="Jamshedpur"
+            data-institution-type="Private"
+            data-entrance-exam="XAT" data-study-mode="Part-Time"
+            data-accreditation="AACSB"
+            data-admission-status="Applications Open"
+            data-package="24-30 LPA" data-nirf="6" data-fee="23.00"
+            data-fee-range="₹20–30 Lakh">
+            <div class="examCard__top">
+              <div class="examCard__logo"><img
+                  src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                  width="56" height="56" loading="lazy"></div>
+
+              <div class="examCard__actions">
+                <a
+                  href="../college/college-detail.php"
+                  class="examBtn examBtn--solid">View College <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+                <a href="#" class="examBtn examBtn--outline">Download
+                  Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+              </div>
+
+              <div class="examCard__info">
+                <h3>Xavier School of Management (XLRI), Jamshedpur</h3>
+                <p>Jamshedpur, Jharkhand</p>
+                <div class="examCard__badges">
+                  <span class="examBadge">NIRF #6</span>
+                  <span class="examBadge">Private</span>
+                  <span class="examBadge">NAAC A+</span>
+                  <span class="examBadge">AICTE Approved</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="examCard__stats">
+              <div class="examCard__stat"><strong>₹10.50 - 23.00
+                  L</strong><span>Total Fees</span></div>
+              <div class="examCard__stat"><strong>₹1.02
+                  Cr</strong><span>Highest Package</span></div>
+              <div class="examCard__stat"><strong>₹29
+                  LPA</strong><span>Average Package</span></div>
+              <div
+                class="examCard__stat"><strong>100%</strong><span>Placement
+                  Rate</span></div>
+
+            </div>
+          </div>
+
+          <!-- Exam Card 4 -->
+
+          <div class="examCard" data-programme="MBA"
+            data-state="Delhi (NCT)" data-city="Delhi NCR"
+            data-institution-type="Government"
+            data-entrance-exam="CAT" data-study-mode="Full-Time"
+            data-accreditation="NAAC A+"
+            data-admission-status="Applications Open"
+            data-package="32-40 LPA" data-nirf="4" data-fee="2.50"
+            data-fee-range="Below ₹5 Lakh">
+            <div class="examCard__top">
+              <div class="examCard__logo"><img
+                  src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                  width="56" height="56" loading="lazy"></div>
+              <div class="examCard__actions">
+                <a
+                  href="../college/college-detail.php"
+                  class="examBtn examBtn--solid">View College <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+                <a href="#" class="examBtn examBtn--outline">Download
+                  Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+              </div>
+
+              <div class="examCard__info">
+                <h3>Faculty of Management Studies, Delhi (FMS)</h3>
+                <p>New Delhi, Delhi/NCR</p>
+                <div class="examCard__badges">
+                  <span class="examBadge">NIRF #4</span>
+                  <span class="examBadge">Government</span>
+                  <span class="examBadge">NAAC A</span>
+                  <span class="examBadge">AICTE Approved</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="examCard__stats">
+              <div class="examCard__stat"><strong>₹1.50 - 2.50
+                  L</strong><span>Total Fees</span></div>
+              <div class="examCard__stat"><strong>₹1.02
+                  Cr</strong><span>Highest Package</span></div>
+              <div class="examCard__stat"><strong>₹32
+                  LPA</strong><span>Average Package</span></div>
+              <div
+                class="examCard__stat"><strong>100%</strong><span>Placement
+                  Rate</span></div>
+
+            </div>
+          </div>
+
+          <!-- Exam Card 5 -->
+
+          <div class="examCard" data-programme="Online MBA"
+            data-state="Haryana" data-city="Gurugram"
+            data-institution-type="Private"
+            data-entrance-exam="GMAT" data-study-mode="Online"
+            data-accreditation="AMBA"
+            data-admission-status="Applications Open"
+            data-package="20+ LPA" data-nirf="8" data-fee="19.50"
+            data-fee-range="₹15–20 Lakh">
+            <div class="examCard__top">
+              <div class="examCard__logo"><img
+                  src="../src/assets/images/iima-DED8g9td.webp" alt="XAT logo"
+                  width="56" height="56" loading="lazy"></div>
+
+              <div class="examCard__actions">
+                <a
+                  href="../college/college-detail.php"
+                  class="examBtn examBtn--solid">View College <svg
+                    width="16" height="16" viewBox="0 0 24 24" fill="none"
+                    aria-hidden="true">
+                    <path d="M7 17L17 7M17 7H8M17 7V16"
+                      stroke="currentColor" stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+                <a href="#" class="examBtn examBtn--outline">Download
+                  Brochure <svg width="16" height="16" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg></a>
+              </div>
+
+              <div class="examCard__info">
+                <h3>Management Development Institute, Gurgaon (MDI)</h3>
+                <p>Gurgaon, Haryana</p>
+                <div class="examCard__badges">
+                  <span class="examBadge">NIRF #8</span>
+                  <span class="examBadge">Autonomous</span>
+                  <span class="examBadge">NAAC A</span>
+                  <span class="examBadge">AICTE Approved</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="examCard__stats">
+              <div class="examCard__stat"><strong>₹17.00 - 19.50
+                  L</strong><span>Total Fees</span></div>
+              <div class="examCard__stat"><strong>₹1.02
+                  Cr</strong><span>Highest Package</span></div>
+              <div class="examCard__stat"><strong>₹27
+                  LPA</strong><span>Average Package</span></div>
+              <div
+                class="examCard__stat"><strong>100%</strong><span>Placement
+                  Rate</span></div>
+              <!-- <div
+        class="examCard__stat"><strong>XX</strong><span>Lorem</span></div> -->
+            </div>
+          </div>
+
+          <div class="examPagination" id="examPagination"></div>
+
+        </div>
+
+        <!-- Right sidebar -->
+        <aside class="examAside">
+
+          <div class="clg-sideCard clg-admissionsWidget">
+            <h3 class="clg-sideCard__title">Admissions open now</h3>
+
+            <ul class="clg-admissionsList">
+              <li class="clg-admissionItem">
+                <div class="logo-date">
+
+                  <img class="clg-admissionItem__logo"
+                    src="../src/assets/images/isb-hyderabad.webp" width="58" height="23"
+                    alt="ISB logo">
+
+                  <div class="clg-admissionItem__info">
+                    <p class="clg-admissionItem__name">ISB PGPpro</p>
+                    <p class="clg-admissionItem__deadline">Deadline: Jun 15,
+                      2026</p>
+                    <a href="javascript:void(0)" class="downloadBrochureBtn"
+                      aria-label="Apply now"> Apply now
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true">
+                        <path
+                          d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- <a class="clg-admissionItem__cta" href="#">Apply now</a> -->
+
+              </li>
+
+              <li class="clg-admissionItem">
+                <div class="logo-date">
+                  <img class="clg-admissionItem__logo"
+                    src="../src/assets/images/spjimr.webp" width="54" height="21" alt="SPJIMR logo">
+                  <div class="clg-admissionItem__info">
+                    <p class="clg-admissionItem__name">SPJIMR PGEMP</p>
+                    <p class="clg-admissionItem__deadline">Deadline: Jun 30,
+                      2026</p>
+                    <a href="javascript:void(0)" class="downloadBrochureBtn"
+                      aria-label="Apply now"> Apply now
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true">
+                        <path
+                          d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="clg-admissionItem">
+                <div class="logo-date">
+                  <img class="clg-admissionItem__logo"
+                    src="../src/assets/images/iim.webp" width="43" height="41"
+                    alt="IIM Calcutta logo">
+                  <div class="clg-admissionItem__info">
+                    <p class="clg-admissionItem__name">IIM-C EPGM</p>
+                    <p class="clg-admissionItem__deadline">Deadline: Jul 31,
+                      2026</p>
+                    <a href="javascript:void(0)" class="downloadBrochureBtn"
+                      aria-label="Apply now"> Apply now
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true">
+                        <path
+                          d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="clg-admissionItem">
+                <div class="logo-date">
+                  <img class="clg-admissionItem__logo"
+                    src="../src/assets/images/mdi.webp" width="54" height="27" alt="MDI logo">
+                  <div class="clg-admissionItem__info">
+                    <p class="clg-admissionItem__name">MDI NMP</p>
+                    <p class="clg-admissionItem__deadline">Deadline: Aug
+                      2026</p>
+                    <a href="javascript:void(0)" class="downloadBrochureBtn"
+                      aria-label="Apply now"> Apply now
+                      <svg width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" aria-hidden="true">
+                        <path
+                          d="M7 17L17 7M17 7H8M17 7V16"
+                          stroke="currentColor"
+                          stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+              </li>
+            </ul>
+          </div>
+
+          <div class="collegeCard" itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/CollegeOrUniversity">
+            <div class="collegeCardLogo">
+              <img src="../src/assets/images/iima-DED8g9td.webp"
+                alt="IIM Ahmedabad logo" width="160" height="64"
+                loading="lazy" decoding="async" itemprop="logo">
+            </div>
+            <div class="collegeCardBody">
+              <h3 class="collegeCardName" itemprop="name">IIMA</h3>
+              <p class="collegeCardLocation" itemprop="address">Ahmedabad,
+                Gujarat</p>
+
+              <div class="collegeStats">
+                <div class="collegeStat">
+                  <span class="collegeStatValue">₹19.5 Lakh</span>
+                  <span class="collegeStatLabel">Total Fees</span>
+                </div>
+                <div class="collegeStat">
+                  <span class="collegeStatValue">₹19 Lakh</span>
+                  <span class="collegeStatLabel">Avg Package</span>
+                </div>
+                <div class="collegeStat">
+                  <span class="collegeStatValue">95%ile</span>
+                  <span class="collegeStatLabel">Cutoff</span>
+                </div>
+              </div>
+
+              <p class="collegeAccepting">Accepting</p>
+              <ul class="collegeTags">
+                <li class="collegeTag">CAT</li>
+                <li class="collegeTag">XAT</li>
+                <li class="collegeTag">GMAT</li>
+              </ul>
+
+              <div class="collegeCardFooter">
+                <a href="#" class="viewCoursesLink">
+                  View College
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
                       stroke-width="2" stroke-linecap="round"
                       stroke-linejoin="round"></path>
                   </svg>
-                </button>
+                </a>
+                <a href="#" class="downloadBrochureBtn"
+                  aria-label="Download IIMA brochure">
+                  Download Brochure
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </a>
               </div>
-              <p class="admissionJourneyError" id="admissionJourneyError"
-                role="alert" aria-live="polite"></p>
-            </form>
+            </div>
+          </div>
+
+          <div class="collegeCard" itemprop="itemListElement" itemscope
+            itemtype="https://schema.org/CollegeOrUniversity">
+            <div class="collegeCardLogo">
+              <img src="../src/assets/images/iim-banglore.webp"
+                alt="IIM Bangalore logo" width="160" height="64"
+                loading="lazy" decoding="async" itemprop="logo">
+            </div>
+            <div class="collegeCardBody">
+              <h3 class="collegeCardName" itemprop="name">IIM Bangalore</h3>
+              <p class="collegeCardLocation" itemprop="address">Bangalore,
+                Karnataka</p>
+
+              <div class="collegeStats">
+                <div class="collegeStat">
+                  <span class="collegeStatValue">₹21.5 Lakh</span>
+                  <span class="collegeStatLabel">Total Fees</span>
+                </div>
+                <div class="collegeStat">
+                  <span class="collegeStatValue">₹21.5 Lakh</span>
+                  <span class="collegeStatLabel">Avg Package</span>
+                </div>
+                <div class="collegeStat">
+                  <span class="collegeStatValue">94%ile</span>
+                  <span class="collegeStatLabel">Cutoff</span>
+                </div>
+              </div>
+
+              <p class="collegeAccepting">Accepting</p>
+              <ul class="collegeTags">
+                <li class="collegeTag">CAT</li>
+                <li class="collegeTag">XAT</li>
+                <li class="collegeTag">GMAT</li>
+              </ul>
+
+              <div class="collegeCardFooter">
+                <a href="#" class="viewCoursesLink">
+                  View College
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+                <a href="#" class="downloadBrochureBtn"
+                  aria-label="Download IIM Bangalore brochure">
+                  Download Brochure
+                  <svg width="14" height="14" viewBox="0 0 24 24"
+                    fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="alumniAdvertiseWidget">
+            <h5>Advertise your programme </h5>
+            <p>Reach 5,000+ working professionals actively comparing
+              Executive MBA programs on MBA 360.</p>
+            <div class="alumniAdvertiseWidget__stats">
+              <div><strong>5K+</strong><span>Monthly visitors</span></div>
+              <div><strong>₹40L+</strong><span>Avg CTC</span></div>
+              <div><strong>PPL</strong><span>Pay-per-lead</span></div>
+              <div><strong>3.8×</strong><span>Lead quality</span></div>
+            </div>
+            <a href="#" class="alumniAdvertiseWidget__cta">Advertise here
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H8M17 7V16"
+                  stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="examCalendar reveal">
+    <div class="container">
+      <div class="examCalendar__grid">
+        <div class="examCalendar__head">
+          <h2 class="marketing__heading">Top 20 MBA Colleges in India - NIRF
+            Rankings 2026</h2>
+          <p>Source: NIRF India Rankings 2025 (Management Category). Data
+            updated July 2025.</p>
+        </div>
+
+        <div class="examCalendar__disclaimer">
+          <strong>Disclaimer:</strong> Fee structures and placement data are
+          sourced from official institutional disclosures and may vary.
+          Please verify directly with the institute before making admission
+          decisions.
+        </div>
+
+        <div class="examCalendar__tableWrap examTable__wrapScroll">
+          <table class="examTable">
+            <thead>
+              <tr>
+                <th>NIRF Rank</th>
+                <th>College Name</th>
+                <th>City</th>
+                <th>Type</th>
+                <th>Avg Package</th>
+                <th>Entrance Exam</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="examTable__name">1</td>
+                <td class="examTable__name">IIM Ahmedabad</td>
+                <td>Ahmedabad</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹42 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">2</td>
+                <td class="examTable__name">IIM Bangalore</td>
+                <td>Bangalore</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹35 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">3</td>
+                <td class="examTable__name">IIM Calcutta</td>
+                <td>Kolkata</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹34 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">4</td>
+                <td class="examTable__name">FMS Delhi</td>
+                <td>New Delhi</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹32 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">5</td>
+                <td class="examTable__name">IIM Lucknow</td>
+                <td>Lucknow</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹30 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">6</td>
+                <td class="examTable__name">XLRI Jamshedpur</td>
+                <td>Jamshedpur</td>
+                <td>Private</td>
+                <td><span class="examTable__count">₹29 LPA</span></td>
+                <td>XAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">7</td>
+                <td class="examTable__name">IIM Kozhikode</td>
+                <td>Kozhikode</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹28 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">8</td>
+                <td class="examTable__name">MDI Gurgaon</td>
+                <td>Gurgaon</td>
+                <td>Autonomous</td>
+                <td><span class="examTable__count">₹27 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">9</td>
+                <td class="examTable__name">JBIMS Mumbai</td>
+                <td>Mumbai</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹28 LPA</span></td>
+                <td>MH-CET</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">10</td>
+                <td class="examTable__name">IIM Indore</td>
+                <td>Indore</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹25 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">11</td>
+                <td class="examTable__name">IIM Udaipur</td>
+                <td>Udaipur</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹22 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">12</td>
+                <td class="examTable__name">NITIE Mumbai (IIM Mumbai)</td>
+                <td>Mumbai</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹24 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">13</td>
+                <td class="examTable__name">NMIMS Mumbai</td>
+                <td>Mumbai</td>
+                <td>Deemed</td>
+                <td><span class="examTable__count">₹18 LPA</span></td>
+                <td>NMAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">14</td>
+                <td class="examTable__name">IIM Shillong</td>
+                <td>Shillong</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹20 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr>
+                <td class="examTable__name">15</td>
+                <td class="examTable__name">Great Lakes Chennai</td>
+                <td>Chennai</td>
+                <td>Private</td>
+                <td><span class="examTable__count">₹16.5 LPA</span></td>
+                <td>CAT/XAT/GMAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <!-- Extra exams: hidden until "View All" is clicked -->
+
+              <tr class="examTable__extraRow" style="display:none;">
+                <td class="examTable__name">16</td>
+                <td class="examTable__name">IIM Ahmedabad</td>
+                <td>Ahmedabad</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹42 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr class="examTable__extraRow" style="display:none;">
+                <td class="examTable__name">17</td>
+                <td class="examTable__name">IIM Bangalore</td>
+                <td>Bangalore</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹35 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr class="examTable__extraRow" style="display:none;">
+                <td class="examTable__name">18</td>
+                <td class="examTable__name">IIM Calcutta</td>
+                <td>Kolkata</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹34 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+
+              <tr class="examTable__extraRow" style="display:none;">
+                <td class="examTable__name">19</td>
+                <td class="examTable__name">FMS Delhi</td>
+                <td>New Delhi</td>
+                <td>Government</td>
+                <td><span class="examTable__count">₹32 LPA</span></td>
+                <td>CAT</td>
+                <td><button class="examTable__apply">Apply</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="examCalendar__viewAll">
+          <button id="examViewAllBtn">View Full NIRF Top 100 List <span
+              aria-hidden="true"><svg width="18" height="18"
+                viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg></span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="examFaq reveal">
+    <div class="container">
+      <div class="examFaq__grid">
+        <div class="examFaq__head">
+          <h2 class="marketing__heading">Frequently Asked Questions — MBA
+            Colleges in India</h2>
+          <p>Everything you need to know about MBA admissions, fees, and
+            career prospects</p>
+        </div>
+
+        <div class="examFaq__tabs" id="examFaqTabs">
+          <button class="examFaq__tab is-active"
+            data-category="rankings">Rankings</button>
+          <button class="examFaq__tab" data-category="fees">Fees</button>
+          <button class="examFaq__tab"
+            data-category="admissions">Admissions</button>
+          <button class="examFaq__tab" data-category="salary">Salary &amp;
+            Placement</button>
+          <button class="examFaq__tab"
+            data-category="eligibility">Eligibility</button>
+          <button class="examFaq__tab"
+            data-category="specializations">Specializations</button>
+          <button class="examFaq__tab"
+            data-category="scholarships">Scholarships</button>
+        </div>
+
+        <div class="examFaq__list" id="examFaqList">
+          <div class="examFaq__item" data-category="rankings">
+            <button class="examFaq__question">Which is the No. 1 MBA college
+              in India 2025?<span class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>IIM Ahmedabad is consistently
+                ranked the No. 1 MBA college in India, followed closely by
+                IIM Bangalore and IIM Calcutta, based on NIRF rankings,
+                placement records, and faculty quality.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="rankings">
+            <button class="examFaq__question">How are MBA colleges ranked in
+              India — NIRF vs private rankings?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>NIRF is the official government
+                ranking based on teaching, research, placements and
+                outreach, while private rankings (like those by business
+                magazines) also factor in brand perception and industry
+                surveys — so the two lists can differ slightly.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="rankings">
+            <button class="examFaq__question">Which is the No. 1 MBA college
+              in India 2025?<span class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>IIM Ahmedabad is consistently
+                ranked the No. 1 MBA college in India, followed closely by
+                IIM Bangalore and IIM Calcutta, based on NIRF rankings,
+                placement records, and faculty quality.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="rankings">
+            <button class="examFaq__question">How are MBA colleges ranked in
+              India — NIRF vs private rankings?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>NIRF is the official government
+                ranking based on teaching, research, placements and
+                outreach, while private rankings (like those by business
+                magazines) also factor in brand perception and industry
+                surveys — so the two lists can differ slightly.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="fees">
+            <button class="examFaq__question">What is the cheapest top MBA
+              college in India?<span class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Government-run institutes and
+                university departments such as FMS Delhi and JBIMS Mumbai
+                offer top-tier MBA education at a fraction of the cost of
+                private B-schools.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="fees">
+            <button class="examFaq__question">What is the average total fee
+              for a 2-year MBA at IIMs?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>The total fee for a 2-year PGP
+                at most IIMs typically ranges between ₹20-25 lakhs, though
+                newer and smaller IIMs are usually on the lower end of that
+                range.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="fees">
+            <button class="examFaq__question">What is the cheapest top MBA
+              college in India?<span class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Government-run institutes and
+                university departments such as FMS Delhi and JBIMS Mumbai
+                offer top-tier MBA education at a fraction of the cost of
+                private B-schools.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="fees">
+            <button class="examFaq__question">What is the average total fee
+              for a 2-year MBA at IIMs?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>The total fee for a 2-year PGP
+                at most IIMs typically ranges between ₹20-25 lakhs, though
+                newer and smaller IIMs are usually on the lower end of that
+                range.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="admissions">
+            <button class="examFaq__question">How many MBA entrance exams
+              should I appear for?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most aspirants appear for 3-4
+                exams such as CAT, XAT, SNAP and NMAT to maximise their
+                chances of getting into a good B-school.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="admissions">
+            <button class="examFaq__question">What is the typical MBA
+              admission process after the entrance exam?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most B-schools shortlist
+                candidates for a Written Ability Test (WAT) followed by a
+                Group Discussion and Personal Interview (GD-PI), with the
+                final selection based on a combination of exam score,
+                academic record, work experience, and interview
+                performance.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="admissions">
+            <button class="examFaq__question">How many MBA entrance exams
+              should I appear for?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most aspirants appear for 3-4
+                exams such as CAT, XAT, SNAP and NMAT to maximise their
+                chances of getting into a good B-school.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="admissions">
+            <button class="examFaq__question">What is the typical MBA
+              admission process after the entrance exam?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most B-schools shortlist
+                candidates for a Written Ability Test (WAT) followed by a
+                Group Discussion and Personal Interview (GD-PI), with the
+                final selection based on a combination of exam score,
+                academic record, work experience, and interview
+                performance.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="salary">
+            <button class="examFaq__question">What is the average salary
+              after MBA from IIM?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>The average placement package
+                across the older IIMs ranges between ₹25-33 LPA, with top
+                recruiters offering significantly higher packages in
+                consulting and finance roles.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="salary">
+            <button class="examFaq__question">Which companies recruit the
+              most at top B-schools?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Consulting firms (McKinsey, BCG,
+                Bain), major banks, and consumer goods companies are
+                consistently among the top recruiters at premier Indian
+                B-schools every placement season.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="salary">
+            <button class="examFaq__question">What is the average salary
+              after MBA from IIM?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>The average placement package
+                across the older IIMs ranges between ₹25-33 LPA, with top
+                recruiters offering significantly higher packages in
+                consulting and finance roles.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="salary">
+            <button class="examFaq__question">Which companies recruit the
+              most at top B-schools?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Consulting firms (McKinsey, BCG,
+                Bain), major banks, and consumer goods companies are
+                consistently among the top recruiters at premier Indian
+                B-schools every placement season.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="eligibility">
+            <button class="examFaq__question">Is work experience mandatory
+              for MBA admission in India?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Work experience is not mandatory
+                for most MBA programs, but exams like the Executive MBA and
+                certain XLRI/IIM programs give preference to candidates with
+                2+ years of experience.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="eligibility">
+            <button class="examFaq__question">What is the minimum percentage
+              required for MBA entrance exams?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most exams require a minimum of
+                50% marks (45% for reserved categories) in a bachelor's
+                degree from a recognised university to be eligible to
+                apply.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="eligibility">
+            <button class="examFaq__question">Is work experience mandatory
+              for MBA admission in India?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Work experience is not mandatory
+                for most MBA programs, but exams like the Executive MBA and
+                certain XLRI/IIM programs give preference to candidates with
+                2+ years of experience.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="eligibility">
+            <button class="examFaq__question">What is the minimum percentage
+              required for MBA entrance exams?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most exams require a minimum of
+                50% marks (45% for reserved categories) in a bachelor's
+                degree from a recognised university to be eligible to
+                apply.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="specializations">
+            <button class="examFaq__question">Which MBA specialization has
+              the highest salary in India 2025?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Finance, Consulting, and Product
+                Management specializations continue to command the highest
+                average salaries for MBA graduates in India.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="specializations">
+            <button class="examFaq__question">Can I switch my specialization
+              after the first year of MBA?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most 2-year MBA programs let
+                students choose their specialization only after the first
+                year, once they've had exposure to core subjects across
+                finance, marketing, operations and HR.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="specializations">
+            <button class="examFaq__question">Which MBA specialization has
+              the highest salary in India 2025?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Finance, Consulting, and Product
+                Management specializations continue to command the highest
+                average salaries for MBA graduates in India.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="specializations">
+            <button class="examFaq__question">Can I switch my specialization
+              after the first year of MBA?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Most 2-year MBA programs let
+                students choose their specialization only after the first
+                year, once they've had exposure to core subjects across
+                finance, marketing, operations and HR.</p>
+            </div>
+          </div>
+
+          <div class="examFaq__item" data-category="scholarships">
+            <button class="examFaq__question">Are scholarships available for
+              MBA students in India?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Yes, most B-schools offer merit
+                and need-based scholarships, and government schemes along
+                with bank education loans are also widely used to fund MBA
+                fees.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="scholarships">
+            <button class="examFaq__question">Do IIMs offer fee waivers
+              based on family income?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Yes, IIMs offer significant fee
+                waivers (up to 100% at some campuses) for students whose
+                family income falls below a specified threshold, in addition
+                to need-based financial assistance.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="scholarships">
+            <button class="examFaq__question">Are scholarships available for
+              MBA students in India?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Yes, most B-schools offer merit
+                and need-based scholarships, and government schemes along
+                with bank education loans are also widely used to fund MBA
+                fees.</p>
+            </div>
+          </div>
+          <div class="examFaq__item" data-category="scholarships">
+            <button class="examFaq__question">Do IIMs offer fee waivers
+              based on family income?<span
+                class="examFaq__icon">+</span></button>
+            <div class="examFaq__answer">
+              <p>Yes, IIMs offer significant fee
+                waivers (up to 100% at some campuses) for students whose
+                family income falls below a specified threshold, in addition
+                to need-based financial assistance.</p>
+            </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+  </section>
 
-    <!-- ============================================================
+  <section class="admissionJourney"
+    aria-labelledby="admissionJourneyHeading">
+    <div class="container">
+      <div class="admissionJourneyInner reveal">
+        <h2 class="marketing__heading" id="admissionJourneyHeading">Master
+          your admission
+          journey</h2>
+        <p class="admissionJourneyText">Weekly briefing on exam
+          updates, admission deadlines, placement reports, and
+          editorial analysis. No spam. Unsubscribe
+          anytime.</p>
+
+        <form class="admissionJourneyForm" id="admissionJourneyForm"
+          novalidate>
+          <label for="admissionJourneyEmail"
+            class="admissionJourneyLabel">Email
+            address</label>
+          <div class="admissionJourneyField">
+            <input type="email" id="admissionJourneyEmail" name="email"
+              class="admissionJourneyInput" placeholder="Your email address"
+              autocomplete="email" required
+              aria-describedby="admissionJourneyError">
+            <button type="submit" class="admissionJourneySubmit">
+              Subscribe
+              <svg viewBox="0 0 26 26" width="22" height="22" fill="none"
+                aria-hidden="true">
+                <path d="M7 17L17 7M17 7H9M17 7V15" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </svg>
+            </button>
+          </div>
+          <p class="admissionJourneyError" id="admissionJourneyError"
+            role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============================================================
        FOOTER 
   ============================================================ -->
-     <?php require __DIR__ . '/../includes/footer.php'; ?>
-    <script src="../src/js/menu.js" defer></script>
-    <script src="../src/js/exam-college-comon.js" defer></script>
-    <script src="../src/js/college.js" defer></script>
-    <script src="../src/js/filter.js" defer></script>
-    <script src="../src/js/faq.js" defer></script>
-  </body>
+<?php require __DIR__ . '/../includes/footer.php'; ?>
+<script src="../src/js/menu.js" defer></script>
+<script src="../src/js/exam-college-comon.js" defer></script>
+<script src="../src/js/college.js" defer></script>
+<script src="../src/js/filter.js" defer></script>
+<script src="../src/js/faq.js" defer></script>
+</body>
+
 </html>
