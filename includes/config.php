@@ -89,30 +89,21 @@ define('APP_BASE_PATH', $projectRoot);
 
 /*
 |--------------------------------------------------------------------------
-| Application Base URL
+| Public Application URL
 |--------------------------------------------------------------------------
 |
-| Local example:
-| http://localhost/discover-mba
-|
-| Production example:
-| https://www.example.com/discover-mba
+| Set this to the canonical public URL before deploying. Do not derive it
+| from the request Host header because it is used in security-sensitive
+| email verification links.
 |
 */
 
-$isHttps = (
-    !empty($_SERVER['HTTPS']) &&
-    $_SERVER['HTTPS'] !== 'off'
-);
+const APP_PUBLIC_URL = 'http://localhost/discover-mba';
 
-$scheme = $isHttps ? 'https' : 'http';
+// Set to true in production to enable registration rate limiting.
+const IS_PRODUCTION = false;
 
-$host = $_SERVER['HTTP_HOST'] ?? 'localhost';
-
-define(
-    'APP_BASE_URL',
-    $scheme . '://' . $host . APP_BASE_PATH
-);
+define('APP_BASE_URL', rtrim(APP_PUBLIC_URL, '/'));
 
 
 /*
@@ -121,14 +112,14 @@ define(
 |--------------------------------------------------------------------------
 */
 
-const SMTP_HOST = 'host.designawebsite.in';
-const SMTP_PORT = 465;
-const SMTP_USERNAME = 'noreply@grandprintsindia.com';
-const SMTP_PASSWORD = 'VzG_(!#RBYq)I]=q';
-const SMTP_ENCRYPTION = 'ssl'; // ssl or tls
+const SMTP_HOST = 'sandbox.smtp.mailtrap.io';
+const SMTP_PORT = 2525;
+const SMTP_USERNAME = '0525c2c7392f52';
+const SMTP_PASSWORD = '5420fd6708a8c9';
+const SMTP_ENCRYPTION = ''; // Empty matches MAIL_SCHEME=null.
 
-const SMTP_FROM_EMAIL = 'noreply@grandprintsindia.com';
-const SMTP_FROM_NAME = 'MBA 360';
+const SMTP_FROM_EMAIL = 'hello@example.com';
+const SMTP_FROM_NAME = 'Discover MBA';
 
 
 /*
@@ -139,6 +130,31 @@ const SMTP_FROM_NAME = 'MBA 360';
 
 // Email verification token validity: 24 hours
 const VERIFICATION_TOKEN_TTL = 86400;
+
+const REGISTRATION_RATE_LIMIT_MAX_ATTEMPTS = 10;
+const REGISTRATION_RATE_LIMIT_WINDOW_SECONDS = 300;
+
+const DISPOSABLE_EMAIL_DOMAINS = [
+    'yopmail.com', 'yopmail.fr', 'yopmail.net', 'yopmail.org', 'yopmail.co',
+    'yopmail.top', 'yopmail.xyz', 'yopmail.me', 'yopmail.guru',
+    'mailinator.com', 'mailinator.net', 'mailinator.org', 'mailinator.co',
+    'mailinator.xyz',
+    '10minutemail.com', '10minutemail.net', '10minutemail.org',
+    '10minemail.com', '10minute-mail.com',
+    'temp-mail.org', 'temp-mail.io', 'temp-mail.com', 'tempmail.com',
+    'tempmail.net', 'tempmail.org', 'tempmail.co', 'tempmail.email',
+    'guerrillamail.com', 'guerrillamail.info', 'guerrillamail.net',
+    'guerrillamail.org', 'guerrillamail.biz', 'sharklasers.com', 'grr.la',
+    'trashmail.com', 'trashmail.de', 'trashmail.net', 'trashmail.me',
+    'moakt.com', 'moakt.cc', 'moakt.ws',
+    'getnada.com', 'nadaemail.com', 'dropmail.me',
+    'maildrop.cc', 'maildrop.cf', 'maildrop.ga',
+    'dispostable.com', 'dispostable.org',
+    'fakeinbox.com', 'fakeinbox.info',
+    'throwawaymail.com', 'throwawaymail.io',
+    'mailnesia.com', 'getairmail.com', 'inboxkitten.com', 'burnermail.io',
+    'burnermail.com',
+];
 
 // Set true when production is running on HTTPS
 const SESSION_COOKIE_SECURE = false;

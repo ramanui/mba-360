@@ -1,40 +1,85 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
+<?php
+declare(strict_types=1);
 
-        <title>College LP</title>
-        <meta name="description" content="DGTL">
+require_once __DIR__ . '/includes/config.php';
+require_once __DIR__ . '/includes/database.php';
+require_once __DIR__ . '/includes/helpers.php';
+require_once __DIR__ . '/includes/auth.php';
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="./favicon.svg"
-            sizes="32x32">
-        <link rel="apple-touch-icon" href="./favicon.svg" sizes="180x180">
+startSecureSession();
 
-        <link rel="preload" as="image"
-            href="../src/assets/images/stay-updated-with-mba-news.webp"
-            fetchpriority="high">
+$pageTitle = 'Log In | Discover MBA';
+$metaDescription = 'Log in to your Discover MBA account.';
+$pageCss = ['swiper-bundle.min.css', 'common.css', 'login.css', 'registration-validation.css'];
+$pageJs = ['swiper-bundle.min.js', 'member-login.js'];
+$authenicationRequired = false;
 
-        <!-- Google Fonts (Ultra Optimized) -->
+if (isPostRequest()) {
+    $email = mb_strtolower(trim((string)($_POST['email'] ?? '')));
+    $password = (string)($_POST['password'] ?? '');
+    $csrf = $_POST['csrf_token'] ?? null;
+    $fieldErrors = [];
 
-        <link rel="preload"
-            href="./fonts/Inter-Regular.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+    if (!verifyCsrfToken(is_string($csrf) ? $csrf : null)) {
+        jsonResponse(['success' => false, 'message' => 'Your session has expired. Please refresh the page and try again.'], 419);
+    }
 
-        <link rel="preload"
-            href="./fonts/Inter-Bold.woff2"
-            as="font"
-            type="font/woff2"
-            crossorigin>
+    if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $fieldErrors['email'] = 'Please enter a valid email address.';
+    }
 
-        <link rel="stylesheet" href="./src/css/swiper-bundle.min.css">
-<link rel="stylesheet" href="./src/css/common.css">
-    <link rel="stylesheet" href="./src/css/login.css">
-  </head>
-    <body>
+    if ($password === '') {
+        $fieldErrors['password'] = 'Please enter your password.';
+    }
+
+    if ($fieldErrors) {
+        jsonResponse(['success' => false, 'fieldErrors' => $fieldErrors], 422);
+    }
+
+    $stmt = $pdo->prepare(
+        'SELECT id, name, email, password, email_verified, status
+         FROM users
+         WHERE email = ?
+         LIMIT 1'
+    );
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if (!$user || !password_verify($password, (string)$user['password'])) {
+        jsonResponse([
+            'success' => false,
+            'fieldErrors' => ['email' => 'Invalid email address or password.'],
+        ], 401);
+    }
+
+    if (empty($user['email_verified'])) {
+        jsonResponse([
+            'success' => false,
+            'fieldErrors' => ['email' => 'Please verify your email address before logging in.'],
+        ], 403);
+    }
+
+    if (empty($user['status'])) {
+        jsonResponse(['success' => false, 'message' => 'Your account is unavailable. Please contact support.'], 403);
+    }
+
+    logInUser($user);
+    trackAuthenticatedActivity($pdo, 'login');
+
+    jsonResponse([
+        'success' => true,
+        'redirect' => appRedirectPath('/index.php'),
+    ]);
+}
+
+if (currentAuthenticatedUser()) {
+    header('Location: ' . appRedirectPath('/index.php'));
+    exit;
+}
+
+$csrfToken = csrfToken();
+require __DIR__ . '/includes/head.php';
+?>
 
     
 
@@ -74,11 +119,14 @@
                                 class="authPage__link">Create an account
                             </a></p>
 
-                        <form id="registrationForm" class="authPage__formFields"
-                            action="/demo/our-project/member-registration"
+                        <div id="loginResponse" class="registrationResponse"
+                            role="status" aria-live="polite" hidden></div>
+
+                        <form id="loginForm" class="authPage__formFields"
+                            action=""
                             method="POST" novalidate>
-                            <input type="hidden" name="_token"
-                                value="DMohSvZBZqO15HHj3EWib4WIzo8ategHoo6sI5wu"
+                            <input type="hidden" name="csrf_token"
+                                value="<?= e($csrfToken) ?>"
                                 autocomplete="off">
 
                             <div class="formGroup">
@@ -88,7 +136,7 @@
                                     <input type="email" id="loginEmail"
                                         name="email"
                                         placeholder="Enter your email"
-                                        autocomplete="email" required>
+                                        autocomplete="email">
                                     <span class="formGroup__requiredStar"
                                         id="nameStar">*</span>
                                     <svg class="formGroup__icon"
@@ -102,8 +150,7 @@
                                     </svg>
                                 </div>
                                 <div class="formGroup__error"
-                                    id="emailError">Please enter your email
-                                    address</div>
+                                    id="emailError"></div>
                             </div>
 
                             <div class="formGroup">
@@ -113,7 +160,7 @@
                                     <input type="password" id="loginPassword"
                                         name="password"
                                         placeholder="Enter your password"
-                                        autocomplete="new-password" required>
+                                        autocomplete="current-password">
                                     <span class="formGroup__requiredStar"
                                         id="nameStar">*</span>
                                     <button type="button"
@@ -136,8 +183,7 @@
                                 <!-- <div class="formGroup__strength"
                                     id="passwordStrength"></div> -->
                                 <div class="formGroup__error"
-                                    id="passwordError">Please enter a
-                                    password</div>
+                                    id="passwordError"></div>
                             </div>
 
                             <button type="submit" class="authPage__submit"
@@ -281,7 +327,5 @@
        SCROLL REVEAL SCRIPT
   ============================================================ -->
 
-    <script src="./src/js/swiper-bundle.min.js" defer></script>
-        <script src="./src/js/login.js" defer></script>
   </body>
 </html>

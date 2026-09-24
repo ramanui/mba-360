@@ -1,6 +1,16 @@
 <?php
 declare(strict_types=1);
 require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/auth.php';
+
+startSecureSession();
+
+$routeRequiresAuth = isset($routeRequiresAuth) ? (bool) $routeRequiresAuth : false;
+
+if ($routeRequiresAuth && !isUserAuthenticated()) {
+    header('Location: ' . appRedirectPath('/member-login.php'));
+    exit;
+}
 ?>
 <!doctype html>
 <html lang="en">

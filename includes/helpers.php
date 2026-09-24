@@ -89,6 +89,42 @@ function isDisposableEmail(string $email): bool
     );
 }
 
+function trackAuthenticatedActivity(PDO $pdo, string $activityType, array $metadata = []): void
+{
+    $user = currentAuthenticatedUser();
+
+    if ($user === null) {
+        return;
+    }
+
+    try {
+        $pdo->exec(
+            'CREATE TABLE IF NOT EXISTS user_activities (
+                id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                user_id INT UNSIGNED NOT NULL,
+                activity_type VARCHAR(100) NOT NULL,
+                metadata TEXT NULL,
+                created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                INDEX user_activities_user_created (user_id, created_at)
+            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
+        );
+
+        $stmt = $pdo->prepare(
+            'INSERT INTO user_activities (user_id, activity_type, metadata)
+             VALUES (?, ?, ?)'
+        );
+        $stmt->execute([
+            (int)$user['id'],
+            substr($activityType, 0, 100),
+            $metadata === []
+                ? null
+                : json_encode($metadata, JSON_UNESCAPED_SLASHES),
+        ]);
+    } catch (PDOException $e) {
+        error_log('User activity tracking failed: ' . $e->getMessage());
+    }
+}
+
 function csrfToken(): string
 {
     if (empty($_SESSION['csrf_token'])) {

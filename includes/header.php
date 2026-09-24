@@ -1,4 +1,9 @@
 <?php
+require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/auth.php';
+require_once __DIR__ . '/helpers.php';
+startSecureSession();
+
 $__root = realpath(__DIR__ . '/..');
 $__here = realpath(dirname($_SERVER['SCRIPT_FILENAME']));
 $__base = './';
@@ -7,6 +12,10 @@ if ($__root !== false && $__here !== false && $__here !== $__root) {
   $__depth = ($__rel === '') ? 0 : substr_count($__rel, '/') + 1;
   $__base = str_repeat('../', $__depth);
 }
+
+$currentUser = currentAuthenticatedUser();
+$isAuthenticated = $currentUser !== null;
+$currentUserName = $isAuthenticated ? trim((string) $currentUser['name']) : '';
 ?>
 <script>
   window.SITE_BASE = "<?php echo $__base; ?>";
@@ -1123,34 +1132,52 @@ if ($__root !== false && $__here !== false && $__here !== $__root) {
       <div
         class="site-header__actions site-header__actions--mobile">
 
-        <a
-          class="btn btn--outline"
-          href="<?php echo $__base; ?>member-login.php">
-          Login
-        </a>
+        <?php if ($isAuthenticated): ?>
+          <span class="site-header__user-name"><?php echo e($currentUserName !== '' ? $currentUserName : 'User'); ?></span>
+          <a
+            class="btn btn--outline"
+            href="<?php echo $__base; ?>logout.php">
+            Logout
+          </a>
+        <?php else: ?>
+          <a
+            class="btn btn--outline"
+            href="<?php echo $__base; ?>member-login.php">
+            Login
+          </a>
 
-        <a
-          class="btn btn--solid"
-          href="<?php echo $__base; ?>member-registration.php">
-          Register
-        </a>
+          <a
+            class="btn btn--solid"
+            href="<?php echo $__base; ?>member-registration.php">
+            Register
+          </a>
+        <?php endif; ?>
 
       </div>
       <!-- DESKTOP ACTIONS -->
 
       <div class="site-header__actions">
 
-        <a
-          class="btn btn--outline"
-          href="<?php echo $__base; ?>member-login.php">
-          Login
-        </a>
+        <?php if ($isAuthenticated): ?>
+          <span class="site-header__user-name"><?php echo e($currentUserName !== '' ? $currentUserName : 'User'); ?></span>
+          <a
+            class="btn btn--outline"
+            href="<?php echo $__base; ?>logout.php">
+            Logout
+          </a>
+        <?php else: ?>
+          <a
+            class="btn btn--outline"
+            href="<?php echo $__base; ?>member-login.php">
+            Login
+          </a>
 
-        <a
-          class="btn btn--solid"
-          href="<?php echo $__base; ?>member-registration.php">
-          Register
-        </a>
+          <a
+            class="btn btn--solid"
+            href="<?php echo $__base; ?>member-registration.php">
+            Register
+          </a>
+        <?php endif; ?>
 
       </div>
 
