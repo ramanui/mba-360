@@ -45,6 +45,48 @@ function appRedirectPath(string $path): string
     return APP_BASE_PATH . $normalized;
 }
 
+function resolveRedirectTarget(?string $target, string $fallback = '/index.php'): string
+{
+    $safeFallback = appRedirectPath($fallback);
+
+    if ($target === null || trim($target) === '') {
+        return $safeFallback;
+    }
+
+    $value = trim($target);
+
+    if (stripos($value, 'javascript:') === 0) {
+        return $safeFallback;
+    }
+
+    if (preg_match('/^(?:[a-z]+:)?\/\//i', $value)) {
+        $parts = parse_url($value);
+        $host = strtolower((string)($parts['host'] ?? ''));
+        $allowedHost = strtolower((string)parse_url(APP_PUBLIC_URL ?: 'http://localhost', PHP_URL_HOST));
+
+        if ($host !== '' && $host !== $allowedHost) {
+            return $safeFallback;
+        }
+
+        $path = $parts['path'] ?? '/';
+        $query = $parts['query'] ?? '';
+        $value = $path . ($query !== '' ? '?' . $query : '');
+    }
+
+    if (strpos($value, '?') !== false) {
+        $parts = parse_url($value);
+        $path = $parts['path'] ?? '/';
+        $query = $parts['query'] ?? '';
+        $value = $path . ($query !== '' ? '?' . $query : '');
+    }
+
+    if (strpos($value, '/') === 0) {
+        return appRedirectPath($value);
+    }
+
+    return appRedirectPath('/' . $value);
+}
+
 function requireAuthentication(string $redirectPath = '/member-login.php'): void
 {
     if (!isUserAuthenticated()) {

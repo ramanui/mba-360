@@ -1,14 +1,16 @@
 <?php
 declare(strict_types=1);
 
-session_start();
-
 require_once __DIR__ . '/includes/config.php';
 require_once __DIR__ . '/includes/database.php';
 require_once __DIR__ . '/includes/helpers.php';
+require_once __DIR__ . '/includes/auth.php';
+
+startSecureSession();
 
 $pageTitle = 'Email Verification | MBA 360';
 $metaDescription = 'Verify your MBA 360 email address.';
+$authenicationRequired = false;
 
 $token = trim((string)($_GET['token'] ?? ''));
 

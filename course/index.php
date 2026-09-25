@@ -554,7 +554,9 @@ require __DIR__ . '/../includes/header.php';
                                             stroke-linejoin="round"></path>
                                     </svg></a>
                                 <a href="#"
-                                    class="examBtn examBtn--outline">Download
+                                    class="track-activity examBtn examBtn--outline"
+                                    data-entity-type="exam" data-entity-slug="cat" data-activity-type="exam" data-action="download_brochure"
+                                    data-entity-name="Shaheed Sukhdev College of Business Studies (SSCBS), Delhi">Download
                                     Brochure <svg width="16" height="16"
                                         viewBox="0 0 24 24" fill="none"
                                         aria-hidden="true">

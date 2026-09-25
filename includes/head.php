@@ -81,11 +81,17 @@ if ($routeRequiresAuth && !isUserAuthenticated()) {
         <?php endforeach; ?>
     <?php endif; ?>
 
+    <script>
+        window.APP_BASE_PATH = <?= json_encode(APP_BASE_PATH) ?>;
+    </script>
+
     <?php if (!empty($pageJs)) : ?>
         <?php foreach ($pageJs as $js) : ?>
             <script src="<?= $projectRoot ?>/src/js/<?= $js ?>" defer></script>
         <?php endforeach; ?>
     <?php endif; ?>
+
+    <script src="<?= $projectRoot ?>/src/js/track-activity.js" defer></script>
 
 </head>
 

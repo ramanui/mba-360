@@ -14,6 +14,8 @@ $pageCss = ['swiper-bundle.min.css', 'common.css', 'login.css', 'registration-va
 $pageJs = ['swiper-bundle.min.js', 'member-login.js'];
 $authenicationRequired = false;
 
+$redirectTarget = resolveRedirectTarget($_GET['redirect'] ?? null, '/index.php');
+
 if (isPostRequest()) {
     $email = mb_strtolower(trim((string)($_POST['email'] ?? '')));
     $password = (string)($_POST['password'] ?? '');
@@ -66,14 +68,16 @@ if (isPostRequest()) {
     logInUser($user);
     trackAuthenticatedActivity($pdo, 'login');
 
+    $postLoginRedirect = resolveRedirectTarget($_POST['redirect'] ?? null, '/index.php');
+
     jsonResponse([
         'success' => true,
-        'redirect' => appRedirectPath('/index.php'),
+        'redirect' => $postLoginRedirect,
     ]);
 }
 
 if (currentAuthenticatedUser()) {
-    header('Location: ' . appRedirectPath('/index.php'));
+    header('Location: ' . $redirectTarget);
     exit;
 }
 
@@ -128,6 +132,10 @@ require __DIR__ . '/includes/head.php';
                             <input type="hidden" name="csrf_token"
                                 value="<?= e($csrfToken) ?>"
                                 autocomplete="off">
+                            <?php if (!empty($_GET['redirect'])) : ?>
+                                <input type="hidden" name="redirect"
+                                    value="<?= e((string)$_GET['redirect']) ?>">
+                            <?php endif; ?>
 
                             <div class="formGroup">
                                 <!-- <label for="loginEmail">Email Address <span
