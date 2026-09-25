@@ -91,9 +91,15 @@ function isDisposableEmail(string $email): bool
 
 function trackAuthenticatedActivity(PDO $pdo, string $activityType, array $metadata = []): void
 {
+    $allowedActivities = ['login', 'logout'];
+
+    if (!in_array($activityType, $allowedActivities, true)) {
+        return;
+    }
+
     $user = currentAuthenticatedUser();
 
-    if ($user === null) {
+    if ($user === null && $activityType !== 'logout') {
         return;
     }
 
@@ -103,24 +109,32 @@ function trackAuthenticatedActivity(PDO $pdo, string $activityType, array $metad
                 id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 user_id INT UNSIGNED NOT NULL,
                 activity_type VARCHAR(100) NOT NULL,
-                metadata TEXT NULL,
+                metadata JSON NULL,
                 created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 INDEX user_activities_user_created (user_id, created_at)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4'
         );
 
+        $column = $pdo->query("SHOW COLUMNS FROM user_activities LIKE 'metadata'")->fetch(PDO::FETCH_ASSOC);
+        if ($column && strtoupper((string)$column['Type']) !== 'JSON') {
+            $pdo->exec('ALTER TABLE user_activities MODIFY metadata JSON NULL');
+        }
+
+        $jsonMetadata = $metadata === []
+            ? null
+            : json_encode($metadata, JSON_UNESCAPED_SLASHES | JSON_THROW_ON_ERROR);
+
         $stmt = $pdo->prepare(
             'INSERT INTO user_activities (user_id, activity_type, metadata)
              VALUES (?, ?, ?)'
         );
+
         $stmt->execute([
-            (int)$user['id'],
+            (int)($user['id'] ?? 0),
             substr($activityType, 0, 100),
-            $metadata === []
-                ? null
-                : json_encode($metadata, JSON_UNESCAPED_SLASHES),
+            $jsonMetadata,
         ]);
-    } catch (PDOException $e) {
+    } catch (Throwable $e) {
         error_log('User activity tracking failed: ' . $e->getMessage());
     }
 }

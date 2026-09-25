@@ -65,10 +65,15 @@ if (isPostRequest()) {
         jsonResponse(['success' => false, 'message' => 'Your account is unavailable. Please contact support.'], 403);
     }
 
-    logInUser($user);
-    trackAuthenticatedActivity($pdo, 'login');
-
     $postLoginRedirect = resolveRedirectTarget($_POST['redirect'] ?? null, '/index.php');
+
+    logInUser($user);
+    trackAuthenticatedActivity($pdo, 'login', [
+        'user_email' => $email,
+        'source_url' => $_SERVER['REQUEST_URI'] ?? '/member-login.php',
+        'redirect_to' => $postLoginRedirect,
+        'login_method' => 'email_password',
+    ]);
 
     jsonResponse([
         'success' => true,
